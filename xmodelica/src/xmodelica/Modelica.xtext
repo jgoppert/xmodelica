@@ -1,0 +1,9 @@
+grammar xmodelica.Modelica with org.eclipse.xtext.common.Terminals
+
+generate modelica "http://www.Modelica.xmodelica"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

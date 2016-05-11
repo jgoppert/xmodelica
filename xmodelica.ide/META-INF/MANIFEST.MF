@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: xmodelica.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: xmodelica.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: xmodelica,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: xmodelica.ide.contentassist.antlr,
+ xmodelica.ide.contentassist.antlr.internal
+

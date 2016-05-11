@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: xmodelica
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: xmodelica; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: xmodelica.scoping,
+ xmodelica.services,
+ xmodelica.validation,
+ xmodelica.modelica.util,
+ xmodelica.parser.antlr.internal,
+ xmodelica,
+ xmodelica.modelica.impl,
+ xmodelica.parser.antlr,
+ xmodelica.serializer,
+ xmodelica.modelica,
+ xmodelica.generator
+Import-Package: org.apache.log4j
