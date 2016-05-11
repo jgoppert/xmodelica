@@ -33,13 +33,13 @@ public interface ModelicaFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Class</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Class</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  Class createClass();
 
   /**
    * Returns the package supported by this factory.

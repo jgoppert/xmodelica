@@ -26,7 +26,11 @@ public class ModelicaParsingTest {
   public void loadModel() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Hello Xtext!");
+      _builder.append("class Ball");
+      _builder.newLine();
+      _builder.append("equation");
+      _builder.newLine();
+      _builder.append("end Ball;");
       _builder.newLine();
       final Model result = this.parseHelper.parse(_builder);
       Assert.assertNotNull(result);

@@ -86,14 +86,14 @@ public interface ModelicaPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link xmodelica.modelica.impl.GreetingImpl <em>Greeting</em>}' class.
+   * The meta object id for the '{@link xmodelica.modelica.impl.ClassImpl <em>Class</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see xmodelica.modelica.impl.GreetingImpl
-   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getGreeting()
+   * @see xmodelica.modelica.impl.ClassImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getClass_()
    * @generated
    */
-  int GREETING = 1;
+  int CLASS = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,16 +102,25 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GREETING__NAME = 0;
+  int CLASS__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The feature id for the '<em><b>Name end</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int CLASS__NAME_END = 1;
+
+  /**
+   * The number of structural features of the '<em>Class</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_FEATURE_COUNT = 2;
 
 
   /**
@@ -136,25 +145,36 @@ public interface ModelicaPackage extends EPackage
   EReference getModel_Greetings();
 
   /**
-   * Returns the meta object for class '{@link xmodelica.modelica.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for class '{@link xmodelica.modelica.Class <em>Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see xmodelica.modelica.Greeting
+   * @return the meta object for class '<em>Class</em>'.
+   * @see xmodelica.modelica.Class
    * @generated
    */
-  EClass getGreeting();
+  EClass getClass_();
 
   /**
-   * Returns the meta object for the attribute '{@link xmodelica.modelica.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.Class#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see xmodelica.modelica.Greeting#getName()
-   * @see #getGreeting()
+   * @see xmodelica.modelica.Class#getName()
+   * @see #getClass_()
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EAttribute getClass_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.Class#getName_end <em>Name end</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name end</em>'.
+   * @see xmodelica.modelica.Class#getName_end()
+   * @see #getClass_()
+   * @generated
+   */
+  EAttribute getClass_Name_end();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -198,14 +218,14 @@ public interface ModelicaPackage extends EPackage
     EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
 
     /**
-     * The meta object literal for the '{@link xmodelica.modelica.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ClassImpl <em>Class</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see xmodelica.modelica.impl.GreetingImpl
-     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getGreeting()
+     * @see xmodelica.modelica.impl.ClassImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getClass_()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EClass CLASS = eINSTANCE.getClass_();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -213,7 +233,15 @@ public interface ModelicaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute CLASS__NAME = eINSTANCE.getClass_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Name end</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLASS__NAME_END = eINSTANCE.getClass_Name_end();
 
   }
 

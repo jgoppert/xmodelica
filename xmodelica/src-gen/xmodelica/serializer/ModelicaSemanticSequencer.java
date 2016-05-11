@@ -14,7 +14,6 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import xmodelica.modelica.Greeting;
 import xmodelica.modelica.Model;
 import xmodelica.modelica.ModelicaPackage;
 import xmodelica.services.ModelicaGrammarAccess;
@@ -33,8 +32,8 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == ModelicaPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case ModelicaPackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
+			case ModelicaPackage.CLASS:
+				sequence_Class(context, (xmodelica.modelica.Class) semanticObject); 
 				return; 
 			case ModelicaPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -46,18 +45,21 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     Greeting returns Greeting
+	 *     Class returns Class
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID name_end=ID)
 	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
+	protected void sequence_Class(ISerializationContext context, xmodelica.modelica.Class semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.GREETING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.GREETING__NAME));
+			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.CLASS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.CLASS__NAME));
+			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.CLASS__NAME_END) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.CLASS__NAME_END));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getClassAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getClassAccess().getName_endIDTerminalRuleCall_4_0(), semanticObject.getName_end());
 		feeder.finish();
 	}
 	
@@ -67,7 +69,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     greetings+=Greeting+
+	 *     greetings+=Class+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -8,7 +8,8 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import xmodelica.modelica.*;
+import xmodelica.modelica.Model;
+import xmodelica.modelica.ModelicaPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,10 +81,10 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ModelicaPackage.GREETING:
+      case ModelicaPackage.CLASS:
       {
-        Greeting greeting = (Greeting)theEObject;
-        T result = caseGreeting(greeting);
+        xmodelica.modelica.Class class_ = (xmodelica.modelica.Class)theEObject;
+        T result = caseClass(class_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -108,17 +109,17 @@ public class ModelicaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Class</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Class</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGreeting(Greeting object)
+  public T caseClass(xmodelica.modelica.Class object)
   {
     return null;
   }

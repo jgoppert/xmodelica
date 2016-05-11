@@ -10,7 +10,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import xmodelica.modelica.*;
+import xmodelica.modelica.Model;
+import xmodelica.modelica.ModelicaPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,9 +82,9 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseClass(xmodelica.modelica.Class object)
       {
-        return createGreetingAdapter();
+        return createClassAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -123,16 +124,16 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Class <em>Class</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see xmodelica.modelica.Greeting
+   * @see xmodelica.modelica.Class
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createClassAdapter()
   {
     return null;
   }

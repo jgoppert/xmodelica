@@ -22,7 +22,9 @@ class ModelicaParsingTest{
 	@Test 
 	def void loadModel() {
 		val result = parseHelper.parse('''
-			Hello Xtext!
+			class Ball
+			equation
+			end Ball;
 		''')
 		Assert.assertNotNull(result)
 	}

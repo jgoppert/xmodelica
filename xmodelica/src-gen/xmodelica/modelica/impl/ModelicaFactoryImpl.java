@@ -11,7 +11,9 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import xmodelica.modelica.*;
+import xmodelica.modelica.Model;
+import xmodelica.modelica.ModelicaFactory;
+import xmodelica.modelica.ModelicaPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,7 +68,7 @@ public class ModelicaFactoryImpl extends EFactoryImpl implements ModelicaFactory
     switch (eClass.getClassifierID())
     {
       case ModelicaPackage.MODEL: return createModel();
-      case ModelicaPackage.GREETING: return createGreeting();
+      case ModelicaPackage.CLASS: return createClass();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -88,10 +90,10 @@ public class ModelicaFactoryImpl extends EFactoryImpl implements ModelicaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Greeting createGreeting()
+  public xmodelica.modelica.Class createClass()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    ClassImpl class_ = new ClassImpl();
+    return class_;
   }
 
   /**

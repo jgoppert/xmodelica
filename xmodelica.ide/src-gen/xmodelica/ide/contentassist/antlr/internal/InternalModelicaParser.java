@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalModelicaParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Hello'", "'!'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'class'", "'equation'", "'end'", "';'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
@@ -33,6 +33,8 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
     public static final int T__11=11;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__12=12;
+    public static final int T__13=13;
+    public static final int T__14=14;
     public static final int EOF=-1;
 
     // delegates
@@ -165,20 +167,20 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "ruleModel"
 
 
-    // $ANTLR start "entryRuleGreeting"
-    // InternalModelica.g:78:1: entryRuleGreeting : ruleGreeting EOF ;
-    public final void entryRuleGreeting() throws RecognitionException {
+    // $ANTLR start "entryRuleClass"
+    // InternalModelica.g:78:1: entryRuleClass : ruleClass EOF ;
+    public final void entryRuleClass() throws RecognitionException {
         try {
-            // InternalModelica.g:79:1: ( ruleGreeting EOF )
-            // InternalModelica.g:80:1: ruleGreeting EOF
+            // InternalModelica.g:79:1: ( ruleClass EOF )
+            // InternalModelica.g:80:1: ruleClass EOF
             {
-             before(grammarAccess.getGreetingRule()); 
+             before(grammarAccess.getClassRule()); 
             pushFollow(FOLLOW_1);
-            ruleGreeting();
+            ruleClass();
 
             state._fsp--;
 
-             after(grammarAccess.getGreetingRule()); 
+             after(grammarAccess.getClassRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -192,35 +194,35 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "entryRuleGreeting"
+    // $ANTLR end "entryRuleClass"
 
 
-    // $ANTLR start "ruleGreeting"
-    // InternalModelica.g:87:1: ruleGreeting : ( ( rule__Greeting__Group__0 ) ) ;
-    public final void ruleGreeting() throws RecognitionException {
+    // $ANTLR start "ruleClass"
+    // InternalModelica.g:87:1: ruleClass : ( ( rule__Class__Group__0 ) ) ;
+    public final void ruleClass() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalModelica.g:91:2: ( ( ( rule__Greeting__Group__0 ) ) )
-            // InternalModelica.g:92:2: ( ( rule__Greeting__Group__0 ) )
+            // InternalModelica.g:91:2: ( ( ( rule__Class__Group__0 ) ) )
+            // InternalModelica.g:92:2: ( ( rule__Class__Group__0 ) )
             {
-            // InternalModelica.g:92:2: ( ( rule__Greeting__Group__0 ) )
-            // InternalModelica.g:93:3: ( rule__Greeting__Group__0 )
+            // InternalModelica.g:92:2: ( ( rule__Class__Group__0 ) )
+            // InternalModelica.g:93:3: ( rule__Class__Group__0 )
             {
-             before(grammarAccess.getGreetingAccess().getGroup()); 
-            // InternalModelica.g:94:3: ( rule__Greeting__Group__0 )
-            // InternalModelica.g:94:4: rule__Greeting__Group__0
+             before(grammarAccess.getClassAccess().getGroup()); 
+            // InternalModelica.g:94:3: ( rule__Class__Group__0 )
+            // InternalModelica.g:94:4: rule__Class__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Greeting__Group__0();
+            rule__Class__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGreetingAccess().getGroup()); 
+             after(grammarAccess.getClassAccess().getGroup()); 
 
             }
 
@@ -239,26 +241,26 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "ruleGreeting"
+    // $ANTLR end "ruleClass"
 
 
-    // $ANTLR start "rule__Greeting__Group__0"
-    // InternalModelica.g:102:1: rule__Greeting__Group__0 : rule__Greeting__Group__0__Impl rule__Greeting__Group__1 ;
-    public final void rule__Greeting__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Class__Group__0"
+    // InternalModelica.g:102:1: rule__Class__Group__0 : rule__Class__Group__0__Impl rule__Class__Group__1 ;
+    public final void rule__Class__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalModelica.g:106:1: ( rule__Greeting__Group__0__Impl rule__Greeting__Group__1 )
-            // InternalModelica.g:107:2: rule__Greeting__Group__0__Impl rule__Greeting__Group__1
+            // InternalModelica.g:106:1: ( rule__Class__Group__0__Impl rule__Class__Group__1 )
+            // InternalModelica.g:107:2: rule__Class__Group__0__Impl rule__Class__Group__1
             {
             pushFollow(FOLLOW_4);
-            rule__Greeting__Group__0__Impl();
+            rule__Class__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Greeting__Group__1();
+            rule__Class__Group__1();
 
             state._fsp--;
 
@@ -277,25 +279,25 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__0"
+    // $ANTLR end "rule__Class__Group__0"
 
 
-    // $ANTLR start "rule__Greeting__Group__0__Impl"
-    // InternalModelica.g:114:1: rule__Greeting__Group__0__Impl : ( 'Hello' ) ;
-    public final void rule__Greeting__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Class__Group__0__Impl"
+    // InternalModelica.g:114:1: rule__Class__Group__0__Impl : ( 'class' ) ;
+    public final void rule__Class__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalModelica.g:118:1: ( ( 'Hello' ) )
-            // InternalModelica.g:119:1: ( 'Hello' )
+            // InternalModelica.g:118:1: ( ( 'class' ) )
+            // InternalModelica.g:119:1: ( 'class' )
             {
-            // InternalModelica.g:119:1: ( 'Hello' )
-            // InternalModelica.g:120:2: 'Hello'
+            // InternalModelica.g:119:1: ( 'class' )
+            // InternalModelica.g:120:2: 'class'
             {
-             before(grammarAccess.getGreetingAccess().getHelloKeyword_0()); 
+             before(grammarAccess.getClassAccess().getClassKeyword_0()); 
             match(input,11,FOLLOW_2); 
-             after(grammarAccess.getGreetingAccess().getHelloKeyword_0()); 
+             after(grammarAccess.getClassAccess().getClassKeyword_0()); 
 
             }
 
@@ -314,26 +316,26 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__0__Impl"
+    // $ANTLR end "rule__Class__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Greeting__Group__1"
-    // InternalModelica.g:129:1: rule__Greeting__Group__1 : rule__Greeting__Group__1__Impl rule__Greeting__Group__2 ;
-    public final void rule__Greeting__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Class__Group__1"
+    // InternalModelica.g:129:1: rule__Class__Group__1 : rule__Class__Group__1__Impl rule__Class__Group__2 ;
+    public final void rule__Class__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalModelica.g:133:1: ( rule__Greeting__Group__1__Impl rule__Greeting__Group__2 )
-            // InternalModelica.g:134:2: rule__Greeting__Group__1__Impl rule__Greeting__Group__2
+            // InternalModelica.g:133:1: ( rule__Class__Group__1__Impl rule__Class__Group__2 )
+            // InternalModelica.g:134:2: rule__Class__Group__1__Impl rule__Class__Group__2
             {
             pushFollow(FOLLOW_5);
-            rule__Greeting__Group__1__Impl();
+            rule__Class__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Greeting__Group__2();
+            rule__Class__Group__2();
 
             state._fsp--;
 
@@ -352,35 +354,35 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__1"
+    // $ANTLR end "rule__Class__Group__1"
 
 
-    // $ANTLR start "rule__Greeting__Group__1__Impl"
-    // InternalModelica.g:141:1: rule__Greeting__Group__1__Impl : ( ( rule__Greeting__NameAssignment_1 ) ) ;
-    public final void rule__Greeting__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Class__Group__1__Impl"
+    // InternalModelica.g:141:1: rule__Class__Group__1__Impl : ( ( rule__Class__NameAssignment_1 ) ) ;
+    public final void rule__Class__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalModelica.g:145:1: ( ( ( rule__Greeting__NameAssignment_1 ) ) )
-            // InternalModelica.g:146:1: ( ( rule__Greeting__NameAssignment_1 ) )
+            // InternalModelica.g:145:1: ( ( ( rule__Class__NameAssignment_1 ) ) )
+            // InternalModelica.g:146:1: ( ( rule__Class__NameAssignment_1 ) )
             {
-            // InternalModelica.g:146:1: ( ( rule__Greeting__NameAssignment_1 ) )
-            // InternalModelica.g:147:2: ( rule__Greeting__NameAssignment_1 )
+            // InternalModelica.g:146:1: ( ( rule__Class__NameAssignment_1 ) )
+            // InternalModelica.g:147:2: ( rule__Class__NameAssignment_1 )
             {
-             before(grammarAccess.getGreetingAccess().getNameAssignment_1()); 
-            // InternalModelica.g:148:2: ( rule__Greeting__NameAssignment_1 )
-            // InternalModelica.g:148:3: rule__Greeting__NameAssignment_1
+             before(grammarAccess.getClassAccess().getNameAssignment_1()); 
+            // InternalModelica.g:148:2: ( rule__Class__NameAssignment_1 )
+            // InternalModelica.g:148:3: rule__Class__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Greeting__NameAssignment_1();
+            rule__Class__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGreetingAccess().getNameAssignment_1()); 
+             after(grammarAccess.getClassAccess().getNameAssignment_1()); 
 
             }
 
@@ -399,21 +401,273 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__1__Impl"
+    // $ANTLR end "rule__Class__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Greeting__Group__2"
-    // InternalModelica.g:156:1: rule__Greeting__Group__2 : rule__Greeting__Group__2__Impl ;
-    public final void rule__Greeting__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Class__Group__2"
+    // InternalModelica.g:156:1: rule__Class__Group__2 : rule__Class__Group__2__Impl rule__Class__Group__3 ;
+    public final void rule__Class__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalModelica.g:160:1: ( rule__Greeting__Group__2__Impl )
-            // InternalModelica.g:161:2: rule__Greeting__Group__2__Impl
+            // InternalModelica.g:160:1: ( rule__Class__Group__2__Impl rule__Class__Group__3 )
+            // InternalModelica.g:161:2: rule__Class__Group__2__Impl rule__Class__Group__3
+            {
+            pushFollow(FOLLOW_5);
+            rule__Class__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Class__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Class__Group__2"
+
+
+    // $ANTLR start "rule__Class__Group__2__Impl"
+    // InternalModelica.g:168:1: rule__Class__Group__2__Impl : ( ( 'equation' )? ) ;
+    public final void rule__Class__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalModelica.g:172:1: ( ( ( 'equation' )? ) )
+            // InternalModelica.g:173:1: ( ( 'equation' )? )
+            {
+            // InternalModelica.g:173:1: ( ( 'equation' )? )
+            // InternalModelica.g:174:2: ( 'equation' )?
+            {
+             before(grammarAccess.getClassAccess().getEquationKeyword_2()); 
+            // InternalModelica.g:175:2: ( 'equation' )?
+            int alt2=2;
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==12) ) {
+                alt2=1;
+            }
+            switch (alt2) {
+                case 1 :
+                    // InternalModelica.g:175:3: 'equation'
+                    {
+                    match(input,12,FOLLOW_2); 
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getClassAccess().getEquationKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Class__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Class__Group__3"
+    // InternalModelica.g:183:1: rule__Class__Group__3 : rule__Class__Group__3__Impl rule__Class__Group__4 ;
+    public final void rule__Class__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalModelica.g:187:1: ( rule__Class__Group__3__Impl rule__Class__Group__4 )
+            // InternalModelica.g:188:2: rule__Class__Group__3__Impl rule__Class__Group__4
+            {
+            pushFollow(FOLLOW_4);
+            rule__Class__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Class__Group__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Class__Group__3"
+
+
+    // $ANTLR start "rule__Class__Group__3__Impl"
+    // InternalModelica.g:195:1: rule__Class__Group__3__Impl : ( 'end' ) ;
+    public final void rule__Class__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalModelica.g:199:1: ( ( 'end' ) )
+            // InternalModelica.g:200:1: ( 'end' )
+            {
+            // InternalModelica.g:200:1: ( 'end' )
+            // InternalModelica.g:201:2: 'end'
+            {
+             before(grammarAccess.getClassAccess().getEndKeyword_3()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getClassAccess().getEndKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Class__Group__3__Impl"
+
+
+    // $ANTLR start "rule__Class__Group__4"
+    // InternalModelica.g:210:1: rule__Class__Group__4 : rule__Class__Group__4__Impl rule__Class__Group__5 ;
+    public final void rule__Class__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalModelica.g:214:1: ( rule__Class__Group__4__Impl rule__Class__Group__5 )
+            // InternalModelica.g:215:2: rule__Class__Group__4__Impl rule__Class__Group__5
+            {
+            pushFollow(FOLLOW_6);
+            rule__Class__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Class__Group__5();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Class__Group__4"
+
+
+    // $ANTLR start "rule__Class__Group__4__Impl"
+    // InternalModelica.g:222:1: rule__Class__Group__4__Impl : ( ( rule__Class__Name_endAssignment_4 ) ) ;
+    public final void rule__Class__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalModelica.g:226:1: ( ( ( rule__Class__Name_endAssignment_4 ) ) )
+            // InternalModelica.g:227:1: ( ( rule__Class__Name_endAssignment_4 ) )
+            {
+            // InternalModelica.g:227:1: ( ( rule__Class__Name_endAssignment_4 ) )
+            // InternalModelica.g:228:2: ( rule__Class__Name_endAssignment_4 )
+            {
+             before(grammarAccess.getClassAccess().getName_endAssignment_4()); 
+            // InternalModelica.g:229:2: ( rule__Class__Name_endAssignment_4 )
+            // InternalModelica.g:229:3: rule__Class__Name_endAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__Greeting__Group__2__Impl();
+            rule__Class__Name_endAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getClassAccess().getName_endAssignment_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Class__Group__4__Impl"
+
+
+    // $ANTLR start "rule__Class__Group__5"
+    // InternalModelica.g:237:1: rule__Class__Group__5 : rule__Class__Group__5__Impl ;
+    public final void rule__Class__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalModelica.g:241:1: ( rule__Class__Group__5__Impl )
+            // InternalModelica.g:242:2: rule__Class__Group__5__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Class__Group__5__Impl();
 
             state._fsp--;
 
@@ -432,25 +686,25 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__2"
+    // $ANTLR end "rule__Class__Group__5"
 
 
-    // $ANTLR start "rule__Greeting__Group__2__Impl"
-    // InternalModelica.g:167:1: rule__Greeting__Group__2__Impl : ( '!' ) ;
-    public final void rule__Greeting__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Class__Group__5__Impl"
+    // InternalModelica.g:248:1: rule__Class__Group__5__Impl : ( ';' ) ;
+    public final void rule__Class__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalModelica.g:171:1: ( ( '!' ) )
-            // InternalModelica.g:172:1: ( '!' )
+            // InternalModelica.g:252:1: ( ( ';' ) )
+            // InternalModelica.g:253:1: ( ';' )
             {
-            // InternalModelica.g:172:1: ( '!' )
-            // InternalModelica.g:173:2: '!'
+            // InternalModelica.g:253:1: ( ';' )
+            // InternalModelica.g:254:2: ';'
             {
-             before(grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2()); 
+             before(grammarAccess.getClassAccess().getSemicolonKeyword_5()); 
+            match(input,14,FOLLOW_2); 
+             after(grammarAccess.getClassAccess().getSemicolonKeyword_5()); 
 
             }
 
@@ -469,29 +723,29 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__2__Impl"
+    // $ANTLR end "rule__Class__Group__5__Impl"
 
 
     // $ANTLR start "rule__Model__GreetingsAssignment"
-    // InternalModelica.g:183:1: rule__Model__GreetingsAssignment : ( ruleGreeting ) ;
+    // InternalModelica.g:264:1: rule__Model__GreetingsAssignment : ( ruleClass ) ;
     public final void rule__Model__GreetingsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalModelica.g:187:1: ( ( ruleGreeting ) )
-            // InternalModelica.g:188:2: ( ruleGreeting )
+            // InternalModelica.g:268:1: ( ( ruleClass ) )
+            // InternalModelica.g:269:2: ( ruleClass )
             {
-            // InternalModelica.g:188:2: ( ruleGreeting )
-            // InternalModelica.g:189:3: ruleGreeting
+            // InternalModelica.g:269:2: ( ruleClass )
+            // InternalModelica.g:270:3: ruleClass
             {
-             before(grammarAccess.getModelAccess().getGreetingsGreetingParserRuleCall_0()); 
+             before(grammarAccess.getModelAccess().getGreetingsClassParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
-            ruleGreeting();
+            ruleClass();
 
             state._fsp--;
 
-             after(grammarAccess.getModelAccess().getGreetingsGreetingParserRuleCall_0()); 
+             after(grammarAccess.getModelAccess().getGreetingsClassParserRuleCall_0()); 
 
             }
 
@@ -513,22 +767,22 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Model__GreetingsAssignment"
 
 
-    // $ANTLR start "rule__Greeting__NameAssignment_1"
-    // InternalModelica.g:198:1: rule__Greeting__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Greeting__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Class__NameAssignment_1"
+    // InternalModelica.g:279:1: rule__Class__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Class__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalModelica.g:202:1: ( ( RULE_ID ) )
-            // InternalModelica.g:203:2: ( RULE_ID )
+            // InternalModelica.g:283:1: ( ( RULE_ID ) )
+            // InternalModelica.g:284:2: ( RULE_ID )
             {
-            // InternalModelica.g:203:2: ( RULE_ID )
-            // InternalModelica.g:204:3: RULE_ID
+            // InternalModelica.g:284:2: ( RULE_ID )
+            // InternalModelica.g:285:3: RULE_ID
             {
-             before(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getClassAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getClassAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -547,7 +801,44 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__NameAssignment_1"
+    // $ANTLR end "rule__Class__NameAssignment_1"
+
+
+    // $ANTLR start "rule__Class__Name_endAssignment_4"
+    // InternalModelica.g:294:1: rule__Class__Name_endAssignment_4 : ( RULE_ID ) ;
+    public final void rule__Class__Name_endAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalModelica.g:298:1: ( ( RULE_ID ) )
+            // InternalModelica.g:299:2: ( RULE_ID )
+            {
+            // InternalModelica.g:299:2: ( RULE_ID )
+            // InternalModelica.g:300:3: RULE_ID
+            {
+             before(grammarAccess.getClassAccess().getName_endIDTerminalRuleCall_4_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getClassAccess().getName_endIDTerminalRuleCall_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Class__Name_endAssignment_4"
 
     // Delegated rules
 
@@ -558,6 +849,7 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
 
 }

@@ -3,7 +3,10 @@ grammar xmodelica.Modelica with org.eclipse.xtext.common.Terminals
 generate modelica "http://www.Modelica.xmodelica"
 
 Model:
-	greetings+=Greeting*;
+	classes+=Class*;
 	
-Greeting:
-	'Hello' name=ID '!';
+Class:
+	'class' name=ID
+	('equation' )?
+	'end' name_end=ID ';'
+	;

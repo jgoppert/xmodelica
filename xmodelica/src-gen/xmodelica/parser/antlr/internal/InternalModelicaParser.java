@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalModelicaParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Hello'", "'!'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'class'", "'equation'", "'end'", "';'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
@@ -32,6 +32,8 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
     public static final int T__11=11;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__12=12;
+    public static final int T__13=13;
+    public static final int T__14=14;
     public static final int EOF=-1;
 
     // delegates
@@ -110,7 +112,7 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModel"
-    // InternalModelica.g:71:1: ruleModel returns [EObject current=null] : ( (lv_greetings_0_0= ruleGreeting ) )* ;
+    // InternalModelica.g:71:1: ruleModel returns [EObject current=null] : ( (lv_greetings_0_0= ruleClass ) )* ;
     public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
@@ -121,10 +123,10 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalModelica.g:77:2: ( ( (lv_greetings_0_0= ruleGreeting ) )* )
-            // InternalModelica.g:78:2: ( (lv_greetings_0_0= ruleGreeting ) )*
+            // InternalModelica.g:77:2: ( ( (lv_greetings_0_0= ruleClass ) )* )
+            // InternalModelica.g:78:2: ( (lv_greetings_0_0= ruleClass ) )*
             {
-            // InternalModelica.g:78:2: ( (lv_greetings_0_0= ruleGreeting ) )*
+            // InternalModelica.g:78:2: ( (lv_greetings_0_0= ruleClass ) )*
             loop1:
             do {
                 int alt1=2;
@@ -137,16 +139,16 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalModelica.g:79:3: (lv_greetings_0_0= ruleGreeting )
+            	    // InternalModelica.g:79:3: (lv_greetings_0_0= ruleClass )
             	    {
-            	    // InternalModelica.g:79:3: (lv_greetings_0_0= ruleGreeting )
-            	    // InternalModelica.g:80:4: lv_greetings_0_0= ruleGreeting
+            	    // InternalModelica.g:79:3: (lv_greetings_0_0= ruleClass )
+            	    // InternalModelica.g:80:4: lv_greetings_0_0= ruleClass
             	    {
 
-            	    				newCompositeNode(grammarAccess.getModelAccess().getGreetingsGreetingParserRuleCall_0());
+            	    				newCompositeNode(grammarAccess.getModelAccess().getGreetingsClassParserRuleCall_0());
             	    			
             	    pushFollow(FOLLOW_3);
-            	    lv_greetings_0_0=ruleGreeting();
+            	    lv_greetings_0_0=ruleClass();
 
             	    state._fsp--;
 
@@ -158,7 +160,7 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
             	    					current,
             	    					"greetings",
             	    					lv_greetings_0_0,
-            	    					"xmodelica.Modelica.Greeting");
+            	    					"xmodelica.Modelica.Class");
             	    				afterParserOrEnumRuleCall();
             	    			
 
@@ -192,25 +194,25 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleModel"
 
 
-    // $ANTLR start "entryRuleGreeting"
-    // InternalModelica.g:100:1: entryRuleGreeting returns [EObject current=null] : iv_ruleGreeting= ruleGreeting EOF ;
-    public final EObject entryRuleGreeting() throws RecognitionException {
+    // $ANTLR start "entryRuleClass"
+    // InternalModelica.g:100:1: entryRuleClass returns [EObject current=null] : iv_ruleClass= ruleClass EOF ;
+    public final EObject entryRuleClass() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleGreeting = null;
+        EObject iv_ruleClass = null;
 
 
         try {
-            // InternalModelica.g:100:49: (iv_ruleGreeting= ruleGreeting EOF )
-            // InternalModelica.g:101:2: iv_ruleGreeting= ruleGreeting EOF
+            // InternalModelica.g:100:46: (iv_ruleClass= ruleClass EOF )
+            // InternalModelica.g:101:2: iv_ruleClass= ruleClass EOF
             {
-             newCompositeNode(grammarAccess.getGreetingRule()); 
+             newCompositeNode(grammarAccess.getClassRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleGreeting=ruleGreeting();
+            iv_ruleClass=ruleClass();
 
             state._fsp--;
 
-             current =iv_ruleGreeting; 
+             current =iv_ruleClass; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -225,31 +227,34 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleGreeting"
+    // $ANTLR end "entryRuleClass"
 
 
-    // $ANTLR start "ruleGreeting"
-    // InternalModelica.g:107:1: ruleGreeting returns [EObject current=null] : (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' ) ;
-    public final EObject ruleGreeting() throws RecognitionException {
+    // $ANTLR start "ruleClass"
+    // InternalModelica.g:107:1: ruleClass returns [EObject current=null] : (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'equation' )? otherlv_3= 'end' ( (lv_name_end_4_0= RULE_ID ) ) otherlv_5= ';' ) ;
+    public final EObject ruleClass() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_name_1_0=null;
         Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token lv_name_end_4_0=null;
+        Token otherlv_5=null;
 
 
         	enterRule();
 
         try {
-            // InternalModelica.g:113:2: ( (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' ) )
-            // InternalModelica.g:114:2: (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' )
+            // InternalModelica.g:113:2: ( (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'equation' )? otherlv_3= 'end' ( (lv_name_end_4_0= RULE_ID ) ) otherlv_5= ';' ) )
+            // InternalModelica.g:114:2: (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'equation' )? otherlv_3= 'end' ( (lv_name_end_4_0= RULE_ID ) ) otherlv_5= ';' )
             {
-            // InternalModelica.g:114:2: (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' )
-            // InternalModelica.g:115:3: otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!'
+            // InternalModelica.g:114:2: (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'equation' )? otherlv_3= 'end' ( (lv_name_end_4_0= RULE_ID ) ) otherlv_5= ';' )
+            // InternalModelica.g:115:3: otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'equation' )? otherlv_3= 'end' ( (lv_name_end_4_0= RULE_ID ) ) otherlv_5= ';'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getGreetingAccess().getHelloKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getClassAccess().getClassKeyword_0());
             		
             // InternalModelica.g:119:3: ( (lv_name_1_0= RULE_ID ) )
             // InternalModelica.g:120:4: (lv_name_1_0= RULE_ID )
@@ -259,11 +264,11 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getClassAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getGreetingRule());
+            						current = createModelElement(grammarAccess.getClassRule());
             					}
             					setWithLastConsumed(
             						current,
@@ -277,9 +282,60 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_2); 
+            // InternalModelica.g:137:3: (otherlv_2= 'equation' )?
+            int alt2=2;
+            int LA2_0 = input.LA(1);
 
-            			newLeafNode(otherlv_2, grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2());
+            if ( (LA2_0==12) ) {
+                alt2=1;
+            }
+            switch (alt2) {
+                case 1 :
+                    // InternalModelica.g:138:4: otherlv_2= 'equation'
+                    {
+                    otherlv_2=(Token)match(input,12,FOLLOW_6); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getClassAccess().getEquationKeyword_2());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            otherlv_3=(Token)match(input,13,FOLLOW_4); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getClassAccess().getEndKeyword_3());
+            		
+            // InternalModelica.g:147:3: ( (lv_name_end_4_0= RULE_ID ) )
+            // InternalModelica.g:148:4: (lv_name_end_4_0= RULE_ID )
+            {
+            // InternalModelica.g:148:4: (lv_name_end_4_0= RULE_ID )
+            // InternalModelica.g:149:5: lv_name_end_4_0= RULE_ID
+            {
+            lv_name_end_4_0=(Token)match(input,RULE_ID,FOLLOW_7); 
+
+            					newLeafNode(lv_name_end_4_0, grammarAccess.getClassAccess().getName_endIDTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getClassRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name_end",
+            						lv_name_end_4_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,14,FOLLOW_2); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getClassAccess().getSemicolonKeyword_5());
             		
 
             }
@@ -300,7 +356,7 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleGreeting"
+    // $ANTLR end "ruleClass"
 
     // Delegated rules
 
@@ -311,6 +367,8 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004000L});
 
 }

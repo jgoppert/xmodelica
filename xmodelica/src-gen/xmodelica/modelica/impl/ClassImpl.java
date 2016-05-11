@@ -10,23 +10,23 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import xmodelica.modelica.Greeting;
 import xmodelica.modelica.ModelicaPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Greeting</b></em>'.
+ * An implementation of the model object '<em><b>Class</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.impl.GreetingImpl#getName <em>Name</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassImpl#getName <em>Name</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassImpl#getName_end <em>Name end</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeting
+public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica.modelica.Class
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -49,11 +49,31 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getName_end() <em>Name end</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName_end()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_END_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName_end() <em>Name end</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName_end()
+   * @generated
+   * @ordered
+   */
+  protected String name_end = NAME_END_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GreetingImpl()
+  protected ClassImpl()
   {
     super();
   }
@@ -66,7 +86,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   @Override
   protected EClass eStaticClass()
   {
-    return ModelicaPackage.Literals.GREETING;
+    return ModelicaPackage.Literals.CLASS;
   }
 
   /**
@@ -89,7 +109,30 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.GREETING__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName_end()
+  {
+    return name_end;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName_end(String newName_end)
+  {
+    String oldName_end = name_end;
+    name_end = newName_end;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS__NAME_END, oldName_end, name_end));
   }
 
   /**
@@ -102,8 +145,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ModelicaPackage.GREETING__NAME:
+      case ModelicaPackage.CLASS__NAME:
         return getName();
+      case ModelicaPackage.CLASS__NAME_END:
+        return getName_end();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +163,11 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ModelicaPackage.GREETING__NAME:
+      case ModelicaPackage.CLASS__NAME:
         setName((String)newValue);
+        return;
+      case ModelicaPackage.CLASS__NAME_END:
+        setName_end((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +183,11 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ModelicaPackage.GREETING__NAME:
+      case ModelicaPackage.CLASS__NAME:
         setName(NAME_EDEFAULT);
+        return;
+      case ModelicaPackage.CLASS__NAME_END:
+        setName_end(NAME_END_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +203,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ModelicaPackage.GREETING__NAME:
+      case ModelicaPackage.CLASS__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ModelicaPackage.CLASS__NAME_END:
+        return NAME_END_EDEFAULT == null ? name_end != null : !NAME_END_EDEFAULT.equals(name_end);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +224,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", name_end: ");
+    result.append(name_end);
     result.append(')');
     return result.toString();
   }
 
-} //GreetingImpl
+} //ClassImpl

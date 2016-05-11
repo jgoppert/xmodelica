@@ -78,9 +78,9 @@ ruleModel returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getModelAccess().getGreetingsGreetingParserRuleCall_0());
+				newCompositeNode(grammarAccess.getModelAccess().getGreetingsClassParserRuleCall_0());
 			}
-			lv_greetings_0_0=ruleGreeting
+			lv_greetings_0_0=ruleClass
 			{
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -89,22 +89,22 @@ ruleModel returns [EObject current=null]
 					$current,
 					"greetings",
 					lv_greetings_0_0,
-					"xmodelica.Modelica.Greeting");
+					"xmodelica.Modelica.Class");
 				afterParserOrEnumRuleCall();
 			}
 		)
 	)*
 ;
 
-// Entry rule entryRuleGreeting
-entryRuleGreeting returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getGreetingRule()); }
-	iv_ruleGreeting=ruleGreeting
-	{ $current=$iv_ruleGreeting.current; }
+// Entry rule entryRuleClass
+entryRuleClass returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getClassRule()); }
+	iv_ruleClass=ruleClass
+	{ $current=$iv_ruleClass.current; }
 	EOF;
 
-// Rule Greeting
-ruleGreeting returns [EObject current=null]
+// Rule Class
+ruleClass returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -112,19 +112,19 @@ ruleGreeting returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Hello'
+		otherlv_0='class'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getGreetingAccess().getHelloKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getClassAccess().getClassKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getClassAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGreetingRule());
+						$current = createModelElement(grammarAccess.getClassRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -134,9 +134,37 @@ ruleGreeting returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='!'
+		(
+			otherlv_2='equation'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getClassAccess().getEquationKeyword_2());
+			}
+		)?
+		otherlv_3='end'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getClassAccess().getEndKeyword_3());
+		}
+		(
+			(
+				lv_name_end_4_0=RULE_ID
+				{
+					newLeafNode(lv_name_end_4_0, grammarAccess.getClassAccess().getName_endIDTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getClassRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name_end",
+						lv_name_end_4_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_5=';'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getClassAccess().getSemicolonKeyword_5());
 		}
 	)
 ;

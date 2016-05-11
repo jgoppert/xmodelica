@@ -9,8 +9,9 @@
     <genClasses ecoreClass="Modelica.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Model/greetings"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Greeting/name"/>
+    <genClasses ecoreClass="Modelica.ecore#//Class">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Class/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Class/name_end"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

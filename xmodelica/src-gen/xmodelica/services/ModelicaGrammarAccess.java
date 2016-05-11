@@ -24,35 +24,41 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.Model");
 		private final Assignment cGreetingsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cGreetingsGreetingParserRuleCall_0 = (RuleCall)cGreetingsAssignment.eContents().get(0);
+		private final RuleCall cGreetingsClassParserRuleCall_0 = (RuleCall)cGreetingsAssignment.eContents().get(0);
 		
 		//Model:
-		//	greetings+=Greeting*;
+		//	greetings+=Class*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//greetings+=Greeting*
+		//greetings+=Class*
 		public Assignment getGreetingsAssignment() { return cGreetingsAssignment; }
 		
-		//Greeting
-		public RuleCall getGreetingsGreetingParserRuleCall_0() { return cGreetingsGreetingParserRuleCall_0; }
+		//Class
+		public RuleCall getGreetingsClassParserRuleCall_0() { return cGreetingsClassParserRuleCall_0; }
 	}
-	public class GreetingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.Greeting");
+	public class ClassElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.Class");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHelloKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cClassKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cExclamationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cEquationKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cName_endAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cName_endIDTerminalRuleCall_4_0 = (RuleCall)cName_endAssignment_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//Greeting:
-		//	'Hello' name=ID '!';
+		//Class:
+		//	'class' name=ID
+		//	'equation'?
+		//	'end' name_end=ID ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Hello' name=ID '!'
+		//'class' name=ID 'equation'? 'end' name_end=ID ';'
 		public Group getGroup() { return cGroup; }
 		
-		//'Hello'
-		public Keyword getHelloKeyword_0() { return cHelloKeyword_0; }
+		//'class'
+		public Keyword getClassKeyword_0() { return cClassKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -60,13 +66,25 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//'!'
-		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
+		//'equation'?
+		public Keyword getEquationKeyword_2() { return cEquationKeyword_2; }
+		
+		//'end'
+		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		
+		//name_end=ID
+		public Assignment getName_endAssignment_4() { return cName_endAssignment_4; }
+		
+		//ID
+		public RuleCall getName_endIDTerminalRuleCall_4_0() { return cName_endIDTerminalRuleCall_4_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 	
 	
 	private final ModelElements pModel;
-	private final GreetingElements pGreeting;
+	private final ClassElements pClass;
 	
 	private final Grammar grammar;
 	
@@ -78,7 +96,7 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pGreeting = new GreetingElements();
+		this.pClass = new ClassElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -109,7 +127,7 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	greetings+=Greeting*;
+	//	greetings+=Class*;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -118,14 +136,16 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
-	//Greeting:
-	//	'Hello' name=ID '!';
-	public GreetingElements getGreetingAccess() {
-		return pGreeting;
+	//Class:
+	//	'class' name=ID
+	//	'equation'?
+	//	'end' name_end=ID ';';
+	public ClassElements getClassAccess() {
+		return pClass;
 	}
 	
-	public ParserRule getGreetingRule() {
-		return getGreetingAccess().getRule();
+	public ParserRule getClassRule() {
+		return getClassAccess().getRule();
 	}
 	
 	//terminal ID:

@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import xmodelica.modelica.Greeting;
 import xmodelica.modelica.Model;
 import xmodelica.modelica.ModelicaPackage;
 
@@ -44,7 +43,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected EList<xmodelica.modelica.Class> greetings;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,11 +71,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Greeting> getGreetings()
+  public EList<xmodelica.modelica.Class> getGreetings()
   {
     if (greetings == null)
     {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, ModelicaPackage.MODEL__GREETINGS);
+      greetings = new EObjectContainmentEList<xmodelica.modelica.Class>(xmodelica.modelica.Class.class, this, ModelicaPackage.MODEL__GREETINGS);
     }
     return greetings;
   }
@@ -126,7 +125,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case ModelicaPackage.MODEL__GREETINGS:
         getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+        getGreetings().addAll((Collection<? extends xmodelica.modelica.Class>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

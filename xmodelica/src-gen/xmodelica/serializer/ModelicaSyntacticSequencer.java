@@ -10,6 +10,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import xmodelica.services.ModelicaGrammarAccess;
@@ -18,10 +20,12 @@ import xmodelica.services.ModelicaGrammarAccess;
 public class ModelicaSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ModelicaGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Class_EquationKeyword_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ModelicaGrammarAccess) access;
+		match_Class_EquationKeyword_2_q = new TokenAlias(false, true, grammarAccess.getClassAccess().getEquationKeyword_2());
 	}
 	
 	@Override
@@ -36,8 +40,21 @@ public class ModelicaSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_Class_EquationKeyword_2_q.equals(syntax))
+				emit_Class_EquationKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'equation'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=ID (ambiguity) 'end' name_end=ID
+	 */
+	protected void emit_Class_EquationKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }
