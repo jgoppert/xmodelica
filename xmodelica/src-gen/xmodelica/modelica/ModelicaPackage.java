@@ -58,14 +58,14 @@ public interface ModelicaPackage extends EPackage
   ModelicaPackage eINSTANCE = xmodelica.modelica.impl.ModelicaPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link xmodelica.modelica.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link xmodelica.modelica.impl.StoredDefinitionImpl <em>Stored Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see xmodelica.modelica.impl.ModelImpl
-   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getModel()
+   * @see xmodelica.modelica.impl.StoredDefinitionImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getStoredDefinition()
    * @generated
    */
-  int MODEL = 0;
+  int STORED_DEFINITION = 0;
 
   /**
    * The feature id for the '<em><b>Classes</b></em>' containment reference list.
@@ -74,26 +74,221 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__CLASSES = 0;
+  int STORED_DEFINITION__CLASSES = 0;
 
   /**
-   * The number of structural features of the '<em>Model</em>' class.
+   * The number of structural features of the '<em>Stored Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 1;
+  int STORED_DEFINITION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link xmodelica.modelica.impl.ClassImpl <em>Class</em>}' class.
+   * The meta object id for the '{@link xmodelica.modelica.impl.ElementImpl <em>Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see xmodelica.modelica.impl.ClassImpl
-   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getClass_()
+   * @see xmodelica.modelica.impl.ElementImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElement()
    * @generated
    */
-  int CLASS = 1;
+  int ELEMENT = 8;
+
+  /**
+   * The number of structural features of the '<em>Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ClassDefinitionImpl <em>Class Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ClassDefinitionImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getClassDefinition()
+   * @generated
+   */
+  int CLASS_DEFINITION = 1;
+
+  /**
+   * The number of structural features of the '<em>Class Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ClassSpecifierImpl <em>Class Specifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ClassSpecifierImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getClassSpecifier()
+   * @generated
+   */
+  int CLASS_SPECIFIER = 2;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__MOD = CLASS_DEFINITION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Class Specifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER_FEATURE_COUNT = CLASS_DEFINITION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.EnumListImpl <em>Enum List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.EnumListImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getEnumList()
+   * @generated
+   */
+  int ENUM_LIST = 3;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_LIST__MOD = CLASS_SPECIFIER__MOD;
+
+  /**
+   * The feature id for the '<em><b>Const</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_LIST__CONST = CLASS_SPECIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Mode</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_LIST__MODE = CLASS_SPECIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_LIST__COMMENT = CLASS_SPECIFIER_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Enums</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_LIST__ENUMS = CLASS_SPECIFIER_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Enum List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_LIST_FEATURE_COUNT = CLASS_SPECIFIER_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.EnumerationLiteralImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getEnumerationLiteral()
+   * @generated
+   */
+  int ENUMERATION_LITERAL = 4;
+
+  /**
+   * The number of structural features of the '<em>Enumeration Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_LITERAL_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.CompositionImpl <em>Composition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.CompositionImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComposition()
+   * @generated
+   */
+  int COMPOSITION = 5;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITION__MOD = CLASS_SPECIFIER__MOD;
+
+  /**
+   * The number of structural features of the '<em>Composition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITION_FEATURE_COUNT = CLASS_SPECIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ExternalFunctionCallImpl <em>External Function Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ExternalFunctionCallImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getExternalFunctionCall()
+   * @generated
+   */
+  int EXTERNAL_FUNCTION_CALL = 6;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_FUNCTION_CALL__MOD = COMPOSITION__MOD;
+
+  /**
+   * The feature id for the '<em><b>Lhs</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_FUNCTION_CALL__LHS = COMPOSITION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,79 +297,4161 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS__NAME = 0;
+  int EXTERNAL_FUNCTION_CALL__NAME = COMPOSITION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Name end</b></em>' attribute.
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS__NAME_END = 1;
+  int EXTERNAL_FUNCTION_CALL__ARGS = COMPOSITION_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Class</em>' class.
+   * The number of structural features of the '<em>External Function Call</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_FEATURE_COUNT = 2;
-
+  int EXTERNAL_FUNCTION_CALL_FEATURE_COUNT = COMPOSITION_FEATURE_COUNT + 3;
 
   /**
-   * Returns the meta object for class '{@link xmodelica.modelica.Model <em>Model</em>}'.
+   * The meta object id for the '{@link xmodelica.modelica.impl.ElementListImpl <em>Element List</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see xmodelica.modelica.Model
+   * @see xmodelica.modelica.impl.ElementListImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElementList()
    * @generated
    */
-  EClass getModel();
+  int ELEMENT_LIST = 7;
 
   /**
-   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.Model#getClasses <em>Classes</em>}'.
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_LIST__MOD = COMPOSITION__MOD;
+
+  /**
+   * The feature id for the '<em><b>Pub elist</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_LIST__PUB_ELIST = COMPOSITION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Protected elist</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_LIST__PROTECTED_ELIST = COMPOSITION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Eq secs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_LIST__EQ_SECS = COMPOSITION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Alg secs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_LIST__ALG_SECS = COMPOSITION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Anno</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_LIST__ANNO = COMPOSITION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Elem</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_LIST__ELEM = COMPOSITION_FEATURE_COUNT + 5;
+
+  /**
+   * The number of structural features of the '<em>Element List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_LIST_FEATURE_COUNT = COMPOSITION_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ImportClauseImpl <em>Import Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ImportClauseImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getImportClause()
+   * @generated
+   */
+  int IMPORT_CLAUSE = 9;
+
+  /**
+   * The number of structural features of the '<em>Import Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ExtendsClauseImpl <em>Extends Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ExtendsClauseImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getExtendsClause()
+   * @generated
+   */
+  int EXTENDS_CLAUSE = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDS_CLAUSE__NAME = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDS_CLAUSE__MOD = ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Anno</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDS_CLAUSE__ANNO = ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Extends Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDS_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ConstrainingClauseImpl <em>Constraining Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ConstrainingClauseImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getConstrainingClause()
+   * @generated
+   */
+  int CONSTRAINING_CLAUSE = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINING_CLAUSE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINING_CLAUSE__MOD = 1;
+
+  /**
+   * The number of structural features of the '<em>Constraining Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINING_CLAUSE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ComponentClauseImpl <em>Component Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ComponentClauseImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentClause()
+   * @generated
+   */
+  int COMPONENT_CLAUSE = 12;
+
+  /**
+   * The feature id for the '<em><b>Comps</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE__COMPS = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Component Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ComponentListImpl <em>Component List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ComponentListImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentList()
+   * @generated
+   */
+  int COMPONENT_LIST = 13;
+
+  /**
+   * The feature id for the '<em><b>Comps</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_LIST__COMPS = 0;
+
+  /**
+   * The number of structural features of the '<em>Component List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ComponentDeclarationImpl <em>Component Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ComponentDeclarationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentDeclaration()
+   * @generated
+   */
+  int COMPONENT_DECLARATION = 14;
+
+  /**
+   * The feature id for the '<em><b>Decl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION__DECL = 0;
+
+  /**
+   * The feature id for the '<em><b>Cond</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION__COND = 1;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION__COMMENT = 2;
+
+  /**
+   * The number of structural features of the '<em>Component Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ConditionAttributeImpl <em>Condition Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ConditionAttributeImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getConditionAttribute()
+   * @generated
+   */
+  int CONDITION_ATTRIBUTE = 15;
+
+  /**
+   * The number of structural features of the '<em>Condition Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_ATTRIBUTE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ElementRedeclarationImpl <em>Element Redeclaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ElementRedeclarationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElementRedeclaration()
+   * @generated
+   */
+  int ELEMENT_REDECLARATION = 23;
+
+  /**
+   * The number of structural features of the '<em>Element Redeclaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REDECLARATION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ComponentClause1Impl <em>Component Clause1</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ComponentClause1Impl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentClause1()
+   * @generated
+   */
+  int COMPONENT_CLAUSE1 = 25;
+
+  /**
+   * The feature id for the '<em><b>Const</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__CONST = ELEMENT_REDECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Component Clause1</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1_FEATURE_COUNT = ELEMENT_REDECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ComponentDeclaration1Impl <em>Component Declaration1</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ComponentDeclaration1Impl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentDeclaration1()
+   * @generated
+   */
+  int COMPONENT_DECLARATION1 = 26;
+
+  /**
+   * The feature id for the '<em><b>Const</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION1__CONST = COMPONENT_CLAUSE1__CONST;
+
+  /**
+   * The number of structural features of the '<em>Component Declaration1</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION1_FEATURE_COUNT = COMPONENT_CLAUSE1_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.DeclarationImpl <em>Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.DeclarationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getDeclaration()
+   * @generated
+   */
+  int DECLARATION = 16;
+
+  /**
+   * The feature id for the '<em><b>Const</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__CONST = COMPONENT_DECLARATION1__CONST;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__NAME = COMPONENT_DECLARATION1_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Subscripts</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__SUBSCRIPTS = COMPONENT_DECLARATION1_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__MOD = COMPONENT_DECLARATION1_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__COMMENT = COMPONENT_DECLARATION1_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_FEATURE_COUNT = COMPONENT_DECLARATION1_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ModificationImpl <em>Modification</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ModificationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getModification()
+   * @generated
+   */
+  int MODIFICATION = 17;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFICATION__MOD = 0;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFICATION__EXPR = 1;
+
+  /**
+   * The number of structural features of the '<em>Modification</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFICATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ClassModificationImpl <em>Class Modification</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ClassModificationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getClassModification()
+   * @generated
+   */
+  int CLASS_MODIFICATION = 18;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_MODIFICATION__MOD = CLASS_SPECIFIER__MOD;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_MODIFICATION__ARGS = CLASS_SPECIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Class Modification</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_MODIFICATION_FEATURE_COUNT = CLASS_SPECIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ArgumentListImpl <em>Argument List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ArgumentListImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getArgumentList()
+   * @generated
+   */
+  int ARGUMENT_LIST = 19;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT_LIST__ARGS = 0;
+
+  /**
+   * The number of structural features of the '<em>Argument List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ArgumentImpl <em>Argument</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ArgumentImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getArgument()
+   * @generated
+   */
+  int ARGUMENT = 20;
+
+  /**
+   * The number of structural features of the '<em>Argument</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ElementModicationOrReplaceableImpl <em>Element Modication Or Replaceable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ElementModicationOrReplaceableImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElementModicationOrReplaceable()
+   * @generated
+   */
+  int ELEMENT_MODICATION_OR_REPLACEABLE = 21;
+
+  /**
+   * The number of structural features of the '<em>Element Modication Or Replaceable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_MODICATION_OR_REPLACEABLE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ElementModificationImpl <em>Element Modification</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ElementModificationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElementModification()
+   * @generated
+   */
+  int ELEMENT_MODIFICATION = 22;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_MODIFICATION__NAME = ELEMENT_MODICATION_OR_REPLACEABLE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_MODIFICATION__MOD = ELEMENT_MODICATION_OR_REPLACEABLE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_MODIFICATION__COMMENT = ELEMENT_MODICATION_OR_REPLACEABLE_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Element Modification</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_MODIFICATION_FEATURE_COUNT = ELEMENT_MODICATION_OR_REPLACEABLE_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ElementReplaceableImpl <em>Element Replaceable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ElementReplaceableImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElementReplaceable()
+   * @generated
+   */
+  int ELEMENT_REPLACEABLE = 24;
+
+  /**
+   * The feature id for the '<em><b>Const</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__CONST = ELEMENT_MODICATION_OR_REPLACEABLE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Element Replaceable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE_FEATURE_COUNT = ELEMENT_MODICATION_OR_REPLACEABLE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ShortClassDefinitionImpl <em>Short Class Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ShortClassDefinitionImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getShortClassDefinition()
+   * @generated
+   */
+  int SHORT_CLASS_DEFINITION = 27;
+
+  /**
+   * The feature id for the '<em><b>Const</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_DEFINITION__CONST = ELEMENT_REDECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Mode</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_DEFINITION__MODE = ELEMENT_REDECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_DEFINITION__COMMENT = ELEMENT_REDECLARATION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Short Class Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_DEFINITION_FEATURE_COUNT = ELEMENT_REDECLARATION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.EquationSectionImpl <em>Equation Section</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.EquationSectionImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getEquationSection()
+   * @generated
+   */
+  int EQUATION_SECTION = 28;
+
+  /**
+   * The feature id for the '<em><b>Equationss</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATION_SECTION__EQUATIONSS = 0;
+
+  /**
+   * The number of structural features of the '<em>Equation Section</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATION_SECTION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.AlgorithmSectionImpl <em>Algorithm Section</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.AlgorithmSectionImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getAlgorithmSection()
+   * @generated
+   */
+  int ALGORITHM_SECTION = 29;
+
+  /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALGORITHM_SECTION__STATEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>Algorithm Section</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALGORITHM_SECTION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.EquationImpl <em>Equation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.EquationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getEquation()
+   * @generated
+   */
+  int EQUATION = 30;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATION__LEFT = 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATION__RIGHT = 1;
+
+  /**
+   * The feature id for the '<em><b>Commment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATION__COMMMENT = 2;
+
+  /**
+   * The number of structural features of the '<em>Equation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.StatementImpl <em>Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.StatementImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getStatement()
+   * @generated
+   */
+  int STATEMENT = 31;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__LEFT = 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__RIGHT = 1;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__REF = 2;
+
+  /**
+   * The feature id for the '<em><b>Ref call</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__REF_CALL = 3;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__COMMENT = 4;
+
+  /**
+   * The number of structural features of the '<em>Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.IfEquationImpl <em>If Equation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.IfEquationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getIfEquation()
+   * @generated
+   */
+  int IF_EQUATION = 32;
+
+  /**
+   * The feature id for the '<em><b>If expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__IF_EXPR = 0;
+
+  /**
+   * The feature id for the '<em><b>If eqs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__IF_EQS = 1;
+
+  /**
+   * The feature id for the '<em><b>Elsif exprs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__ELSIF_EXPRS = 2;
+
+  /**
+   * The feature id for the '<em><b>Elseif eqs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__ELSEIF_EQS = 3;
+
+  /**
+   * The feature id for the '<em><b>Else eqs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__ELSE_EQS = 4;
+
+  /**
+   * The number of structural features of the '<em>If Equation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.IfStatementImpl <em>If Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.IfStatementImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getIfStatement()
+   * @generated
+   */
+  int IF_STATEMENT = 33;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__LEFT = STATEMENT__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__RIGHT = STATEMENT__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__REF = STATEMENT__REF;
+
+  /**
+   * The feature id for the '<em><b>Ref call</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__REF_CALL = STATEMENT__REF_CALL;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__COMMENT = STATEMENT__COMMENT;
+
+  /**
+   * The feature id for the '<em><b>If expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__IF_EXPR = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>If stmts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__IF_STMTS = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Elseif exprs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__ELSEIF_EXPRS = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Elseif stmts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__ELSEIF_STMTS = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Else stmts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__ELSE_STMTS = STATEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>If Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ForEquationImpl <em>For Equation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ForEquationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getForEquation()
+   * @generated
+   */
+  int FOR_EQUATION = 34;
+
+  /**
+   * The feature id for the '<em><b>Indices</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_EQUATION__INDICES = 0;
+
+  /**
+   * The feature id for the '<em><b>Eqs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_EQUATION__EQS = 1;
+
+  /**
+   * The number of structural features of the '<em>For Equation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_EQUATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ForStatementImpl <em>For Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ForStatementImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getForStatement()
+   * @generated
+   */
+  int FOR_STATEMENT = 35;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__LEFT = STATEMENT__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__RIGHT = STATEMENT__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__REF = STATEMENT__REF;
+
+  /**
+   * The feature id for the '<em><b>Ref call</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__REF_CALL = STATEMENT__REF_CALL;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__COMMENT = STATEMENT__COMMENT;
+
+  /**
+   * The feature id for the '<em><b>Indices</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__INDICES = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Stmts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__STMTS = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>For Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ForIndicesImpl <em>For Indices</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ForIndicesImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getForIndices()
+   * @generated
+   */
+  int FOR_INDICES = 36;
+
+  /**
+   * The feature id for the '<em><b>Indices</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_INDICES__INDICES = 0;
+
+  /**
+   * The number of structural features of the '<em>For Indices</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_INDICES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ForIndexImpl <em>For Index</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ForIndexImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getForIndex()
+   * @generated
+   */
+  int FOR_INDEX = 37;
+
+  /**
+   * The number of structural features of the '<em>For Index</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_INDEX_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.WhileStatementImpl <em>While Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.WhileStatementImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getWhileStatement()
+   * @generated
+   */
+  int WHILE_STATEMENT = 38;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__LEFT = STATEMENT__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__RIGHT = STATEMENT__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__REF = STATEMENT__REF;
+
+  /**
+   * The feature id for the '<em><b>Ref call</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__REF_CALL = STATEMENT__REF_CALL;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__COMMENT = STATEMENT__COMMENT;
+
+  /**
+   * The feature id for the '<em><b>Cond</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__COND = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Stmts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__STMTS = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>While Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.WhenEquationImpl <em>When Equation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.WhenEquationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getWhenEquation()
+   * @generated
+   */
+  int WHEN_EQUATION = 39;
+
+  /**
+   * The feature id for the '<em><b>When</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION__WHEN = 0;
+
+  /**
+   * The feature id for the '<em><b>When eqs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION__WHEN_EQS = 1;
+
+  /**
+   * The feature id for the '<em><b>Elsehwhen</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION__ELSEHWHEN = 2;
+
+  /**
+   * The feature id for the '<em><b>Elsewhen eqs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION__ELSEWHEN_EQS = 3;
+
+  /**
+   * The number of structural features of the '<em>When Equation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.WhenStatementImpl <em>When Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.WhenStatementImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getWhenStatement()
+   * @generated
+   */
+  int WHEN_STATEMENT = 40;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_STATEMENT__LEFT = STATEMENT__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_STATEMENT__RIGHT = STATEMENT__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_STATEMENT__REF = STATEMENT__REF;
+
+  /**
+   * The feature id for the '<em><b>Ref call</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_STATEMENT__REF_CALL = STATEMENT__REF_CALL;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_STATEMENT__COMMENT = STATEMENT__COMMENT;
+
+  /**
+   * The feature id for the '<em><b>When</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_STATEMENT__WHEN = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>When stmts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_STATEMENT__WHEN_STMTS = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Elsehwhen</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_STATEMENT__ELSEHWHEN = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Elsewhen stmts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_STATEMENT__ELSEWHEN_STMTS = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>When Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ConnectClauseImpl <em>Connect Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ConnectClauseImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getConnectClause()
+   * @generated
+   */
+  int CONNECT_CLAUSE = 41;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECT_CLAUSE__LEFT = 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECT_CLAUSE__RIGHT = 1;
+
+  /**
+   * The number of structural features of the '<em>Connect Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECT_CLAUSE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ExpressionImpl <em>Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ExpressionImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getExpression()
+   * @generated
+   */
+  int EXPRESSION = 42;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__NAME = CONDITION_ATTRIBUTE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__ARGS = CONDITION_ATTRIBUTE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>If</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__IF = CONDITION_ATTRIBUTE_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Then</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__THEN = CONDITION_ATTRIBUTE_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Elseif</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__ELSEIF = CONDITION_ATTRIBUTE_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Elseifthen</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__ELSEIFTHEN = CONDITION_ATTRIBUTE_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Else</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__ELSE = CONDITION_ATTRIBUTE_FEATURE_COUNT + 6;
+
+  /**
+   * The number of structural features of the '<em>Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_FEATURE_COUNT = CONDITION_ATTRIBUTE_FEATURE_COUNT + 7;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.SimpleExpressionImpl <em>Simple Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.SimpleExpressionImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getSimpleExpression()
+   * @generated
+   */
+  int SIMPLE_EXPRESSION = 43;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EXPRESSION__NAME = EXPRESSION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EXPRESSION__ARGS = EXPRESSION__ARGS;
+
+  /**
+   * The feature id for the '<em><b>If</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EXPRESSION__IF = EXPRESSION__IF;
+
+  /**
+   * The feature id for the '<em><b>Then</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EXPRESSION__THEN = EXPRESSION__THEN;
+
+  /**
+   * The feature id for the '<em><b>Elseif</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EXPRESSION__ELSEIF = EXPRESSION__ELSEIF;
+
+  /**
+   * The feature id for the '<em><b>Elseifthen</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EXPRESSION__ELSEIFTHEN = EXPRESSION__ELSEIFTHEN;
+
+  /**
+   * The feature id for the '<em><b>Else</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EXPRESSION__ELSE = EXPRESSION__ELSE;
+
+  /**
+   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EXPRESSION__EXPRS = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Simple Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.LogicalExpressionImpl <em>Logical Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.LogicalExpressionImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getLogicalExpression()
+   * @generated
+   */
+  int LOGICAL_EXPRESSION = 44;
+
+  /**
+   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_EXPRESSION__TERMS = 0;
+
+  /**
+   * The number of structural features of the '<em>Logical Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_EXPRESSION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.LogicalTermImpl <em>Logical Term</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.LogicalTermImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getLogicalTerm()
+   * @generated
+   */
+  int LOGICAL_TERM = 45;
+
+  /**
+   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_TERM__FACTORS = 0;
+
+  /**
+   * The number of structural features of the '<em>Logical Term</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_TERM_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.LogicalFactorImpl <em>Logical Factor</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.LogicalFactorImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getLogicalFactor()
+   * @generated
+   */
+  int LOGICAL_FACTOR = 46;
+
+  /**
+   * The number of structural features of the '<em>Logical Factor</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_FACTOR_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.RelationImpl <em>Relation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.RelationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getRelation()
+   * @generated
+   */
+  int RELATION = 47;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION__LEFT = LOGICAL_FACTOR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION__OP = LOGICAL_FACTOR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION__RIGHT = LOGICAL_FACTOR_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Relation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION_FEATURE_COUNT = LOGICAL_FACTOR_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ArithmeticExpressionImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getArithmeticExpression()
+   * @generated
+   */
+  int ARITHMETIC_EXPRESSION = 48;
+
+  /**
+   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARITHMETIC_EXPRESSION__OPS = 0;
+
+  /**
+   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARITHMETIC_EXPRESSION__TERMS = 1;
+
+  /**
+   * The number of structural features of the '<em>Arithmetic Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARITHMETIC_EXPRESSION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.TermImpl <em>Term</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.TermImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getTerm()
+   * @generated
+   */
+  int TERM = 49;
+
+  /**
+   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__FACTORS = 0;
+
+  /**
+   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__OPS = 1;
+
+  /**
+   * The number of structural features of the '<em>Term</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.FactorImpl <em>Factor</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.FactorImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFactor()
+   * @generated
+   */
+  int FACTOR = 50;
+
+  /**
+   * The feature id for the '<em><b>Base</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTOR__BASE = 0;
+
+  /**
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTOR__EXP = 1;
+
+  /**
+   * The number of structural features of the '<em>Factor</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTOR_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.PrimaryImpl <em>Primary</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.PrimaryImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getPrimary()
+   * @generated
+   */
+  int PRIMARY = 51;
+
+  /**
+   * The number of structural features of the '<em>Primary</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_FEATURE_COUNT = ARGUMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ComponentReferenceImpl <em>Component Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ComponentReferenceImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentReference()
+   * @generated
+   */
+  int COMPONENT_REFERENCE = 52;
+
+  /**
+   * The feature id for the '<em><b>Idents</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_REFERENCE__IDENTS = 0;
+
+  /**
+   * The feature id for the '<em><b>Subscripts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_REFERENCE__SUBSCRIPTS = 1;
+
+  /**
+   * The number of structural features of the '<em>Component Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_REFERENCE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.FunctionCallArgsImpl <em>Function Call Args</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.FunctionCallArgsImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFunctionCallArgs()
+   * @generated
+   */
+  int FUNCTION_CALL_ARGS = 53;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL_ARGS__ARGS = 0;
+
+  /**
+   * The number of structural features of the '<em>Function Call Args</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL_ARGS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.FunctionArgumentsImpl <em>Function Arguments</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.FunctionArgumentsImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFunctionArguments()
+   * @generated
+   */
+  int FUNCTION_ARGUMENTS = 54;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ARGUMENTS__ARGS = 0;
+
+  /**
+   * The feature id for the '<em><b>Indices</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ARGUMENTS__INDICES = 1;
+
+  /**
+   * The number of structural features of the '<em>Function Arguments</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ARGUMENTS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.NamedArgumentsImpl <em>Named Arguments</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.NamedArgumentsImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getNamedArguments()
+   * @generated
+   */
+  int NAMED_ARGUMENTS = 55;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENTS__ARGS = 0;
+
+  /**
+   * The number of structural features of the '<em>Named Arguments</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENTS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.NamedArgumentImpl <em>Named Argument</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.NamedArgumentImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getNamedArgument()
+   * @generated
+   */
+  int NAMED_ARGUMENT = 56;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENT__ARGS = FUNCTION_ARGUMENTS__ARGS;
+
+  /**
+   * The feature id for the '<em><b>Indices</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENT__INDICES = FUNCTION_ARGUMENTS__INDICES;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENT__ID = FUNCTION_ARGUMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Func</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENT__FUNC = FUNCTION_ARGUMENTS_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Named Argument</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENT_FEATURE_COUNT = FUNCTION_ARGUMENTS_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.FunctionArgumentImpl <em>Function Argument</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.FunctionArgumentImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFunctionArgument()
+   * @generated
+   */
+  int FUNCTION_ARGUMENT = 57;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ARGUMENT__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ARGUMENT__ARGS = 1;
+
+  /**
+   * The number of structural features of the '<em>Function Argument</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ARGUMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.OutputExpressionListImpl <em>Output Expression List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.OutputExpressionListImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getOutputExpressionList()
+   * @generated
+   */
+  int OUTPUT_EXPRESSION_LIST = 58;
+
+  /**
+   * The number of structural features of the '<em>Output Expression List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTPUT_EXPRESSION_LIST_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ExpressionListImpl <em>Expression List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ExpressionListImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getExpressionList()
+   * @generated
+   */
+  int EXPRESSION_LIST = 59;
+
+  /**
+   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_LIST__EXPRS = 0;
+
+  /**
+   * The number of structural features of the '<em>Expression List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.ArraySubscriptsImpl <em>Array Subscripts</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.ArraySubscriptsImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getArraySubscripts()
+   * @generated
+   */
+  int ARRAY_SUBSCRIPTS = 60;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_SUBSCRIPTS__MOD = CLASS_SPECIFIER__MOD;
+
+  /**
+   * The feature id for the '<em><b>Comps</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_SUBSCRIPTS__COMPS = CLASS_SPECIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Const</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_SUBSCRIPTS__CONST = CLASS_SPECIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Mode</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_SUBSCRIPTS__MODE = CLASS_SPECIFIER_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_SUBSCRIPTS__COMMENT = CLASS_SPECIFIER_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Subscripts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_SUBSCRIPTS__SUBSCRIPTS = CLASS_SPECIFIER_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>Array Subscripts</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_SUBSCRIPTS_FEATURE_COUNT = CLASS_SPECIFIER_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.SubscriptImpl <em>Subscript</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.SubscriptImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getSubscript()
+   * @generated
+   */
+  int SUBSCRIPT = 61;
+
+  /**
+   * The number of structural features of the '<em>Subscript</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSCRIPT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.CommentImpl <em>Comment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.CommentImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComment()
+   * @generated
+   */
+  int COMMENT = 62;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT__MOD = CLASS_SPECIFIER__MOD;
+
+  /**
+   * The number of structural features of the '<em>Comment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_FEATURE_COUNT = CLASS_SPECIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.AnnotationImpl <em>Annotation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.AnnotationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getAnnotation()
+   * @generated
+   */
+  int ANNOTATION = 63;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION__MOD = COMMENT__MOD;
+
+  /**
+   * The number of structural features of the '<em>Annotation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_FEATURE_COUNT = COMMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.OuputExpressionListImpl <em>Ouput Expression List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.OuputExpressionListImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getOuputExpressionList()
+   * @generated
+   */
+  int OUPUT_EXPRESSION_LIST = 64;
+
+  /**
+   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUPUT_EXPRESSION_LIST__EXPRS = OUTPUT_EXPRESSION_LIST_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Ouput Expression List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUPUT_EXPRESSION_LIST_FEATURE_COUNT = OUTPUT_EXPRESSION_LIST_FEATURE_COUNT + 1;
+
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.StoredDefinition <em>Stored Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Stored Definition</em>'.
+   * @see xmodelica.modelica.StoredDefinition
+   * @generated
+   */
+  EClass getStoredDefinition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.StoredDefinition#getClasses <em>Classes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Classes</em>'.
-   * @see xmodelica.modelica.Model#getClasses()
-   * @see #getModel()
+   * @see xmodelica.modelica.StoredDefinition#getClasses()
+   * @see #getStoredDefinition()
    * @generated
    */
-  EReference getModel_Classes();
+  EReference getStoredDefinition_Classes();
 
   /**
-   * Returns the meta object for class '{@link xmodelica.modelica.Class <em>Class</em>}'.
+   * Returns the meta object for class '{@link xmodelica.modelica.ClassDefinition <em>Class Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class</em>'.
-   * @see xmodelica.modelica.Class
+   * @return the meta object for class '<em>Class Definition</em>'.
+   * @see xmodelica.modelica.ClassDefinition
    * @generated
    */
-  EClass getClass_();
+  EClass getClassDefinition();
 
   /**
-   * Returns the meta object for the attribute '{@link xmodelica.modelica.Class#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link xmodelica.modelica.ClassSpecifier <em>Class Specifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Class Specifier</em>'.
+   * @see xmodelica.modelica.ClassSpecifier
+   * @generated
+   */
+  EClass getClassSpecifier();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ClassSpecifier#getMod <em>Mod</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Mod</em>'.
+   * @see xmodelica.modelica.ClassSpecifier#getMod()
+   * @see #getClassSpecifier()
+   * @generated
+   */
+  EReference getClassSpecifier_Mod();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.EnumList <em>Enum List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enum List</em>'.
+   * @see xmodelica.modelica.EnumList
+   * @generated
+   */
+  EClass getEnumList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.EnumList#getEnums <em>Enums</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Enums</em>'.
+   * @see xmodelica.modelica.EnumList#getEnums()
+   * @see #getEnumList()
+   * @generated
+   */
+  EReference getEnumList_Enums();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.EnumerationLiteral <em>Enumeration Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enumeration Literal</em>'.
+   * @see xmodelica.modelica.EnumerationLiteral
+   * @generated
+   */
+  EClass getEnumerationLiteral();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Composition <em>Composition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Composition</em>'.
+   * @see xmodelica.modelica.Composition
+   * @generated
+   */
+  EClass getComposition();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ExternalFunctionCall <em>External Function Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>External Function Call</em>'.
+   * @see xmodelica.modelica.ExternalFunctionCall
+   * @generated
+   */
+  EClass getExternalFunctionCall();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ExternalFunctionCall#getLhs <em>Lhs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Lhs</em>'.
+   * @see xmodelica.modelica.ExternalFunctionCall#getLhs()
+   * @see #getExternalFunctionCall()
+   * @generated
+   */
+  EReference getExternalFunctionCall_Lhs();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.ExternalFunctionCall#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see xmodelica.modelica.Class#getName()
-   * @see #getClass_()
+   * @see xmodelica.modelica.ExternalFunctionCall#getName()
+   * @see #getExternalFunctionCall()
    * @generated
    */
-  EAttribute getClass_Name();
+  EAttribute getExternalFunctionCall_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link xmodelica.modelica.Class#getName_end <em>Name end</em>}'.
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ExternalFunctionCall#getArgs <em>Args</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name end</em>'.
-   * @see xmodelica.modelica.Class#getName_end()
-   * @see #getClass_()
+   * @return the meta object for the containment reference '<em>Args</em>'.
+   * @see xmodelica.modelica.ExternalFunctionCall#getArgs()
+   * @see #getExternalFunctionCall()
    * @generated
    */
-  EAttribute getClass_Name_end();
+  EReference getExternalFunctionCall_Args();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ElementList <em>Element List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element List</em>'.
+   * @see xmodelica.modelica.ElementList
+   * @generated
+   */
+  EClass getElementList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ElementList#getPub_elist <em>Pub elist</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Pub elist</em>'.
+   * @see xmodelica.modelica.ElementList#getPub_elist()
+   * @see #getElementList()
+   * @generated
+   */
+  EReference getElementList_Pub_elist();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ElementList#getProtected_elist <em>Protected elist</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Protected elist</em>'.
+   * @see xmodelica.modelica.ElementList#getProtected_elist()
+   * @see #getElementList()
+   * @generated
+   */
+  EReference getElementList_Protected_elist();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ElementList#getEq_secs <em>Eq secs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Eq secs</em>'.
+   * @see xmodelica.modelica.ElementList#getEq_secs()
+   * @see #getElementList()
+   * @generated
+   */
+  EReference getElementList_Eq_secs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ElementList#getAlg_secs <em>Alg secs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Alg secs</em>'.
+   * @see xmodelica.modelica.ElementList#getAlg_secs()
+   * @see #getElementList()
+   * @generated
+   */
+  EReference getElementList_Alg_secs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ElementList#getAnno <em>Anno</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Anno</em>'.
+   * @see xmodelica.modelica.ElementList#getAnno()
+   * @see #getElementList()
+   * @generated
+   */
+  EReference getElementList_Anno();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ElementList#getElem <em>Elem</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elem</em>'.
+   * @see xmodelica.modelica.ElementList#getElem()
+   * @see #getElementList()
+   * @generated
+   */
+  EReference getElementList_Elem();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Element <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element</em>'.
+   * @see xmodelica.modelica.Element
+   * @generated
+   */
+  EClass getElement();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ImportClause <em>Import Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Import Clause</em>'.
+   * @see xmodelica.modelica.ImportClause
+   * @generated
+   */
+  EClass getImportClause();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ExtendsClause <em>Extends Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Extends Clause</em>'.
+   * @see xmodelica.modelica.ExtendsClause
+   * @generated
+   */
+  EClass getExtendsClause();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.ExtendsClause#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see xmodelica.modelica.ExtendsClause#getName()
+   * @see #getExtendsClause()
+   * @generated
+   */
+  EAttribute getExtendsClause_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ExtendsClause#getMod <em>Mod</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Mod</em>'.
+   * @see xmodelica.modelica.ExtendsClause#getMod()
+   * @see #getExtendsClause()
+   * @generated
+   */
+  EReference getExtendsClause_Mod();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ExtendsClause#getAnno <em>Anno</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Anno</em>'.
+   * @see xmodelica.modelica.ExtendsClause#getAnno()
+   * @see #getExtendsClause()
+   * @generated
+   */
+  EReference getExtendsClause_Anno();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ConstrainingClause <em>Constraining Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Constraining Clause</em>'.
+   * @see xmodelica.modelica.ConstrainingClause
+   * @generated
+   */
+  EClass getConstrainingClause();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.ConstrainingClause#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see xmodelica.modelica.ConstrainingClause#getName()
+   * @see #getConstrainingClause()
+   * @generated
+   */
+  EAttribute getConstrainingClause_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ConstrainingClause#getMod <em>Mod</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Mod</em>'.
+   * @see xmodelica.modelica.ConstrainingClause#getMod()
+   * @see #getConstrainingClause()
+   * @generated
+   */
+  EReference getConstrainingClause_Mod();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ComponentClause <em>Component Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component Clause</em>'.
+   * @see xmodelica.modelica.ComponentClause
+   * @generated
+   */
+  EClass getComponentClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ComponentClause#getComps <em>Comps</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Comps</em>'.
+   * @see xmodelica.modelica.ComponentClause#getComps()
+   * @see #getComponentClause()
+   * @generated
+   */
+  EReference getComponentClause_Comps();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ComponentList <em>Component List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component List</em>'.
+   * @see xmodelica.modelica.ComponentList
+   * @generated
+   */
+  EClass getComponentList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ComponentList#getComps <em>Comps</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Comps</em>'.
+   * @see xmodelica.modelica.ComponentList#getComps()
+   * @see #getComponentList()
+   * @generated
+   */
+  EReference getComponentList_Comps();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ComponentDeclaration <em>Component Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component Declaration</em>'.
+   * @see xmodelica.modelica.ComponentDeclaration
+   * @generated
+   */
+  EClass getComponentDeclaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ComponentDeclaration#getDecl <em>Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Decl</em>'.
+   * @see xmodelica.modelica.ComponentDeclaration#getDecl()
+   * @see #getComponentDeclaration()
+   * @generated
+   */
+  EReference getComponentDeclaration_Decl();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ComponentDeclaration#getCond <em>Cond</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Cond</em>'.
+   * @see xmodelica.modelica.ComponentDeclaration#getCond()
+   * @see #getComponentDeclaration()
+   * @generated
+   */
+  EReference getComponentDeclaration_Cond();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ComponentDeclaration#getComment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Comment</em>'.
+   * @see xmodelica.modelica.ComponentDeclaration#getComment()
+   * @see #getComponentDeclaration()
+   * @generated
+   */
+  EReference getComponentDeclaration_Comment();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ConditionAttribute <em>Condition Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Condition Attribute</em>'.
+   * @see xmodelica.modelica.ConditionAttribute
+   * @generated
+   */
+  EClass getConditionAttribute();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Declaration <em>Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration</em>'.
+   * @see xmodelica.modelica.Declaration
+   * @generated
+   */
+  EClass getDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.Declaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see xmodelica.modelica.Declaration#getName()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EAttribute getDeclaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Declaration#getSubscripts <em>Subscripts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Subscripts</em>'.
+   * @see xmodelica.modelica.Declaration#getSubscripts()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EReference getDeclaration_Subscripts();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Declaration#getMod <em>Mod</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Mod</em>'.
+   * @see xmodelica.modelica.Declaration#getMod()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EReference getDeclaration_Mod();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Declaration#getComment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Comment</em>'.
+   * @see xmodelica.modelica.Declaration#getComment()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EReference getDeclaration_Comment();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Modification <em>Modification</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Modification</em>'.
+   * @see xmodelica.modelica.Modification
+   * @generated
+   */
+  EClass getModification();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Modification#getMod <em>Mod</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Mod</em>'.
+   * @see xmodelica.modelica.Modification#getMod()
+   * @see #getModification()
+   * @generated
+   */
+  EReference getModification_Mod();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Modification#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see xmodelica.modelica.Modification#getExpr()
+   * @see #getModification()
+   * @generated
+   */
+  EReference getModification_Expr();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ClassModification <em>Class Modification</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Class Modification</em>'.
+   * @see xmodelica.modelica.ClassModification
+   * @generated
+   */
+  EClass getClassModification();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ClassModification#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Args</em>'.
+   * @see xmodelica.modelica.ClassModification#getArgs()
+   * @see #getClassModification()
+   * @generated
+   */
+  EReference getClassModification_Args();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ArgumentList <em>Argument List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Argument List</em>'.
+   * @see xmodelica.modelica.ArgumentList
+   * @generated
+   */
+  EClass getArgumentList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ArgumentList#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Args</em>'.
+   * @see xmodelica.modelica.ArgumentList#getArgs()
+   * @see #getArgumentList()
+   * @generated
+   */
+  EReference getArgumentList_Args();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Argument <em>Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Argument</em>'.
+   * @see xmodelica.modelica.Argument
+   * @generated
+   */
+  EClass getArgument();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ElementModicationOrReplaceable <em>Element Modication Or Replaceable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element Modication Or Replaceable</em>'.
+   * @see xmodelica.modelica.ElementModicationOrReplaceable
+   * @generated
+   */
+  EClass getElementModicationOrReplaceable();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ElementModification <em>Element Modification</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element Modification</em>'.
+   * @see xmodelica.modelica.ElementModification
+   * @generated
+   */
+  EClass getElementModification();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.ElementModification#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see xmodelica.modelica.ElementModification#getName()
+   * @see #getElementModification()
+   * @generated
+   */
+  EAttribute getElementModification_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ElementModification#getMod <em>Mod</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Mod</em>'.
+   * @see xmodelica.modelica.ElementModification#getMod()
+   * @see #getElementModification()
+   * @generated
+   */
+  EReference getElementModification_Mod();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.ElementModification#getComment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Comment</em>'.
+   * @see xmodelica.modelica.ElementModification#getComment()
+   * @see #getElementModification()
+   * @generated
+   */
+  EAttribute getElementModification_Comment();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ElementRedeclaration <em>Element Redeclaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element Redeclaration</em>'.
+   * @see xmodelica.modelica.ElementRedeclaration
+   * @generated
+   */
+  EClass getElementRedeclaration();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ElementReplaceable <em>Element Replaceable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element Replaceable</em>'.
+   * @see xmodelica.modelica.ElementReplaceable
+   * @generated
+   */
+  EClass getElementReplaceable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ElementReplaceable#getConst <em>Const</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Const</em>'.
+   * @see xmodelica.modelica.ElementReplaceable#getConst()
+   * @see #getElementReplaceable()
+   * @generated
+   */
+  EReference getElementReplaceable_Const();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ComponentClause1 <em>Component Clause1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component Clause1</em>'.
+   * @see xmodelica.modelica.ComponentClause1
+   * @generated
+   */
+  EClass getComponentClause1();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ComponentDeclaration1 <em>Component Declaration1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component Declaration1</em>'.
+   * @see xmodelica.modelica.ComponentDeclaration1
+   * @generated
+   */
+  EClass getComponentDeclaration1();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ShortClassDefinition <em>Short Class Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Short Class Definition</em>'.
+   * @see xmodelica.modelica.ShortClassDefinition
+   * @generated
+   */
+  EClass getShortClassDefinition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ShortClassDefinition#getMode <em>Mode</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Mode</em>'.
+   * @see xmodelica.modelica.ShortClassDefinition#getMode()
+   * @see #getShortClassDefinition()
+   * @generated
+   */
+  EReference getShortClassDefinition_Mode();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ShortClassDefinition#getComment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Comment</em>'.
+   * @see xmodelica.modelica.ShortClassDefinition#getComment()
+   * @see #getShortClassDefinition()
+   * @generated
+   */
+  EReference getShortClassDefinition_Comment();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.EquationSection <em>Equation Section</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Equation Section</em>'.
+   * @see xmodelica.modelica.EquationSection
+   * @generated
+   */
+  EClass getEquationSection();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.EquationSection#getEquationss <em>Equationss</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Equationss</em>'.
+   * @see xmodelica.modelica.EquationSection#getEquationss()
+   * @see #getEquationSection()
+   * @generated
+   */
+  EReference getEquationSection_Equationss();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.AlgorithmSection <em>Algorithm Section</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Algorithm Section</em>'.
+   * @see xmodelica.modelica.AlgorithmSection
+   * @generated
+   */
+  EClass getAlgorithmSection();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.AlgorithmSection#getStatements <em>Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Statements</em>'.
+   * @see xmodelica.modelica.AlgorithmSection#getStatements()
+   * @see #getAlgorithmSection()
+   * @generated
+   */
+  EReference getAlgorithmSection_Statements();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Equation <em>Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Equation</em>'.
+   * @see xmodelica.modelica.Equation
+   * @generated
+   */
+  EClass getEquation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Equation#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see xmodelica.modelica.Equation#getLeft()
+   * @see #getEquation()
+   * @generated
+   */
+  EReference getEquation_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Equation#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see xmodelica.modelica.Equation#getRight()
+   * @see #getEquation()
+   * @generated
+   */
+  EReference getEquation_Right();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Equation#getCommment <em>Commment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Commment</em>'.
+   * @see xmodelica.modelica.Equation#getCommment()
+   * @see #getEquation()
+   * @generated
+   */
+  EReference getEquation_Commment();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Statement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Statement</em>'.
+   * @see xmodelica.modelica.Statement
+   * @generated
+   */
+  EClass getStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Statement#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see xmodelica.modelica.Statement#getLeft()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Statement#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see xmodelica.modelica.Statement#getRight()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Right();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Statement#getRef <em>Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ref</em>'.
+   * @see xmodelica.modelica.Statement#getRef()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Ref();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Statement#getRef_call <em>Ref call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ref call</em>'.
+   * @see xmodelica.modelica.Statement#getRef_call()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Ref_call();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Statement#getComment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Comment</em>'.
+   * @see xmodelica.modelica.Statement#getComment()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Comment();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.IfEquation <em>If Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If Equation</em>'.
+   * @see xmodelica.modelica.IfEquation
+   * @generated
+   */
+  EClass getIfEquation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.IfEquation#getIf_expr <em>If expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>If expr</em>'.
+   * @see xmodelica.modelica.IfEquation#getIf_expr()
+   * @see #getIfEquation()
+   * @generated
+   */
+  EReference getIfEquation_If_expr();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.IfEquation#getIf_eqs <em>If eqs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>If eqs</em>'.
+   * @see xmodelica.modelica.IfEquation#getIf_eqs()
+   * @see #getIfEquation()
+   * @generated
+   */
+  EReference getIfEquation_If_eqs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.IfEquation#getElsif_exprs <em>Elsif exprs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elsif exprs</em>'.
+   * @see xmodelica.modelica.IfEquation#getElsif_exprs()
+   * @see #getIfEquation()
+   * @generated
+   */
+  EReference getIfEquation_Elsif_exprs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.IfEquation#getElseif_eqs <em>Elseif eqs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elseif eqs</em>'.
+   * @see xmodelica.modelica.IfEquation#getElseif_eqs()
+   * @see #getIfEquation()
+   * @generated
+   */
+  EReference getIfEquation_Elseif_eqs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.IfEquation#getElse_eqs <em>Else eqs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Else eqs</em>'.
+   * @see xmodelica.modelica.IfEquation#getElse_eqs()
+   * @see #getIfEquation()
+   * @generated
+   */
+  EReference getIfEquation_Else_eqs();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.IfStatement <em>If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If Statement</em>'.
+   * @see xmodelica.modelica.IfStatement
+   * @generated
+   */
+  EClass getIfStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.IfStatement#getIf_expr <em>If expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>If expr</em>'.
+   * @see xmodelica.modelica.IfStatement#getIf_expr()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_If_expr();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.IfStatement#getIf_stmts <em>If stmts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>If stmts</em>'.
+   * @see xmodelica.modelica.IfStatement#getIf_stmts()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_If_stmts();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.IfStatement#getElseif_exprs <em>Elseif exprs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elseif exprs</em>'.
+   * @see xmodelica.modelica.IfStatement#getElseif_exprs()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_Elseif_exprs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.IfStatement#getElseif_stmts <em>Elseif stmts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elseif stmts</em>'.
+   * @see xmodelica.modelica.IfStatement#getElseif_stmts()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_Elseif_stmts();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.IfStatement#getElse_stmts <em>Else stmts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Else stmts</em>'.
+   * @see xmodelica.modelica.IfStatement#getElse_stmts()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_Else_stmts();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ForEquation <em>For Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>For Equation</em>'.
+   * @see xmodelica.modelica.ForEquation
+   * @generated
+   */
+  EClass getForEquation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ForEquation#getIndices <em>Indices</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Indices</em>'.
+   * @see xmodelica.modelica.ForEquation#getIndices()
+   * @see #getForEquation()
+   * @generated
+   */
+  EReference getForEquation_Indices();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ForEquation#getEqs <em>Eqs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Eqs</em>'.
+   * @see xmodelica.modelica.ForEquation#getEqs()
+   * @see #getForEquation()
+   * @generated
+   */
+  EReference getForEquation_Eqs();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ForStatement <em>For Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>For Statement</em>'.
+   * @see xmodelica.modelica.ForStatement
+   * @generated
+   */
+  EClass getForStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ForStatement#getIndices <em>Indices</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Indices</em>'.
+   * @see xmodelica.modelica.ForStatement#getIndices()
+   * @see #getForStatement()
+   * @generated
+   */
+  EReference getForStatement_Indices();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ForStatement#getStmts <em>Stmts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Stmts</em>'.
+   * @see xmodelica.modelica.ForStatement#getStmts()
+   * @see #getForStatement()
+   * @generated
+   */
+  EReference getForStatement_Stmts();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ForIndices <em>For Indices</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>For Indices</em>'.
+   * @see xmodelica.modelica.ForIndices
+   * @generated
+   */
+  EClass getForIndices();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ForIndices#getIndices <em>Indices</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Indices</em>'.
+   * @see xmodelica.modelica.ForIndices#getIndices()
+   * @see #getForIndices()
+   * @generated
+   */
+  EReference getForIndices_Indices();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ForIndex <em>For Index</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>For Index</em>'.
+   * @see xmodelica.modelica.ForIndex
+   * @generated
+   */
+  EClass getForIndex();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.WhileStatement <em>While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>While Statement</em>'.
+   * @see xmodelica.modelica.WhileStatement
+   * @generated
+   */
+  EClass getWhileStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.WhileStatement#getCond <em>Cond</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Cond</em>'.
+   * @see xmodelica.modelica.WhileStatement#getCond()
+   * @see #getWhileStatement()
+   * @generated
+   */
+  EReference getWhileStatement_Cond();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.WhileStatement#getStmts <em>Stmts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Stmts</em>'.
+   * @see xmodelica.modelica.WhileStatement#getStmts()
+   * @see #getWhileStatement()
+   * @generated
+   */
+  EReference getWhileStatement_Stmts();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.WhenEquation <em>When Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>When Equation</em>'.
+   * @see xmodelica.modelica.WhenEquation
+   * @generated
+   */
+  EClass getWhenEquation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.WhenEquation#getWhen <em>When</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>When</em>'.
+   * @see xmodelica.modelica.WhenEquation#getWhen()
+   * @see #getWhenEquation()
+   * @generated
+   */
+  EReference getWhenEquation_When();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.WhenEquation#getWhen_eqs <em>When eqs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>When eqs</em>'.
+   * @see xmodelica.modelica.WhenEquation#getWhen_eqs()
+   * @see #getWhenEquation()
+   * @generated
+   */
+  EReference getWhenEquation_When_eqs();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.WhenEquation#getElsehwhen <em>Elsehwhen</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Elsehwhen</em>'.
+   * @see xmodelica.modelica.WhenEquation#getElsehwhen()
+   * @see #getWhenEquation()
+   * @generated
+   */
+  EReference getWhenEquation_Elsehwhen();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.WhenEquation#getElsewhen_eqs <em>Elsewhen eqs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elsewhen eqs</em>'.
+   * @see xmodelica.modelica.WhenEquation#getElsewhen_eqs()
+   * @see #getWhenEquation()
+   * @generated
+   */
+  EReference getWhenEquation_Elsewhen_eqs();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.WhenStatement <em>When Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>When Statement</em>'.
+   * @see xmodelica.modelica.WhenStatement
+   * @generated
+   */
+  EClass getWhenStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.WhenStatement#getWhen <em>When</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>When</em>'.
+   * @see xmodelica.modelica.WhenStatement#getWhen()
+   * @see #getWhenStatement()
+   * @generated
+   */
+  EReference getWhenStatement_When();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.WhenStatement#getWhen_stmts <em>When stmts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>When stmts</em>'.
+   * @see xmodelica.modelica.WhenStatement#getWhen_stmts()
+   * @see #getWhenStatement()
+   * @generated
+   */
+  EReference getWhenStatement_When_stmts();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.WhenStatement#getElsehwhen <em>Elsehwhen</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Elsehwhen</em>'.
+   * @see xmodelica.modelica.WhenStatement#getElsehwhen()
+   * @see #getWhenStatement()
+   * @generated
+   */
+  EReference getWhenStatement_Elsehwhen();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.WhenStatement#getElsewhen_stmts <em>Elsewhen stmts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elsewhen stmts</em>'.
+   * @see xmodelica.modelica.WhenStatement#getElsewhen_stmts()
+   * @see #getWhenStatement()
+   * @generated
+   */
+  EReference getWhenStatement_Elsewhen_stmts();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ConnectClause <em>Connect Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Connect Clause</em>'.
+   * @see xmodelica.modelica.ConnectClause
+   * @generated
+   */
+  EClass getConnectClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ConnectClause#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see xmodelica.modelica.ConnectClause#getLeft()
+   * @see #getConnectClause()
+   * @generated
+   */
+  EReference getConnectClause_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ConnectClause#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see xmodelica.modelica.ConnectClause#getRight()
+   * @see #getConnectClause()
+   * @generated
+   */
+  EReference getConnectClause_Right();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression</em>'.
+   * @see xmodelica.modelica.Expression
+   * @generated
+   */
+  EClass getExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Expression#getIf <em>If</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>If</em>'.
+   * @see xmodelica.modelica.Expression#getIf()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_If();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Expression#getThen <em>Then</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Then</em>'.
+   * @see xmodelica.modelica.Expression#getThen()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_Then();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.Expression#getElseif <em>Elseif</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elseif</em>'.
+   * @see xmodelica.modelica.Expression#getElseif()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_Elseif();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.Expression#getElseifthen <em>Elseifthen</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elseifthen</em>'.
+   * @see xmodelica.modelica.Expression#getElseifthen()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_Elseifthen();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.Expression#getElse <em>Else</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Else</em>'.
+   * @see xmodelica.modelica.Expression#getElse()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_Else();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.SimpleExpression <em>Simple Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Simple Expression</em>'.
+   * @see xmodelica.modelica.SimpleExpression
+   * @generated
+   */
+  EClass getSimpleExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.SimpleExpression#getExprs <em>Exprs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Exprs</em>'.
+   * @see xmodelica.modelica.SimpleExpression#getExprs()
+   * @see #getSimpleExpression()
+   * @generated
+   */
+  EReference getSimpleExpression_Exprs();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.LogicalExpression <em>Logical Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Logical Expression</em>'.
+   * @see xmodelica.modelica.LogicalExpression
+   * @generated
+   */
+  EClass getLogicalExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.LogicalExpression#getTerms <em>Terms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Terms</em>'.
+   * @see xmodelica.modelica.LogicalExpression#getTerms()
+   * @see #getLogicalExpression()
+   * @generated
+   */
+  EReference getLogicalExpression_Terms();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.LogicalTerm <em>Logical Term</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Logical Term</em>'.
+   * @see xmodelica.modelica.LogicalTerm
+   * @generated
+   */
+  EClass getLogicalTerm();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.LogicalTerm#getFactors <em>Factors</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Factors</em>'.
+   * @see xmodelica.modelica.LogicalTerm#getFactors()
+   * @see #getLogicalTerm()
+   * @generated
+   */
+  EReference getLogicalTerm_Factors();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.LogicalFactor <em>Logical Factor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Logical Factor</em>'.
+   * @see xmodelica.modelica.LogicalFactor
+   * @generated
+   */
+  EClass getLogicalFactor();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Relation <em>Relation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Relation</em>'.
+   * @see xmodelica.modelica.Relation
+   * @generated
+   */
+  EClass getRelation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Relation#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see xmodelica.modelica.Relation#getLeft()
+   * @see #getRelation()
+   * @generated
+   */
+  EReference getRelation_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.Relation#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see xmodelica.modelica.Relation#getOp()
+   * @see #getRelation()
+   * @generated
+   */
+  EAttribute getRelation_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Relation#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see xmodelica.modelica.Relation#getRight()
+   * @see #getRelation()
+   * @generated
+   */
+  EReference getRelation_Right();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ArithmeticExpression <em>Arithmetic Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Arithmetic Expression</em>'.
+   * @see xmodelica.modelica.ArithmeticExpression
+   * @generated
+   */
+  EClass getArithmeticExpression();
+
+  /**
+   * Returns the meta object for the attribute list '{@link xmodelica.modelica.ArithmeticExpression#getOps <em>Ops</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Ops</em>'.
+   * @see xmodelica.modelica.ArithmeticExpression#getOps()
+   * @see #getArithmeticExpression()
+   * @generated
+   */
+  EAttribute getArithmeticExpression_Ops();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ArithmeticExpression#getTerms <em>Terms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Terms</em>'.
+   * @see xmodelica.modelica.ArithmeticExpression#getTerms()
+   * @see #getArithmeticExpression()
+   * @generated
+   */
+  EReference getArithmeticExpression_Terms();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Term <em>Term</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Term</em>'.
+   * @see xmodelica.modelica.Term
+   * @generated
+   */
+  EClass getTerm();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.Term#getFactors <em>Factors</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Factors</em>'.
+   * @see xmodelica.modelica.Term#getFactors()
+   * @see #getTerm()
+   * @generated
+   */
+  EReference getTerm_Factors();
+
+  /**
+   * Returns the meta object for the attribute list '{@link xmodelica.modelica.Term#getOps <em>Ops</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Ops</em>'.
+   * @see xmodelica.modelica.Term#getOps()
+   * @see #getTerm()
+   * @generated
+   */
+  EAttribute getTerm_Ops();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Factor <em>Factor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Factor</em>'.
+   * @see xmodelica.modelica.Factor
+   * @generated
+   */
+  EClass getFactor();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Factor#getBase <em>Base</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Base</em>'.
+   * @see xmodelica.modelica.Factor#getBase()
+   * @see #getFactor()
+   * @generated
+   */
+  EReference getFactor_Base();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Factor#getExp <em>Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @see xmodelica.modelica.Factor#getExp()
+   * @see #getFactor()
+   * @generated
+   */
+  EReference getFactor_Exp();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Primary <em>Primary</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Primary</em>'.
+   * @see xmodelica.modelica.Primary
+   * @generated
+   */
+  EClass getPrimary();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ComponentReference <em>Component Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component Reference</em>'.
+   * @see xmodelica.modelica.ComponentReference
+   * @generated
+   */
+  EClass getComponentReference();
+
+  /**
+   * Returns the meta object for the attribute list '{@link xmodelica.modelica.ComponentReference#getIdents <em>Idents</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Idents</em>'.
+   * @see xmodelica.modelica.ComponentReference#getIdents()
+   * @see #getComponentReference()
+   * @generated
+   */
+  EAttribute getComponentReference_Idents();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ComponentReference#getSubscripts <em>Subscripts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Subscripts</em>'.
+   * @see xmodelica.modelica.ComponentReference#getSubscripts()
+   * @see #getComponentReference()
+   * @generated
+   */
+  EReference getComponentReference_Subscripts();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.FunctionCallArgs <em>Function Call Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Call Args</em>'.
+   * @see xmodelica.modelica.FunctionCallArgs
+   * @generated
+   */
+  EClass getFunctionCallArgs();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.FunctionCallArgs#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Args</em>'.
+   * @see xmodelica.modelica.FunctionCallArgs#getArgs()
+   * @see #getFunctionCallArgs()
+   * @generated
+   */
+  EReference getFunctionCallArgs_Args();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.FunctionArguments <em>Function Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Arguments</em>'.
+   * @see xmodelica.modelica.FunctionArguments
+   * @generated
+   */
+  EClass getFunctionArguments();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.FunctionArguments#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Args</em>'.
+   * @see xmodelica.modelica.FunctionArguments#getArgs()
+   * @see #getFunctionArguments()
+   * @generated
+   */
+  EReference getFunctionArguments_Args();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.FunctionArguments#getIndices <em>Indices</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Indices</em>'.
+   * @see xmodelica.modelica.FunctionArguments#getIndices()
+   * @see #getFunctionArguments()
+   * @generated
+   */
+  EReference getFunctionArguments_Indices();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.NamedArguments <em>Named Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Named Arguments</em>'.
+   * @see xmodelica.modelica.NamedArguments
+   * @generated
+   */
+  EClass getNamedArguments();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.NamedArguments#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Args</em>'.
+   * @see xmodelica.modelica.NamedArguments#getArgs()
+   * @see #getNamedArguments()
+   * @generated
+   */
+  EReference getNamedArguments_Args();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.NamedArgument <em>Named Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Named Argument</em>'.
+   * @see xmodelica.modelica.NamedArgument
+   * @generated
+   */
+  EClass getNamedArgument();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.NamedArgument#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see xmodelica.modelica.NamedArgument#getId()
+   * @see #getNamedArgument()
+   * @generated
+   */
+  EAttribute getNamedArgument_Id();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.NamedArgument#getFunc <em>Func</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Func</em>'.
+   * @see xmodelica.modelica.NamedArgument#getFunc()
+   * @see #getNamedArgument()
+   * @generated
+   */
+  EReference getNamedArgument_Func();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.FunctionArgument <em>Function Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Argument</em>'.
+   * @see xmodelica.modelica.FunctionArgument
+   * @generated
+   */
+  EClass getFunctionArgument();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.FunctionArgument#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see xmodelica.modelica.FunctionArgument#getName()
+   * @see #getFunctionArgument()
+   * @generated
+   */
+  EAttribute getFunctionArgument_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.FunctionArgument#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Args</em>'.
+   * @see xmodelica.modelica.FunctionArgument#getArgs()
+   * @see #getFunctionArgument()
+   * @generated
+   */
+  EReference getFunctionArgument_Args();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.OutputExpressionList <em>Output Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Output Expression List</em>'.
+   * @see xmodelica.modelica.OutputExpressionList
+   * @generated
+   */
+  EClass getOutputExpressionList();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression List</em>'.
+   * @see xmodelica.modelica.ExpressionList
+   * @generated
+   */
+  EClass getExpressionList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ExpressionList#getExprs <em>Exprs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Exprs</em>'.
+   * @see xmodelica.modelica.ExpressionList#getExprs()
+   * @see #getExpressionList()
+   * @generated
+   */
+  EReference getExpressionList_Exprs();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.ArraySubscripts <em>Array Subscripts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Array Subscripts</em>'.
+   * @see xmodelica.modelica.ArraySubscripts
+   * @generated
+   */
+  EClass getArraySubscripts();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.ArraySubscripts#getSubscripts <em>Subscripts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Subscripts</em>'.
+   * @see xmodelica.modelica.ArraySubscripts#getSubscripts()
+   * @see #getArraySubscripts()
+   * @generated
+   */
+  EReference getArraySubscripts_Subscripts();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Subscript <em>Subscript</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Subscript</em>'.
+   * @see xmodelica.modelica.Subscript
+   * @generated
+   */
+  EClass getSubscript();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Comment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comment</em>'.
+   * @see xmodelica.modelica.Comment
+   * @generated
+   */
+  EClass getComment();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Annotation <em>Annotation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Annotation</em>'.
+   * @see xmodelica.modelica.Annotation
+   * @generated
+   */
+  EClass getAnnotation();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.OuputExpressionList <em>Ouput Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ouput Expression List</em>'.
+   * @see xmodelica.modelica.OuputExpressionList
+   * @generated
+   */
+  EClass getOuputExpressionList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.OuputExpressionList#getExprs <em>Exprs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Exprs</em>'.
+   * @see xmodelica.modelica.OuputExpressionList#getExprs()
+   * @see #getOuputExpressionList()
+   * @generated
+   */
+  EReference getOuputExpressionList_Exprs();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -200,14 +4477,14 @@ public interface ModelicaPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link xmodelica.modelica.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link xmodelica.modelica.impl.StoredDefinitionImpl <em>Stored Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see xmodelica.modelica.impl.ModelImpl
-     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getModel()
+     * @see xmodelica.modelica.impl.StoredDefinitionImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getStoredDefinition()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass STORED_DEFINITION = eINSTANCE.getStoredDefinition();
 
     /**
      * The meta object literal for the '<em><b>Classes</b></em>' containment reference list feature.
@@ -215,17 +4492,91 @@ public interface ModelicaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__CLASSES = eINSTANCE.getModel_Classes();
+    EReference STORED_DEFINITION__CLASSES = eINSTANCE.getStoredDefinition_Classes();
 
     /**
-     * The meta object literal for the '{@link xmodelica.modelica.impl.ClassImpl <em>Class</em>}' class.
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ClassDefinitionImpl <em>Class Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see xmodelica.modelica.impl.ClassImpl
-     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getClass_()
+     * @see xmodelica.modelica.impl.ClassDefinitionImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getClassDefinition()
      * @generated
      */
-    EClass CLASS = eINSTANCE.getClass_();
+    EClass CLASS_DEFINITION = eINSTANCE.getClassDefinition();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ClassSpecifierImpl <em>Class Specifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ClassSpecifierImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getClassSpecifier()
+     * @generated
+     */
+    EClass CLASS_SPECIFIER = eINSTANCE.getClassSpecifier();
+
+    /**
+     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLASS_SPECIFIER__MOD = eINSTANCE.getClassSpecifier_Mod();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.EnumListImpl <em>Enum List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.EnumListImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getEnumList()
+     * @generated
+     */
+    EClass ENUM_LIST = eINSTANCE.getEnumList();
+
+    /**
+     * The meta object literal for the '<em><b>Enums</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENUM_LIST__ENUMS = eINSTANCE.getEnumList_Enums();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.EnumerationLiteralImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getEnumerationLiteral()
+     * @generated
+     */
+    EClass ENUMERATION_LITERAL = eINSTANCE.getEnumerationLiteral();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.CompositionImpl <em>Composition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.CompositionImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComposition()
+     * @generated
+     */
+    EClass COMPOSITION = eINSTANCE.getComposition();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ExternalFunctionCallImpl <em>External Function Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ExternalFunctionCallImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getExternalFunctionCall()
+     * @generated
+     */
+    EClass EXTERNAL_FUNCTION_CALL = eINSTANCE.getExternalFunctionCall();
+
+    /**
+     * The meta object literal for the '<em><b>Lhs</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXTERNAL_FUNCTION_CALL__LHS = eINSTANCE.getExternalFunctionCall_Lhs();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -233,15 +4584,1371 @@ public interface ModelicaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS__NAME = eINSTANCE.getClass_Name();
+    EAttribute EXTERNAL_FUNCTION_CALL__NAME = eINSTANCE.getExternalFunctionCall_Name();
 
     /**
-     * The meta object literal for the '<em><b>Name end</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS__NAME_END = eINSTANCE.getClass_Name_end();
+    EReference EXTERNAL_FUNCTION_CALL__ARGS = eINSTANCE.getExternalFunctionCall_Args();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ElementListImpl <em>Element List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ElementListImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElementList()
+     * @generated
+     */
+    EClass ELEMENT_LIST = eINSTANCE.getElementList();
+
+    /**
+     * The meta object literal for the '<em><b>Pub elist</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_LIST__PUB_ELIST = eINSTANCE.getElementList_Pub_elist();
+
+    /**
+     * The meta object literal for the '<em><b>Protected elist</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_LIST__PROTECTED_ELIST = eINSTANCE.getElementList_Protected_elist();
+
+    /**
+     * The meta object literal for the '<em><b>Eq secs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_LIST__EQ_SECS = eINSTANCE.getElementList_Eq_secs();
+
+    /**
+     * The meta object literal for the '<em><b>Alg secs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_LIST__ALG_SECS = eINSTANCE.getElementList_Alg_secs();
+
+    /**
+     * The meta object literal for the '<em><b>Anno</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_LIST__ANNO = eINSTANCE.getElementList_Anno();
+
+    /**
+     * The meta object literal for the '<em><b>Elem</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_LIST__ELEM = eINSTANCE.getElementList_Elem();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ElementImpl <em>Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ElementImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElement()
+     * @generated
+     */
+    EClass ELEMENT = eINSTANCE.getElement();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ImportClauseImpl <em>Import Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ImportClauseImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getImportClause()
+     * @generated
+     */
+    EClass IMPORT_CLAUSE = eINSTANCE.getImportClause();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ExtendsClauseImpl <em>Extends Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ExtendsClauseImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getExtendsClause()
+     * @generated
+     */
+    EClass EXTENDS_CLAUSE = eINSTANCE.getExtendsClause();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTENDS_CLAUSE__NAME = eINSTANCE.getExtendsClause_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXTENDS_CLAUSE__MOD = eINSTANCE.getExtendsClause_Mod();
+
+    /**
+     * The meta object literal for the '<em><b>Anno</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXTENDS_CLAUSE__ANNO = eINSTANCE.getExtendsClause_Anno();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ConstrainingClauseImpl <em>Constraining Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ConstrainingClauseImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getConstrainingClause()
+     * @generated
+     */
+    EClass CONSTRAINING_CLAUSE = eINSTANCE.getConstrainingClause();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSTRAINING_CLAUSE__NAME = eINSTANCE.getConstrainingClause_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSTRAINING_CLAUSE__MOD = eINSTANCE.getConstrainingClause_Mod();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ComponentClauseImpl <em>Component Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ComponentClauseImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentClause()
+     * @generated
+     */
+    EClass COMPONENT_CLAUSE = eINSTANCE.getComponentClause();
+
+    /**
+     * The meta object literal for the '<em><b>Comps</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_CLAUSE__COMPS = eINSTANCE.getComponentClause_Comps();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ComponentListImpl <em>Component List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ComponentListImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentList()
+     * @generated
+     */
+    EClass COMPONENT_LIST = eINSTANCE.getComponentList();
+
+    /**
+     * The meta object literal for the '<em><b>Comps</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_LIST__COMPS = eINSTANCE.getComponentList_Comps();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ComponentDeclarationImpl <em>Component Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ComponentDeclarationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentDeclaration()
+     * @generated
+     */
+    EClass COMPONENT_DECLARATION = eINSTANCE.getComponentDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Decl</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_DECLARATION__DECL = eINSTANCE.getComponentDeclaration_Decl();
+
+    /**
+     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_DECLARATION__COND = eINSTANCE.getComponentDeclaration_Cond();
+
+    /**
+     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_DECLARATION__COMMENT = eINSTANCE.getComponentDeclaration_Comment();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ConditionAttributeImpl <em>Condition Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ConditionAttributeImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getConditionAttribute()
+     * @generated
+     */
+    EClass CONDITION_ATTRIBUTE = eINSTANCE.getConditionAttribute();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.DeclarationImpl <em>Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.DeclarationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getDeclaration()
+     * @generated
+     */
+    EClass DECLARATION = eINSTANCE.getDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DECLARATION__NAME = eINSTANCE.getDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Subscripts</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION__SUBSCRIPTS = eINSTANCE.getDeclaration_Subscripts();
+
+    /**
+     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION__MOD = eINSTANCE.getDeclaration_Mod();
+
+    /**
+     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION__COMMENT = eINSTANCE.getDeclaration_Comment();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ModificationImpl <em>Modification</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ModificationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getModification()
+     * @generated
+     */
+    EClass MODIFICATION = eINSTANCE.getModification();
+
+    /**
+     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODIFICATION__MOD = eINSTANCE.getModification_Mod();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODIFICATION__EXPR = eINSTANCE.getModification_Expr();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ClassModificationImpl <em>Class Modification</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ClassModificationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getClassModification()
+     * @generated
+     */
+    EClass CLASS_MODIFICATION = eINSTANCE.getClassModification();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLASS_MODIFICATION__ARGS = eINSTANCE.getClassModification_Args();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ArgumentListImpl <em>Argument List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ArgumentListImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getArgumentList()
+     * @generated
+     */
+    EClass ARGUMENT_LIST = eINSTANCE.getArgumentList();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARGUMENT_LIST__ARGS = eINSTANCE.getArgumentList_Args();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ArgumentImpl <em>Argument</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ArgumentImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getArgument()
+     * @generated
+     */
+    EClass ARGUMENT = eINSTANCE.getArgument();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ElementModicationOrReplaceableImpl <em>Element Modication Or Replaceable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ElementModicationOrReplaceableImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElementModicationOrReplaceable()
+     * @generated
+     */
+    EClass ELEMENT_MODICATION_OR_REPLACEABLE = eINSTANCE.getElementModicationOrReplaceable();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ElementModificationImpl <em>Element Modification</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ElementModificationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElementModification()
+     * @generated
+     */
+    EClass ELEMENT_MODIFICATION = eINSTANCE.getElementModification();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_MODIFICATION__NAME = eINSTANCE.getElementModification_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_MODIFICATION__MOD = eINSTANCE.getElementModification_Mod();
+
+    /**
+     * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_MODIFICATION__COMMENT = eINSTANCE.getElementModification_Comment();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ElementRedeclarationImpl <em>Element Redeclaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ElementRedeclarationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElementRedeclaration()
+     * @generated
+     */
+    EClass ELEMENT_REDECLARATION = eINSTANCE.getElementRedeclaration();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ElementReplaceableImpl <em>Element Replaceable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ElementReplaceableImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getElementReplaceable()
+     * @generated
+     */
+    EClass ELEMENT_REPLACEABLE = eINSTANCE.getElementReplaceable();
+
+    /**
+     * The meta object literal for the '<em><b>Const</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_REPLACEABLE__CONST = eINSTANCE.getElementReplaceable_Const();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ComponentClause1Impl <em>Component Clause1</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ComponentClause1Impl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentClause1()
+     * @generated
+     */
+    EClass COMPONENT_CLAUSE1 = eINSTANCE.getComponentClause1();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ComponentDeclaration1Impl <em>Component Declaration1</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ComponentDeclaration1Impl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentDeclaration1()
+     * @generated
+     */
+    EClass COMPONENT_DECLARATION1 = eINSTANCE.getComponentDeclaration1();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ShortClassDefinitionImpl <em>Short Class Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ShortClassDefinitionImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getShortClassDefinition()
+     * @generated
+     */
+    EClass SHORT_CLASS_DEFINITION = eINSTANCE.getShortClassDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Mode</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SHORT_CLASS_DEFINITION__MODE = eINSTANCE.getShortClassDefinition_Mode();
+
+    /**
+     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SHORT_CLASS_DEFINITION__COMMENT = eINSTANCE.getShortClassDefinition_Comment();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.EquationSectionImpl <em>Equation Section</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.EquationSectionImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getEquationSection()
+     * @generated
+     */
+    EClass EQUATION_SECTION = eINSTANCE.getEquationSection();
+
+    /**
+     * The meta object literal for the '<em><b>Equationss</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EQUATION_SECTION__EQUATIONSS = eINSTANCE.getEquationSection_Equationss();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.AlgorithmSectionImpl <em>Algorithm Section</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.AlgorithmSectionImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getAlgorithmSection()
+     * @generated
+     */
+    EClass ALGORITHM_SECTION = eINSTANCE.getAlgorithmSection();
+
+    /**
+     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ALGORITHM_SECTION__STATEMENTS = eINSTANCE.getAlgorithmSection_Statements();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.EquationImpl <em>Equation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.EquationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getEquation()
+     * @generated
+     */
+    EClass EQUATION = eINSTANCE.getEquation();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EQUATION__LEFT = eINSTANCE.getEquation_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EQUATION__RIGHT = eINSTANCE.getEquation_Right();
+
+    /**
+     * The meta object literal for the '<em><b>Commment</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EQUATION__COMMMENT = eINSTANCE.getEquation_Commment();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.StatementImpl <em>Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.StatementImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getStatement()
+     * @generated
+     */
+    EClass STATEMENT = eINSTANCE.getStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__LEFT = eINSTANCE.getStatement_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__RIGHT = eINSTANCE.getStatement_Right();
+
+    /**
+     * The meta object literal for the '<em><b>Ref</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__REF = eINSTANCE.getStatement_Ref();
+
+    /**
+     * The meta object literal for the '<em><b>Ref call</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__REF_CALL = eINSTANCE.getStatement_Ref_call();
+
+    /**
+     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__COMMENT = eINSTANCE.getStatement_Comment();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.IfEquationImpl <em>If Equation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.IfEquationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getIfEquation()
+     * @generated
+     */
+    EClass IF_EQUATION = eINSTANCE.getIfEquation();
+
+    /**
+     * The meta object literal for the '<em><b>If expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EQUATION__IF_EXPR = eINSTANCE.getIfEquation_If_expr();
+
+    /**
+     * The meta object literal for the '<em><b>If eqs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EQUATION__IF_EQS = eINSTANCE.getIfEquation_If_eqs();
+
+    /**
+     * The meta object literal for the '<em><b>Elsif exprs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EQUATION__ELSIF_EXPRS = eINSTANCE.getIfEquation_Elsif_exprs();
+
+    /**
+     * The meta object literal for the '<em><b>Elseif eqs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EQUATION__ELSEIF_EQS = eINSTANCE.getIfEquation_Elseif_eqs();
+
+    /**
+     * The meta object literal for the '<em><b>Else eqs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EQUATION__ELSE_EQS = eINSTANCE.getIfEquation_Else_eqs();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.IfStatementImpl <em>If Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.IfStatementImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getIfStatement()
+     * @generated
+     */
+    EClass IF_STATEMENT = eINSTANCE.getIfStatement();
+
+    /**
+     * The meta object literal for the '<em><b>If expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__IF_EXPR = eINSTANCE.getIfStatement_If_expr();
+
+    /**
+     * The meta object literal for the '<em><b>If stmts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__IF_STMTS = eINSTANCE.getIfStatement_If_stmts();
+
+    /**
+     * The meta object literal for the '<em><b>Elseif exprs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__ELSEIF_EXPRS = eINSTANCE.getIfStatement_Elseif_exprs();
+
+    /**
+     * The meta object literal for the '<em><b>Elseif stmts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__ELSEIF_STMTS = eINSTANCE.getIfStatement_Elseif_stmts();
+
+    /**
+     * The meta object literal for the '<em><b>Else stmts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__ELSE_STMTS = eINSTANCE.getIfStatement_Else_stmts();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ForEquationImpl <em>For Equation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ForEquationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getForEquation()
+     * @generated
+     */
+    EClass FOR_EQUATION = eINSTANCE.getForEquation();
+
+    /**
+     * The meta object literal for the '<em><b>Indices</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_EQUATION__INDICES = eINSTANCE.getForEquation_Indices();
+
+    /**
+     * The meta object literal for the '<em><b>Eqs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_EQUATION__EQS = eINSTANCE.getForEquation_Eqs();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ForStatementImpl <em>For Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ForStatementImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getForStatement()
+     * @generated
+     */
+    EClass FOR_STATEMENT = eINSTANCE.getForStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Indices</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__INDICES = eINSTANCE.getForStatement_Indices();
+
+    /**
+     * The meta object literal for the '<em><b>Stmts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__STMTS = eINSTANCE.getForStatement_Stmts();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ForIndicesImpl <em>For Indices</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ForIndicesImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getForIndices()
+     * @generated
+     */
+    EClass FOR_INDICES = eINSTANCE.getForIndices();
+
+    /**
+     * The meta object literal for the '<em><b>Indices</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_INDICES__INDICES = eINSTANCE.getForIndices_Indices();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ForIndexImpl <em>For Index</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ForIndexImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getForIndex()
+     * @generated
+     */
+    EClass FOR_INDEX = eINSTANCE.getForIndex();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.WhileStatementImpl <em>While Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.WhileStatementImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getWhileStatement()
+     * @generated
+     */
+    EClass WHILE_STATEMENT = eINSTANCE.getWhileStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHILE_STATEMENT__COND = eINSTANCE.getWhileStatement_Cond();
+
+    /**
+     * The meta object literal for the '<em><b>Stmts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHILE_STATEMENT__STMTS = eINSTANCE.getWhileStatement_Stmts();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.WhenEquationImpl <em>When Equation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.WhenEquationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getWhenEquation()
+     * @generated
+     */
+    EClass WHEN_EQUATION = eINSTANCE.getWhenEquation();
+
+    /**
+     * The meta object literal for the '<em><b>When</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHEN_EQUATION__WHEN = eINSTANCE.getWhenEquation_When();
+
+    /**
+     * The meta object literal for the '<em><b>When eqs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHEN_EQUATION__WHEN_EQS = eINSTANCE.getWhenEquation_When_eqs();
+
+    /**
+     * The meta object literal for the '<em><b>Elsehwhen</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHEN_EQUATION__ELSEHWHEN = eINSTANCE.getWhenEquation_Elsehwhen();
+
+    /**
+     * The meta object literal for the '<em><b>Elsewhen eqs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHEN_EQUATION__ELSEWHEN_EQS = eINSTANCE.getWhenEquation_Elsewhen_eqs();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.WhenStatementImpl <em>When Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.WhenStatementImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getWhenStatement()
+     * @generated
+     */
+    EClass WHEN_STATEMENT = eINSTANCE.getWhenStatement();
+
+    /**
+     * The meta object literal for the '<em><b>When</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHEN_STATEMENT__WHEN = eINSTANCE.getWhenStatement_When();
+
+    /**
+     * The meta object literal for the '<em><b>When stmts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHEN_STATEMENT__WHEN_STMTS = eINSTANCE.getWhenStatement_When_stmts();
+
+    /**
+     * The meta object literal for the '<em><b>Elsehwhen</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHEN_STATEMENT__ELSEHWHEN = eINSTANCE.getWhenStatement_Elsehwhen();
+
+    /**
+     * The meta object literal for the '<em><b>Elsewhen stmts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHEN_STATEMENT__ELSEWHEN_STMTS = eINSTANCE.getWhenStatement_Elsewhen_stmts();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ConnectClauseImpl <em>Connect Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ConnectClauseImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getConnectClause()
+     * @generated
+     */
+    EClass CONNECT_CLAUSE = eINSTANCE.getConnectClause();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONNECT_CLAUSE__LEFT = eINSTANCE.getConnectClause_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONNECT_CLAUSE__RIGHT = eINSTANCE.getConnectClause_Right();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ExpressionImpl <em>Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ExpressionImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getExpression()
+     * @generated
+     */
+    EClass EXPRESSION = eINSTANCE.getExpression();
+
+    /**
+     * The meta object literal for the '<em><b>If</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__IF = eINSTANCE.getExpression_If();
+
+    /**
+     * The meta object literal for the '<em><b>Then</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__THEN = eINSTANCE.getExpression_Then();
+
+    /**
+     * The meta object literal for the '<em><b>Elseif</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__ELSEIF = eINSTANCE.getExpression_Elseif();
+
+    /**
+     * The meta object literal for the '<em><b>Elseifthen</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__ELSEIFTHEN = eINSTANCE.getExpression_Elseifthen();
+
+    /**
+     * The meta object literal for the '<em><b>Else</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__ELSE = eINSTANCE.getExpression_Else();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.SimpleExpressionImpl <em>Simple Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.SimpleExpressionImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getSimpleExpression()
+     * @generated
+     */
+    EClass SIMPLE_EXPRESSION = eINSTANCE.getSimpleExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Exprs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_EXPRESSION__EXPRS = eINSTANCE.getSimpleExpression_Exprs();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.LogicalExpressionImpl <em>Logical Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.LogicalExpressionImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getLogicalExpression()
+     * @generated
+     */
+    EClass LOGICAL_EXPRESSION = eINSTANCE.getLogicalExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Terms</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LOGICAL_EXPRESSION__TERMS = eINSTANCE.getLogicalExpression_Terms();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.LogicalTermImpl <em>Logical Term</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.LogicalTermImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getLogicalTerm()
+     * @generated
+     */
+    EClass LOGICAL_TERM = eINSTANCE.getLogicalTerm();
+
+    /**
+     * The meta object literal for the '<em><b>Factors</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LOGICAL_TERM__FACTORS = eINSTANCE.getLogicalTerm_Factors();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.LogicalFactorImpl <em>Logical Factor</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.LogicalFactorImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getLogicalFactor()
+     * @generated
+     */
+    EClass LOGICAL_FACTOR = eINSTANCE.getLogicalFactor();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.RelationImpl <em>Relation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.RelationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getRelation()
+     * @generated
+     */
+    EClass RELATION = eINSTANCE.getRelation();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RELATION__LEFT = eINSTANCE.getRelation_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RELATION__OP = eINSTANCE.getRelation_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RELATION__RIGHT = eINSTANCE.getRelation_Right();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ArithmeticExpressionImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getArithmeticExpression()
+     * @generated
+     */
+    EClass ARITHMETIC_EXPRESSION = eINSTANCE.getArithmeticExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Ops</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ARITHMETIC_EXPRESSION__OPS = eINSTANCE.getArithmeticExpression_Ops();
+
+    /**
+     * The meta object literal for the '<em><b>Terms</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARITHMETIC_EXPRESSION__TERMS = eINSTANCE.getArithmeticExpression_Terms();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.TermImpl <em>Term</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.TermImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getTerm()
+     * @generated
+     */
+    EClass TERM = eINSTANCE.getTerm();
+
+    /**
+     * The meta object literal for the '<em><b>Factors</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TERM__FACTORS = eINSTANCE.getTerm_Factors();
+
+    /**
+     * The meta object literal for the '<em><b>Ops</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TERM__OPS = eINSTANCE.getTerm_Ops();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.FactorImpl <em>Factor</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.FactorImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFactor()
+     * @generated
+     */
+    EClass FACTOR = eINSTANCE.getFactor();
+
+    /**
+     * The meta object literal for the '<em><b>Base</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FACTOR__BASE = eINSTANCE.getFactor_Base();
+
+    /**
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FACTOR__EXP = eINSTANCE.getFactor_Exp();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.PrimaryImpl <em>Primary</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.PrimaryImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getPrimary()
+     * @generated
+     */
+    EClass PRIMARY = eINSTANCE.getPrimary();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ComponentReferenceImpl <em>Component Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ComponentReferenceImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentReference()
+     * @generated
+     */
+    EClass COMPONENT_REFERENCE = eINSTANCE.getComponentReference();
+
+    /**
+     * The meta object literal for the '<em><b>Idents</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_REFERENCE__IDENTS = eINSTANCE.getComponentReference_Idents();
+
+    /**
+     * The meta object literal for the '<em><b>Subscripts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_REFERENCE__SUBSCRIPTS = eINSTANCE.getComponentReference_Subscripts();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.FunctionCallArgsImpl <em>Function Call Args</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.FunctionCallArgsImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFunctionCallArgs()
+     * @generated
+     */
+    EClass FUNCTION_CALL_ARGS = eINSTANCE.getFunctionCallArgs();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_CALL_ARGS__ARGS = eINSTANCE.getFunctionCallArgs_Args();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.FunctionArgumentsImpl <em>Function Arguments</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.FunctionArgumentsImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFunctionArguments()
+     * @generated
+     */
+    EClass FUNCTION_ARGUMENTS = eINSTANCE.getFunctionArguments();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_ARGUMENTS__ARGS = eINSTANCE.getFunctionArguments_Args();
+
+    /**
+     * The meta object literal for the '<em><b>Indices</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_ARGUMENTS__INDICES = eINSTANCE.getFunctionArguments_Indices();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.NamedArgumentsImpl <em>Named Arguments</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.NamedArgumentsImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getNamedArguments()
+     * @generated
+     */
+    EClass NAMED_ARGUMENTS = eINSTANCE.getNamedArguments();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAMED_ARGUMENTS__ARGS = eINSTANCE.getNamedArguments_Args();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.NamedArgumentImpl <em>Named Argument</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.NamedArgumentImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getNamedArgument()
+     * @generated
+     */
+    EClass NAMED_ARGUMENT = eINSTANCE.getNamedArgument();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAMED_ARGUMENT__ID = eINSTANCE.getNamedArgument_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Func</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAMED_ARGUMENT__FUNC = eINSTANCE.getNamedArgument_Func();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.FunctionArgumentImpl <em>Function Argument</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.FunctionArgumentImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFunctionArgument()
+     * @generated
+     */
+    EClass FUNCTION_ARGUMENT = eINSTANCE.getFunctionArgument();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_ARGUMENT__NAME = eINSTANCE.getFunctionArgument_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_ARGUMENT__ARGS = eINSTANCE.getFunctionArgument_Args();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.OutputExpressionListImpl <em>Output Expression List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.OutputExpressionListImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getOutputExpressionList()
+     * @generated
+     */
+    EClass OUTPUT_EXPRESSION_LIST = eINSTANCE.getOutputExpressionList();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ExpressionListImpl <em>Expression List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ExpressionListImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getExpressionList()
+     * @generated
+     */
+    EClass EXPRESSION_LIST = eINSTANCE.getExpressionList();
+
+    /**
+     * The meta object literal for the '<em><b>Exprs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_LIST__EXPRS = eINSTANCE.getExpressionList_Exprs();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.ArraySubscriptsImpl <em>Array Subscripts</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.ArraySubscriptsImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getArraySubscripts()
+     * @generated
+     */
+    EClass ARRAY_SUBSCRIPTS = eINSTANCE.getArraySubscripts();
+
+    /**
+     * The meta object literal for the '<em><b>Subscripts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_SUBSCRIPTS__SUBSCRIPTS = eINSTANCE.getArraySubscripts_Subscripts();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.SubscriptImpl <em>Subscript</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.SubscriptImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getSubscript()
+     * @generated
+     */
+    EClass SUBSCRIPT = eINSTANCE.getSubscript();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.CommentImpl <em>Comment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.CommentImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComment()
+     * @generated
+     */
+    EClass COMMENT = eINSTANCE.getComment();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.AnnotationImpl <em>Annotation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.AnnotationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getAnnotation()
+     * @generated
+     */
+    EClass ANNOTATION = eINSTANCE.getAnnotation();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.OuputExpressionListImpl <em>Ouput Expression List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.OuputExpressionListImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getOuputExpressionList()
+     * @generated
+     */
+    EClass OUPUT_EXPRESSION_LIST = eINSTANCE.getOuputExpressionList();
+
+    /**
+     * The meta object literal for the '<em><b>Exprs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OUPUT_EXPRESSION_LIST__EXPRS = eINSTANCE.getOuputExpressionList_Exprs();
 
   }
 

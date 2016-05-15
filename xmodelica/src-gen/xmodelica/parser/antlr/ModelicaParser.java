@@ -27,7 +27,7 @@ public class ModelicaParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "StoredDefinition";
 	}
 
 	public ModelicaGrammarAccess getGrammarAccess() {

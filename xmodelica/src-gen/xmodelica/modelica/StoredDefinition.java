@@ -9,25 +9,25 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Model</b></em>'.
+ * A representation of the model object '<em><b>Stored Definition</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.Model#getClasses <em>Classes</em>}</li>
+ *   <li>{@link xmodelica.modelica.StoredDefinition#getClasses <em>Classes</em>}</li>
  * </ul>
  *
- * @see xmodelica.modelica.ModelicaPackage#getModel()
+ * @see xmodelica.modelica.ModelicaPackage#getStoredDefinition()
  * @model
  * @generated
  */
-public interface Model extends EObject
+public interface StoredDefinition extends EObject
 {
   /**
    * Returns the value of the '<em><b>Classes</b></em>' containment reference list.
-   * The list contents are of type {@link xmodelica.modelica.Class}.
+   * The list contents are of type {@link xmodelica.modelica.ClassDefinition}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Classes</em>' containment reference list isn't clear,
@@ -35,10 +35,10 @@ public interface Model extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Classes</em>' containment reference list.
-   * @see xmodelica.modelica.ModelicaPackage#getModel_Classes()
+   * @see xmodelica.modelica.ModelicaPackage#getStoredDefinition_Classes()
    * @model containment="true"
    * @generated
    */
-  EList<xmodelica.modelica.Class> getClasses();
+  EList<ClassDefinition> getClasses();
 
-} // Model
+} // StoredDefinition

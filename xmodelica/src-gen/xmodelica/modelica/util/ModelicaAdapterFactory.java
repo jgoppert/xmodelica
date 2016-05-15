@@ -10,8 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import xmodelica.modelica.Model;
-import xmodelica.modelica.ModelicaPackage;
+import xmodelica.modelica.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,14 +76,329 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
     new ModelicaSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseStoredDefinition(StoredDefinition object)
       {
-        return createModelAdapter();
+        return createStoredDefinitionAdapter();
       }
       @Override
-      public Adapter caseClass(xmodelica.modelica.Class object)
+      public Adapter caseClassDefinition(ClassDefinition object)
       {
-        return createClassAdapter();
+        return createClassDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseClassSpecifier(ClassSpecifier object)
+      {
+        return createClassSpecifierAdapter();
+      }
+      @Override
+      public Adapter caseEnumList(EnumList object)
+      {
+        return createEnumListAdapter();
+      }
+      @Override
+      public Adapter caseEnumerationLiteral(EnumerationLiteral object)
+      {
+        return createEnumerationLiteralAdapter();
+      }
+      @Override
+      public Adapter caseComposition(Composition object)
+      {
+        return createCompositionAdapter();
+      }
+      @Override
+      public Adapter caseExternalFunctionCall(ExternalFunctionCall object)
+      {
+        return createExternalFunctionCallAdapter();
+      }
+      @Override
+      public Adapter caseElementList(ElementList object)
+      {
+        return createElementListAdapter();
+      }
+      @Override
+      public Adapter caseElement(Element object)
+      {
+        return createElementAdapter();
+      }
+      @Override
+      public Adapter caseImportClause(ImportClause object)
+      {
+        return createImportClauseAdapter();
+      }
+      @Override
+      public Adapter caseExtendsClause(ExtendsClause object)
+      {
+        return createExtendsClauseAdapter();
+      }
+      @Override
+      public Adapter caseConstrainingClause(ConstrainingClause object)
+      {
+        return createConstrainingClauseAdapter();
+      }
+      @Override
+      public Adapter caseComponentClause(ComponentClause object)
+      {
+        return createComponentClauseAdapter();
+      }
+      @Override
+      public Adapter caseComponentList(ComponentList object)
+      {
+        return createComponentListAdapter();
+      }
+      @Override
+      public Adapter caseComponentDeclaration(ComponentDeclaration object)
+      {
+        return createComponentDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseConditionAttribute(ConditionAttribute object)
+      {
+        return createConditionAttributeAdapter();
+      }
+      @Override
+      public Adapter caseDeclaration(Declaration object)
+      {
+        return createDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseModification(Modification object)
+      {
+        return createModificationAdapter();
+      }
+      @Override
+      public Adapter caseClassModification(ClassModification object)
+      {
+        return createClassModificationAdapter();
+      }
+      @Override
+      public Adapter caseArgumentList(ArgumentList object)
+      {
+        return createArgumentListAdapter();
+      }
+      @Override
+      public Adapter caseArgument(Argument object)
+      {
+        return createArgumentAdapter();
+      }
+      @Override
+      public Adapter caseElementModicationOrReplaceable(ElementModicationOrReplaceable object)
+      {
+        return createElementModicationOrReplaceableAdapter();
+      }
+      @Override
+      public Adapter caseElementModification(ElementModification object)
+      {
+        return createElementModificationAdapter();
+      }
+      @Override
+      public Adapter caseElementRedeclaration(ElementRedeclaration object)
+      {
+        return createElementRedeclarationAdapter();
+      }
+      @Override
+      public Adapter caseElementReplaceable(ElementReplaceable object)
+      {
+        return createElementReplaceableAdapter();
+      }
+      @Override
+      public Adapter caseComponentClause1(ComponentClause1 object)
+      {
+        return createComponentClause1Adapter();
+      }
+      @Override
+      public Adapter caseComponentDeclaration1(ComponentDeclaration1 object)
+      {
+        return createComponentDeclaration1Adapter();
+      }
+      @Override
+      public Adapter caseShortClassDefinition(ShortClassDefinition object)
+      {
+        return createShortClassDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseEquationSection(EquationSection object)
+      {
+        return createEquationSectionAdapter();
+      }
+      @Override
+      public Adapter caseAlgorithmSection(AlgorithmSection object)
+      {
+        return createAlgorithmSectionAdapter();
+      }
+      @Override
+      public Adapter caseEquation(Equation object)
+      {
+        return createEquationAdapter();
+      }
+      @Override
+      public Adapter caseStatement(Statement object)
+      {
+        return createStatementAdapter();
+      }
+      @Override
+      public Adapter caseIfEquation(IfEquation object)
+      {
+        return createIfEquationAdapter();
+      }
+      @Override
+      public Adapter caseIfStatement(IfStatement object)
+      {
+        return createIfStatementAdapter();
+      }
+      @Override
+      public Adapter caseForEquation(ForEquation object)
+      {
+        return createForEquationAdapter();
+      }
+      @Override
+      public Adapter caseForStatement(ForStatement object)
+      {
+        return createForStatementAdapter();
+      }
+      @Override
+      public Adapter caseForIndices(ForIndices object)
+      {
+        return createForIndicesAdapter();
+      }
+      @Override
+      public Adapter caseForIndex(ForIndex object)
+      {
+        return createForIndexAdapter();
+      }
+      @Override
+      public Adapter caseWhileStatement(WhileStatement object)
+      {
+        return createWhileStatementAdapter();
+      }
+      @Override
+      public Adapter caseWhenEquation(WhenEquation object)
+      {
+        return createWhenEquationAdapter();
+      }
+      @Override
+      public Adapter caseWhenStatement(WhenStatement object)
+      {
+        return createWhenStatementAdapter();
+      }
+      @Override
+      public Adapter caseConnectClause(ConnectClause object)
+      {
+        return createConnectClauseAdapter();
+      }
+      @Override
+      public Adapter caseExpression(Expression object)
+      {
+        return createExpressionAdapter();
+      }
+      @Override
+      public Adapter caseSimpleExpression(SimpleExpression object)
+      {
+        return createSimpleExpressionAdapter();
+      }
+      @Override
+      public Adapter caseLogicalExpression(LogicalExpression object)
+      {
+        return createLogicalExpressionAdapter();
+      }
+      @Override
+      public Adapter caseLogicalTerm(LogicalTerm object)
+      {
+        return createLogicalTermAdapter();
+      }
+      @Override
+      public Adapter caseLogicalFactor(LogicalFactor object)
+      {
+        return createLogicalFactorAdapter();
+      }
+      @Override
+      public Adapter caseRelation(Relation object)
+      {
+        return createRelationAdapter();
+      }
+      @Override
+      public Adapter caseArithmeticExpression(ArithmeticExpression object)
+      {
+        return createArithmeticExpressionAdapter();
+      }
+      @Override
+      public Adapter caseTerm(Term object)
+      {
+        return createTermAdapter();
+      }
+      @Override
+      public Adapter caseFactor(Factor object)
+      {
+        return createFactorAdapter();
+      }
+      @Override
+      public Adapter casePrimary(Primary object)
+      {
+        return createPrimaryAdapter();
+      }
+      @Override
+      public Adapter caseComponentReference(ComponentReference object)
+      {
+        return createComponentReferenceAdapter();
+      }
+      @Override
+      public Adapter caseFunctionCallArgs(FunctionCallArgs object)
+      {
+        return createFunctionCallArgsAdapter();
+      }
+      @Override
+      public Adapter caseFunctionArguments(FunctionArguments object)
+      {
+        return createFunctionArgumentsAdapter();
+      }
+      @Override
+      public Adapter caseNamedArguments(NamedArguments object)
+      {
+        return createNamedArgumentsAdapter();
+      }
+      @Override
+      public Adapter caseNamedArgument(NamedArgument object)
+      {
+        return createNamedArgumentAdapter();
+      }
+      @Override
+      public Adapter caseFunctionArgument(FunctionArgument object)
+      {
+        return createFunctionArgumentAdapter();
+      }
+      @Override
+      public Adapter caseOutputExpressionList(OutputExpressionList object)
+      {
+        return createOutputExpressionListAdapter();
+      }
+      @Override
+      public Adapter caseExpressionList(ExpressionList object)
+      {
+        return createExpressionListAdapter();
+      }
+      @Override
+      public Adapter caseArraySubscripts(ArraySubscripts object)
+      {
+        return createArraySubscriptsAdapter();
+      }
+      @Override
+      public Adapter caseSubscript(Subscript object)
+      {
+        return createSubscriptAdapter();
+      }
+      @Override
+      public Adapter caseComment(Comment object)
+      {
+        return createCommentAdapter();
+      }
+      @Override
+      public Adapter caseAnnotation(Annotation object)
+      {
+        return createAnnotationAdapter();
+      }
+      @Override
+      public Adapter caseOuputExpressionList(OuputExpressionList object)
+      {
+        return createOuputExpressionListAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -109,31 +423,976 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.StoredDefinition <em>Stored Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see xmodelica.modelica.Model
+   * @see xmodelica.modelica.StoredDefinition
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createStoredDefinitionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Class <em>Class</em>}'.
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ClassDefinition <em>Class Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see xmodelica.modelica.Class
+   * @see xmodelica.modelica.ClassDefinition
    * @generated
    */
-  public Adapter createClassAdapter()
+  public Adapter createClassDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ClassSpecifier <em>Class Specifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ClassSpecifier
+   * @generated
+   */
+  public Adapter createClassSpecifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.EnumList <em>Enum List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.EnumList
+   * @generated
+   */
+  public Adapter createEnumListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.EnumerationLiteral <em>Enumeration Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.EnumerationLiteral
+   * @generated
+   */
+  public Adapter createEnumerationLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Composition <em>Composition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Composition
+   * @generated
+   */
+  public Adapter createCompositionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ExternalFunctionCall <em>External Function Call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ExternalFunctionCall
+   * @generated
+   */
+  public Adapter createExternalFunctionCallAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ElementList <em>Element List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ElementList
+   * @generated
+   */
+  public Adapter createElementListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Element <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Element
+   * @generated
+   */
+  public Adapter createElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ImportClause <em>Import Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ImportClause
+   * @generated
+   */
+  public Adapter createImportClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ExtendsClause <em>Extends Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ExtendsClause
+   * @generated
+   */
+  public Adapter createExtendsClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ConstrainingClause <em>Constraining Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ConstrainingClause
+   * @generated
+   */
+  public Adapter createConstrainingClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ComponentClause <em>Component Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ComponentClause
+   * @generated
+   */
+  public Adapter createComponentClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ComponentList <em>Component List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ComponentList
+   * @generated
+   */
+  public Adapter createComponentListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ComponentDeclaration <em>Component Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ComponentDeclaration
+   * @generated
+   */
+  public Adapter createComponentDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ConditionAttribute <em>Condition Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ConditionAttribute
+   * @generated
+   */
+  public Adapter createConditionAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Declaration <em>Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Declaration
+   * @generated
+   */
+  public Adapter createDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Modification <em>Modification</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Modification
+   * @generated
+   */
+  public Adapter createModificationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ClassModification <em>Class Modification</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ClassModification
+   * @generated
+   */
+  public Adapter createClassModificationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ArgumentList <em>Argument List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ArgumentList
+   * @generated
+   */
+  public Adapter createArgumentListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Argument <em>Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Argument
+   * @generated
+   */
+  public Adapter createArgumentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ElementModicationOrReplaceable <em>Element Modication Or Replaceable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ElementModicationOrReplaceable
+   * @generated
+   */
+  public Adapter createElementModicationOrReplaceableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ElementModification <em>Element Modification</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ElementModification
+   * @generated
+   */
+  public Adapter createElementModificationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ElementRedeclaration <em>Element Redeclaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ElementRedeclaration
+   * @generated
+   */
+  public Adapter createElementRedeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ElementReplaceable <em>Element Replaceable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ElementReplaceable
+   * @generated
+   */
+  public Adapter createElementReplaceableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ComponentClause1 <em>Component Clause1</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ComponentClause1
+   * @generated
+   */
+  public Adapter createComponentClause1Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ComponentDeclaration1 <em>Component Declaration1</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ComponentDeclaration1
+   * @generated
+   */
+  public Adapter createComponentDeclaration1Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ShortClassDefinition <em>Short Class Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ShortClassDefinition
+   * @generated
+   */
+  public Adapter createShortClassDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.EquationSection <em>Equation Section</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.EquationSection
+   * @generated
+   */
+  public Adapter createEquationSectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.AlgorithmSection <em>Algorithm Section</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.AlgorithmSection
+   * @generated
+   */
+  public Adapter createAlgorithmSectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Equation <em>Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Equation
+   * @generated
+   */
+  public Adapter createEquationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Statement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Statement
+   * @generated
+   */
+  public Adapter createStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.IfEquation <em>If Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.IfEquation
+   * @generated
+   */
+  public Adapter createIfEquationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.IfStatement <em>If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.IfStatement
+   * @generated
+   */
+  public Adapter createIfStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ForEquation <em>For Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ForEquation
+   * @generated
+   */
+  public Adapter createForEquationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ForStatement <em>For Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ForStatement
+   * @generated
+   */
+  public Adapter createForStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ForIndices <em>For Indices</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ForIndices
+   * @generated
+   */
+  public Adapter createForIndicesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ForIndex <em>For Index</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ForIndex
+   * @generated
+   */
+  public Adapter createForIndexAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.WhileStatement <em>While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.WhileStatement
+   * @generated
+   */
+  public Adapter createWhileStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.WhenEquation <em>When Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.WhenEquation
+   * @generated
+   */
+  public Adapter createWhenEquationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.WhenStatement <em>When Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.WhenStatement
+   * @generated
+   */
+  public Adapter createWhenStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ConnectClause <em>Connect Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ConnectClause
+   * @generated
+   */
+  public Adapter createConnectClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Expression
+   * @generated
+   */
+  public Adapter createExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.SimpleExpression <em>Simple Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.SimpleExpression
+   * @generated
+   */
+  public Adapter createSimpleExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.LogicalExpression <em>Logical Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.LogicalExpression
+   * @generated
+   */
+  public Adapter createLogicalExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.LogicalTerm <em>Logical Term</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.LogicalTerm
+   * @generated
+   */
+  public Adapter createLogicalTermAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.LogicalFactor <em>Logical Factor</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.LogicalFactor
+   * @generated
+   */
+  public Adapter createLogicalFactorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Relation <em>Relation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Relation
+   * @generated
+   */
+  public Adapter createRelationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ArithmeticExpression <em>Arithmetic Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ArithmeticExpression
+   * @generated
+   */
+  public Adapter createArithmeticExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Term <em>Term</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Term
+   * @generated
+   */
+  public Adapter createTermAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Factor <em>Factor</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Factor
+   * @generated
+   */
+  public Adapter createFactorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Primary <em>Primary</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Primary
+   * @generated
+   */
+  public Adapter createPrimaryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ComponentReference <em>Component Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ComponentReference
+   * @generated
+   */
+  public Adapter createComponentReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.FunctionCallArgs <em>Function Call Args</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.FunctionCallArgs
+   * @generated
+   */
+  public Adapter createFunctionCallArgsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.FunctionArguments <em>Function Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.FunctionArguments
+   * @generated
+   */
+  public Adapter createFunctionArgumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.NamedArguments <em>Named Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.NamedArguments
+   * @generated
+   */
+  public Adapter createNamedArgumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.NamedArgument <em>Named Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.NamedArgument
+   * @generated
+   */
+  public Adapter createNamedArgumentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.FunctionArgument <em>Function Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.FunctionArgument
+   * @generated
+   */
+  public Adapter createFunctionArgumentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.OutputExpressionList <em>Output Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.OutputExpressionList
+   * @generated
+   */
+  public Adapter createOutputExpressionListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ExpressionList
+   * @generated
+   */
+  public Adapter createExpressionListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ArraySubscripts <em>Array Subscripts</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ArraySubscripts
+   * @generated
+   */
+  public Adapter createArraySubscriptsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Subscript <em>Subscript</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Subscript
+   * @generated
+   */
+  public Adapter createSubscriptAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Comment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Comment
+   * @generated
+   */
+  public Adapter createCommentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Annotation <em>Annotation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Annotation
+   * @generated
+   */
+  public Adapter createAnnotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.OuputExpressionList <em>Ouput Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.OuputExpressionList
+   * @generated
+   */
+  public Adapter createOuputExpressionListAdapter()
   {
     return null;
   }

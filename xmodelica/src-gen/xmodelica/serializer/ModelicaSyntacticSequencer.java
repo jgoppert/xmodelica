@@ -10,6 +10,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -20,19 +22,224 @@ import xmodelica.services.ModelicaGrammarAccess;
 public class ModelicaSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ModelicaGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Class_EquationKeyword_2_q;
+	protected AbstractElementAlias match_AlgorithmSection_InitialKeyword_1_q;
+	protected AbstractElementAlias match_ClassDefinition_ClassSpecifier_ComponentClause___EncapsulatedKeyword_0_q_ClassPrefixesParserRuleCall_1_IDENTTerminalRuleCall_1_0_EqualsSignKeyword_1_1_BasePrefixParserRuleCall_1_2_NameParserRuleCall_1_3___or___TypePrefixParserRuleCall_0_TypeSpecifierParserRuleCall_1__;
+	protected AbstractElementAlias match_ClassDefinition_ClassSpecifier_Element_ImportClause___ImportKeyword_0_____IDENTTerminalRuleCall_1_0_0_EqualsSignKeyword_1_0_1_NameParserRuleCall_1_0_2___or___NameParserRuleCall_1_1_0___CommaKeyword_1_1_1_0_q___AsteriskKeyword_1_1_1_1_0_or___LeftParenthesisKeyword_1_1_1_1_1_0_ImportListParserRuleCall_1_1_1_1_1_1_RightParenthesisKeyword_1_1_1_1_1_2______q_______or___RedeclareKeyword_2_0_q_FinalKeyword_2_1_q_InnerKeyword_2_2_q_OuterKeyword_2_3_q_ReplaceableKeyword_2_4_1_0_q_EncapsulatedKeyword_0_q_ClassPrefixesParserRuleCall_1_IDENTTerminalRuleCall_3_0_EqualsSignKeyword_3_1_DerKeyword_3_2_LeftParenthesisKeyword_3_3_NameParserRuleCall_3_4_CommaKeyword_3_5_IDENTTerminalRuleCall_3_6___CommaKeyword_3_7_0_IDENTTerminalRuleCall_3_7_1__a_RightParenthesisKeyword_3_8__;
+	protected AbstractElementAlias match_ClassDefinition_EncapsulatedKeyword_0_q;
+	protected AbstractElementAlias match_ClassSpecifier___CommaKeyword_3_7_0_IDENTTerminalRuleCall_3_7_1__a;
+	protected AbstractElementAlias match_ClassSpecifier___ExtendsKeyword_4_0_IDENTTerminalRuleCall_4_1_StringCommentParserRuleCall_4_3___or___IDENTTerminalRuleCall_0_0_StringCommentParserRuleCall_0_1__;
+	protected AbstractElementAlias match_ClassSpecifier___IDENTTerminalRuleCall_1_0_EqualsSignKeyword_1_1_BasePrefixParserRuleCall_1_2_NameParserRuleCall_1_3___or___IDENTTerminalRuleCall_2_0_EqualsSignKeyword_2_1_EnumerationKeyword_2_2_LeftParenthesisKeyword_2_3_ColonKeyword_2_4_1_q_RightParenthesisKeyword_2_5__;
+	protected AbstractElementAlias match_ComponentReference_FullStopKeyword_1_0_q;
+	protected AbstractElementAlias match_Composition_LanguageSpecificationParserRuleCall_2_1_q;
+	protected AbstractElementAlias match_Composition___ExternalKeyword_2_0_LanguageSpecificationParserRuleCall_2_1_q_SemicolonKeyword_2_4__q;
+	protected AbstractElementAlias match_ElementModicationOrReplaceable_EachKeyword_0_q;
+	protected AbstractElementAlias match_ElementModicationOrReplaceable_FinalKeyword_1_q;
+	protected AbstractElementAlias match_ElementRedeclaration_EachKeyword_1_q;
+	protected AbstractElementAlias match_ElementRedeclaration_FinalKeyword_2_q;
+	protected AbstractElementAlias match_ElementReplaceable_ReplaceableKeyword_0_q;
+	protected AbstractElementAlias match_Element_FinalKeyword_2_1_q;
+	protected AbstractElementAlias match_Element_InnerKeyword_2_2_q;
+	protected AbstractElementAlias match_Element_OuterKeyword_2_3_q;
+	protected AbstractElementAlias match_Element_RedeclareKeyword_2_0_q;
+	protected AbstractElementAlias match_Element_ReplaceableKeyword_2_4_1_0_q;
+	protected AbstractElementAlias match_EquationSection_InitialKeyword_1_q;
+	protected AbstractElementAlias match_Factor_CircumflexAccentKeyword_1_0_0_or_FullStopCircumflexAccentKeyword_1_0_1;
+	protected AbstractElementAlias match_IfEquation_ElseKeyword_5_0_q;
+	protected AbstractElementAlias match_IfStatement_ElseKeyword_5_0_q;
+	protected AbstractElementAlias match_ImportClause___IDENTTerminalRuleCall_1_0_0_EqualsSignKeyword_1_0_1_NameParserRuleCall_1_0_2___or___NameParserRuleCall_1_1_0___CommaKeyword_1_1_1_0_q___AsteriskKeyword_1_1_1_1_0_or___LeftParenthesisKeyword_1_1_1_1_1_0_ImportListParserRuleCall_1_1_1_1_1_1_RightParenthesisKeyword_1_1_1_1_1_2______q__;
+	protected AbstractElementAlias match_OutputExpressionList_CommaKeyword_2_0_a;
+	protected AbstractElementAlias match_OutputExpressionList_CommaKeyword_2_0_p;
+	protected AbstractElementAlias match_Primary_EndKeyword_4_or_FalseKeyword_2_or_STRINGTerminalRuleCall_1_or_TrueKeyword_3;
+	protected AbstractElementAlias match_ShortClassDefinition_ColonKeyword_3_1_2_1_q;
+	protected AbstractElementAlias match_Statement_BreakKeyword_0_2_or_ReturnKeyword_0_3;
+	protected AbstractElementAlias match_StoredDefinition_FinalKeyword_2_0_q;
+	protected AbstractElementAlias match_StoredDefinition___WithinKeyword_1_0_NameParserRuleCall_1_1_q_SemicolonKeyword_1_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ModelicaGrammarAccess) access;
-		match_Class_EquationKeyword_2_q = new TokenAlias(false, true, grammarAccess.getClassAccess().getEquationKeyword_2());
+		match_AlgorithmSection_InitialKeyword_1_q = new TokenAlias(false, true, grammarAccess.getAlgorithmSectionAccess().getInitialKeyword_1());
+		match_ClassDefinition_ClassSpecifier_ComponentClause___EncapsulatedKeyword_0_q_ClassPrefixesParserRuleCall_1_IDENTTerminalRuleCall_1_0_EqualsSignKeyword_1_1_BasePrefixParserRuleCall_1_2_NameParserRuleCall_1_3___or___TypePrefixParserRuleCall_0_TypeSpecifierParserRuleCall_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getComponentClauseAccess().getTypePrefixParserRuleCall_0()), new TokenAlias(false, false, grammarAccess.getComponentClauseAccess().getTypeSpecifierParserRuleCall_1())), new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getClassDefinitionAccess().getEncapsulatedKeyword_0()), new TokenAlias(false, false, grammarAccess.getClassDefinitionAccess().getClassPrefixesParserRuleCall_1()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getIDENTTerminalRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getEqualsSignKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getBasePrefixParserRuleCall_1_2()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getNameParserRuleCall_1_3())));
+		match_ClassDefinition_ClassSpecifier_Element_ImportClause___ImportKeyword_0_____IDENTTerminalRuleCall_1_0_0_EqualsSignKeyword_1_0_1_NameParserRuleCall_1_0_2___or___NameParserRuleCall_1_1_0___CommaKeyword_1_1_1_0_q___AsteriskKeyword_1_1_1_1_0_or___LeftParenthesisKeyword_1_1_1_1_1_0_ImportListParserRuleCall_1_1_1_1_1_1_RightParenthesisKeyword_1_1_1_1_1_2______q_______or___RedeclareKeyword_2_0_q_FinalKeyword_2_1_q_InnerKeyword_2_2_q_OuterKeyword_2_3_q_ReplaceableKeyword_2_4_1_0_q_EncapsulatedKeyword_0_q_ClassPrefixesParserRuleCall_1_IDENTTerminalRuleCall_3_0_EqualsSignKeyword_3_1_DerKeyword_3_2_LeftParenthesisKeyword_3_3_NameParserRuleCall_3_4_CommaKeyword_3_5_IDENTTerminalRuleCall_3_6___CommaKeyword_3_7_0_IDENTTerminalRuleCall_3_7_1__a_RightParenthesisKeyword_3_8__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getImportKeyword_0()), new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getIDENTTerminalRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getEqualsSignKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getNameParserRuleCall_1_0_2())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getNameParserRuleCall_1_1_0()), new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getImportClauseAccess().getCommaKeyword_1_1_1_0()), new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getLeftParenthesisKeyword_1_1_1_1_1_0()), new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getImportListParserRuleCall_1_1_1_1_1_1()), new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getRightParenthesisKeyword_1_1_1_1_1_2())), new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getAsteriskKeyword_1_1_1_1_0())))))), new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getElementAccess().getRedeclareKeyword_2_0()), new TokenAlias(false, true, grammarAccess.getElementAccess().getFinalKeyword_2_1()), new TokenAlias(false, true, grammarAccess.getElementAccess().getInnerKeyword_2_2()), new TokenAlias(false, true, grammarAccess.getElementAccess().getOuterKeyword_2_3()), new TokenAlias(false, true, grammarAccess.getElementAccess().getReplaceableKeyword_2_4_1_0()), new TokenAlias(false, true, grammarAccess.getClassDefinitionAccess().getEncapsulatedKeyword_0()), new TokenAlias(false, false, grammarAccess.getClassDefinitionAccess().getClassPrefixesParserRuleCall_1()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getIDENTTerminalRuleCall_3_0()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getEqualsSignKeyword_3_1()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getDerKeyword_3_2()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getLeftParenthesisKeyword_3_3()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getNameParserRuleCall_3_4()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getCommaKeyword_3_5()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getIDENTTerminalRuleCall_3_6()), new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getCommaKeyword_3_7_0()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getIDENTTerminalRuleCall_3_7_1())), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getRightParenthesisKeyword_3_8())));
+		match_ClassDefinition_EncapsulatedKeyword_0_q = new TokenAlias(false, true, grammarAccess.getClassDefinitionAccess().getEncapsulatedKeyword_0());
+		match_ClassSpecifier___CommaKeyword_3_7_0_IDENTTerminalRuleCall_3_7_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getCommaKeyword_3_7_0()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getIDENTTerminalRuleCall_3_7_1()));
+		match_ClassSpecifier___ExtendsKeyword_4_0_IDENTTerminalRuleCall_4_1_StringCommentParserRuleCall_4_3___or___IDENTTerminalRuleCall_0_0_StringCommentParserRuleCall_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getExtendsKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getIDENTTerminalRuleCall_4_1()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getStringCommentParserRuleCall_4_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getIDENTTerminalRuleCall_0_0()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getStringCommentParserRuleCall_0_1())));
+		match_ClassSpecifier___IDENTTerminalRuleCall_1_0_EqualsSignKeyword_1_1_BasePrefixParserRuleCall_1_2_NameParserRuleCall_1_3___or___IDENTTerminalRuleCall_2_0_EqualsSignKeyword_2_1_EnumerationKeyword_2_2_LeftParenthesisKeyword_2_3_ColonKeyword_2_4_1_q_RightParenthesisKeyword_2_5__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getIDENTTerminalRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getEqualsSignKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getBasePrefixParserRuleCall_1_2()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getNameParserRuleCall_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getIDENTTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getEqualsSignKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getEnumerationKeyword_2_2()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getLeftParenthesisKeyword_2_3()), new TokenAlias(false, true, grammarAccess.getClassSpecifierAccess().getColonKeyword_2_4_1()), new TokenAlias(false, false, grammarAccess.getClassSpecifierAccess().getRightParenthesisKeyword_2_5())));
+		match_ComponentReference_FullStopKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getComponentReferenceAccess().getFullStopKeyword_1_0());
+		match_Composition_LanguageSpecificationParserRuleCall_2_1_q = new TokenAlias(false, true, grammarAccess.getCompositionAccess().getLanguageSpecificationParserRuleCall_2_1());
+		match_Composition___ExternalKeyword_2_0_LanguageSpecificationParserRuleCall_2_1_q_SemicolonKeyword_2_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCompositionAccess().getExternalKeyword_2_0()), new TokenAlias(false, true, grammarAccess.getCompositionAccess().getLanguageSpecificationParserRuleCall_2_1()), new TokenAlias(false, false, grammarAccess.getCompositionAccess().getSemicolonKeyword_2_4()));
+		match_ElementModicationOrReplaceable_EachKeyword_0_q = new TokenAlias(false, true, grammarAccess.getElementModicationOrReplaceableAccess().getEachKeyword_0());
+		match_ElementModicationOrReplaceable_FinalKeyword_1_q = new TokenAlias(false, true, grammarAccess.getElementModicationOrReplaceableAccess().getFinalKeyword_1());
+		match_ElementRedeclaration_EachKeyword_1_q = new TokenAlias(false, true, grammarAccess.getElementRedeclarationAccess().getEachKeyword_1());
+		match_ElementRedeclaration_FinalKeyword_2_q = new TokenAlias(false, true, grammarAccess.getElementRedeclarationAccess().getFinalKeyword_2());
+		match_ElementReplaceable_ReplaceableKeyword_0_q = new TokenAlias(false, true, grammarAccess.getElementReplaceableAccess().getReplaceableKeyword_0());
+		match_Element_FinalKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getElementAccess().getFinalKeyword_2_1());
+		match_Element_InnerKeyword_2_2_q = new TokenAlias(false, true, grammarAccess.getElementAccess().getInnerKeyword_2_2());
+		match_Element_OuterKeyword_2_3_q = new TokenAlias(false, true, grammarAccess.getElementAccess().getOuterKeyword_2_3());
+		match_Element_RedeclareKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getElementAccess().getRedeclareKeyword_2_0());
+		match_Element_ReplaceableKeyword_2_4_1_0_q = new TokenAlias(false, true, grammarAccess.getElementAccess().getReplaceableKeyword_2_4_1_0());
+		match_EquationSection_InitialKeyword_1_q = new TokenAlias(false, true, grammarAccess.getEquationSectionAccess().getInitialKeyword_1());
+		match_Factor_CircumflexAccentKeyword_1_0_0_or_FullStopCircumflexAccentKeyword_1_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getCircumflexAccentKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getFullStopCircumflexAccentKeyword_1_0_1()));
+		match_IfEquation_ElseKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getIfEquationAccess().getElseKeyword_5_0());
+		match_IfStatement_ElseKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getIfStatementAccess().getElseKeyword_5_0());
+		match_ImportClause___IDENTTerminalRuleCall_1_0_0_EqualsSignKeyword_1_0_1_NameParserRuleCall_1_0_2___or___NameParserRuleCall_1_1_0___CommaKeyword_1_1_1_0_q___AsteriskKeyword_1_1_1_1_0_or___LeftParenthesisKeyword_1_1_1_1_1_0_ImportListParserRuleCall_1_1_1_1_1_1_RightParenthesisKeyword_1_1_1_1_1_2______q__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getIDENTTerminalRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getEqualsSignKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getNameParserRuleCall_1_0_2())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getNameParserRuleCall_1_1_0()), new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getImportClauseAccess().getCommaKeyword_1_1_1_0()), new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getLeftParenthesisKeyword_1_1_1_1_1_0()), new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getImportListParserRuleCall_1_1_1_1_1_1()), new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getRightParenthesisKeyword_1_1_1_1_1_2())), new TokenAlias(false, false, grammarAccess.getImportClauseAccess().getAsteriskKeyword_1_1_1_1_0())))));
+		match_OutputExpressionList_CommaKeyword_2_0_a = new TokenAlias(true, true, grammarAccess.getOutputExpressionListAccess().getCommaKeyword_2_0());
+		match_OutputExpressionList_CommaKeyword_2_0_p = new TokenAlias(true, false, grammarAccess.getOutputExpressionListAccess().getCommaKeyword_2_0());
+		match_Primary_EndKeyword_4_or_FalseKeyword_2_or_STRINGTerminalRuleCall_1_or_TrueKeyword_3 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPrimaryAccess().getEndKeyword_4()), new TokenAlias(false, false, grammarAccess.getPrimaryAccess().getFalseKeyword_2()), new TokenAlias(false, false, grammarAccess.getPrimaryAccess().getSTRINGTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getPrimaryAccess().getTrueKeyword_3()));
+		match_ShortClassDefinition_ColonKeyword_3_1_2_1_q = new TokenAlias(false, true, grammarAccess.getShortClassDefinitionAccess().getColonKeyword_3_1_2_1());
+		match_Statement_BreakKeyword_0_2_or_ReturnKeyword_0_3 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getStatementAccess().getBreakKeyword_0_2()), new TokenAlias(false, false, grammarAccess.getStatementAccess().getReturnKeyword_0_3()));
+		match_StoredDefinition_FinalKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getStoredDefinitionAccess().getFinalKeyword_2_0());
+		match_StoredDefinition___WithinKeyword_1_0_NameParserRuleCall_1_1_q_SemicolonKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getStoredDefinitionAccess().getWithinKeyword_1_0()), new TokenAlias(false, true, grammarAccess.getStoredDefinitionAccess().getNameParserRuleCall_1_1()), new TokenAlias(false, false, grammarAccess.getStoredDefinitionAccess().getSemicolonKeyword_1_2()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getBasePrefixRule())
+			return getBasePrefixToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getClassPrefixesRule())
+			return getClassPrefixesToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getIDENTRule())
+			return getIDENTToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getImportListRule())
+			return getImportListToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getLanguageSpecificationRule())
+			return getLanguageSpecificationToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getNameRule())
+			return getNameToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getSTRINGRule())
+			return getSTRINGToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getStringCommentRule())
+			return getStringCommentToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getTypePrefixRule())
+			return getTypePrefixToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getTypeSpecifierRule())
+			return getTypeSpecifierToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getUNSIGNED_NUMBERRule())
+			return getUNSIGNED_NUMBERToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * BasePrefix:
+	 * 	TypePrefix
+	 * ;
+	 */
+	protected String getBasePrefixToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
+	 * ClassPrefixes:
+	 * 	'partial'?
+	 * 	('class' | 'model' | 'operator'? 'record' | 'block' | 'expandable'? 'connector'
+	 * 		| 'type' | 'package' | ('pure' | 'impure')? 'operator'? 'function' | 'operator'
+	 * 	)
+	 * ;
+	 */
+	protected String getClassPrefixesToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "class";
+	}
+	
+	/**
+	 * terminal IDENT : NONDIGIT ( DIGIT | NONDIGIT )* ;
+	 */
+	protected String getIDENTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "_";
+	}
+	
+	/**
+	 * ImportList:
+	 * 	IDENT (',' ImportList)?
+	 * ;
+	 */
+	protected String getImportListToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "_";
+	}
+	
+	/**
+	 * LanguageSpecification:
+	 * 	STRING
+	 * ;
+	 */
+	protected String getLanguageSpecificationToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\"";
+	}
+	
+	/**
+	 * Name:
+	 * 	"."? IDENT ("." IDENT)*
+	 * ;
+	 */
+	protected String getNameToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "_";
+	}
+	
+	/**
+	 * terminal STRING : "\"" ( S_CHAR  )* "\"";
+	 */
+	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\"";
+	}
+	
+	/**
+	 * StringComment:
+	 * 	(STRING ('+' STRING)*)?
+	 * ;
+	 */
+	protected String getStringCommentToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
+	 * TypePrefix:
+	 * 	('flow' | 'stream')?
+	 * 	('discrete' | 'parameter' | 'constant')?
+	 * 	('input' | 'output')?
+	 * ;
+	 */
+	protected String getTypePrefixToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
+	 * TypeSpecifier:
+	 * 	Name
+	 * ;
+	 */
+	protected String getTypeSpecifierToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "_";
+	}
+	
+	/**
+	 * terminal UNSIGNED_NUMBER:
+	 * 	UNSIGNED_INTEGER ( "." ( UNSIGNED_INTEGER )? )?
+	 * 	( ( "e" | "E" ) ( "+" | "-" )? UNSIGNED_INTEGER )?;
+	 */
+	protected String getUNSIGNED_NUMBERToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -40,20 +247,768 @@ public class ModelicaSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Class_EquationKeyword_2_q.equals(syntax))
-				emit_Class_EquationKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_AlgorithmSection_InitialKeyword_1_q.equals(syntax))
+				emit_AlgorithmSection_InitialKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ClassDefinition_ClassSpecifier_ComponentClause___EncapsulatedKeyword_0_q_ClassPrefixesParserRuleCall_1_IDENTTerminalRuleCall_1_0_EqualsSignKeyword_1_1_BasePrefixParserRuleCall_1_2_NameParserRuleCall_1_3___or___TypePrefixParserRuleCall_0_TypeSpecifierParserRuleCall_1__.equals(syntax))
+				emit_ClassDefinition_ClassSpecifier_ComponentClause___EncapsulatedKeyword_0_q_ClassPrefixesParserRuleCall_1_IDENTTerminalRuleCall_1_0_EqualsSignKeyword_1_1_BasePrefixParserRuleCall_1_2_NameParserRuleCall_1_3___or___TypePrefixParserRuleCall_0_TypeSpecifierParserRuleCall_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ClassDefinition_ClassSpecifier_Element_ImportClause___ImportKeyword_0_____IDENTTerminalRuleCall_1_0_0_EqualsSignKeyword_1_0_1_NameParserRuleCall_1_0_2___or___NameParserRuleCall_1_1_0___CommaKeyword_1_1_1_0_q___AsteriskKeyword_1_1_1_1_0_or___LeftParenthesisKeyword_1_1_1_1_1_0_ImportListParserRuleCall_1_1_1_1_1_1_RightParenthesisKeyword_1_1_1_1_1_2______q_______or___RedeclareKeyword_2_0_q_FinalKeyword_2_1_q_InnerKeyword_2_2_q_OuterKeyword_2_3_q_ReplaceableKeyword_2_4_1_0_q_EncapsulatedKeyword_0_q_ClassPrefixesParserRuleCall_1_IDENTTerminalRuleCall_3_0_EqualsSignKeyword_3_1_DerKeyword_3_2_LeftParenthesisKeyword_3_3_NameParserRuleCall_3_4_CommaKeyword_3_5_IDENTTerminalRuleCall_3_6___CommaKeyword_3_7_0_IDENTTerminalRuleCall_3_7_1__a_RightParenthesisKeyword_3_8__.equals(syntax))
+				emit_ClassDefinition_ClassSpecifier_Element_ImportClause___ImportKeyword_0_____IDENTTerminalRuleCall_1_0_0_EqualsSignKeyword_1_0_1_NameParserRuleCall_1_0_2___or___NameParserRuleCall_1_1_0___CommaKeyword_1_1_1_0_q___AsteriskKeyword_1_1_1_1_0_or___LeftParenthesisKeyword_1_1_1_1_1_0_ImportListParserRuleCall_1_1_1_1_1_1_RightParenthesisKeyword_1_1_1_1_1_2______q_______or___RedeclareKeyword_2_0_q_FinalKeyword_2_1_q_InnerKeyword_2_2_q_OuterKeyword_2_3_q_ReplaceableKeyword_2_4_1_0_q_EncapsulatedKeyword_0_q_ClassPrefixesParserRuleCall_1_IDENTTerminalRuleCall_3_0_EqualsSignKeyword_3_1_DerKeyword_3_2_LeftParenthesisKeyword_3_3_NameParserRuleCall_3_4_CommaKeyword_3_5_IDENTTerminalRuleCall_3_6___CommaKeyword_3_7_0_IDENTTerminalRuleCall_3_7_1__a_RightParenthesisKeyword_3_8__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ClassDefinition_EncapsulatedKeyword_0_q.equals(syntax))
+				emit_ClassDefinition_EncapsulatedKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ClassSpecifier___CommaKeyword_3_7_0_IDENTTerminalRuleCall_3_7_1__a.equals(syntax))
+				emit_ClassSpecifier___CommaKeyword_3_7_0_IDENTTerminalRuleCall_3_7_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ClassSpecifier___ExtendsKeyword_4_0_IDENTTerminalRuleCall_4_1_StringCommentParserRuleCall_4_3___or___IDENTTerminalRuleCall_0_0_StringCommentParserRuleCall_0_1__.equals(syntax))
+				emit_ClassSpecifier___ExtendsKeyword_4_0_IDENTTerminalRuleCall_4_1_StringCommentParserRuleCall_4_3___or___IDENTTerminalRuleCall_0_0_StringCommentParserRuleCall_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ClassSpecifier___IDENTTerminalRuleCall_1_0_EqualsSignKeyword_1_1_BasePrefixParserRuleCall_1_2_NameParserRuleCall_1_3___or___IDENTTerminalRuleCall_2_0_EqualsSignKeyword_2_1_EnumerationKeyword_2_2_LeftParenthesisKeyword_2_3_ColonKeyword_2_4_1_q_RightParenthesisKeyword_2_5__.equals(syntax))
+				emit_ClassSpecifier___IDENTTerminalRuleCall_1_0_EqualsSignKeyword_1_1_BasePrefixParserRuleCall_1_2_NameParserRuleCall_1_3___or___IDENTTerminalRuleCall_2_0_EqualsSignKeyword_2_1_EnumerationKeyword_2_2_LeftParenthesisKeyword_2_3_ColonKeyword_2_4_1_q_RightParenthesisKeyword_2_5__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ComponentReference_FullStopKeyword_1_0_q.equals(syntax))
+				emit_ComponentReference_FullStopKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Composition_LanguageSpecificationParserRuleCall_2_1_q.equals(syntax))
+				emit_Composition_LanguageSpecificationParserRuleCall_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Composition___ExternalKeyword_2_0_LanguageSpecificationParserRuleCall_2_1_q_SemicolonKeyword_2_4__q.equals(syntax))
+				emit_Composition___ExternalKeyword_2_0_LanguageSpecificationParserRuleCall_2_1_q_SemicolonKeyword_2_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ElementModicationOrReplaceable_EachKeyword_0_q.equals(syntax))
+				emit_ElementModicationOrReplaceable_EachKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ElementModicationOrReplaceable_FinalKeyword_1_q.equals(syntax))
+				emit_ElementModicationOrReplaceable_FinalKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ElementRedeclaration_EachKeyword_1_q.equals(syntax))
+				emit_ElementRedeclaration_EachKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ElementRedeclaration_FinalKeyword_2_q.equals(syntax))
+				emit_ElementRedeclaration_FinalKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ElementReplaceable_ReplaceableKeyword_0_q.equals(syntax))
+				emit_ElementReplaceable_ReplaceableKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Element_FinalKeyword_2_1_q.equals(syntax))
+				emit_Element_FinalKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Element_InnerKeyword_2_2_q.equals(syntax))
+				emit_Element_InnerKeyword_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Element_OuterKeyword_2_3_q.equals(syntax))
+				emit_Element_OuterKeyword_2_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Element_RedeclareKeyword_2_0_q.equals(syntax))
+				emit_Element_RedeclareKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Element_ReplaceableKeyword_2_4_1_0_q.equals(syntax))
+				emit_Element_ReplaceableKeyword_2_4_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EquationSection_InitialKeyword_1_q.equals(syntax))
+				emit_EquationSection_InitialKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Factor_CircumflexAccentKeyword_1_0_0_or_FullStopCircumflexAccentKeyword_1_0_1.equals(syntax))
+				emit_Factor_CircumflexAccentKeyword_1_0_0_or_FullStopCircumflexAccentKeyword_1_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_IfEquation_ElseKeyword_5_0_q.equals(syntax))
+				emit_IfEquation_ElseKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_IfStatement_ElseKeyword_5_0_q.equals(syntax))
+				emit_IfStatement_ElseKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ImportClause___IDENTTerminalRuleCall_1_0_0_EqualsSignKeyword_1_0_1_NameParserRuleCall_1_0_2___or___NameParserRuleCall_1_1_0___CommaKeyword_1_1_1_0_q___AsteriskKeyword_1_1_1_1_0_or___LeftParenthesisKeyword_1_1_1_1_1_0_ImportListParserRuleCall_1_1_1_1_1_1_RightParenthesisKeyword_1_1_1_1_1_2______q__.equals(syntax))
+				emit_ImportClause___IDENTTerminalRuleCall_1_0_0_EqualsSignKeyword_1_0_1_NameParserRuleCall_1_0_2___or___NameParserRuleCall_1_1_0___CommaKeyword_1_1_1_0_q___AsteriskKeyword_1_1_1_1_0_or___LeftParenthesisKeyword_1_1_1_1_1_0_ImportListParserRuleCall_1_1_1_1_1_1_RightParenthesisKeyword_1_1_1_1_1_2______q__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OutputExpressionList_CommaKeyword_2_0_a.equals(syntax))
+				emit_OutputExpressionList_CommaKeyword_2_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OutputExpressionList_CommaKeyword_2_0_p.equals(syntax))
+				emit_OutputExpressionList_CommaKeyword_2_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Primary_EndKeyword_4_or_FalseKeyword_2_or_STRINGTerminalRuleCall_1_or_TrueKeyword_3.equals(syntax))
+				emit_Primary_EndKeyword_4_or_FalseKeyword_2_or_STRINGTerminalRuleCall_1_or_TrueKeyword_3(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ShortClassDefinition_ColonKeyword_3_1_2_1_q.equals(syntax))
+				emit_ShortClassDefinition_ColonKeyword_3_1_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Statement_BreakKeyword_0_2_or_ReturnKeyword_0_3.equals(syntax))
+				emit_Statement_BreakKeyword_0_2_or_ReturnKeyword_0_3(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_StoredDefinition_FinalKeyword_2_0_q.equals(syntax))
+				emit_StoredDefinition_FinalKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_StoredDefinition___WithinKeyword_1_0_NameParserRuleCall_1_1_q_SemicolonKeyword_1_2__q.equals(syntax))
+				emit_StoredDefinition___WithinKeyword_1_0_NameParserRuleCall_1_1_q_SemicolonKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     'equation'?
+	 *     'initial'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=ID (ambiguity) 'end' name_end=ID
+	 *     (rule start) (ambiguity) 'algorithm' (rule start)
+	 *     (rule start) (ambiguity) 'algorithm' statements+=Statement
 	 */
-	protected void emit_Class_EquationKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_AlgorithmSection_InitialKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (
+	  *         (TypePrefix TypeSpecifier) | 
+	  *         (
+	  *             'encapsulated'? 
+	  *             ClassPrefixes 
+	  *             IDENT 
+	  *             '=' 
+	  *             BasePrefix 
+	  *             Name
+	  *         )
+	  *     )
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) '[' subscripts+=Subscript
+	 */
+	protected void emit_ClassDefinition_ClassSpecifier_ComponentClause___EncapsulatedKeyword_0_q_ClassPrefixesParserRuleCall_1_IDENTTerminalRuleCall_1_0_EqualsSignKeyword_1_1_BasePrefixParserRuleCall_1_2_NameParserRuleCall_1_3___or___TypePrefixParserRuleCall_0_TypeSpecifierParserRuleCall_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (
+	  *         (
+	  *             'redeclare'? 
+	  *             'final'? 
+	  *             'inner'? 
+	  *             'outer'? 
+	  *             'replaceable'? 
+	  *             'encapsulated'? 
+	  *             ClassPrefixes 
+	  *             IDENT 
+	  *             '=' 
+	  *             'der' 
+	  *             '(' 
+	  *             Name 
+	  *             ',' 
+	  *             IDENT 
+	  *             (',' IDENT)* 
+	  *             ')'
+	  *         ) | 
+	  *         ('import' ((Name (','? ('*' | ('(' ImportList ')')))?) | (IDENT '=' Name)))
+	  *     )
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) StringComment (rule start)
+	 */
+	protected void emit_ClassDefinition_ClassSpecifier_Element_ImportClause___ImportKeyword_0_____IDENTTerminalRuleCall_1_0_0_EqualsSignKeyword_1_0_1_NameParserRuleCall_1_0_2___or___NameParserRuleCall_1_1_0___CommaKeyword_1_1_1_0_q___AsteriskKeyword_1_1_1_1_0_or___LeftParenthesisKeyword_1_1_1_1_1_0_ImportListParserRuleCall_1_1_1_1_1_1_RightParenthesisKeyword_1_1_1_1_1_2______q_______or___RedeclareKeyword_2_0_q_FinalKeyword_2_1_q_InnerKeyword_2_2_q_OuterKeyword_2_3_q_ReplaceableKeyword_2_4_1_0_q_EncapsulatedKeyword_0_q_ClassPrefixesParserRuleCall_1_IDENTTerminalRuleCall_3_0_EqualsSignKeyword_3_1_DerKeyword_3_2_LeftParenthesisKeyword_3_3_NameParserRuleCall_3_4_CommaKeyword_3_5_IDENTTerminalRuleCall_3_6___CommaKeyword_3_7_0_IDENTTerminalRuleCall_3_7_1__a_RightParenthesisKeyword_3_8__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'encapsulated'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'end' IDENT (rule start)
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? anno+=Annotation
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? lhs=ComponentReference
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? name=IDENT
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'protected' protected_elist+=ElementList
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'public' pub_elist+=ElementList
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) ('external' LanguageSpecification? ';')? anno+=Annotation
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) alg_secs+=AlgorithmSection
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) elem+=Element
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) eq_secs+=EquationSection
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes ((IDENT '=' BasePrefix Name) | (IDENT '=' 'enumeration' '(' ':'? ')')) (rule start)
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? (ambiguity) ClassPrefixes IDENT '=' BasePrefix Name mod=ClassModification
+	 *     (rule start) (ambiguity) ClassPrefixes ((IDENT '=' BasePrefix Name) | (IDENT '=' 'enumeration' '(' ':'? ')')) (rule start)
+	 *     (rule start) (ambiguity) ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) 'end' IDENT (rule start)
+	 *     (rule start) (ambiguity) ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) 'external' LanguageSpecification? anno+=Annotation
+	 *     (rule start) (ambiguity) ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) 'external' LanguageSpecification? lhs=ComponentReference
+	 *     (rule start) (ambiguity) ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) 'external' LanguageSpecification? name=IDENT
+	 *     (rule start) (ambiguity) ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) 'protected' protected_elist+=ElementList
+	 *     (rule start) (ambiguity) ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) 'public' pub_elist+=ElementList
+	 *     (rule start) (ambiguity) ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) ('external' LanguageSpecification? ';')? anno+=Annotation
+	 *     (rule start) (ambiguity) ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) alg_secs+=AlgorithmSection
+	 *     (rule start) (ambiguity) ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) elem+=Element
+	 *     (rule start) (ambiguity) ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) eq_secs+=EquationSection
+	 *     (rule start) (ambiguity) ClassPrefixes IDENT '=' 'der' '(' Name ',' IDENT (',' IDENT)* ')' StringComment (rule start)
+	 *     (rule start) (ambiguity) ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) (ambiguity) ClassPrefixes IDENT '=' BasePrefix Name '[' subscripts+=Subscript
+	 *     (rule start) (ambiguity) ClassPrefixes IDENT '=' BasePrefix Name mod=ClassModification
+	 */
+	protected void emit_ClassDefinition_EncapsulatedKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (',' IDENT)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'encapsulated'? ClassPrefixes IDENT '=' 'der' '(' Name ',' IDENT (ambiguity) ')' StringComment (rule start)
+	 *     (rule start) IDENT '=' 'der' '(' Name ',' IDENT (ambiguity) ')' StringComment (rule start)
+	 */
+	protected void emit_ClassSpecifier___CommaKeyword_3_7_0_IDENTTerminalRuleCall_3_7_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (IDENT StringComment) | ('extends' IDENT StringComment)
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'encapsulated'? ClassPrefixes (ambiguity) 'end' IDENT (rule start)
+	 *     (rule start) 'encapsulated'? ClassPrefixes (ambiguity) 'external' LanguageSpecification? anno+=Annotation
+	 *     (rule start) 'encapsulated'? ClassPrefixes (ambiguity) 'external' LanguageSpecification? lhs=ComponentReference
+	 *     (rule start) 'encapsulated'? ClassPrefixes (ambiguity) 'external' LanguageSpecification? name=IDENT
+	 *     (rule start) 'encapsulated'? ClassPrefixes (ambiguity) 'protected' protected_elist+=ElementList
+	 *     (rule start) 'encapsulated'? ClassPrefixes (ambiguity) 'public' pub_elist+=ElementList
+	 *     (rule start) 'encapsulated'? ClassPrefixes (ambiguity) ('external' LanguageSpecification? ';')? anno+=Annotation
+	 *     (rule start) 'encapsulated'? ClassPrefixes (ambiguity) alg_secs+=AlgorithmSection
+	 *     (rule start) 'encapsulated'? ClassPrefixes (ambiguity) elem+=Element
+	 *     (rule start) 'encapsulated'? ClassPrefixes (ambiguity) eq_secs+=EquationSection
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (ambiguity) 'end' IDENT (rule start)
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (ambiguity) 'external' LanguageSpecification? anno+=Annotation
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (ambiguity) 'external' LanguageSpecification? lhs=ComponentReference
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (ambiguity) 'external' LanguageSpecification? name=IDENT
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (ambiguity) 'protected' protected_elist+=ElementList
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (ambiguity) 'public' pub_elist+=ElementList
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (ambiguity) ('external' LanguageSpecification? ';')? anno+=Annotation
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (ambiguity) alg_secs+=AlgorithmSection
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (ambiguity) elem+=Element
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (ambiguity) eq_secs+=EquationSection
+	 *     (rule start) (ambiguity) 'end' IDENT (rule start)
+	 *     (rule start) (ambiguity) 'external' LanguageSpecification? anno+=Annotation
+	 *     (rule start) (ambiguity) 'external' LanguageSpecification? lhs=ComponentReference
+	 *     (rule start) (ambiguity) 'external' LanguageSpecification? name=IDENT
+	 *     (rule start) (ambiguity) 'protected' protected_elist+=ElementList
+	 *     (rule start) (ambiguity) 'public' pub_elist+=ElementList
+	 *     (rule start) (ambiguity) ('external' LanguageSpecification? ';')? anno+=Annotation
+	 *     (rule start) (ambiguity) alg_secs+=AlgorithmSection
+	 *     (rule start) (ambiguity) elem+=Element
+	 *     (rule start) (ambiguity) eq_secs+=EquationSection
+	 */
+	protected void emit_ClassSpecifier___ExtendsKeyword_4_0_IDENTTerminalRuleCall_4_1_StringCommentParserRuleCall_4_3___or___IDENTTerminalRuleCall_0_0_StringCommentParserRuleCall_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (
+	  *         (IDENT '=' BasePrefix Name) | 
+	  *         (
+	  *             IDENT 
+	  *             '=' 
+	  *             'enumeration' 
+	  *             '(' 
+	  *             ':'? 
+	  *             ')'
+	  *         )
+	  *     )
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'encapsulated'? ClassPrefixes (ambiguity) (rule start)
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (ambiguity) (rule start)
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_ClassSpecifier___IDENTTerminalRuleCall_1_0_EqualsSignKeyword_1_1_BasePrefixParserRuleCall_1_2_NameParserRuleCall_1_3___or___IDENTTerminalRuleCall_2_0_EqualsSignKeyword_2_1_EnumerationKeyword_2_2_LeftParenthesisKeyword_2_3_ColonKeyword_2_4_1_q_RightParenthesisKeyword_2_5__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '.'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) idents+=IDENT
+	 *     idents+=IDENT (ambiguity) idents+=IDENT
+	 *     subscripts+=ArraySubscripts (ambiguity) idents+=IDENT
+	 */
+	protected void emit_ComponentReference_FullStopKeyword_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     LanguageSpecification?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'encapsulated'? ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) 'external' (ambiguity) anno+=Annotation
+	 *     (rule start) 'encapsulated'? ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) 'external' (ambiguity) lhs=ComponentReference
+	 *     (rule start) 'encapsulated'? ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) 'external' (ambiguity) name=IDENT
+	 *     (rule start) 'external' (ambiguity) anno+=Annotation
+	 *     (rule start) 'external' (ambiguity) lhs=ComponentReference
+	 *     (rule start) 'external' (ambiguity) name=IDENT
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' (ambiguity) anno+=Annotation
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' (ambiguity) lhs=ComponentReference
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' (ambiguity) name=IDENT
+	 *     (rule start) ((IDENT StringComment) | ('extends' IDENT StringComment)) 'external' (ambiguity) anno+=Annotation
+	 *     (rule start) ((IDENT StringComment) | ('extends' IDENT StringComment)) 'external' (ambiguity) lhs=ComponentReference
+	 *     (rule start) ((IDENT StringComment) | ('extends' IDENT StringComment)) 'external' (ambiguity) name=IDENT
+	 *     alg_secs+=AlgorithmSection 'external' (ambiguity) anno+=Annotation
+	 *     alg_secs+=AlgorithmSection 'external' (ambiguity) lhs=ComponentReference
+	 *     alg_secs+=AlgorithmSection 'external' (ambiguity) name=IDENT
+	 *     elem+=Element ';' 'external' (ambiguity) anno+=Annotation
+	 *     elem+=Element ';' 'external' (ambiguity) lhs=ComponentReference
+	 *     elem+=Element ';' 'external' (ambiguity) name=IDENT
+	 *     eq_secs+=EquationSection 'external' (ambiguity) anno+=Annotation
+	 *     eq_secs+=EquationSection 'external' (ambiguity) lhs=ComponentReference
+	 *     eq_secs+=EquationSection 'external' (ambiguity) name=IDENT
+	 *     protected_elist+=ElementList 'external' (ambiguity) anno+=Annotation
+	 *     protected_elist+=ElementList 'external' (ambiguity) lhs=ComponentReference
+	 *     protected_elist+=ElementList 'external' (ambiguity) name=IDENT
+	 *     pub_elist+=ElementList 'external' (ambiguity) anno+=Annotation
+	 *     pub_elist+=ElementList 'external' (ambiguity) lhs=ComponentReference
+	 *     pub_elist+=ElementList 'external' (ambiguity) name=IDENT
+	 */
+	protected void emit_Composition_LanguageSpecificationParserRuleCall_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('external' LanguageSpecification? ';')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'encapsulated'? ClassPrefixes ((IDENT StringComment) | ('extends' IDENT StringComment)) (ambiguity) anno+=Annotation
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) (ambiguity) anno+=Annotation
+	 *     (rule start) ((IDENT StringComment) | ('extends' IDENT StringComment)) (ambiguity) anno+=Annotation
+	 *     (rule start) (ambiguity) (rule start)
+	 *     (rule start) (ambiguity) anno+=Annotation
+	 *     alg_secs+=AlgorithmSection (ambiguity) (rule end)
+	 *     alg_secs+=AlgorithmSection (ambiguity) anno+=Annotation
+	 *     elem+=Element ';' (ambiguity) (rule end)
+	 *     elem+=Element ';' (ambiguity) anno+=Annotation
+	 *     eq_secs+=EquationSection (ambiguity) (rule end)
+	 *     eq_secs+=EquationSection (ambiguity) anno+=Annotation
+	 *     protected_elist+=ElementList (ambiguity) (rule end)
+	 *     protected_elist+=ElementList (ambiguity) anno+=Annotation
+	 *     pub_elist+=ElementList (ambiguity) (rule end)
+	 *     pub_elist+=ElementList (ambiguity) anno+=Annotation
+	 */
+	protected void emit_Composition___ExternalKeyword_2_0_LanguageSpecificationParserRuleCall_2_1_q_SemicolonKeyword_2_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'each'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'final'? 'replaceable' ClassPrefixes IDENT '=' 'enumeration' '(' ':'? ')' comment=Comment
+	 *     (rule start) (ambiguity) 'final'? 'replaceable' ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) (ambiguity) 'final'? 'replaceable' ClassPrefixes IDENT '=' BasePrefix Name '[' subscripts+=Subscript
+	 *     (rule start) (ambiguity) 'final'? 'replaceable' ClassPrefixes IDENT '=' BasePrefix Name comment=Comment
+	 *     (rule start) (ambiguity) 'final'? 'replaceable' ClassPrefixes IDENT '=' BasePrefix Name mode=ClassModification
+	 *     (rule start) (ambiguity) 'final'? 'replaceable' TypePrefix TypeSpecifier name=IDENT
+	 *     (rule start) (ambiguity) 'final'? name=Name
+	 */
+	protected void emit_ElementModicationOrReplaceable_EachKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'final'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'each'? (ambiguity) 'replaceable' ClassPrefixes IDENT '=' 'enumeration' '(' ':'? ')' comment=Comment
+	 *     (rule start) 'each'? (ambiguity) 'replaceable' ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) 'each'? (ambiguity) 'replaceable' ClassPrefixes IDENT '=' BasePrefix Name '[' subscripts+=Subscript
+	 *     (rule start) 'each'? (ambiguity) 'replaceable' ClassPrefixes IDENT '=' BasePrefix Name comment=Comment
+	 *     (rule start) 'each'? (ambiguity) 'replaceable' ClassPrefixes IDENT '=' BasePrefix Name mode=ClassModification
+	 *     (rule start) 'each'? (ambiguity) 'replaceable' TypePrefix TypeSpecifier name=IDENT
+	 *     (rule start) 'each'? (ambiguity) name=Name
+	 */
+	protected void emit_ElementModicationOrReplaceable_FinalKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'each'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'redeclare' (ambiguity) 'final'? 'replaceable'? ClassPrefixes IDENT '=' 'enumeration' '(' ':'? ')' comment=Comment
+	 *     (rule start) 'redeclare' (ambiguity) 'final'? 'replaceable'? ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) 'redeclare' (ambiguity) 'final'? 'replaceable'? ClassPrefixes IDENT '=' BasePrefix Name '[' subscripts+=Subscript
+	 *     (rule start) 'redeclare' (ambiguity) 'final'? 'replaceable'? ClassPrefixes IDENT '=' BasePrefix Name comment=Comment
+	 *     (rule start) 'redeclare' (ambiguity) 'final'? 'replaceable'? ClassPrefixes IDENT '=' BasePrefix Name mode=ClassModification
+	 *     (rule start) 'redeclare' (ambiguity) 'final'? 'replaceable'? TypePrefix TypeSpecifier name=IDENT
+	 */
+	protected void emit_ElementRedeclaration_EachKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'final'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'redeclare' 'each'? (ambiguity) 'replaceable'? ClassPrefixes IDENT '=' 'enumeration' '(' ':'? ')' comment=Comment
+	 *     (rule start) 'redeclare' 'each'? (ambiguity) 'replaceable'? ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) 'redeclare' 'each'? (ambiguity) 'replaceable'? ClassPrefixes IDENT '=' BasePrefix Name '[' subscripts+=Subscript
+	 *     (rule start) 'redeclare' 'each'? (ambiguity) 'replaceable'? ClassPrefixes IDENT '=' BasePrefix Name comment=Comment
+	 *     (rule start) 'redeclare' 'each'? (ambiguity) 'replaceable'? ClassPrefixes IDENT '=' BasePrefix Name mode=ClassModification
+	 *     (rule start) 'redeclare' 'each'? (ambiguity) 'replaceable'? TypePrefix TypeSpecifier name=IDENT
+	 */
+	protected void emit_ElementRedeclaration_FinalKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'replaceable'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'redeclare' 'each'? 'final'? (ambiguity) ClassPrefixes IDENT '=' 'enumeration' '(' ':'? ')' comment=Comment
+	 *     (rule start) 'redeclare' 'each'? 'final'? (ambiguity) ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) 'redeclare' 'each'? 'final'? (ambiguity) ClassPrefixes IDENT '=' BasePrefix Name '[' subscripts+=Subscript
+	 *     (rule start) 'redeclare' 'each'? 'final'? (ambiguity) ClassPrefixes IDENT '=' BasePrefix Name comment=Comment
+	 *     (rule start) 'redeclare' 'each'? 'final'? (ambiguity) ClassPrefixes IDENT '=' BasePrefix Name mode=ClassModification
+	 *     (rule start) 'redeclare' 'each'? 'final'? (ambiguity) TypePrefix TypeSpecifier name=IDENT
+	 */
+	protected void emit_ElementReplaceable_ReplaceableKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'final'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (
+	 *         (rule start) 
+	 *         'redeclare'? 
+	 *         (ambiguity) 
+	 *         'inner'? 
+	 *         'outer'? 
+	 *         'replaceable'? 
+	 *         'encapsulated'? 
+	 *         ClassPrefixes 
+	 *         (('extends' IDENT StringComment) | (IDENT StringComment)) 
+	 *         'external' 
+	 *         LanguageSpecification? 
+	 *         lhs=ComponentReference
+	 *     )
+	 *     (
+	 *         (rule start) 
+	 *         'redeclare'? 
+	 *         (ambiguity) 
+	 *         'inner'? 
+	 *         'outer'? 
+	 *         'replaceable'? 
+	 *         'encapsulated'? 
+	 *         ClassPrefixes 
+	 *         (('extends' IDENT StringComment) | (IDENT StringComment)) 
+	 *         ('external' LanguageSpecification? ';')? 
+	 *         anno+=Annotation
+	 *     )
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'end' IDENT (rule start)
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? anno+=Annotation
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? name=IDENT
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'protected' protected_elist+=ElementList
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'public' pub_elist+=ElementList
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) alg_secs+=AlgorithmSection
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) elem+=Element
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) eq_secs+=EquationSection
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes ((IDENT '=' BasePrefix Name) | (IDENT '=' 'enumeration' '(' ':'? ')')) (rule start)
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes IDENT '=' BasePrefix Name mod=ClassModification
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? ((TypePrefix TypeSpecifier) | ('encapsulated'? ClassPrefixes IDENT '=' BasePrefix Name)) '[' subscripts+=Subscript
+	 *     (rule start) 'redeclare'? (ambiguity) 'inner'? 'outer'? 'replaceable'? TypePrefix TypeSpecifier comps=ComponentList
+	 */
+	protected void emit_Element_FinalKeyword_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'inner'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (
+	 *         (rule start) 
+	 *         'redeclare'? 
+	 *         'final'? 
+	 *         (ambiguity) 
+	 *         'outer'? 
+	 *         'replaceable'? 
+	 *         'encapsulated'? 
+	 *         ClassPrefixes 
+	 *         (('extends' IDENT StringComment) | (IDENT StringComment)) 
+	 *         'external' 
+	 *         LanguageSpecification? 
+	 *         lhs=ComponentReference
+	 *     )
+	 *     (
+	 *         (rule start) 
+	 *         'redeclare'? 
+	 *         'final'? 
+	 *         (ambiguity) 
+	 *         'outer'? 
+	 *         'replaceable'? 
+	 *         'encapsulated'? 
+	 *         ClassPrefixes 
+	 *         (('extends' IDENT StringComment) | (IDENT StringComment)) 
+	 *         ('external' LanguageSpecification? ';')? 
+	 *         anno+=Annotation
+	 *     )
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'end' IDENT (rule start)
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? anno+=Annotation
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? name=IDENT
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'protected' protected_elist+=ElementList
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'public' pub_elist+=ElementList
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) alg_secs+=AlgorithmSection
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) elem+=Element
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) eq_secs+=EquationSection
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes ((IDENT '=' BasePrefix Name) | (IDENT '=' 'enumeration' '(' ':'? ')')) (rule start)
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes IDENT '=' BasePrefix Name mod=ClassModification
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? ((TypePrefix TypeSpecifier) | ('encapsulated'? ClassPrefixes IDENT '=' BasePrefix Name)) '[' subscripts+=Subscript
+	 *     (rule start) 'redeclare'? 'final'? (ambiguity) 'outer'? 'replaceable'? TypePrefix TypeSpecifier comps=ComponentList
+	 */
+	protected void emit_Element_InnerKeyword_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'outer'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (
+	 *         (rule start) 
+	 *         'redeclare'? 
+	 *         'final'? 
+	 *         'inner'? 
+	 *         (ambiguity) 
+	 *         'replaceable'? 
+	 *         'encapsulated'? 
+	 *         ClassPrefixes 
+	 *         (('extends' IDENT StringComment) | (IDENT StringComment)) 
+	 *         'external' 
+	 *         LanguageSpecification? 
+	 *         lhs=ComponentReference
+	 *     )
+	 *     (
+	 *         (rule start) 
+	 *         'redeclare'? 
+	 *         'final'? 
+	 *         'inner'? 
+	 *         (ambiguity) 
+	 *         'replaceable'? 
+	 *         'encapsulated'? 
+	 *         ClassPrefixes 
+	 *         (('extends' IDENT StringComment) | (IDENT StringComment)) 
+	 *         ('external' LanguageSpecification? ';')? 
+	 *         anno+=Annotation
+	 *     )
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'end' IDENT (rule start)
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? anno+=Annotation
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? name=IDENT
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'protected' protected_elist+=ElementList
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'public' pub_elist+=ElementList
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) alg_secs+=AlgorithmSection
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) elem+=Element
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) eq_secs+=EquationSection
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? 'encapsulated'? ClassPrefixes ((IDENT '=' BasePrefix Name) | (IDENT '=' 'enumeration' '(' ':'? ')')) (rule start)
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? 'encapsulated'? ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? 'encapsulated'? ClassPrefixes IDENT '=' BasePrefix Name mod=ClassModification
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? ((TypePrefix TypeSpecifier) | ('encapsulated'? ClassPrefixes IDENT '=' BasePrefix Name)) '[' subscripts+=Subscript
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? (ambiguity) 'replaceable'? TypePrefix TypeSpecifier comps=ComponentList
+	 */
+	protected void emit_Element_OuterKeyword_2_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'redeclare'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (
+	 *         (rule start) 
+	 *         (ambiguity) 
+	 *         'final'? 
+	 *         'inner'? 
+	 *         'outer'? 
+	 *         'replaceable'? 
+	 *         'encapsulated'? 
+	 *         ClassPrefixes 
+	 *         (('extends' IDENT StringComment) | (IDENT StringComment)) 
+	 *         ('external' LanguageSpecification? ';')? 
+	 *         anno+=Annotation
+	 *     )
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'end' IDENT (rule start)
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? anno+=Annotation
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? lhs=ComponentReference
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? name=IDENT
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'protected' protected_elist+=ElementList
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'public' pub_elist+=ElementList
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) alg_secs+=AlgorithmSection
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) elem+=Element
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) eq_secs+=EquationSection
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes ((IDENT '=' BasePrefix Name) | (IDENT '=' 'enumeration' '(' ':'? ')')) (rule start)
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? 'encapsulated'? ClassPrefixes IDENT '=' BasePrefix Name mod=ClassModification
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? ((TypePrefix TypeSpecifier) | ('encapsulated'? ClassPrefixes IDENT '=' BasePrefix Name)) '[' subscripts+=Subscript
+	 *     (rule start) (ambiguity) 'final'? 'inner'? 'outer'? 'replaceable'? TypePrefix TypeSpecifier comps=ComponentList
+	 */
+	protected void emit_Element_RedeclareKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'replaceable'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'end' IDENT (rule start)
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? anno+=Annotation
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? lhs=ComponentReference
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'external' LanguageSpecification? name=IDENT
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'protected' protected_elist+=ElementList
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) 'public' pub_elist+=ElementList
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) ('external' LanguageSpecification? ';')? anno+=Annotation
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) alg_secs+=AlgorithmSection
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) elem+=Element
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes (('extends' IDENT StringComment) | (IDENT StringComment)) eq_secs+=EquationSection
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes ((IDENT '=' BasePrefix Name) | (IDENT '=' 'enumeration' '(' ':'? ')')) (rule start)
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes IDENT '=' 'enumeration' '(' enums+=EnumerationLiteral
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) 'encapsulated'? ClassPrefixes IDENT '=' BasePrefix Name mod=ClassModification
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) ((TypePrefix TypeSpecifier) | ('encapsulated'? ClassPrefixes IDENT '=' BasePrefix Name)) '[' subscripts+=Subscript
+	 *     (rule start) 'redeclare'? 'final'? 'inner'? 'outer'? (ambiguity) TypePrefix TypeSpecifier comps=ComponentList
+	 */
+	protected void emit_Element_ReplaceableKeyword_2_4_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'initial'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'equation' (rule start)
+	 *     (rule start) (ambiguity) 'equation' equationss+=Equation
+	 */
+	protected void emit_EquationSection_InitialKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '^' | '.^'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     base=Primary (ambiguity) exp=Primary
+	 */
+	protected void emit_Factor_CircumflexAccentKeyword_1_0_0_or_FullStopCircumflexAccentKeyword_1_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'else'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     elseif_eqs+=Equation ';' (ambiguity) 'end' 'if' (rule end)
+	 *     elsif_exprs+=Expression 'then' (ambiguity) 'end' 'if' (rule end)
+	 *     if_eqs+=Equation ';' (ambiguity) 'end' 'if' (rule end)
+	 *     if_expr=Expression 'then' (ambiguity) 'end' 'if' (rule end)
+	 */
+	protected void emit_IfEquation_ElseKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'else'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     elseif_exprs+=Expression 'then' (ambiguity) 'end' 'if' (rule end)
+	 *     elseif_exprs+=Expression 'then' (ambiguity) 'end' 'if' comment=Comment
+	 *     elseif_stmts+=Statement ';' (ambiguity) 'end' 'if' (rule end)
+	 *     elseif_stmts+=Statement ';' (ambiguity) 'end' 'if' comment=Comment
+	 *     if_expr=Expression 'then' (ambiguity) 'end' 'if' (rule end)
+	 *     if_expr=Expression 'then' (ambiguity) 'end' 'if' comment=Comment
+	 *     if_stmts+=Statement ';' (ambiguity) 'end' 'if' (rule end)
+	 *     if_stmts+=Statement ';' (ambiguity) 'end' 'if' comment=Comment
+	 */
+	protected void emit_IfStatement_ElseKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (IDENT '=' Name) | (Name (','? ('*' | ('(' ImportList ')')))?)
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'import' (ambiguity) StringComment 'annotation' '(' args+=ArgumentList
+	 *     (rule start) 'import' (ambiguity) StringComment (rule start)
+	 */
+	protected void emit_ImportClause___IDENTTerminalRuleCall_1_0_0_EqualsSignKeyword_1_0_1_NameParserRuleCall_1_0_2___or___NameParserRuleCall_1_1_0___CommaKeyword_1_1_1_0_q___AsteriskKeyword_1_1_1_1_0_or___LeftParenthesisKeyword_1_1_1_1_1_0_ImportListParserRuleCall_1_1_1_1_1_1_RightParenthesisKeyword_1_1_1_1_1_2______q__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 *     exprs+=Expression (ambiguity) (rule end)
+	 */
+	protected void emit_OutputExpressionList_CommaKeyword_2_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) exprs+=Expression
+	 *     exprs+=Expression (ambiguity) exprs+=Expression
+	 */
+	protected void emit_OutputExpressionList_CommaKeyword_2_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     STRING | 'false' | 'true' | 'end'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_Primary_EndKeyword_4_or_FalseKeyword_2_or_STRINGTerminalRuleCall_1_or_TrueKeyword_3(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ':'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'each'? 'final'? 'replaceable' ClassPrefixes IDENT '=' 'enumeration' '(' (ambiguity) ')' comment=Comment
+	 *     (rule start) 'redeclare' 'each'? 'final'? 'replaceable'? ClassPrefixes IDENT '=' 'enumeration' '(' (ambiguity) ')' comment=Comment
+	 *     (rule start) 'replaceable' ClassPrefixes IDENT '=' 'enumeration' '(' (ambiguity) ')' comment=Comment
+	 *     (rule start) ClassPrefixes IDENT '=' 'enumeration' '(' (ambiguity) ')' comment=Comment
+	 */
+	protected void emit_ShortClassDefinition_ColonKeyword_3_1_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'break' | 'return'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) comment=Comment
+	 */
+	protected void emit_Statement_BreakKeyword_0_2_or_ReturnKeyword_0_3(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'final'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) ('within' Name? ';')? (ambiguity) classes+=ClassDefinition
+	 *     classes+=ClassDefinition ';' (ambiguity) classes+=ClassDefinition
+	 */
+	protected void emit_StoredDefinition_FinalKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('within' Name? ';')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'final'? classes+=ClassDefinition
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_StoredDefinition___WithinKeyword_1_0_NameParserRuleCall_1_1_q_SemicolonKeyword_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

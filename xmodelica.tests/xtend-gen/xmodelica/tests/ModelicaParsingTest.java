@@ -12,7 +12,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import xmodelica.modelica.Model;
+import xmodelica.modelica.StoredDefinition;
 import xmodelica.tests.ModelicaInjectorProvider;
 
 @RunWith(XtextRunner.class)
@@ -20,10 +20,10 @@ import xmodelica.tests.ModelicaInjectorProvider;
 @SuppressWarnings("all")
 public class ModelicaParsingTest {
   @Inject
-  private ParseHelper<Model> parseHelper;
+  private ParseHelper<StoredDefinition> parseHelper;
   
   @Test
-  public void loadModel() {
+  public void loadStoredDefinition() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("class Ball");
@@ -32,7 +32,7 @@ public class ModelicaParsingTest {
       _builder.newLine();
       _builder.append("end Ball;");
       _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
+      final StoredDefinition result = this.parseHelper.parse(_builder);
       Assert.assertNotNull(result);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);

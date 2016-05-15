@@ -1,12 +1,474 @@
-grammar xmodelica.Modelica with org.eclipse.xtext.common.Terminals
+grammar xmodelica.Modelica hidden(WS, ML_COMMENT, SL_COMMENT)
 
 generate modelica "http://www.Modelica.xmodelica"
 
-Model:
-	classes+=Class*;
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+//-----------------------------------------------
+// B.2.1 Stored Definition
+//-----------------------------------------------
+
+
+StoredDefinition:
+	{StoredDefinition}
+	('within' Name? ';')?
+	('final'? classes+=ClassDefinition ';')*
+;
+
+//-----------------------------------------------
+// B.2.1 Class Definition
+//-----------------------------------------------
 	
-Class:
-	'class' name=ID
-	('equation' )?
-	'end' name_end=ID ';'
-	;
+ClassDefinition:
+	'encapsulated'? ClassPrefixes
+	ClassSpecifier
+;
+
+ClassPrefixes:
+	'partial'?
+	('class' | 'model' | 'operator'? 'record' | 'block' | 'expandable'? 'connector'
+		| 'type' | 'package' | ('pure' | 'impure')? 'operator'? 'function' | 'operator'
+	)
+;
+
+ClassSpecifier:
+	IDENT StringComment Composition 'end' IDENT
+	| IDENT '=' BasePrefix Name ArraySubscripts? mod=ClassModification? // TODO Comment
+	| IDENT '=' 'enumeration' '(' ( EnumList? | ':') ')' // TODO Comment
+	| IDENT '=' 'der' '(' Name ',' IDENT (',' IDENT)* ')' Comment
+	| 'extends' IDENT ClassModification? StringComment Composition 'end' IDENT
+;
+
+BasePrefix:
+	TypePrefix
+;
+
+EnumList:
+	enums+=EnumerationLiteral (',' enums+=EnumerationLiteral)*
+;
+
+EnumerationLiteral:
+	IDENT Comment
+;
+
+Composition:
+	ElementList
+	(
+		'public' pub_elist+=ElementList
+		| 'protected' protected_elist+=ElementList
+		| eq_secs+=EquationSection
+		| alg_secs+=AlgorithmSection
+	)*
+	('external' LanguageSpecification? ExternalFunctionCall? anno+=Annotation? ';')?
+	(anno+=Annotation ';')?
+;
+
+LanguageSpecification:
+	STRING
+;
+
+ExternalFunctionCall:
+	(lhs=ComponentReference '=')?
+	name=IDENT '(' args=ExpressionList? ')'
+;
+
+ElementList:
+	{ElementList}
+	(elem+=Element ';')*
+;
+
+Element:
+	ImportClause
+	| ExtendsClause
+	| 'redeclare'? 'final'? 'inner'? 'outer'?
+		( (ClassDefinition | ComponentClause)
+			| 'replaceable' (ClassDefinition | ComponentClause)
+			// TODO (ConstrainingClause Comment)?
+		)
+;
+
+ImportClause:
+	'import' (IDENT '=' Name
+		| Name (','? ('*' | '(' ImportList ')' ) )?) Comment
+;
+
+ImportList:
+	IDENT (',' ImportList)?
+;
+
+//-----------------------------------------------
+// B.2.3 Extends
+//-----------------------------------------------
+ExtendsClause:
+	'extends' name=Name mod=ClassModification? anno=Annotation?
+;
+
+ConstrainingClause:
+	'constrainedby' name=Name mod=ClassModification?
+;
+
+//-----------------------------------------------
+// B.2.4 Component Clause
+//-----------------------------------------------
+
+ComponentClause:
+	TypePrefix TypeSpecifier ArraySubscripts? comps=ComponentList
+;
+
+TypePrefix:
+	('flow' | 'stream')?
+	('discrete' | 'parameter' | 'constant')?
+	('input' | 'output')?
+;
+
+TypeSpecifier:
+	Name
+;
+
+ComponentList:
+	comps+=ComponentDeclaration (',' comps+=ComponentDeclaration)*
+;
+
+ComponentDeclaration:
+	decl=Declaration cond=ConditionAttribute? comment=Comment
+;
+
+ConditionAttribute:
+	'if' Expression
+;
+
+Declaration:
+	name=IDENT subscripts=ArraySubscripts? mod=Modification?
+;
+
+
+//-----------------------------------------------
+// B.2.5 Modification
+//-----------------------------------------------
+
+Modification:
+	mod=ClassModification ('=' expr=Expression)?
+	| '=' expr=Expression
+	| ':=' expr=Expression
+;
+
+ClassModification:
+	{ClassModification}
+	"(" args+=ArgumentList? ")"
+;
+
+ArgumentList:
+	args+=Argument ("," args+=Argument)*
+;
+
+Argument:
+	// TODO
+	Primary
+;
+
+ElementModicationOrReplaceable:
+	'each'? 'final'? (ElementModification | ElementReplaceable)
+;
+
+ElementModification:
+	name=Name mod=Modification? comment=StringComment
+;
+
+ElementRedeclaration:
+	'redeclare' 'each'? 'final'?
+	(
+		(ShortClassDefinition | ComponentClause1) | ElementReplaceable
+	)
+;
+
+ElementReplaceable:
+	'replaceable' (ShortClassDefinition | ComponentClause1) const=ConstrainingClause?
+;
+
+ComponentClause1:
+	TypePrefix TypeSpecifier ComponentDeclaration1
+;
+
+ComponentDeclaration1:
+	Declaration comment=Comment
+;
+
+ShortClassDefinition:
+	ClassPrefixes IDENT '='
+	(BasePrefix Name ArraySubscripts? mode=ClassModification? comment=Comment |
+		'enumeration' '(' ( EnumList? | ':') ')' comment=Comment 
+	)
+;
+
+//-----------------------------------------------
+// B.2.6 Equations
+//-----------------------------------------------
+EquationSection:
+	{EquationSection}
+	'initial'? 'equation' (equationss+=Equation ';')*
+;
+
+AlgorithmSection:
+	{AlgorithmSection}
+	'initial'? 'algorithm' (statements+=Statement ';')*
+;
+
+Equation:
+	(left=SimpleExpression '=' right=Expression)
+	commment=Comment
+;
+
+Statement:
+	((left=ComponentReference
+	(':=' right= (Expression | FunctionCallArgs))
+	)
+	| '(' left=OutputExpressionList ')' ':='
+		ref=ComponentReference ref_call=FunctionCallArgs
+	| 'break'
+	| 'return'
+	| IfStatement
+	| ForStatement
+	| WhileStatement
+	| WhenStatement)
+	comment=Comment
+;
+
+IfEquation:
+	'if' if_expr=Expression 'then'
+		(if_eqs+=Equation ';')*
+	(
+		'elseif' elsif_exprs+=Expression 'then'
+			(elseif_eqs+=Equation ';')*
+	)*
+	(
+		'else'
+			(else_eqs+=Equation ';')*
+	)?
+	'end' 'if'
+;
+
+IfStatement:
+	'if' if_expr=Expression 'then'
+		(if_stmts+=Statement ';')*
+	(
+		'elseif' elseif_exprs+=Expression 'then'
+			(elseif_stmts+=Statement ';')*
+	)*
+	(
+		'else'
+			(else_stmts+=Statement ';')*
+	)?
+	'end' 'if'
+;
+
+ForEquation:
+	'for' indices=ForIndices 'loop'
+		(eqs+=Equation ';')*
+	'end' 'for'
+;
+
+ForStatement:
+	'for' indices=ForIndices 'loop'
+		(stmts+=Statement ';')*
+	'end' 'for'
+;
+
+ForIndices:
+	indices+=ForIndex (',' indices+=ForIndex)*
+;
+
+ForIndex:
+	IDENT ('in' Expression)
+;
+
+WhileStatement:
+	'while' cond=Expression 'loop'
+		(stmts+=Statement ';')*
+	'end' 'while'
+;
+
+WhenEquation:
+	'when' when=Expression 'then'
+		(when_eqs+=Equation ';')*
+	( 'elsewhen' elsehwhen=Expression 'then'
+		(elsewhen_eqs+=Equation ';')
+	)
+;
+
+WhenStatement:
+	'when' when=Expression 'then'
+		(when_stmts+=Statement ';')*
+	( 'elsewhen' elsehwhen=Expression 'then'
+		(elsewhen_stmts+=Statement ';')
+	)	
+;
+
+ConnectClause:
+	'connect' '(' left=ComponentReference ','
+		right=ComponentReference ')'
+;
+
+//-----------------------------------------------
+// B.2.7 Expressions
+//-----------------------------------------------
+
+Expression:
+	SimpleExpression
+	| 'if' if=Expression 'then' then=Expression
+	( 'elseif' elseif+=Expression
+			'then' elseifthen+=Expression)*
+		'else' else+=Expression
+;
+
+SimpleExpression:
+	exprs+=LogicalExpression
+	(':' exprs+=LogicalExpression 
+		(':' exprs+=LogicalExpression)?
+	)?
+;
+
+LogicalExpression:
+	terms+=LogicalTerm ( 'or' terms+=LogicalTerm)*
+;
+
+LogicalTerm:
+	factors+=LogicalFactor ('and' factors+=LogicalFactor)*
+;
+
+LogicalFactor:
+	'not' Relation
+;
+
+Relation:
+	left=ArithmeticExpression ( op=RelOp right=ArithmeticExpression)?
+;
+
+RelOp:
+	"<" | "<=" | ">" | ">=" | "==" | "<>"
+;
+
+ArithmeticExpression:
+	ops+=AddOp? terms+=Term ( ops+=AddOp terms+=Term)*
+;
+
+AddOp:
+	"+" | "-" | ".+" | ".-"
+;
+
+Term :
+	factors+=Factor ( ops+=MulOp factors+=Factor )*
+;
+
+MulOp :
+	"*" | "/" | ".*" | "./"
+;
+
+Factor :
+	base=Primary ( ("^" | ".^") exp=Primary )?
+;
+
+Primary:
+	{Primary}
+	UNSIGNED_NUMBER
+	| STRING
+	| 'false'
+	| 'true'
+	/* TODO
+	| ( name | 'der' | 'initial' ) function_call_args
+	| component_reference
+	| "(" output_expression_list ")"
+	| "[" expression_list { ";" expression_list } "]"
+	| "{" function_arguments "}"
+	*/
+	| 'end'
+;
+
+Name:
+	"."? IDENT ("." IDENT)*
+;
+
+ComponentReference:
+	{ComponentReference}
+	('.'? idents+=IDENT subscripts+=ArraySubscripts?)+
+;
+
+FunctionCallArgs:
+	{FunctionCallArgs}
+	'(' args=FunctionArguments? ')'
+;
+
+FunctionArguments:
+	// TODO args handling for list
+	args+=FunctionArgument ( ',' args+=FunctionArguments |
+		'for' indices=ForIndices )? | NamedArgument
+;
+
+
+NamedArguments:
+	args+=NamedArgument ("," args+=NamedArguments)
+;
+
+NamedArgument:
+	id=IDENT '=' func=FunctionArgument
+;
+
+FunctionArgument:
+	{FunctionArgument}
+	'function' name=Name '(' args=NamedArguments? ')'
+	| Expression
+;
+
+OutputExpressionList:
+	{OuputExpressionList}
+	exprs+=Expression? (',' exprs+=Expression?)*
+;
+
+ExpressionList:
+	exprs+=Expression (',' exprs+=Expression)*
+;
+
+ArraySubscripts:
+	'[' subscripts+=Subscript
+		(',' subscripts+=Subscript)*
+	']'
+;
+
+Subscript:
+	{Subscript}
+	';' | Expression
+;
+
+Comment:
+	{Comment}
+	StringComment Annotation?
+;
+
+StringComment:
+	(STRING ('+' STRING)*)?
+;
+
+Annotation:
+	'annotation' ClassModification
+;
+
+// terminals
+terminal IDENT : NONDIGIT ( DIGIT | NONDIGIT )* /* | Q_IDENT */;
+terminal UNSIGNED_NUMBER:
+	UNSIGNED_INTEGER ( "." ( UNSIGNED_INTEGER )? )?
+	( ( "e" | "E" ) ( "+" | "-" )? UNSIGNED_INTEGER )?;
+terminal STRING : "\"" ( S_CHAR /* | S_ESCAPE*/ )* "\"";
+terminal ML_COMMENT: '/*'->'*/';
+terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
+terminal WS: (' ' | '\t' | '\r' | '\n')+;
+terminal ANY_OTHER: .;
+
+// terminal fragments
+terminal fragment DIGIT : "0".."9";
+terminal fragment UNSIGNED_INTEGER :DIGIT+;
+terminal fragment S_ESCAPE : "\\" ("'" | "\"" | "?" | "\\" | "a" | "b" | "f" | "n" | "r" | "t" | "v");
+terminal fragment Q_IDENT : "’" ( Q_CHAR | S_ESCAPE )+ "’";
+terminal fragment NONDIGIT : "_" | "a".."z" | "A".."Z";
+terminal fragment S_CHAR : (! ( "\"" | "\\"));
+terminal fragment Q_CHAR : NONDIGIT | DIGIT | "!" | "#" | "$" | "%" | "&" | "(" | ")" | "*" | "+" | "," |
+	"-" | "." | "/" | ":" | ";" | "<" | ">" | "=" | "?" | "@" | "[" | "]" | "^" |
+	"{" | "}" | "|" | "~" | " ";

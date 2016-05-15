@@ -4,29 +4,33 @@
 package xmodelica.modelica.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import xmodelica.modelica.FunctionArgument;
 import xmodelica.modelica.ModelicaPackage;
+import xmodelica.modelica.NamedArguments;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Class</b></em>'.
+ * An implementation of the model object '<em><b>Function Argument</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.impl.ClassImpl#getName <em>Name</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.ClassImpl#getName_end <em>Name end</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.FunctionArgumentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.FunctionArgumentImpl#getArgs <em>Args</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica.modelica.Class
+public class FunctionArgumentImpl extends MinimalEObjectImpl.Container implements FunctionArgument
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -49,31 +53,21 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getName_end() <em>Name end</em>}' attribute.
+   * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName_end()
+   * @see #getArgs()
    * @generated
    * @ordered
    */
-  protected static final String NAME_END_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName_end() <em>Name end</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName_end()
-   * @generated
-   * @ordered
-   */
-  protected String name_end = NAME_END_EDEFAULT;
+  protected NamedArguments args;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ClassImpl()
+  protected FunctionArgumentImpl()
   {
     super();
   }
@@ -86,7 +80,7 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica
   @Override
   protected EClass eStaticClass()
   {
-    return ModelicaPackage.Literals.CLASS;
+    return ModelicaPackage.Literals.FUNCTION_ARGUMENT;
   }
 
   /**
@@ -109,7 +103,7 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.FUNCTION_ARGUMENT__NAME, oldName, name));
   }
 
   /**
@@ -117,9 +111,9 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName_end()
+  public NamedArguments getArgs()
   {
-    return name_end;
+    return args;
   }
 
   /**
@@ -127,12 +121,53 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName_end(String newName_end)
+  public NotificationChain basicSetArgs(NamedArguments newArgs, NotificationChain msgs)
   {
-    String oldName_end = name_end;
-    name_end = newName_end;
+    NamedArguments oldArgs = args;
+    args = newArgs;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS__NAME_END, oldName_end, name_end));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.FUNCTION_ARGUMENT__ARGS, oldArgs, newArgs);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setArgs(NamedArguments newArgs)
+  {
+    if (newArgs != args)
+    {
+      NotificationChain msgs = null;
+      if (args != null)
+        msgs = ((InternalEObject)args).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.FUNCTION_ARGUMENT__ARGS, null, msgs);
+      if (newArgs != null)
+        msgs = ((InternalEObject)newArgs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.FUNCTION_ARGUMENT__ARGS, null, msgs);
+      msgs = basicSetArgs(newArgs, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.FUNCTION_ARGUMENT__ARGS, newArgs, newArgs));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.FUNCTION_ARGUMENT__ARGS:
+        return basicSetArgs(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -145,10 +180,10 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica
   {
     switch (featureID)
     {
-      case ModelicaPackage.CLASS__NAME:
+      case ModelicaPackage.FUNCTION_ARGUMENT__NAME:
         return getName();
-      case ModelicaPackage.CLASS__NAME_END:
-        return getName_end();
+      case ModelicaPackage.FUNCTION_ARGUMENT__ARGS:
+        return getArgs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -163,11 +198,11 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica
   {
     switch (featureID)
     {
-      case ModelicaPackage.CLASS__NAME:
+      case ModelicaPackage.FUNCTION_ARGUMENT__NAME:
         setName((String)newValue);
         return;
-      case ModelicaPackage.CLASS__NAME_END:
-        setName_end((String)newValue);
+      case ModelicaPackage.FUNCTION_ARGUMENT__ARGS:
+        setArgs((NamedArguments)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -183,11 +218,11 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica
   {
     switch (featureID)
     {
-      case ModelicaPackage.CLASS__NAME:
+      case ModelicaPackage.FUNCTION_ARGUMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case ModelicaPackage.CLASS__NAME_END:
-        setName_end(NAME_END_EDEFAULT);
+      case ModelicaPackage.FUNCTION_ARGUMENT__ARGS:
+        setArgs((NamedArguments)null);
         return;
     }
     super.eUnset(featureID);
@@ -203,10 +238,10 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica
   {
     switch (featureID)
     {
-      case ModelicaPackage.CLASS__NAME:
+      case ModelicaPackage.FUNCTION_ARGUMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ModelicaPackage.CLASS__NAME_END:
-        return NAME_END_EDEFAULT == null ? name_end != null : !NAME_END_EDEFAULT.equals(name_end);
+      case ModelicaPackage.FUNCTION_ARGUMENT__ARGS:
+        return args != null;
     }
     return super.eIsSet(featureID);
   }
@@ -224,10 +259,8 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements xmodelica
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", name_end: ");
-    result.append(name_end);
     result.append(')');
     return result.toString();
   }
 
-} //ClassImpl
+} //FunctionArgumentImpl

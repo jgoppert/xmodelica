@@ -17,40 +17,41 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import xmodelica.modelica.Model;
+import xmodelica.modelica.ComponentDeclaration;
+import xmodelica.modelica.ComponentList;
 import xmodelica.modelica.ModelicaPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>Component List</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.impl.ModelImpl#getClasses <em>Classes</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ComponentListImpl#getComps <em>Comps</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelImpl extends MinimalEObjectImpl.Container implements Model
+public class ComponentListImpl extends MinimalEObjectImpl.Container implements ComponentList
 {
   /**
-   * The cached value of the '{@link #getClasses() <em>Classes</em>}' containment reference list.
+   * The cached value of the '{@link #getComps() <em>Comps</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClasses()
+   * @see #getComps()
    * @generated
    * @ordered
    */
-  protected EList<xmodelica.modelica.Class> classes;
+  protected EList<ComponentDeclaration> comps;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModelImpl()
+  protected ComponentListImpl()
   {
     super();
   }
@@ -63,7 +64,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return ModelicaPackage.Literals.MODEL;
+    return ModelicaPackage.Literals.COMPONENT_LIST;
   }
 
   /**
@@ -71,13 +72,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<xmodelica.modelica.Class> getClasses()
+  public EList<ComponentDeclaration> getComps()
   {
-    if (classes == null)
+    if (comps == null)
     {
-      classes = new EObjectContainmentEList<xmodelica.modelica.Class>(xmodelica.modelica.Class.class, this, ModelicaPackage.MODEL__CLASSES);
+      comps = new EObjectContainmentEList<ComponentDeclaration>(ComponentDeclaration.class, this, ModelicaPackage.COMPONENT_LIST__COMPS);
     }
-    return classes;
+    return comps;
   }
 
   /**
@@ -90,8 +91,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ModelicaPackage.MODEL__CLASSES:
-        return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
+      case ModelicaPackage.COMPONENT_LIST__COMPS:
+        return ((InternalEList<?>)getComps()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +107,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ModelicaPackage.MODEL__CLASSES:
-        return getClasses();
+      case ModelicaPackage.COMPONENT_LIST__COMPS:
+        return getComps();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +124,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ModelicaPackage.MODEL__CLASSES:
-        getClasses().clear();
-        getClasses().addAll((Collection<? extends xmodelica.modelica.Class>)newValue);
+      case ModelicaPackage.COMPONENT_LIST__COMPS:
+        getComps().clear();
+        getComps().addAll((Collection<? extends ComponentDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +142,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ModelicaPackage.MODEL__CLASSES:
-        getClasses().clear();
+      case ModelicaPackage.COMPONENT_LIST__COMPS:
+        getComps().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +159,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ModelicaPackage.MODEL__CLASSES:
-        return classes != null && !classes.isEmpty();
+      case ModelicaPackage.COMPONENT_LIST__COMPS:
+        return comps != null && !comps.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ModelImpl
+} //ComponentListImpl

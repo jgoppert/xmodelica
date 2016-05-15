@@ -10,17 +10,17 @@ import org.eclipse.xtext.junit4.util.ParseHelper
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
-import xmodelica.modelica.Model
+import xmodelica.modelica.StoredDefinition
 
 @RunWith(XtextRunner)
 @InjectWith(ModelicaInjectorProvider)
 class ModelicaParsingTest{
 
 	@Inject
-	ParseHelper<Model> parseHelper;
+	ParseHelper<StoredDefinition> parseHelper;
 
 	@Test 
-	def void loadModel() {
+	def void loadStoredDefinition() {
 		val result = parseHelper.parse('''
 			class Ball
 			equation

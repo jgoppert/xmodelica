@@ -24,22 +24,589 @@ public interface ModelicaFactory extends EFactory
   ModelicaFactory eINSTANCE = xmodelica.modelica.impl.ModelicaFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>Stored Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>Stored Definition</em>'.
    * @generated
    */
-  Model createModel();
+  StoredDefinition createStoredDefinition();
 
   /**
-   * Returns a new object of class '<em>Class</em>'.
+   * Returns a new object of class '<em>Class Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class</em>'.
+   * @return a new object of class '<em>Class Definition</em>'.
    * @generated
    */
-  Class createClass();
+  ClassDefinition createClassDefinition();
+
+  /**
+   * Returns a new object of class '<em>Class Specifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class Specifier</em>'.
+   * @generated
+   */
+  ClassSpecifier createClassSpecifier();
+
+  /**
+   * Returns a new object of class '<em>Enum List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enum List</em>'.
+   * @generated
+   */
+  EnumList createEnumList();
+
+  /**
+   * Returns a new object of class '<em>Enumeration Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enumeration Literal</em>'.
+   * @generated
+   */
+  EnumerationLiteral createEnumerationLiteral();
+
+  /**
+   * Returns a new object of class '<em>Composition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Composition</em>'.
+   * @generated
+   */
+  Composition createComposition();
+
+  /**
+   * Returns a new object of class '<em>External Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>External Function Call</em>'.
+   * @generated
+   */
+  ExternalFunctionCall createExternalFunctionCall();
+
+  /**
+   * Returns a new object of class '<em>Element List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element List</em>'.
+   * @generated
+   */
+  ElementList createElementList();
+
+  /**
+   * Returns a new object of class '<em>Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element</em>'.
+   * @generated
+   */
+  Element createElement();
+
+  /**
+   * Returns a new object of class '<em>Import Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import Clause</em>'.
+   * @generated
+   */
+  ImportClause createImportClause();
+
+  /**
+   * Returns a new object of class '<em>Extends Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Extends Clause</em>'.
+   * @generated
+   */
+  ExtendsClause createExtendsClause();
+
+  /**
+   * Returns a new object of class '<em>Constraining Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Constraining Clause</em>'.
+   * @generated
+   */
+  ConstrainingClause createConstrainingClause();
+
+  /**
+   * Returns a new object of class '<em>Component Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component Clause</em>'.
+   * @generated
+   */
+  ComponentClause createComponentClause();
+
+  /**
+   * Returns a new object of class '<em>Component List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component List</em>'.
+   * @generated
+   */
+  ComponentList createComponentList();
+
+  /**
+   * Returns a new object of class '<em>Component Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component Declaration</em>'.
+   * @generated
+   */
+  ComponentDeclaration createComponentDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Condition Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Condition Attribute</em>'.
+   * @generated
+   */
+  ConditionAttribute createConditionAttribute();
+
+  /**
+   * Returns a new object of class '<em>Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration</em>'.
+   * @generated
+   */
+  Declaration createDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Modification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Modification</em>'.
+   * @generated
+   */
+  Modification createModification();
+
+  /**
+   * Returns a new object of class '<em>Class Modification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class Modification</em>'.
+   * @generated
+   */
+  ClassModification createClassModification();
+
+  /**
+   * Returns a new object of class '<em>Argument List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Argument List</em>'.
+   * @generated
+   */
+  ArgumentList createArgumentList();
+
+  /**
+   * Returns a new object of class '<em>Argument</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Argument</em>'.
+   * @generated
+   */
+  Argument createArgument();
+
+  /**
+   * Returns a new object of class '<em>Element Modication Or Replaceable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Modication Or Replaceable</em>'.
+   * @generated
+   */
+  ElementModicationOrReplaceable createElementModicationOrReplaceable();
+
+  /**
+   * Returns a new object of class '<em>Element Modification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Modification</em>'.
+   * @generated
+   */
+  ElementModification createElementModification();
+
+  /**
+   * Returns a new object of class '<em>Element Redeclaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Redeclaration</em>'.
+   * @generated
+   */
+  ElementRedeclaration createElementRedeclaration();
+
+  /**
+   * Returns a new object of class '<em>Element Replaceable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Replaceable</em>'.
+   * @generated
+   */
+  ElementReplaceable createElementReplaceable();
+
+  /**
+   * Returns a new object of class '<em>Component Clause1</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component Clause1</em>'.
+   * @generated
+   */
+  ComponentClause1 createComponentClause1();
+
+  /**
+   * Returns a new object of class '<em>Component Declaration1</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component Declaration1</em>'.
+   * @generated
+   */
+  ComponentDeclaration1 createComponentDeclaration1();
+
+  /**
+   * Returns a new object of class '<em>Short Class Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Short Class Definition</em>'.
+   * @generated
+   */
+  ShortClassDefinition createShortClassDefinition();
+
+  /**
+   * Returns a new object of class '<em>Equation Section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Equation Section</em>'.
+   * @generated
+   */
+  EquationSection createEquationSection();
+
+  /**
+   * Returns a new object of class '<em>Algorithm Section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Algorithm Section</em>'.
+   * @generated
+   */
+  AlgorithmSection createAlgorithmSection();
+
+  /**
+   * Returns a new object of class '<em>Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Equation</em>'.
+   * @generated
+   */
+  Equation createEquation();
+
+  /**
+   * Returns a new object of class '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Statement</em>'.
+   * @generated
+   */
+  Statement createStatement();
+
+  /**
+   * Returns a new object of class '<em>If Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Equation</em>'.
+   * @generated
+   */
+  IfEquation createIfEquation();
+
+  /**
+   * Returns a new object of class '<em>If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Statement</em>'.
+   * @generated
+   */
+  IfStatement createIfStatement();
+
+  /**
+   * Returns a new object of class '<em>For Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Equation</em>'.
+   * @generated
+   */
+  ForEquation createForEquation();
+
+  /**
+   * Returns a new object of class '<em>For Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Statement</em>'.
+   * @generated
+   */
+  ForStatement createForStatement();
+
+  /**
+   * Returns a new object of class '<em>For Indices</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Indices</em>'.
+   * @generated
+   */
+  ForIndices createForIndices();
+
+  /**
+   * Returns a new object of class '<em>For Index</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Index</em>'.
+   * @generated
+   */
+  ForIndex createForIndex();
+
+  /**
+   * Returns a new object of class '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>While Statement</em>'.
+   * @generated
+   */
+  WhileStatement createWhileStatement();
+
+  /**
+   * Returns a new object of class '<em>When Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>When Equation</em>'.
+   * @generated
+   */
+  WhenEquation createWhenEquation();
+
+  /**
+   * Returns a new object of class '<em>When Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>When Statement</em>'.
+   * @generated
+   */
+  WhenStatement createWhenStatement();
+
+  /**
+   * Returns a new object of class '<em>Connect Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connect Clause</em>'.
+   * @generated
+   */
+  ConnectClause createConnectClause();
+
+  /**
+   * Returns a new object of class '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression</em>'.
+   * @generated
+   */
+  Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Simple Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Expression</em>'.
+   * @generated
+   */
+  SimpleExpression createSimpleExpression();
+
+  /**
+   * Returns a new object of class '<em>Logical Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Logical Expression</em>'.
+   * @generated
+   */
+  LogicalExpression createLogicalExpression();
+
+  /**
+   * Returns a new object of class '<em>Logical Term</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Logical Term</em>'.
+   * @generated
+   */
+  LogicalTerm createLogicalTerm();
+
+  /**
+   * Returns a new object of class '<em>Logical Factor</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Logical Factor</em>'.
+   * @generated
+   */
+  LogicalFactor createLogicalFactor();
+
+  /**
+   * Returns a new object of class '<em>Relation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Relation</em>'.
+   * @generated
+   */
+  Relation createRelation();
+
+  /**
+   * Returns a new object of class '<em>Arithmetic Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Arithmetic Expression</em>'.
+   * @generated
+   */
+  ArithmeticExpression createArithmeticExpression();
+
+  /**
+   * Returns a new object of class '<em>Term</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Term</em>'.
+   * @generated
+   */
+  Term createTerm();
+
+  /**
+   * Returns a new object of class '<em>Factor</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Factor</em>'.
+   * @generated
+   */
+  Factor createFactor();
+
+  /**
+   * Returns a new object of class '<em>Primary</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Primary</em>'.
+   * @generated
+   */
+  Primary createPrimary();
+
+  /**
+   * Returns a new object of class '<em>Component Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component Reference</em>'.
+   * @generated
+   */
+  ComponentReference createComponentReference();
+
+  /**
+   * Returns a new object of class '<em>Function Call Args</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Call Args</em>'.
+   * @generated
+   */
+  FunctionCallArgs createFunctionCallArgs();
+
+  /**
+   * Returns a new object of class '<em>Function Arguments</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Arguments</em>'.
+   * @generated
+   */
+  FunctionArguments createFunctionArguments();
+
+  /**
+   * Returns a new object of class '<em>Named Arguments</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Named Arguments</em>'.
+   * @generated
+   */
+  NamedArguments createNamedArguments();
+
+  /**
+   * Returns a new object of class '<em>Named Argument</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Named Argument</em>'.
+   * @generated
+   */
+  NamedArgument createNamedArgument();
+
+  /**
+   * Returns a new object of class '<em>Function Argument</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Argument</em>'.
+   * @generated
+   */
+  FunctionArgument createFunctionArgument();
+
+  /**
+   * Returns a new object of class '<em>Output Expression List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Output Expression List</em>'.
+   * @generated
+   */
+  OutputExpressionList createOutputExpressionList();
+
+  /**
+   * Returns a new object of class '<em>Expression List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression List</em>'.
+   * @generated
+   */
+  ExpressionList createExpressionList();
+
+  /**
+   * Returns a new object of class '<em>Array Subscripts</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Array Subscripts</em>'.
+   * @generated
+   */
+  ArraySubscripts createArraySubscripts();
+
+  /**
+   * Returns a new object of class '<em>Subscript</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Subscript</em>'.
+   * @generated
+   */
+  Subscript createSubscript();
+
+  /**
+   * Returns a new object of class '<em>Comment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comment</em>'.
+   * @generated
+   */
+  Comment createComment();
+
+  /**
+   * Returns a new object of class '<em>Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotation</em>'.
+   * @generated
+   */
+  Annotation createAnnotation();
+
+  /**
+   * Returns a new object of class '<em>Ouput Expression List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ouput Expression List</em>'.
+   * @generated
+   */
+  OuputExpressionList createOuputExpressionList();
 
   /**
    * Returns the package supported by this factory.

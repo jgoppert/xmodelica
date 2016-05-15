@@ -8,8 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import xmodelica.modelica.Model;
-import xmodelica.modelica.ModelicaPackage;
+import xmodelica.modelica.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,17 +73,543 @@ public class ModelicaSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case ModelicaPackage.MODEL:
+      case ModelicaPackage.STORED_DEFINITION:
       {
-        Model model = (Model)theEObject;
-        T result = caseModel(model);
+        StoredDefinition storedDefinition = (StoredDefinition)theEObject;
+        T result = caseStoredDefinition(storedDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ModelicaPackage.CLASS:
+      case ModelicaPackage.CLASS_DEFINITION:
       {
-        xmodelica.modelica.Class class_ = (xmodelica.modelica.Class)theEObject;
-        T result = caseClass(class_);
+        ClassDefinition classDefinition = (ClassDefinition)theEObject;
+        T result = caseClassDefinition(classDefinition);
+        if (result == null) result = caseElement(classDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.CLASS_SPECIFIER:
+      {
+        ClassSpecifier classSpecifier = (ClassSpecifier)theEObject;
+        T result = caseClassSpecifier(classSpecifier);
+        if (result == null) result = caseClassDefinition(classSpecifier);
+        if (result == null) result = caseElement(classSpecifier);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ENUM_LIST:
+      {
+        EnumList enumList = (EnumList)theEObject;
+        T result = caseEnumList(enumList);
+        if (result == null) result = caseClassSpecifier(enumList);
+        if (result == null) result = caseShortClassDefinition(enumList);
+        if (result == null) result = caseClassDefinition(enumList);
+        if (result == null) result = caseElementReplaceable(enumList);
+        if (result == null) result = caseElement(enumList);
+        if (result == null) result = caseElementRedeclaration(enumList);
+        if (result == null) result = caseElementModicationOrReplaceable(enumList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ENUMERATION_LITERAL:
+      {
+        EnumerationLiteral enumerationLiteral = (EnumerationLiteral)theEObject;
+        T result = caseEnumerationLiteral(enumerationLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.COMPOSITION:
+      {
+        Composition composition = (Composition)theEObject;
+        T result = caseComposition(composition);
+        if (result == null) result = caseClassSpecifier(composition);
+        if (result == null) result = caseClassDefinition(composition);
+        if (result == null) result = caseElement(composition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.EXTERNAL_FUNCTION_CALL:
+      {
+        ExternalFunctionCall externalFunctionCall = (ExternalFunctionCall)theEObject;
+        T result = caseExternalFunctionCall(externalFunctionCall);
+        if (result == null) result = caseComposition(externalFunctionCall);
+        if (result == null) result = caseClassSpecifier(externalFunctionCall);
+        if (result == null) result = caseClassDefinition(externalFunctionCall);
+        if (result == null) result = caseElement(externalFunctionCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ELEMENT_LIST:
+      {
+        ElementList elementList = (ElementList)theEObject;
+        T result = caseElementList(elementList);
+        if (result == null) result = caseComposition(elementList);
+        if (result == null) result = caseClassSpecifier(elementList);
+        if (result == null) result = caseClassDefinition(elementList);
+        if (result == null) result = caseElement(elementList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ELEMENT:
+      {
+        Element element = (Element)theEObject;
+        T result = caseElement(element);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.IMPORT_CLAUSE:
+      {
+        ImportClause importClause = (ImportClause)theEObject;
+        T result = caseImportClause(importClause);
+        if (result == null) result = caseElement(importClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.EXTENDS_CLAUSE:
+      {
+        ExtendsClause extendsClause = (ExtendsClause)theEObject;
+        T result = caseExtendsClause(extendsClause);
+        if (result == null) result = caseElement(extendsClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.CONSTRAINING_CLAUSE:
+      {
+        ConstrainingClause constrainingClause = (ConstrainingClause)theEObject;
+        T result = caseConstrainingClause(constrainingClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.COMPONENT_CLAUSE:
+      {
+        ComponentClause componentClause = (ComponentClause)theEObject;
+        T result = caseComponentClause(componentClause);
+        if (result == null) result = caseElement(componentClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.COMPONENT_LIST:
+      {
+        ComponentList componentList = (ComponentList)theEObject;
+        T result = caseComponentList(componentList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.COMPONENT_DECLARATION:
+      {
+        ComponentDeclaration componentDeclaration = (ComponentDeclaration)theEObject;
+        T result = caseComponentDeclaration(componentDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.CONDITION_ATTRIBUTE:
+      {
+        ConditionAttribute conditionAttribute = (ConditionAttribute)theEObject;
+        T result = caseConditionAttribute(conditionAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.DECLARATION:
+      {
+        Declaration declaration = (Declaration)theEObject;
+        T result = caseDeclaration(declaration);
+        if (result == null) result = caseComponentDeclaration1(declaration);
+        if (result == null) result = caseComponentClause1(declaration);
+        if (result == null) result = caseElementReplaceable(declaration);
+        if (result == null) result = caseElementRedeclaration(declaration);
+        if (result == null) result = caseElementModicationOrReplaceable(declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.MODIFICATION:
+      {
+        Modification modification = (Modification)theEObject;
+        T result = caseModification(modification);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.CLASS_MODIFICATION:
+      {
+        ClassModification classModification = (ClassModification)theEObject;
+        T result = caseClassModification(classModification);
+        if (result == null) result = caseAnnotation(classModification);
+        if (result == null) result = caseClassDefinition(classModification);
+        if (result == null) result = caseComment(classModification);
+        if (result == null) result = caseClassSpecifier(classModification);
+        if (result == null) result = caseEnumerationLiteral(classModification);
+        if (result == null) result = caseImportClause(classModification);
+        if (result == null) result = caseElement(classModification);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ARGUMENT_LIST:
+      {
+        ArgumentList argumentList = (ArgumentList)theEObject;
+        T result = caseArgumentList(argumentList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ARGUMENT:
+      {
+        Argument argument = (Argument)theEObject;
+        T result = caseArgument(argument);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ELEMENT_MODICATION_OR_REPLACEABLE:
+      {
+        ElementModicationOrReplaceable elementModicationOrReplaceable = (ElementModicationOrReplaceable)theEObject;
+        T result = caseElementModicationOrReplaceable(elementModicationOrReplaceable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ELEMENT_MODIFICATION:
+      {
+        ElementModification elementModification = (ElementModification)theEObject;
+        T result = caseElementModification(elementModification);
+        if (result == null) result = caseElementModicationOrReplaceable(elementModification);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ELEMENT_REDECLARATION:
+      {
+        ElementRedeclaration elementRedeclaration = (ElementRedeclaration)theEObject;
+        T result = caseElementRedeclaration(elementRedeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ELEMENT_REPLACEABLE:
+      {
+        ElementReplaceable elementReplaceable = (ElementReplaceable)theEObject;
+        T result = caseElementReplaceable(elementReplaceable);
+        if (result == null) result = caseElementModicationOrReplaceable(elementReplaceable);
+        if (result == null) result = caseElementRedeclaration(elementReplaceable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.COMPONENT_CLAUSE1:
+      {
+        ComponentClause1 componentClause1 = (ComponentClause1)theEObject;
+        T result = caseComponentClause1(componentClause1);
+        if (result == null) result = caseElementReplaceable(componentClause1);
+        if (result == null) result = caseElementRedeclaration(componentClause1);
+        if (result == null) result = caseElementModicationOrReplaceable(componentClause1);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.COMPONENT_DECLARATION1:
+      {
+        ComponentDeclaration1 componentDeclaration1 = (ComponentDeclaration1)theEObject;
+        T result = caseComponentDeclaration1(componentDeclaration1);
+        if (result == null) result = caseComponentClause1(componentDeclaration1);
+        if (result == null) result = caseElementReplaceable(componentDeclaration1);
+        if (result == null) result = caseElementRedeclaration(componentDeclaration1);
+        if (result == null) result = caseElementModicationOrReplaceable(componentDeclaration1);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.SHORT_CLASS_DEFINITION:
+      {
+        ShortClassDefinition shortClassDefinition = (ShortClassDefinition)theEObject;
+        T result = caseShortClassDefinition(shortClassDefinition);
+        if (result == null) result = caseElementReplaceable(shortClassDefinition);
+        if (result == null) result = caseElementRedeclaration(shortClassDefinition);
+        if (result == null) result = caseElementModicationOrReplaceable(shortClassDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.EQUATION_SECTION:
+      {
+        EquationSection equationSection = (EquationSection)theEObject;
+        T result = caseEquationSection(equationSection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ALGORITHM_SECTION:
+      {
+        AlgorithmSection algorithmSection = (AlgorithmSection)theEObject;
+        T result = caseAlgorithmSection(algorithmSection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.EQUATION:
+      {
+        Equation equation = (Equation)theEObject;
+        T result = caseEquation(equation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.STATEMENT:
+      {
+        Statement statement = (Statement)theEObject;
+        T result = caseStatement(statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.IF_EQUATION:
+      {
+        IfEquation ifEquation = (IfEquation)theEObject;
+        T result = caseIfEquation(ifEquation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.IF_STATEMENT:
+      {
+        IfStatement ifStatement = (IfStatement)theEObject;
+        T result = caseIfStatement(ifStatement);
+        if (result == null) result = caseStatement(ifStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.FOR_EQUATION:
+      {
+        ForEquation forEquation = (ForEquation)theEObject;
+        T result = caseForEquation(forEquation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.FOR_STATEMENT:
+      {
+        ForStatement forStatement = (ForStatement)theEObject;
+        T result = caseForStatement(forStatement);
+        if (result == null) result = caseStatement(forStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.FOR_INDICES:
+      {
+        ForIndices forIndices = (ForIndices)theEObject;
+        T result = caseForIndices(forIndices);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.FOR_INDEX:
+      {
+        ForIndex forIndex = (ForIndex)theEObject;
+        T result = caseForIndex(forIndex);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.WHILE_STATEMENT:
+      {
+        WhileStatement whileStatement = (WhileStatement)theEObject;
+        T result = caseWhileStatement(whileStatement);
+        if (result == null) result = caseStatement(whileStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.WHEN_EQUATION:
+      {
+        WhenEquation whenEquation = (WhenEquation)theEObject;
+        T result = caseWhenEquation(whenEquation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.WHEN_STATEMENT:
+      {
+        WhenStatement whenStatement = (WhenStatement)theEObject;
+        T result = caseWhenStatement(whenStatement);
+        if (result == null) result = caseStatement(whenStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.CONNECT_CLAUSE:
+      {
+        ConnectClause connectClause = (ConnectClause)theEObject;
+        T result = caseConnectClause(connectClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.EXPRESSION:
+      {
+        Expression expression = (Expression)theEObject;
+        T result = caseExpression(expression);
+        if (result == null) result = caseConditionAttribute(expression);
+        if (result == null) result = caseForIndex(expression);
+        if (result == null) result = caseFunctionArgument(expression);
+        if (result == null) result = caseSubscript(expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.SIMPLE_EXPRESSION:
+      {
+        SimpleExpression simpleExpression = (SimpleExpression)theEObject;
+        T result = caseSimpleExpression(simpleExpression);
+        if (result == null) result = caseExpression(simpleExpression);
+        if (result == null) result = caseConditionAttribute(simpleExpression);
+        if (result == null) result = caseForIndex(simpleExpression);
+        if (result == null) result = caseFunctionArgument(simpleExpression);
+        if (result == null) result = caseSubscript(simpleExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.LOGICAL_EXPRESSION:
+      {
+        LogicalExpression logicalExpression = (LogicalExpression)theEObject;
+        T result = caseLogicalExpression(logicalExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.LOGICAL_TERM:
+      {
+        LogicalTerm logicalTerm = (LogicalTerm)theEObject;
+        T result = caseLogicalTerm(logicalTerm);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.LOGICAL_FACTOR:
+      {
+        LogicalFactor logicalFactor = (LogicalFactor)theEObject;
+        T result = caseLogicalFactor(logicalFactor);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.RELATION:
+      {
+        Relation relation = (Relation)theEObject;
+        T result = caseRelation(relation);
+        if (result == null) result = caseLogicalFactor(relation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ARITHMETIC_EXPRESSION:
+      {
+        ArithmeticExpression arithmeticExpression = (ArithmeticExpression)theEObject;
+        T result = caseArithmeticExpression(arithmeticExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.TERM:
+      {
+        Term term = (Term)theEObject;
+        T result = caseTerm(term);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.FACTOR:
+      {
+        Factor factor = (Factor)theEObject;
+        T result = caseFactor(factor);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.PRIMARY:
+      {
+        Primary primary = (Primary)theEObject;
+        T result = casePrimary(primary);
+        if (result == null) result = caseArgument(primary);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.COMPONENT_REFERENCE:
+      {
+        ComponentReference componentReference = (ComponentReference)theEObject;
+        T result = caseComponentReference(componentReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.FUNCTION_CALL_ARGS:
+      {
+        FunctionCallArgs functionCallArgs = (FunctionCallArgs)theEObject;
+        T result = caseFunctionCallArgs(functionCallArgs);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.FUNCTION_ARGUMENTS:
+      {
+        FunctionArguments functionArguments = (FunctionArguments)theEObject;
+        T result = caseFunctionArguments(functionArguments);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.NAMED_ARGUMENTS:
+      {
+        NamedArguments namedArguments = (NamedArguments)theEObject;
+        T result = caseNamedArguments(namedArguments);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.NAMED_ARGUMENT:
+      {
+        NamedArgument namedArgument = (NamedArgument)theEObject;
+        T result = caseNamedArgument(namedArgument);
+        if (result == null) result = caseFunctionArguments(namedArgument);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.FUNCTION_ARGUMENT:
+      {
+        FunctionArgument functionArgument = (FunctionArgument)theEObject;
+        T result = caseFunctionArgument(functionArgument);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.OUTPUT_EXPRESSION_LIST:
+      {
+        OutputExpressionList outputExpressionList = (OutputExpressionList)theEObject;
+        T result = caseOutputExpressionList(outputExpressionList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.EXPRESSION_LIST:
+      {
+        ExpressionList expressionList = (ExpressionList)theEObject;
+        T result = caseExpressionList(expressionList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ARRAY_SUBSCRIPTS:
+      {
+        ArraySubscripts arraySubscripts = (ArraySubscripts)theEObject;
+        T result = caseArraySubscripts(arraySubscripts);
+        if (result == null) result = caseClassSpecifier(arraySubscripts);
+        if (result == null) result = caseComponentClause(arraySubscripts);
+        if (result == null) result = caseShortClassDefinition(arraySubscripts);
+        if (result == null) result = caseClassDefinition(arraySubscripts);
+        if (result == null) result = caseElementReplaceable(arraySubscripts);
+        if (result == null) result = caseElement(arraySubscripts);
+        if (result == null) result = caseElementRedeclaration(arraySubscripts);
+        if (result == null) result = caseElementModicationOrReplaceable(arraySubscripts);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.SUBSCRIPT:
+      {
+        Subscript subscript = (Subscript)theEObject;
+        T result = caseSubscript(subscript);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.COMMENT:
+      {
+        Comment comment = (Comment)theEObject;
+        T result = caseComment(comment);
+        if (result == null) result = caseClassSpecifier(comment);
+        if (result == null) result = caseEnumerationLiteral(comment);
+        if (result == null) result = caseImportClause(comment);
+        if (result == null) result = caseClassDefinition(comment);
+        if (result == null) result = caseElement(comment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.ANNOTATION:
+      {
+        Annotation annotation = (Annotation)theEObject;
+        T result = caseAnnotation(annotation);
+        if (result == null) result = caseComment(annotation);
+        if (result == null) result = caseClassSpecifier(annotation);
+        if (result == null) result = caseEnumerationLiteral(annotation);
+        if (result == null) result = caseImportClause(annotation);
+        if (result == null) result = caseClassDefinition(annotation);
+        if (result == null) result = caseElement(annotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.OUPUT_EXPRESSION_LIST:
+      {
+        OuputExpressionList ouputExpressionList = (OuputExpressionList)theEObject;
+        T result = caseOuputExpressionList(ouputExpressionList);
+        if (result == null) result = caseOutputExpressionList(ouputExpressionList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -93,33 +618,1041 @@ public class ModelicaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Stored Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Stored Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModel(Model object)
+  public T caseStoredDefinition(StoredDefinition object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Class</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Class Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Class</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Class Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseClass(xmodelica.modelica.Class object)
+  public T caseClassDefinition(ClassDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Class Specifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Class Specifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClassSpecifier(ClassSpecifier object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enum List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enum List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumList(EnumList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enumeration Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enumeration Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumerationLiteral(EnumerationLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Composition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Composition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComposition(Composition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>External Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>External Function Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExternalFunctionCall(ExternalFunctionCall object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementList(ElementList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElement(Element object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Import Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Import Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImportClause(ImportClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Extends Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Extends Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExtendsClause(ExtendsClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Constraining Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Constraining Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConstrainingClause(ConstrainingClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Component Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Component Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentClause(ComponentClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Component List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Component List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentList(ComponentList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Component Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Component Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentDeclaration(ComponentDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Condition Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Condition Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConditionAttribute(ConditionAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclaration(Declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Modification</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Modification</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModification(Modification object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Class Modification</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Class Modification</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClassModification(ClassModification object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Argument List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Argument List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArgumentList(ArgumentList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Argument</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Argument</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArgument(Argument object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Modication Or Replaceable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Modication Or Replaceable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementModicationOrReplaceable(ElementModicationOrReplaceable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Modification</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Modification</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementModification(ElementModification object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Redeclaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Redeclaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementRedeclaration(ElementRedeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Replaceable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Replaceable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementReplaceable(ElementReplaceable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Component Clause1</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Component Clause1</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentClause1(ComponentClause1 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Component Declaration1</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Component Declaration1</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentDeclaration1(ComponentDeclaration1 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Short Class Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Short Class Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseShortClassDefinition(ShortClassDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Equation Section</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Equation Section</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEquationSection(EquationSection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Algorithm Section</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Algorithm Section</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlgorithmSection(AlgorithmSection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Equation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Equation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEquation(Equation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStatement(Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Equation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Equation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfEquation(IfEquation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfStatement(IfStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>For Equation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>For Equation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForEquation(ForEquation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>For Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>For Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForStatement(ForStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>For Indices</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>For Indices</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForIndices(ForIndices object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>For Index</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>For Index</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForIndex(ForIndex object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhileStatement(WhileStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>When Equation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>When Equation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhenEquation(WhenEquation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>When Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>When Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhenStatement(WhenStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Connect Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Connect Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConnectClause(ConnectClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpression(Expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleExpression(SimpleExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Logical Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Logical Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLogicalExpression(LogicalExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Logical Term</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Logical Term</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLogicalTerm(LogicalTerm object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Logical Factor</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Logical Factor</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLogicalFactor(LogicalFactor object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Relation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Relation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelation(Relation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Arithmetic Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Arithmetic Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArithmeticExpression(ArithmeticExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Term</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Term</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTerm(Term object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Factor</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Factor</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFactor(Factor object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Primary</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Primary</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrimary(Primary object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Component Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Component Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentReference(ComponentReference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Call Args</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Call Args</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionCallArgs(FunctionCallArgs object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Arguments</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Arguments</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionArguments(FunctionArguments object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Named Arguments</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Named Arguments</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNamedArguments(NamedArguments object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Named Argument</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Named Argument</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNamedArgument(NamedArgument object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Argument</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Argument</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionArgument(FunctionArgument object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Output Expression List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Output Expression List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOutputExpressionList(OutputExpressionList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionList(ExpressionList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Array Subscripts</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Array Subscripts</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArraySubscripts(ArraySubscripts object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Subscript</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Subscript</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubscript(Subscript object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComment(Comment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Annotation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnotation(Annotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ouput Expression List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ouput Expression List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOuputExpressionList(OuputExpressionList object)
   {
     return null;
   }
