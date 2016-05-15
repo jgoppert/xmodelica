@@ -68,13 +68,13 @@ public interface ModelicaPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Classes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int MODEL__CLASSES = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -134,15 +134,15 @@ public interface ModelicaPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.Model#getClasses <em>Classes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see xmodelica.modelica.Model#getGreetings()
+   * @return the meta object for the containment reference list '<em>Classes</em>'.
+   * @see xmodelica.modelica.Model#getClasses()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Greetings();
+  EReference getModel_Classes();
 
   /**
    * Returns the meta object for class '{@link xmodelica.modelica.Class <em>Class</em>}'.
@@ -210,12 +210,12 @@ public interface ModelicaPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Classes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EReference MODEL__CLASSES = eINSTANCE.getModel_Classes();
 
     /**
      * The meta object literal for the '{@link xmodelica.modelica.impl.ClassImpl <em>Class</em>}' class.

@@ -28,7 +28,7 @@ import xmodelica.modelica.ModelicaPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ModelImpl#getClasses <em>Classes</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,14 +36,14 @@ import xmodelica.modelica.ModelicaPackage;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+   * The cached value of the '{@link #getClasses() <em>Classes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreetings()
+   * @see #getClasses()
    * @generated
    * @ordered
    */
-  protected EList<xmodelica.modelica.Class> greetings;
+  protected EList<xmodelica.modelica.Class> classes;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +71,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<xmodelica.modelica.Class> getGreetings()
+  public EList<xmodelica.modelica.Class> getClasses()
   {
-    if (greetings == null)
+    if (classes == null)
     {
-      greetings = new EObjectContainmentEList<xmodelica.modelica.Class>(xmodelica.modelica.Class.class, this, ModelicaPackage.MODEL__GREETINGS);
+      classes = new EObjectContainmentEList<xmodelica.modelica.Class>(xmodelica.modelica.Class.class, this, ModelicaPackage.MODEL__CLASSES);
     }
-    return greetings;
+    return classes;
   }
 
   /**
@@ -90,8 +90,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ModelicaPackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
+      case ModelicaPackage.MODEL__CLASSES:
+        return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ModelicaPackage.MODEL__GREETINGS:
-        return getGreetings();
+      case ModelicaPackage.MODEL__CLASSES:
+        return getClasses();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ModelicaPackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends xmodelica.modelica.Class>)newValue);
+      case ModelicaPackage.MODEL__CLASSES:
+        getClasses().clear();
+        getClasses().addAll((Collection<? extends xmodelica.modelica.Class>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ModelicaPackage.MODEL__GREETINGS:
-        getGreetings().clear();
+      case ModelicaPackage.MODEL__CLASSES:
+        getClasses().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +158,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ModelicaPackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
+      case ModelicaPackage.MODEL__CLASSES:
+        return classes != null && !classes.isEmpty();
     }
     return super.eIsSet(featureID);
   }

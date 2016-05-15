@@ -78,17 +78,17 @@ ruleModel returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getModelAccess().getGreetingsClassParserRuleCall_0());
+				newCompositeNode(grammarAccess.getModelAccess().getClassesClassParserRuleCall_0());
 			}
-			lv_greetings_0_0=ruleClass
+			lv_classes_0_0=ruleClass
 			{
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getModelRule());
 				}
 				add(
 					$current,
-					"greetings",
-					lv_greetings_0_0,
+					"classes",
+					lv_classes_0_0,
 					"xmodelica.Modelica.Class");
 				afterParserOrEnumRuleCall();
 			}

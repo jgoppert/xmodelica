@@ -36,7 +36,7 @@ public class ModelicaParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getClassAccess().getGroup(), "rule__Class__Group__0");
-					put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
+					put(grammarAccess.getModelAccess().getClassesAssignment(), "rule__Model__ClassesAssignment");
 					put(grammarAccess.getClassAccess().getNameAssignment_1(), "rule__Class__NameAssignment_1");
 					put(grammarAccess.getClassAccess().getName_endAssignment_4(), "rule__Class__Name_endAssignment_4");
 				}

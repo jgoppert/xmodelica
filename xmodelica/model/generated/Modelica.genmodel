@@ -7,7 +7,7 @@
   <genPackages prefix="Modelica" basePackage="xmodelica" disposableProviderFactory="true"
       fileExtensions="mo" ecorePackage="Modelica.ecore#/">
     <genClasses ecoreClass="Modelica.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Model/greetings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Model/classes"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//Class">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Class/name"/>

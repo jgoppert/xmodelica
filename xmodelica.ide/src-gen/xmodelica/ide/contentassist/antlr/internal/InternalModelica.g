@@ -65,9 +65,9 @@ ruleModel
 	}
 	:
 	(
-		{ before(grammarAccess.getModelAccess().getGreetingsAssignment()); }
-		(rule__Model__GreetingsAssignment)*
-		{ after(grammarAccess.getModelAccess().getGreetingsAssignment()); }
+		{ before(grammarAccess.getModelAccess().getClassesAssignment()); }
+		(rule__Model__ClassesAssignment)*
+		{ after(grammarAccess.getModelAccess().getClassesAssignment()); }
 	)
 ;
 finally {
@@ -261,15 +261,15 @@ finally {
 }
 
 
-rule__Model__GreetingsAssignment
+rule__Model__ClassesAssignment
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getModelAccess().getGreetingsClassParserRuleCall_0()); }
+		{ before(grammarAccess.getModelAccess().getClassesClassParserRuleCall_0()); }
 		ruleClass
-		{ after(grammarAccess.getModelAccess().getGreetingsClassParserRuleCall_0()); }
+		{ after(grammarAccess.getModelAccess().getClassesClassParserRuleCall_0()); }
 	)
 ;
 finally {

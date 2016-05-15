@@ -112,21 +112,21 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModel"
-    // InternalModelica.g:71:1: ruleModel returns [EObject current=null] : ( (lv_greetings_0_0= ruleClass ) )* ;
+    // InternalModelica.g:71:1: ruleModel returns [EObject current=null] : ( (lv_classes_0_0= ruleClass ) )* ;
     public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_greetings_0_0 = null;
+        EObject lv_classes_0_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalModelica.g:77:2: ( ( (lv_greetings_0_0= ruleClass ) )* )
-            // InternalModelica.g:78:2: ( (lv_greetings_0_0= ruleClass ) )*
+            // InternalModelica.g:77:2: ( ( (lv_classes_0_0= ruleClass ) )* )
+            // InternalModelica.g:78:2: ( (lv_classes_0_0= ruleClass ) )*
             {
-            // InternalModelica.g:78:2: ( (lv_greetings_0_0= ruleClass ) )*
+            // InternalModelica.g:78:2: ( (lv_classes_0_0= ruleClass ) )*
             loop1:
             do {
                 int alt1=2;
@@ -139,16 +139,16 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalModelica.g:79:3: (lv_greetings_0_0= ruleClass )
+            	    // InternalModelica.g:79:3: (lv_classes_0_0= ruleClass )
             	    {
-            	    // InternalModelica.g:79:3: (lv_greetings_0_0= ruleClass )
-            	    // InternalModelica.g:80:4: lv_greetings_0_0= ruleClass
+            	    // InternalModelica.g:79:3: (lv_classes_0_0= ruleClass )
+            	    // InternalModelica.g:80:4: lv_classes_0_0= ruleClass
             	    {
 
-            	    				newCompositeNode(grammarAccess.getModelAccess().getGreetingsClassParserRuleCall_0());
+            	    				newCompositeNode(grammarAccess.getModelAccess().getClassesClassParserRuleCall_0());
             	    			
             	    pushFollow(FOLLOW_3);
-            	    lv_greetings_0_0=ruleClass();
+            	    lv_classes_0_0=ruleClass();
 
             	    state._fsp--;
 
@@ -158,8 +158,8 @@ public class InternalModelicaParser extends AbstractInternalAntlrParser {
             	    				}
             	    				add(
             	    					current,
-            	    					"greetings",
-            	    					lv_greetings_0_0,
+            	    					"classes",
+            	    					lv_classes_0_0,
             	    					"xmodelica.Modelica.Class");
             	    				afterParserOrEnumRuleCall();
             	    			

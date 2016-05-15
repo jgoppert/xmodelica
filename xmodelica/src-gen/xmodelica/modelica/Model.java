@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.Model#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link xmodelica.modelica.Model#getClasses <em>Classes</em>}</li>
  * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getModel()
@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Greetings</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Classes</b></em>' containment reference list.
    * The list contents are of type {@link xmodelica.modelica.Class}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Greetings</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Classes</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Greetings</em>' containment reference list.
-   * @see xmodelica.modelica.ModelicaPackage#getModel_Greetings()
+   * @return the value of the '<em>Classes</em>' containment reference list.
+   * @see xmodelica.modelica.ModelicaPackage#getModel_Classes()
    * @model containment="true"
    * @generated
    */
-  EList<xmodelica.modelica.Class> getGreetings();
+  EList<xmodelica.modelica.Class> getClasses();
 
 } // Model

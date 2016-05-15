@@ -23,18 +23,18 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.Model");
-		private final Assignment cGreetingsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cGreetingsClassParserRuleCall_0 = (RuleCall)cGreetingsAssignment.eContents().get(0);
+		private final Assignment cClassesAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cClassesClassParserRuleCall_0 = (RuleCall)cClassesAssignment.eContents().get(0);
 		
 		//Model:
-		//	greetings+=Class*;
+		//	classes+=Class*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//greetings+=Class*
-		public Assignment getGreetingsAssignment() { return cGreetingsAssignment; }
+		//classes+=Class*
+		public Assignment getClassesAssignment() { return cClassesAssignment; }
 		
 		//Class
-		public RuleCall getGreetingsClassParserRuleCall_0() { return cGreetingsClassParserRuleCall_0; }
+		public RuleCall getClassesClassParserRuleCall_0() { return cClassesClassParserRuleCall_0; }
 	}
 	public class ClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.Class");
@@ -127,7 +127,7 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	greetings+=Class*;
+	//	classes+=Class*;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}

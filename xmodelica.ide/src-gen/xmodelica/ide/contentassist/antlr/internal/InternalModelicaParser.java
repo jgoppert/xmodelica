@@ -103,20 +103,20 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleModel"
-    // InternalModelica.g:62:1: ruleModel : ( ( rule__Model__GreetingsAssignment )* ) ;
+    // InternalModelica.g:62:1: ruleModel : ( ( rule__Model__ClassesAssignment )* ) ;
     public final void ruleModel() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalModelica.g:66:2: ( ( ( rule__Model__GreetingsAssignment )* ) )
-            // InternalModelica.g:67:2: ( ( rule__Model__GreetingsAssignment )* )
+            // InternalModelica.g:66:2: ( ( ( rule__Model__ClassesAssignment )* ) )
+            // InternalModelica.g:67:2: ( ( rule__Model__ClassesAssignment )* )
             {
-            // InternalModelica.g:67:2: ( ( rule__Model__GreetingsAssignment )* )
-            // InternalModelica.g:68:3: ( rule__Model__GreetingsAssignment )*
+            // InternalModelica.g:67:2: ( ( rule__Model__ClassesAssignment )* )
+            // InternalModelica.g:68:3: ( rule__Model__ClassesAssignment )*
             {
-             before(grammarAccess.getModelAccess().getGreetingsAssignment()); 
-            // InternalModelica.g:69:3: ( rule__Model__GreetingsAssignment )*
+             before(grammarAccess.getModelAccess().getClassesAssignment()); 
+            // InternalModelica.g:69:3: ( rule__Model__ClassesAssignment )*
             loop1:
             do {
                 int alt1=2;
@@ -129,10 +129,10 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalModelica.g:69:4: rule__Model__GreetingsAssignment
+            	    // InternalModelica.g:69:4: rule__Model__ClassesAssignment
             	    {
             	    pushFollow(FOLLOW_3);
-            	    rule__Model__GreetingsAssignment();
+            	    rule__Model__ClassesAssignment();
 
             	    state._fsp--;
 
@@ -145,7 +145,7 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
                 }
             } while (true);
 
-             after(grammarAccess.getModelAccess().getGreetingsAssignment()); 
+             after(grammarAccess.getModelAccess().getClassesAssignment()); 
 
             }
 
@@ -726,9 +726,9 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Class__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Model__GreetingsAssignment"
-    // InternalModelica.g:264:1: rule__Model__GreetingsAssignment : ( ruleClass ) ;
-    public final void rule__Model__GreetingsAssignment() throws RecognitionException {
+    // $ANTLR start "rule__Model__ClassesAssignment"
+    // InternalModelica.g:264:1: rule__Model__ClassesAssignment : ( ruleClass ) ;
+    public final void rule__Model__ClassesAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -739,13 +739,13 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
             // InternalModelica.g:269:2: ( ruleClass )
             // InternalModelica.g:270:3: ruleClass
             {
-             before(grammarAccess.getModelAccess().getGreetingsClassParserRuleCall_0()); 
+             before(grammarAccess.getModelAccess().getClassesClassParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
             ruleClass();
 
             state._fsp--;
 
-             after(grammarAccess.getModelAccess().getGreetingsClassParserRuleCall_0()); 
+             after(grammarAccess.getModelAccess().getClassesClassParserRuleCall_0()); 
 
             }
 
@@ -764,7 +764,7 @@ public class InternalModelicaParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Model__GreetingsAssignment"
+    // $ANTLR end "rule__Model__ClassesAssignment"
 
 
     // $ANTLR start "rule__Class__NameAssignment_1"
