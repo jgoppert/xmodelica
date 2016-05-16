@@ -115,6 +115,7 @@ public class ModelicaFactoryImpl extends EFactoryImpl implements ModelicaFactory
       case ModelicaPackage.LOGICAL_FACTOR: return createLogicalFactor();
       case ModelicaPackage.RELATION: return createRelation();
       case ModelicaPackage.ARITHMETIC_EXPRESSION: return createArithmeticExpression();
+      case ModelicaPackage.NEGATION: return createNegation();
       case ModelicaPackage.TERM: return createTerm();
       case ModelicaPackage.FACTOR: return createFactor();
       case ModelicaPackage.FLOAT_PRIMARY: return createFloatPrimary();
@@ -689,6 +690,17 @@ public class ModelicaFactoryImpl extends EFactoryImpl implements ModelicaFactory
   {
     ArithmeticExpressionImpl arithmeticExpression = new ArithmeticExpressionImpl();
     return arithmeticExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Negation createNegation()
+  {
+    NegationImpl negation = new NegationImpl();
+    return negation;
   }
 
   /**

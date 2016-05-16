@@ -5,6 +5,7 @@ package xmodelica.modelica.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,11 +13,14 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import xmodelica.modelica.LogicalFactor;
 import xmodelica.modelica.ModelicaPackage;
+import xmodelica.modelica.Relation;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +31,8 @@ import xmodelica.modelica.ModelicaPackage;
  * </p>
  * <ul>
  *   <li>{@link xmodelica.modelica.impl.LogicalFactorImpl#getFactors <em>Factors</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.LogicalFactorImpl#isNot <em>Not</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.LogicalFactorImpl#getRel <em>Rel</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,6 +48,36 @@ public class LogicalFactorImpl extends LogicalTermImpl implements LogicalFactor
    * @ordered
    */
   protected EList<LogicalFactor> factors;
+
+  /**
+   * The default value of the '{@link #isNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNot()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean NOT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNot()
+   * @generated
+   * @ordered
+   */
+  protected boolean not = NOT_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getRel() <em>Rel</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRel()
+   * @generated
+   * @ordered
+   */
+  protected Relation rel;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,6 +119,77 @@ public class LogicalFactorImpl extends LogicalTermImpl implements LogicalFactor
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isNot()
+  {
+    return not;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNot(boolean newNot)
+  {
+    boolean oldNot = not;
+    not = newNot;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.LOGICAL_FACTOR__NOT, oldNot, not));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Relation getRel()
+  {
+    return rel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRel(Relation newRel, NotificationChain msgs)
+  {
+    Relation oldRel = rel;
+    rel = newRel;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.LOGICAL_FACTOR__REL, oldRel, newRel);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRel(Relation newRel)
+  {
+    if (newRel != rel)
+    {
+      NotificationChain msgs = null;
+      if (rel != null)
+        msgs = ((InternalEObject)rel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.LOGICAL_FACTOR__REL, null, msgs);
+      if (newRel != null)
+        msgs = ((InternalEObject)newRel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.LOGICAL_FACTOR__REL, null, msgs);
+      msgs = basicSetRel(newRel, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.LOGICAL_FACTOR__REL, newRel, newRel));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -90,6 +197,8 @@ public class LogicalFactorImpl extends LogicalTermImpl implements LogicalFactor
     {
       case ModelicaPackage.LOGICAL_FACTOR__FACTORS:
         return ((InternalEList<?>)getFactors()).basicRemove(otherEnd, msgs);
+      case ModelicaPackage.LOGICAL_FACTOR__REL:
+        return basicSetRel(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,6 +215,10 @@ public class LogicalFactorImpl extends LogicalTermImpl implements LogicalFactor
     {
       case ModelicaPackage.LOGICAL_FACTOR__FACTORS:
         return getFactors();
+      case ModelicaPackage.LOGICAL_FACTOR__NOT:
+        return isNot();
+      case ModelicaPackage.LOGICAL_FACTOR__REL:
+        return getRel();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,6 +238,12 @@ public class LogicalFactorImpl extends LogicalTermImpl implements LogicalFactor
         getFactors().clear();
         getFactors().addAll((Collection<? extends LogicalFactor>)newValue);
         return;
+      case ModelicaPackage.LOGICAL_FACTOR__NOT:
+        setNot((Boolean)newValue);
+        return;
+      case ModelicaPackage.LOGICAL_FACTOR__REL:
+        setRel((Relation)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -142,6 +261,12 @@ public class LogicalFactorImpl extends LogicalTermImpl implements LogicalFactor
       case ModelicaPackage.LOGICAL_FACTOR__FACTORS:
         getFactors().clear();
         return;
+      case ModelicaPackage.LOGICAL_FACTOR__NOT:
+        setNot(NOT_EDEFAULT);
+        return;
+      case ModelicaPackage.LOGICAL_FACTOR__REL:
+        setRel((Relation)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -158,8 +283,29 @@ public class LogicalFactorImpl extends LogicalTermImpl implements LogicalFactor
     {
       case ModelicaPackage.LOGICAL_FACTOR__FACTORS:
         return factors != null && !factors.isEmpty();
+      case ModelicaPackage.LOGICAL_FACTOR__NOT:
+        return not != NOT_EDEFAULT;
+      case ModelicaPackage.LOGICAL_FACTOR__REL:
+        return rel != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (not: ");
+    result.append(not);
+    result.append(')');
+    return result.toString();
   }
 
 } //LogicalFactorImpl

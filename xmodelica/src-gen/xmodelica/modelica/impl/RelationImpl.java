@@ -24,7 +24,7 @@ import xmodelica.modelica.Relation;
  * </p>
  * <ul>
  *   <li>{@link xmodelica.modelica.impl.RelationImpl#getLeft <em>Left</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.RelationImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.RelationImpl#getRel_op <em>Rel op</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.RelationImpl#getRight <em>Right</em>}</li>
  * </ul>
  *
@@ -43,24 +43,24 @@ public class RelationImpl extends LogicalFactorImpl implements Relation
   protected ArithmeticExpression left;
 
   /**
-   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * The default value of the '{@link #getRel_op() <em>Rel op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOp()
+   * @see #getRel_op()
    * @generated
    * @ordered
    */
-  protected static final String OP_EDEFAULT = null;
+  protected static final String REL_OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * The cached value of the '{@link #getRel_op() <em>Rel op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOp()
+   * @see #getRel_op()
    * @generated
    * @ordered
    */
-  protected String op = OP_EDEFAULT;
+  protected String rel_op = REL_OP_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -146,9 +146,9 @@ public class RelationImpl extends LogicalFactorImpl implements Relation
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOp()
+  public String getRel_op()
   {
-    return op;
+    return rel_op;
   }
 
   /**
@@ -156,12 +156,12 @@ public class RelationImpl extends LogicalFactorImpl implements Relation
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOp(String newOp)
+  public void setRel_op(String newRel_op)
   {
-    String oldOp = op;
-    op = newOp;
+    String oldRel_op = rel_op;
+    rel_op = newRel_op;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.RELATION__OP, oldOp, op));
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.RELATION__REL_OP, oldRel_op, rel_op));
   }
 
   /**
@@ -242,8 +242,8 @@ public class RelationImpl extends LogicalFactorImpl implements Relation
     {
       case ModelicaPackage.RELATION__LEFT:
         return getLeft();
-      case ModelicaPackage.RELATION__OP:
-        return getOp();
+      case ModelicaPackage.RELATION__REL_OP:
+        return getRel_op();
       case ModelicaPackage.RELATION__RIGHT:
         return getRight();
     }
@@ -263,8 +263,8 @@ public class RelationImpl extends LogicalFactorImpl implements Relation
       case ModelicaPackage.RELATION__LEFT:
         setLeft((ArithmeticExpression)newValue);
         return;
-      case ModelicaPackage.RELATION__OP:
-        setOp((String)newValue);
+      case ModelicaPackage.RELATION__REL_OP:
+        setRel_op((String)newValue);
         return;
       case ModelicaPackage.RELATION__RIGHT:
         setRight((ArithmeticExpression)newValue);
@@ -286,8 +286,8 @@ public class RelationImpl extends LogicalFactorImpl implements Relation
       case ModelicaPackage.RELATION__LEFT:
         setLeft((ArithmeticExpression)null);
         return;
-      case ModelicaPackage.RELATION__OP:
-        setOp(OP_EDEFAULT);
+      case ModelicaPackage.RELATION__REL_OP:
+        setRel_op(REL_OP_EDEFAULT);
         return;
       case ModelicaPackage.RELATION__RIGHT:
         setRight((ArithmeticExpression)null);
@@ -308,8 +308,8 @@ public class RelationImpl extends LogicalFactorImpl implements Relation
     {
       case ModelicaPackage.RELATION__LEFT:
         return left != null;
-      case ModelicaPackage.RELATION__OP:
-        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
+      case ModelicaPackage.RELATION__REL_OP:
+        return REL_OP_EDEFAULT == null ? rel_op != null : !REL_OP_EDEFAULT.equals(rel_op);
       case ModelicaPackage.RELATION__RIGHT:
         return right != null;
     }
@@ -327,8 +327,8 @@ public class RelationImpl extends LogicalFactorImpl implements Relation
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (op: ");
-    result.append(op);
+    result.append(" (rel_op: ");
+    result.append(rel_op);
     result.append(')');
     return result.toString();
   }

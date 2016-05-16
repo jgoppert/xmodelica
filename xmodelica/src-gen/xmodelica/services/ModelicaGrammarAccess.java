@@ -246,50 +246,104 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ClassSpecifierElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.ClassSpecifier");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDENTTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Assignment cCommentAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCommentStringCommentParserRuleCall_1_0 = (RuleCall)cCommentAssignment_1.eContents().get(0);
-		private final Assignment cCompositionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCompositionCompositionParserRuleCall_2_0 = (RuleCall)cCompositionAssignment_2.eContents().get(0);
-		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cName_endAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cName_endIDENTTerminalRuleCall_4_0 = (RuleCall)cName_endAssignment_4.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cNameIDENTTerminalRuleCall_0_0_0 = (RuleCall)cNameAssignment_0_0.eContents().get(0);
+		private final Assignment cStr_commentAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cStr_commentStringCommentParserRuleCall_0_1_0 = (RuleCall)cStr_commentAssignment_0_1.eContents().get(0);
+		private final Assignment cCompositionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cCompositionCompositionParserRuleCall_0_2_0 = (RuleCall)cCompositionAssignment_0_2.eContents().get(0);
+		private final Keyword cEndKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Assignment cName_endAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cName_endIDENTTerminalRuleCall_0_4_0 = (RuleCall)cName_endAssignment_0_4.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cNameAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cNameIDENTTerminalRuleCall_1_0_0 = (RuleCall)cNameAssignment_1_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cPrefixAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cPrefixBasePrefixParserRuleCall_1_2_0 = (RuleCall)cPrefixAssignment_1_2.eContents().get(0);
+		private final Assignment cName2Assignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cName2NameParserRuleCall_1_3_0 = (RuleCall)cName2Assignment_1_3.eContents().get(0);
+		private final Assignment cSubsAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final RuleCall cSubsArraySubscriptsParserRuleCall_1_4_0 = (RuleCall)cSubsAssignment_1_4.eContents().get(0);
+		private final Assignment cModAssignment_1_5 = (Assignment)cGroup_1.eContents().get(5);
+		private final RuleCall cModClassModificationParserRuleCall_1_5_0 = (RuleCall)cModAssignment_1_5.eContents().get(0);
 		
 		//ClassSpecifier ClassDefinition:
-		//	name=IDENT comment=StringComment composition=Composition 'end' name_end=IDENT
+		//	name=IDENT str_comment=StringComment composition=Composition 'end' name_end=IDENT
+		//	| name=IDENT '=' prefix=BasePrefix name2=Name subs=ArraySubscripts? mod=ClassModification?
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=IDENT comment=StringComment composition=Composition 'end' name_end=IDENT
-		public Group getGroup() { return cGroup; }
+		//name=IDENT str_comment=StringComment composition=Composition 'end' name_end=IDENT | name=IDENT '=' prefix=BasePrefix
+		//name2=Name subs=ArraySubscripts? mod=ClassModification?
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//name=IDENT str_comment=StringComment composition=Composition 'end' name_end=IDENT
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//name=IDENT
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_0_0() { return cNameAssignment_0_0; }
 		
 		//IDENT
-		public RuleCall getNameIDENTTerminalRuleCall_0_0() { return cNameIDENTTerminalRuleCall_0_0; }
+		public RuleCall getNameIDENTTerminalRuleCall_0_0_0() { return cNameIDENTTerminalRuleCall_0_0_0; }
 		
-		//comment=StringComment
-		public Assignment getCommentAssignment_1() { return cCommentAssignment_1; }
+		//str_comment=StringComment
+		public Assignment getStr_commentAssignment_0_1() { return cStr_commentAssignment_0_1; }
 		
 		//StringComment
-		public RuleCall getCommentStringCommentParserRuleCall_1_0() { return cCommentStringCommentParserRuleCall_1_0; }
+		public RuleCall getStr_commentStringCommentParserRuleCall_0_1_0() { return cStr_commentStringCommentParserRuleCall_0_1_0; }
 		
 		//composition=Composition
-		public Assignment getCompositionAssignment_2() { return cCompositionAssignment_2; }
+		public Assignment getCompositionAssignment_0_2() { return cCompositionAssignment_0_2; }
 		
 		//Composition
-		public RuleCall getCompositionCompositionParserRuleCall_2_0() { return cCompositionCompositionParserRuleCall_2_0; }
+		public RuleCall getCompositionCompositionParserRuleCall_0_2_0() { return cCompositionCompositionParserRuleCall_0_2_0; }
 		
 		//'end'
-		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+		public Keyword getEndKeyword_0_3() { return cEndKeyword_0_3; }
 		
 		//name_end=IDENT
-		public Assignment getName_endAssignment_4() { return cName_endAssignment_4; }
+		public Assignment getName_endAssignment_0_4() { return cName_endAssignment_0_4; }
 		
 		//IDENT
-		public RuleCall getName_endIDENTTerminalRuleCall_4_0() { return cName_endIDENTTerminalRuleCall_4_0; }
+		public RuleCall getName_endIDENTTerminalRuleCall_0_4_0() { return cName_endIDENTTerminalRuleCall_0_4_0; }
+		
+		//name=IDENT '=' prefix=BasePrefix name2=Name subs=ArraySubscripts? mod=ClassModification?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//name=IDENT
+		public Assignment getNameAssignment_1_0() { return cNameAssignment_1_0; }
+		
+		//IDENT
+		public RuleCall getNameIDENTTerminalRuleCall_1_0_0() { return cNameIDENTTerminalRuleCall_1_0_0; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
+		
+		//prefix=BasePrefix
+		public Assignment getPrefixAssignment_1_2() { return cPrefixAssignment_1_2; }
+		
+		//BasePrefix
+		public RuleCall getPrefixBasePrefixParserRuleCall_1_2_0() { return cPrefixBasePrefixParserRuleCall_1_2_0; }
+		
+		//name2=Name
+		public Assignment getName2Assignment_1_3() { return cName2Assignment_1_3; }
+		
+		//Name
+		public RuleCall getName2NameParserRuleCall_1_3_0() { return cName2NameParserRuleCall_1_3_0; }
+		
+		//subs=ArraySubscripts?
+		public Assignment getSubsAssignment_1_4() { return cSubsAssignment_1_4; }
+		
+		//ArraySubscripts
+		public RuleCall getSubsArraySubscriptsParserRuleCall_1_4_0() { return cSubsArraySubscriptsParserRuleCall_1_4_0; }
+		
+		//mod=ClassModification?
+		public Assignment getModAssignment_1_5() { return cModAssignment_1_5; }
+		
+		//ClassModification
+		public RuleCall getModClassModificationParserRuleCall_1_5_0() { return cModClassModificationParserRuleCall_1_5_0; }
 	}
 	public class BasePrefixElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.BasePrefix");
@@ -2341,14 +2395,17 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cElsewhen_eqsAssignment_4_3_0 = (Assignment)cGroup_4_3.eContents().get(0);
 		private final RuleCall cElsewhen_eqsEquationParserRuleCall_4_3_0_0 = (RuleCall)cElsewhen_eqsAssignment_4_3_0.eContents().get(0);
 		private final Keyword cSemicolonKeyword_4_3_1 = (Keyword)cGroup_4_3.eContents().get(1);
+		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cWhenKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//WhenEquation:
-		//	'when' when=Expression 'then' (when_eqs+=Equation ';')* ('elsewhen' elsehwhen=Expression 'then'
-		//	(elsewhen_eqs+=Equation ';'));
+		//	'when' when=Expression 'then' (when_eqs+=Equation ';')* ('elsewhen' elsehwhen+=Expression 'then'
+		//	(elsewhen_eqs+=Equation ';'))*
+		//	'end' 'when';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'when' when=Expression 'then' (when_eqs+=Equation ';')* ('elsewhen' elsehwhen=Expression 'then' (elsewhen_eqs+=Equation
-		//';'))
+		//'when' when=Expression 'then' (when_eqs+=Equation ';')* ('elsewhen' elsehwhen+=Expression 'then' (elsewhen_eqs+=Equation
+		//';'))* 'end' 'when'
 		public Group getGroup() { return cGroup; }
 		
 		//'when'
@@ -2375,13 +2432,13 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		//';'
 		public Keyword getSemicolonKeyword_3_1() { return cSemicolonKeyword_3_1; }
 		
-		//('elsewhen' elsehwhen=Expression 'then' (elsewhen_eqs+=Equation ';'))
+		//('elsewhen' elsehwhen+=Expression 'then' (elsewhen_eqs+=Equation ';'))*
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'elsewhen'
 		public Keyword getElsewhenKeyword_4_0() { return cElsewhenKeyword_4_0; }
 		
-		//elsehwhen=Expression
+		//elsehwhen+=Expression
 		public Assignment getElsehwhenAssignment_4_1() { return cElsehwhenAssignment_4_1; }
 		
 		//Expression
@@ -2401,6 +2458,12 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//';'
 		public Keyword getSemicolonKeyword_4_3_1() { return cSemicolonKeyword_4_3_1; }
+		
+		//'end'
+		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
+		
+		//'when'
+		public Keyword getWhenKeyword_6() { return cWhenKeyword_6; }
 	}
 	public class WhenStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.WhenStatement");
@@ -2422,14 +2485,17 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cElsewhen_stmtsAssignment_4_3_0 = (Assignment)cGroup_4_3.eContents().get(0);
 		private final RuleCall cElsewhen_stmtsStatementParserRuleCall_4_3_0_0 = (RuleCall)cElsewhen_stmtsAssignment_4_3_0.eContents().get(0);
 		private final Keyword cSemicolonKeyword_4_3_1 = (Keyword)cGroup_4_3.eContents().get(1);
+		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cWhenKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//WhenStatement:
-		//	'when' when=Expression 'then' (when_stmts+=Statement ';')* ('elsewhen' elsehwhen=Expression 'then'
-		//	(elsewhen_stmts+=Statement ';'));
+		//	'when' when=Expression 'then' (when_stmts+=Statement ';')* ('elsewhen' elsehwhen+=Expression 'then'
+		//	(elsewhen_stmts+=Statement ';'))*
+		//	'end' 'when';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'when' when=Expression 'then' (when_stmts+=Statement ';')* ('elsewhen' elsehwhen=Expression 'then'
-		//(elsewhen_stmts+=Statement ';'))
+		//'when' when=Expression 'then' (when_stmts+=Statement ';')* ('elsewhen' elsehwhen+=Expression 'then'
+		//(elsewhen_stmts+=Statement ';'))* 'end' 'when'
 		public Group getGroup() { return cGroup; }
 		
 		//'when'
@@ -2456,13 +2522,13 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		//';'
 		public Keyword getSemicolonKeyword_3_1() { return cSemicolonKeyword_3_1; }
 		
-		//('elsewhen' elsehwhen=Expression 'then' (elsewhen_stmts+=Statement ';'))
+		//('elsewhen' elsehwhen+=Expression 'then' (elsewhen_stmts+=Statement ';'))*
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'elsewhen'
 		public Keyword getElsewhenKeyword_4_0() { return cElsewhenKeyword_4_0; }
 		
-		//elsehwhen=Expression
+		//elsehwhen+=Expression
 		public Assignment getElsehwhenAssignment_4_1() { return cElsehwhenAssignment_4_1; }
 		
 		//Expression
@@ -2482,6 +2548,12 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//';'
 		public Keyword getSemicolonKeyword_4_3_1() { return cSemicolonKeyword_4_3_1; }
+		
+		//'end'
+		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
+		
+		//'when'
+		public Keyword getWhenKeyword_6() { return cWhenKeyword_6; }
 	}
 	public class ConnectClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.ConnectClause");
@@ -2741,15 +2813,39 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class LogicalFactorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.LogicalFactor");
-		private final RuleCall cRelationParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cRelationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cNotAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final Keyword cNotNotKeyword_1_0_0 = (Keyword)cNotAssignment_1_0.eContents().get(0);
+		private final Assignment cRelAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRelRelationParserRuleCall_1_1_0 = (RuleCall)cRelAssignment_1_1.eContents().get(0);
 		
 		//LogicalFactor:
-		//	Relation;
+		//	Relation
+		//	| not?='not' rel=Relation;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//// TODO (not?='not')?
+		//Relation | not?='not' rel=Relation
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
 		//Relation
-		public RuleCall getRelationParserRuleCall() { return cRelationParserRuleCall; }
+		public RuleCall getRelationParserRuleCall_0() { return cRelationParserRuleCall_0; }
+		
+		//not?='not' rel=Relation
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//not?='not'
+		public Assignment getNotAssignment_1_0() { return cNotAssignment_1_0; }
+		
+		//'not'
+		public Keyword getNotNotKeyword_1_0_0() { return cNotNotKeyword_1_0_0; }
+		
+		//rel=Relation
+		public Assignment getRelAssignment_1_1() { return cRelAssignment_1_1; }
+		
+		//Relation
+		public RuleCall getRelRelationParserRuleCall_1_1_0() { return cRelRelationParserRuleCall_1_1_0; }
 	}
 	public class RelationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.Relation");
@@ -2757,32 +2853,32 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cArithmeticExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cRelationLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOpRelOpParserRuleCall_1_1_0 = (RuleCall)cOpAssignment_1_1.eContents().get(0);
+		private final Assignment cRel_opAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRel_opRelOpParserRuleCall_1_1_0 = (RuleCall)cRel_opAssignment_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightArithmeticExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//Relation:
-		//	ArithmeticExpression ({Relation.left=current} op=RelOp right=ArithmeticExpression)?;
+		//	ArithmeticExpression ({Relation.left=current} rel_op=RelOp right=ArithmeticExpression)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ArithmeticExpression ({Relation.left=current} op=RelOp right=ArithmeticExpression)?
+		//ArithmeticExpression ({Relation.left=current} rel_op=RelOp right=ArithmeticExpression)?
 		public Group getGroup() { return cGroup; }
 		
 		//ArithmeticExpression
 		public RuleCall getArithmeticExpressionParserRuleCall_0() { return cArithmeticExpressionParserRuleCall_0; }
 		
-		//({Relation.left=current} op=RelOp right=ArithmeticExpression)?
+		//({Relation.left=current} rel_op=RelOp right=ArithmeticExpression)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{Relation.left=current}
 		public Action getRelationLeftAction_1_0() { return cRelationLeftAction_1_0; }
 		
-		//op=RelOp
-		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
+		//rel_op=RelOp
+		public Assignment getRel_opAssignment_1_1() { return cRel_opAssignment_1_1; }
 		
 		//RelOp
-		public RuleCall getOpRelOpParserRuleCall_1_1_0() { return cOpRelOpParserRuleCall_1_1_0; }
+		public RuleCall getRel_opRelOpParserRuleCall_1_1_0() { return cRel_opRelOpParserRuleCall_1_1_0; }
 		
 		//right=ArithmeticExpression
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
@@ -2828,43 +2924,77 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	public class ArithmeticExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.ArithmeticExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cTermParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cNegationParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cArithmeticExpressionTermsAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cOpsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOpsAddOpParserRuleCall_1_1_0 = (RuleCall)cOpsAssignment_1_1.eContents().get(0);
+		private final Assignment cAdd_opAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cAdd_opAddOpParserRuleCall_1_1_0 = (RuleCall)cAdd_opAssignment_1_1.eContents().get(0);
 		private final Assignment cTermsAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cTermsTermParserRuleCall_1_2_0 = (RuleCall)cTermsAssignment_1_2.eContents().get(0);
+		private final RuleCall cTermsNegationParserRuleCall_1_2_0 = (RuleCall)cTermsAssignment_1_2.eContents().get(0);
 		
 		//ArithmeticExpression:
-		//	Term ({ArithmeticExpression.terms+=current} ops+=AddOp terms+=Term)*;
+		//	Negation ({ArithmeticExpression.terms+=current} add_op+=AddOp terms+=Negation)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//// TODO ops+=AddOp?
-		//Term ({ArithmeticExpression.terms+=current} ops+=AddOp terms+=Term)*
+		//Negation ({ArithmeticExpression.terms+=current} add_op+=AddOp terms+=Negation)*
 		public Group getGroup() { return cGroup; }
 		
-		//// TODO ops+=AddOp?
-		//Term
-		public RuleCall getTermParserRuleCall_0() { return cTermParserRuleCall_0; }
+		//Negation
+		public RuleCall getNegationParserRuleCall_0() { return cNegationParserRuleCall_0; }
 		
-		//({ArithmeticExpression.terms+=current} ops+=AddOp terms+=Term)*
+		//({ArithmeticExpression.terms+=current} add_op+=AddOp terms+=Negation)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{ArithmeticExpression.terms+=current}
 		public Action getArithmeticExpressionTermsAction_1_0() { return cArithmeticExpressionTermsAction_1_0; }
 		
-		//ops+=AddOp
-		public Assignment getOpsAssignment_1_1() { return cOpsAssignment_1_1; }
+		//add_op+=AddOp
+		public Assignment getAdd_opAssignment_1_1() { return cAdd_opAssignment_1_1; }
 		
 		//AddOp
-		public RuleCall getOpsAddOpParserRuleCall_1_1_0() { return cOpsAddOpParserRuleCall_1_1_0; }
+		public RuleCall getAdd_opAddOpParserRuleCall_1_1_0() { return cAdd_opAddOpParserRuleCall_1_1_0; }
 		
-		//terms+=Term
+		//terms+=Negation
 		public Assignment getTermsAssignment_1_2() { return cTermsAssignment_1_2; }
 		
+		//Negation
+		public RuleCall getTermsNegationParserRuleCall_1_2_0() { return cTermsNegationParserRuleCall_1_2_0; }
+	}
+	public class NegationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.Negation");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cTermParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cNeg_opAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cNeg_opAddOpParserRuleCall_1_0_0 = (RuleCall)cNeg_opAssignment_1_0.eContents().get(0);
+		private final Assignment cTermAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cTermTermParserRuleCall_1_1_0 = (RuleCall)cTermAssignment_1_1.eContents().get(0);
+		
+		//Negation:
+		//	Term
+		//	| neg_op=AddOp term=Term;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Term | neg_op=AddOp term=Term
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
 		//Term
-		public RuleCall getTermsTermParserRuleCall_1_2_0() { return cTermsTermParserRuleCall_1_2_0; }
+		public RuleCall getTermParserRuleCall_0() { return cTermParserRuleCall_0; }
+		
+		//neg_op=AddOp term=Term
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//neg_op=AddOp
+		public Assignment getNeg_opAssignment_1_0() { return cNeg_opAssignment_1_0; }
+		
+		//AddOp
+		public RuleCall getNeg_opAddOpParserRuleCall_1_0_0() { return cNeg_opAddOpParserRuleCall_1_0_0; }
+		
+		//term=Term
+		public Assignment getTermAssignment_1_1() { return cTermAssignment_1_1; }
+		
+		//Term
+		public RuleCall getTermTermParserRuleCall_1_1_0() { return cTermTermParserRuleCall_1_1_0; }
 	}
 	public class AddOpElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xmodelica.Modelica.AddOp");
@@ -2899,32 +3029,32 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFactorParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cTermFactorsAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cOpsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOpsMulOpParserRuleCall_1_1_0 = (RuleCall)cOpsAssignment_1_1.eContents().get(0);
+		private final Assignment cMul_opAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cMul_opMulOpParserRuleCall_1_1_0 = (RuleCall)cMul_opAssignment_1_1.eContents().get(0);
 		private final Assignment cFactorsAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cFactorsFactorParserRuleCall_1_2_0 = (RuleCall)cFactorsAssignment_1_2.eContents().get(0);
 		
 		//Term:
-		//	Factor ({Term.factors+=current} ops+=MulOp factors+=Factor)*;
+		//	Factor ({Term.factors+=current} mul_op+=MulOp factors+=Factor)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Factor ({Term.factors+=current} ops+=MulOp factors+=Factor)*
+		//Factor ({Term.factors+=current} mul_op+=MulOp factors+=Factor)*
 		public Group getGroup() { return cGroup; }
 		
 		//Factor
 		public RuleCall getFactorParserRuleCall_0() { return cFactorParserRuleCall_0; }
 		
-		//({Term.factors+=current} ops+=MulOp factors+=Factor)*
+		//({Term.factors+=current} mul_op+=MulOp factors+=Factor)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{Term.factors+=current}
 		public Action getTermFactorsAction_1_0() { return cTermFactorsAction_1_0; }
 		
-		//ops+=MulOp
-		public Assignment getOpsAssignment_1_1() { return cOpsAssignment_1_1; }
+		//mul_op+=MulOp
+		public Assignment getMul_opAssignment_1_1() { return cMul_opAssignment_1_1; }
 		
 		//MulOp
-		public RuleCall getOpsMulOpParserRuleCall_1_1_0() { return cOpsMulOpParserRuleCall_1_1_0; }
+		public RuleCall getMul_opMulOpParserRuleCall_1_1_0() { return cMul_opMulOpParserRuleCall_1_1_0; }
 		
 		//factors+=Factor
 		public Assignment getFactorsAssignment_1_2() { return cFactorsAssignment_1_2; }
@@ -3711,6 +3841,7 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	private final RelationElements pRelation;
 	private final RelOpElements pRelOp;
 	private final ArithmeticExpressionElements pArithmeticExpression;
+	private final NegationElements pNegation;
 	private final AddOpElements pAddOp;
 	private final TermElements pTerm;
 	private final MulOpElements pMulOp;
@@ -3812,6 +3943,7 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRelation = new RelationElements();
 		this.pRelOp = new RelOpElements();
 		this.pArithmeticExpression = new ArithmeticExpressionElements();
+		this.pNegation = new NegationElements();
 		this.pAddOp = new AddOpElements();
 		this.pTerm = new TermElements();
 		this.pMulOp = new MulOpElements();
@@ -3935,7 +4067,8 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ClassSpecifier ClassDefinition:
-	//	name=IDENT comment=StringComment composition=Composition 'end' name_end=IDENT
+	//	name=IDENT str_comment=StringComment composition=Composition 'end' name_end=IDENT
+	//	| name=IDENT '=' prefix=BasePrefix name2=Name subs=ArraySubscripts? mod=ClassModification?
 	public ClassSpecifierElements getClassSpecifierAccess() {
 		return pClassSpecifier;
 	}
@@ -4403,8 +4536,9 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WhenEquation:
-	//	'when' when=Expression 'then' (when_eqs+=Equation ';')* ('elsewhen' elsehwhen=Expression 'then'
-	//	(elsewhen_eqs+=Equation ';'));
+	//	'when' when=Expression 'then' (when_eqs+=Equation ';')* ('elsewhen' elsehwhen+=Expression 'then'
+	//	(elsewhen_eqs+=Equation ';'))*
+	//	'end' 'when';
 	public WhenEquationElements getWhenEquationAccess() {
 		return pWhenEquation;
 	}
@@ -4414,8 +4548,9 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WhenStatement:
-	//	'when' when=Expression 'then' (when_stmts+=Statement ';')* ('elsewhen' elsehwhen=Expression 'then'
-	//	(elsewhen_stmts+=Statement ';'));
+	//	'when' when=Expression 'then' (when_stmts+=Statement ';')* ('elsewhen' elsehwhen+=Expression 'then'
+	//	(elsewhen_stmts+=Statement ';'))*
+	//	'end' 'when';
 	public WhenStatementElements getWhenStatementAccess() {
 		return pWhenStatement;
 	}
@@ -4482,7 +4617,8 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//LogicalFactor:
-	//	Relation;
+	//	Relation
+	//	| not?='not' rel=Relation;
 	public LogicalFactorElements getLogicalFactorAccess() {
 		return pLogicalFactor;
 	}
@@ -4492,7 +4628,7 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Relation:
-	//	ArithmeticExpression ({Relation.left=current} op=RelOp right=ArithmeticExpression)?;
+	//	ArithmeticExpression ({Relation.left=current} rel_op=RelOp right=ArithmeticExpression)?;
 	public RelationElements getRelationAccess() {
 		return pRelation;
 	}
@@ -4512,13 +4648,24 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ArithmeticExpression:
-	//	Term ({ArithmeticExpression.terms+=current} ops+=AddOp terms+=Term)*;
+	//	Negation ({ArithmeticExpression.terms+=current} add_op+=AddOp terms+=Negation)*;
 	public ArithmeticExpressionElements getArithmeticExpressionAccess() {
 		return pArithmeticExpression;
 	}
 	
 	public ParserRule getArithmeticExpressionRule() {
 		return getArithmeticExpressionAccess().getRule();
+	}
+	
+	//Negation:
+	//	Term
+	//	| neg_op=AddOp term=Term;
+	public NegationElements getNegationAccess() {
+		return pNegation;
+	}
+	
+	public ParserRule getNegationRule() {
+		return getNegationAccess().getRule();
 	}
 	
 	//AddOp:
@@ -4532,7 +4679,7 @@ public class ModelicaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Term:
-	//	Factor ({Term.factors+=current} ops+=MulOp factors+=Factor)*;
+	//	Factor ({Term.factors+=current} mul_op+=MulOp factors+=Factor)*;
 	public TermElements getTermAccess() {
 		return pTerm;
 	}

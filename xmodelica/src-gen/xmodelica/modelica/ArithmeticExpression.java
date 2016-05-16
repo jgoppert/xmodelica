@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.ArithmeticExpression#getOps <em>Ops</em>}</li>
+ *   <li>{@link xmodelica.modelica.ArithmeticExpression#getAdd_op <em>Add op</em>}</li>
  * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getArithmeticExpression()
@@ -24,19 +24,19 @@ import org.eclipse.emf.common.util.EList;
 public interface ArithmeticExpression extends Relation
 {
   /**
-   * Returns the value of the '<em><b>Ops</b></em>' attribute list.
+   * Returns the value of the '<em><b>Add op</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Ops</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Add op</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ops</em>' attribute list.
-   * @see xmodelica.modelica.ModelicaPackage#getArithmeticExpression_Ops()
+   * @return the value of the '<em>Add op</em>' attribute list.
+   * @see xmodelica.modelica.ModelicaPackage#getArithmeticExpression_Add_op()
    * @model unique="false"
    * @generated
    */
-  EList<String> getOps();
+  EList<String> getAdd_op();
 
 } // ArithmeticExpression

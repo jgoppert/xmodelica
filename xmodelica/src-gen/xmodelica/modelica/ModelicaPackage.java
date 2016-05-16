@@ -151,13 +151,13 @@ public interface ModelicaPackage extends EPackage
   int CLASS_DEFINITION__NAME = ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Comment</b></em>' attribute.
+   * The feature id for the '<em><b>Str comment</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__COMMENT = ELEMENT_FEATURE_COUNT + 3;
+  int CLASS_DEFINITION__STR_COMMENT = ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Composition</b></em>' containment reference.
@@ -178,13 +178,49 @@ public interface ModelicaPackage extends EPackage
   int CLASS_DEFINITION__NAME_END = ELEMENT_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Prefix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__PREFIX = ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Name2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__NAME2 = ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subs</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__SUBS = ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__MOD = ELEMENT_FEATURE_COUNT + 9;
+
+  /**
    * The number of structural features of the '<em>Class Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 6;
+  int CLASS_DEFINITION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link xmodelica.modelica.impl.EnumListImpl <em>Enum List</em>}' class.
@@ -895,7 +931,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getAnnotation()
    * @generated
    */
-  int ANNOTATION = 69;
+  int ANNOTATION = 70;
 
   /**
    * The number of structural features of the '<em>Annotation</em>' class.
@@ -1936,7 +1972,7 @@ public interface ModelicaPackage extends EPackage
   int WHEN_EQUATION__WHEN_EQS = EQUATION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Elsehwhen</b></em>' containment reference.
+   * The feature id for the '<em><b>Elsehwhen</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2036,7 +2072,7 @@ public interface ModelicaPackage extends EPackage
   int WHEN_STATEMENT__WHEN_STMTS = STATEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Elsehwhen</b></em>' containment reference.
+   * The feature id for the '<em><b>Elsehwhen</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2537,13 +2573,31 @@ public interface ModelicaPackage extends EPackage
   int LOGICAL_FACTOR__FACTORS = LOGICAL_TERM_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_FACTOR__NOT = LOGICAL_TERM_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_FACTOR__REL = LOGICAL_TERM_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Logical Factor</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOGICAL_FACTOR_FEATURE_COUNT = LOGICAL_TERM_FEATURE_COUNT + 1;
+  int LOGICAL_FACTOR_FEATURE_COUNT = LOGICAL_TERM_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link xmodelica.modelica.impl.RelationImpl <em>Relation</em>}' class.
@@ -2637,6 +2691,24 @@ public interface ModelicaPackage extends EPackage
   int RELATION__FACTORS = LOGICAL_FACTOR__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION__NOT = LOGICAL_FACTOR__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION__REL = LOGICAL_FACTOR__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2646,13 +2718,13 @@ public interface ModelicaPackage extends EPackage
   int RELATION__LEFT = LOGICAL_FACTOR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RELATION__OP = LOGICAL_FACTOR_FEATURE_COUNT + 1;
+  int RELATION__REL_OP = LOGICAL_FACTOR_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -2764,6 +2836,24 @@ public interface ModelicaPackage extends EPackage
   int ARITHMETIC_EXPRESSION__FACTORS = RELATION__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARITHMETIC_EXPRESSION__NOT = RELATION__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARITHMETIC_EXPRESSION__REL = RELATION__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2773,13 +2863,13 @@ public interface ModelicaPackage extends EPackage
   int ARITHMETIC_EXPRESSION__LEFT = RELATION__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARITHMETIC_EXPRESSION__OP = RELATION__OP;
+  int ARITHMETIC_EXPRESSION__REL_OP = RELATION__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -2791,13 +2881,13 @@ public interface ModelicaPackage extends EPackage
   int ARITHMETIC_EXPRESSION__RIGHT = RELATION__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARITHMETIC_EXPRESSION__OPS = RELATION_FEATURE_COUNT + 0;
+  int ARITHMETIC_EXPRESSION__ADD_OP = RELATION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Arithmetic Expression</em>' class.
@@ -2809,14 +2899,14 @@ public interface ModelicaPackage extends EPackage
   int ARITHMETIC_EXPRESSION_FEATURE_COUNT = RELATION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link xmodelica.modelica.impl.TermImpl <em>Term</em>}' class.
+   * The meta object id for the '{@link xmodelica.modelica.impl.NegationImpl <em>Negation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see xmodelica.modelica.impl.TermImpl
-   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getTerm()
+   * @see xmodelica.modelica.impl.NegationImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getNegation()
    * @generated
    */
-  int TERM = 50;
+  int NEGATION = 50;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -2825,7 +2915,7 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__ALL = ARITHMETIC_EXPRESSION__ALL;
+  int NEGATION__ALL = ARITHMETIC_EXPRESSION__ALL;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -2834,7 +2924,7 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__IF = ARITHMETIC_EXPRESSION__IF;
+  int NEGATION__IF = ARITHMETIC_EXPRESSION__IF;
 
   /**
    * The feature id for the '<em><b>Then</b></em>' containment reference.
@@ -2843,7 +2933,7 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__THEN = ARITHMETIC_EXPRESSION__THEN;
+  int NEGATION__THEN = ARITHMETIC_EXPRESSION__THEN;
 
   /**
    * The feature id for the '<em><b>Elseif</b></em>' containment reference list.
@@ -2852,7 +2942,7 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__ELSEIF = ARITHMETIC_EXPRESSION__ELSEIF;
+  int NEGATION__ELSEIF = ARITHMETIC_EXPRESSION__ELSEIF;
 
   /**
    * The feature id for the '<em><b>Elseifthen</b></em>' containment reference list.
@@ -2861,7 +2951,7 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__ELSEIFTHEN = ARITHMETIC_EXPRESSION__ELSEIFTHEN;
+  int NEGATION__ELSEIFTHEN = ARITHMETIC_EXPRESSION__ELSEIFTHEN;
 
   /**
    * The feature id for the '<em><b>Else</b></em>' containment reference list.
@@ -2870,7 +2960,7 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__ELSE = ARITHMETIC_EXPRESSION__ELSE;
+  int NEGATION__ELSE = ARITHMETIC_EXPRESSION__ELSE;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -2879,7 +2969,7 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__EXPRS = ARITHMETIC_EXPRESSION__EXPRS;
+  int NEGATION__EXPRS = ARITHMETIC_EXPRESSION__EXPRS;
 
   /**
    * The feature id for the '<em><b>Terms</b></em>' containment reference list.
@@ -2888,7 +2978,7 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__TERMS = ARITHMETIC_EXPRESSION__TERMS;
+  int NEGATION__TERMS = ARITHMETIC_EXPRESSION__TERMS;
 
   /**
    * The feature id for the '<em><b>Factors</b></em>' containment reference list.
@@ -2897,7 +2987,25 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__FACTORS = ARITHMETIC_EXPRESSION__FACTORS;
+  int NEGATION__FACTORS = ARITHMETIC_EXPRESSION__FACTORS;
+
+  /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEGATION__NOT = ARITHMETIC_EXPRESSION__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEGATION__REL = ARITHMETIC_EXPRESSION__REL;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2906,16 +3014,16 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__LEFT = ARITHMETIC_EXPRESSION__LEFT;
+  int NEGATION__LEFT = ARITHMETIC_EXPRESSION__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TERM__OP = ARITHMETIC_EXPRESSION__OP;
+  int NEGATION__REL_OP = ARITHMETIC_EXPRESSION__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -2924,16 +3032,215 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM__RIGHT = ARITHMETIC_EXPRESSION__RIGHT;
+  int NEGATION__RIGHT = ARITHMETIC_EXPRESSION__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TERM__OPS = ARITHMETIC_EXPRESSION__OPS;
+  int NEGATION__ADD_OP = ARITHMETIC_EXPRESSION__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEGATION__NEG_OP = ARITHMETIC_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEGATION__TERM = ARITHMETIC_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Negation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEGATION_FEATURE_COUNT = ARITHMETIC_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link xmodelica.modelica.impl.TermImpl <em>Term</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see xmodelica.modelica.impl.TermImpl
+   * @see xmodelica.modelica.impl.ModelicaPackageImpl#getTerm()
+   * @generated
+   */
+  int TERM = 51;
+
+  /**
+   * The feature id for the '<em><b>All</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__ALL = NEGATION__ALL;
+
+  /**
+   * The feature id for the '<em><b>If</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__IF = NEGATION__IF;
+
+  /**
+   * The feature id for the '<em><b>Then</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__THEN = NEGATION__THEN;
+
+  /**
+   * The feature id for the '<em><b>Elseif</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__ELSEIF = NEGATION__ELSEIF;
+
+  /**
+   * The feature id for the '<em><b>Elseifthen</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__ELSEIFTHEN = NEGATION__ELSEIFTHEN;
+
+  /**
+   * The feature id for the '<em><b>Else</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__ELSE = NEGATION__ELSE;
+
+  /**
+   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__EXPRS = NEGATION__EXPRS;
+
+  /**
+   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__TERMS = NEGATION__TERMS;
+
+  /**
+   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__FACTORS = NEGATION__FACTORS;
+
+  /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__NOT = NEGATION__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__REL = NEGATION__REL;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__LEFT = NEGATION__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__REL_OP = NEGATION__REL_OP;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__RIGHT = NEGATION__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__ADD_OP = NEGATION__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__NEG_OP = NEGATION__NEG_OP;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__TERM = NEGATION__TERM;
+
+  /**
+   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__MUL_OP = NEGATION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Term</em>' class.
@@ -2942,7 +3249,7 @@ public interface ModelicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERM_FEATURE_COUNT = ARITHMETIC_EXPRESSION_FEATURE_COUNT + 0;
+  int TERM_FEATURE_COUNT = NEGATION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link xmodelica.modelica.impl.FactorImpl <em>Factor</em>}' class.
@@ -2952,7 +3259,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFactor()
    * @generated
    */
-  int FACTOR = 51;
+  int FACTOR = 52;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -3036,6 +3343,24 @@ public interface ModelicaPackage extends EPackage
   int FACTOR__FACTORS = TERM__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTOR__NOT = TERM__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTOR__REL = TERM__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3045,13 +3370,13 @@ public interface ModelicaPackage extends EPackage
   int FACTOR__LEFT = TERM__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FACTOR__OP = TERM__OP;
+  int FACTOR__REL_OP = TERM__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -3063,13 +3388,40 @@ public interface ModelicaPackage extends EPackage
   int FACTOR__RIGHT = TERM__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FACTOR__OPS = TERM__OPS;
+  int FACTOR__ADD_OP = TERM__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTOR__NEG_OP = TERM__NEG_OP;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTOR__TERM = TERM__TERM;
+
+  /**
+   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTOR__MUL_OP = TERM__MUL_OP;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -3106,7 +3458,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getPrimary()
    * @generated
    */
-  int PRIMARY = 56;
+  int PRIMARY = 57;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -3190,6 +3542,24 @@ public interface ModelicaPackage extends EPackage
   int PRIMARY__FACTORS = FACTOR__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY__NOT = FACTOR__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY__REL = FACTOR__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3199,13 +3569,13 @@ public interface ModelicaPackage extends EPackage
   int PRIMARY__LEFT = FACTOR__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRIMARY__OP = FACTOR__OP;
+  int PRIMARY__REL_OP = FACTOR__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -3217,13 +3587,40 @@ public interface ModelicaPackage extends EPackage
   int PRIMARY__RIGHT = FACTOR__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRIMARY__OPS = FACTOR__OPS;
+  int PRIMARY__ADD_OP = FACTOR__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY__NEG_OP = FACTOR__NEG_OP;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY__TERM = FACTOR__TERM;
+
+  /**
+   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY__MUL_OP = FACTOR__MUL_OP;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -3269,7 +3666,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFloatPrimary()
    * @generated
    */
-  int FLOAT_PRIMARY = 52;
+  int FLOAT_PRIMARY = 53;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -3353,6 +3750,24 @@ public interface ModelicaPackage extends EPackage
   int FLOAT_PRIMARY__FACTORS = PRIMARY__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOAT_PRIMARY__NOT = PRIMARY__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOAT_PRIMARY__REL = PRIMARY__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3362,13 +3777,13 @@ public interface ModelicaPackage extends EPackage
   int FLOAT_PRIMARY__LEFT = PRIMARY__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLOAT_PRIMARY__OP = PRIMARY__OP;
+  int FLOAT_PRIMARY__REL_OP = PRIMARY__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -3380,13 +3795,40 @@ public interface ModelicaPackage extends EPackage
   int FLOAT_PRIMARY__RIGHT = PRIMARY__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLOAT_PRIMARY__OPS = PRIMARY__OPS;
+  int FLOAT_PRIMARY__ADD_OP = PRIMARY__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOAT_PRIMARY__NEG_OP = PRIMARY__NEG_OP;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOAT_PRIMARY__TERM = PRIMARY__TERM;
+
+  /**
+   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOAT_PRIMARY__MUL_OP = PRIMARY__MUL_OP;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -3441,7 +3883,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getStringPrimary()
    * @generated
    */
-  int STRING_PRIMARY = 53;
+  int STRING_PRIMARY = 54;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -3525,6 +3967,24 @@ public interface ModelicaPackage extends EPackage
   int STRING_PRIMARY__FACTORS = PRIMARY__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_PRIMARY__NOT = PRIMARY__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_PRIMARY__REL = PRIMARY__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3534,13 +3994,13 @@ public interface ModelicaPackage extends EPackage
   int STRING_PRIMARY__LEFT = PRIMARY__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRING_PRIMARY__OP = PRIMARY__OP;
+  int STRING_PRIMARY__REL_OP = PRIMARY__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -3552,13 +4012,40 @@ public interface ModelicaPackage extends EPackage
   int STRING_PRIMARY__RIGHT = PRIMARY__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRING_PRIMARY__OPS = PRIMARY__OPS;
+  int STRING_PRIMARY__ADD_OP = PRIMARY__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_PRIMARY__NEG_OP = PRIMARY__NEG_OP;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_PRIMARY__TERM = PRIMARY__TERM;
+
+  /**
+   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_PRIMARY__MUL_OP = PRIMARY__MUL_OP;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -3613,7 +4100,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getLogicalPrimary()
    * @generated
    */
-  int LOGICAL_PRIMARY = 54;
+  int LOGICAL_PRIMARY = 55;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -3697,6 +4184,24 @@ public interface ModelicaPackage extends EPackage
   int LOGICAL_PRIMARY__FACTORS = PRIMARY__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_PRIMARY__NOT = PRIMARY__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_PRIMARY__REL = PRIMARY__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3706,13 +4211,13 @@ public interface ModelicaPackage extends EPackage
   int LOGICAL_PRIMARY__LEFT = PRIMARY__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOGICAL_PRIMARY__OP = PRIMARY__OP;
+  int LOGICAL_PRIMARY__REL_OP = PRIMARY__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -3724,13 +4229,40 @@ public interface ModelicaPackage extends EPackage
   int LOGICAL_PRIMARY__RIGHT = PRIMARY__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOGICAL_PRIMARY__OPS = PRIMARY__OPS;
+  int LOGICAL_PRIMARY__ADD_OP = PRIMARY__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_PRIMARY__NEG_OP = PRIMARY__NEG_OP;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_PRIMARY__TERM = PRIMARY__TERM;
+
+  /**
+   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGICAL_PRIMARY__MUL_OP = PRIMARY__MUL_OP;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -3785,7 +4317,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getEnd()
    * @generated
    */
-  int END = 55;
+  int END = 56;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -3869,6 +4401,24 @@ public interface ModelicaPackage extends EPackage
   int END__FACTORS = PRIMARY__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int END__NOT = PRIMARY__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int END__REL = PRIMARY__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3878,13 +4428,13 @@ public interface ModelicaPackage extends EPackage
   int END__LEFT = PRIMARY__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int END__OP = PRIMARY__OP;
+  int END__REL_OP = PRIMARY__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -3896,13 +4446,40 @@ public interface ModelicaPackage extends EPackage
   int END__RIGHT = PRIMARY__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int END__OPS = PRIMARY__OPS;
+  int END__ADD_OP = PRIMARY__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int END__NEG_OP = PRIMARY__NEG_OP;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int END__TERM = PRIMARY__TERM;
+
+  /**
+   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int END__MUL_OP = PRIMARY__MUL_OP;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -3957,7 +4534,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFunctionCall()
    * @generated
    */
-  int FUNCTION_CALL = 57;
+  int FUNCTION_CALL = 58;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -4041,6 +4618,24 @@ public interface ModelicaPackage extends EPackage
   int FUNCTION_CALL__FACTORS = PRIMARY__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__NOT = PRIMARY__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__REL = PRIMARY__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4050,13 +4645,13 @@ public interface ModelicaPackage extends EPackage
   int FUNCTION_CALL__LEFT = PRIMARY__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_CALL__OP = PRIMARY__OP;
+  int FUNCTION_CALL__REL_OP = PRIMARY__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -4068,13 +4663,40 @@ public interface ModelicaPackage extends EPackage
   int FUNCTION_CALL__RIGHT = PRIMARY__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_CALL__OPS = PRIMARY__OPS;
+  int FUNCTION_CALL__ADD_OP = PRIMARY__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__NEG_OP = PRIMARY__NEG_OP;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__TERM = PRIMARY__TERM;
+
+  /**
+   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__MUL_OP = PRIMARY__MUL_OP;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -4138,7 +4760,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComponentReference()
    * @generated
    */
-  int COMPONENT_REFERENCE = 58;
+  int COMPONENT_REFERENCE = 59;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -4222,6 +4844,24 @@ public interface ModelicaPackage extends EPackage
   int COMPONENT_REFERENCE__FACTORS = PRIMARY__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_REFERENCE__NOT = PRIMARY__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_REFERENCE__REL = PRIMARY__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4231,13 +4871,13 @@ public interface ModelicaPackage extends EPackage
   int COMPONENT_REFERENCE__LEFT = PRIMARY__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_REFERENCE__OP = PRIMARY__OP;
+  int COMPONENT_REFERENCE__REL_OP = PRIMARY__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -4249,13 +4889,40 @@ public interface ModelicaPackage extends EPackage
   int COMPONENT_REFERENCE__RIGHT = PRIMARY__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_REFERENCE__OPS = PRIMARY__OPS;
+  int COMPONENT_REFERENCE__ADD_OP = PRIMARY__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_REFERENCE__NEG_OP = PRIMARY__NEG_OP;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_REFERENCE__TERM = PRIMARY__TERM;
+
+  /**
+   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_REFERENCE__MUL_OP = PRIMARY__MUL_OP;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -4319,7 +4986,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFunctionCallArgs()
    * @generated
    */
-  int FUNCTION_CALL_ARGS = 59;
+  int FUNCTION_CALL_ARGS = 60;
 
   /**
    * The feature id for the '<em><b>Res</b></em>' containment reference.
@@ -4347,7 +5014,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFunctionArguments()
    * @generated
    */
-  int FUNCTION_ARGUMENTS = 60;
+  int FUNCTION_ARGUMENTS = 61;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -4431,6 +5098,24 @@ public interface ModelicaPackage extends EPackage
   int FUNCTION_ARGUMENTS__FACTORS = PRIMARY__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ARGUMENTS__NOT = PRIMARY__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ARGUMENTS__REL = PRIMARY__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4440,13 +5125,13 @@ public interface ModelicaPackage extends EPackage
   int FUNCTION_ARGUMENTS__LEFT = PRIMARY__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_ARGUMENTS__OP = PRIMARY__OP;
+  int FUNCTION_ARGUMENTS__REL_OP = PRIMARY__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -4458,13 +5143,40 @@ public interface ModelicaPackage extends EPackage
   int FUNCTION_ARGUMENTS__RIGHT = PRIMARY__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_ARGUMENTS__OPS = PRIMARY__OPS;
+  int FUNCTION_ARGUMENTS__ADD_OP = PRIMARY__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ARGUMENTS__NEG_OP = PRIMARY__NEG_OP;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ARGUMENTS__TERM = PRIMARY__TERM;
+
+  /**
+   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_ARGUMENTS__MUL_OP = PRIMARY__MUL_OP;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -4528,7 +5240,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getNamedArguments()
    * @generated
    */
-  int NAMED_ARGUMENTS = 61;
+  int NAMED_ARGUMENTS = 62;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference list.
@@ -4556,7 +5268,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getNamedArgument()
    * @generated
    */
-  int NAMED_ARGUMENT = 62;
+  int NAMED_ARGUMENT = 63;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -4640,6 +5352,24 @@ public interface ModelicaPackage extends EPackage
   int NAMED_ARGUMENT__FACTORS = FUNCTION_ARGUMENTS__FACTORS;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENT__NOT = FUNCTION_ARGUMENTS__NOT;
+
+  /**
+   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENT__REL = FUNCTION_ARGUMENTS__REL;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4649,13 +5379,13 @@ public interface ModelicaPackage extends EPackage
   int NAMED_ARGUMENT__LEFT = FUNCTION_ARGUMENTS__LEFT;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_ARGUMENT__OP = FUNCTION_ARGUMENTS__OP;
+  int NAMED_ARGUMENT__REL_OP = FUNCTION_ARGUMENTS__REL_OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -4667,13 +5397,40 @@ public interface ModelicaPackage extends EPackage
   int NAMED_ARGUMENT__RIGHT = FUNCTION_ARGUMENTS__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Ops</b></em>' attribute list.
+   * The feature id for the '<em><b>Add op</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_ARGUMENT__OPS = FUNCTION_ARGUMENTS__OPS;
+  int NAMED_ARGUMENT__ADD_OP = FUNCTION_ARGUMENTS__ADD_OP;
+
+  /**
+   * The feature id for the '<em><b>Neg op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENT__NEG_OP = FUNCTION_ARGUMENTS__NEG_OP;
+
+  /**
+   * The feature id for the '<em><b>Term</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENT__TERM = FUNCTION_ARGUMENTS__TERM;
+
+  /**
+   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMED_ARGUMENT__MUL_OP = FUNCTION_ARGUMENTS__MUL_OP;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -4755,7 +5512,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getFunctionArgument()
    * @generated
    */
-  int FUNCTION_ARGUMENT = 63;
+  int FUNCTION_ARGUMENT = 64;
 
   /**
    * The number of structural features of the '<em>Function Argument</em>' class.
@@ -4774,7 +5531,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getOutputExpressionList()
    * @generated
    */
-  int OUTPUT_EXPRESSION_LIST = 64;
+  int OUTPUT_EXPRESSION_LIST = 65;
 
   /**
    * The number of structural features of the '<em>Output Expression List</em>' class.
@@ -4793,7 +5550,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getExpressionList()
    * @generated
    */
-  int EXPRESSION_LIST = 65;
+  int EXPRESSION_LIST = 66;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -4821,7 +5578,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getArraySubscripts()
    * @generated
    */
-  int ARRAY_SUBSCRIPTS = 66;
+  int ARRAY_SUBSCRIPTS = 67;
 
   /**
    * The feature id for the '<em><b>Const</b></em>' containment reference.
@@ -4885,7 +5642,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getSubscript()
    * @generated
    */
-  int SUBSCRIPT = 67;
+  int SUBSCRIPT = 68;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -4913,7 +5670,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getComment()
    * @generated
    */
-  int COMMENT = 68;
+  int COMMENT = 69;
 
   /**
    * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -4950,7 +5707,7 @@ public interface ModelicaPackage extends EPackage
    * @see xmodelica.modelica.impl.ModelicaPackageImpl#getOuputExpressionList()
    * @generated
    */
-  int OUPUT_EXPRESSION_LIST = 70;
+  int OUPUT_EXPRESSION_LIST = 71;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -5047,15 +5804,15 @@ public interface ModelicaPackage extends EPackage
   EAttribute getClassDefinition_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link xmodelica.modelica.ClassDefinition#getComment <em>Comment</em>}'.
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.ClassDefinition#getStr_comment <em>Str comment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Comment</em>'.
-   * @see xmodelica.modelica.ClassDefinition#getComment()
+   * @return the meta object for the attribute '<em>Str comment</em>'.
+   * @see xmodelica.modelica.ClassDefinition#getStr_comment()
    * @see #getClassDefinition()
    * @generated
    */
-  EAttribute getClassDefinition_Comment();
+  EAttribute getClassDefinition_Str_comment();
 
   /**
    * Returns the meta object for the containment reference '{@link xmodelica.modelica.ClassDefinition#getComposition <em>Composition</em>}'.
@@ -5078,6 +5835,50 @@ public interface ModelicaPackage extends EPackage
    * @generated
    */
   EAttribute getClassDefinition_Name_end();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.ClassDefinition#getPrefix <em>Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prefix</em>'.
+   * @see xmodelica.modelica.ClassDefinition#getPrefix()
+   * @see #getClassDefinition()
+   * @generated
+   */
+  EAttribute getClassDefinition_Prefix();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.ClassDefinition#getName2 <em>Name2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name2</em>'.
+   * @see xmodelica.modelica.ClassDefinition#getName2()
+   * @see #getClassDefinition()
+   * @generated
+   */
+  EAttribute getClassDefinition_Name2();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ClassDefinition#getSubs <em>Subs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Subs</em>'.
+   * @see xmodelica.modelica.ClassDefinition#getSubs()
+   * @see #getClassDefinition()
+   * @generated
+   */
+  EReference getClassDefinition_Subs();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.ClassDefinition#getMod <em>Mod</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Mod</em>'.
+   * @see xmodelica.modelica.ClassDefinition#getMod()
+   * @see #getClassDefinition()
+   * @generated
+   */
+  EReference getClassDefinition_Mod();
 
   /**
    * Returns the meta object for class '{@link xmodelica.modelica.EnumList <em>Enum List</em>}'.
@@ -6427,10 +7228,10 @@ public interface ModelicaPackage extends EPackage
   EReference getWhenEquation_When_eqs();
 
   /**
-   * Returns the meta object for the containment reference '{@link xmodelica.modelica.WhenEquation#getElsehwhen <em>Elsehwhen</em>}'.
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.WhenEquation#getElsehwhen <em>Elsehwhen</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Elsehwhen</em>'.
+   * @return the meta object for the containment reference list '<em>Elsehwhen</em>'.
    * @see xmodelica.modelica.WhenEquation#getElsehwhen()
    * @see #getWhenEquation()
    * @generated
@@ -6481,10 +7282,10 @@ public interface ModelicaPackage extends EPackage
   EReference getWhenStatement_When_stmts();
 
   /**
-   * Returns the meta object for the containment reference '{@link xmodelica.modelica.WhenStatement#getElsehwhen <em>Elsehwhen</em>}'.
+   * Returns the meta object for the containment reference list '{@link xmodelica.modelica.WhenStatement#getElsehwhen <em>Elsehwhen</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Elsehwhen</em>'.
+   * @return the meta object for the containment reference list '<em>Elsehwhen</em>'.
    * @see xmodelica.modelica.WhenStatement#getElsehwhen()
    * @see #getWhenStatement()
    * @generated
@@ -6651,6 +7452,28 @@ public interface ModelicaPackage extends EPackage
   EReference getLogicalFactor_Factors();
 
   /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.LogicalFactor#isNot <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Not</em>'.
+   * @see xmodelica.modelica.LogicalFactor#isNot()
+   * @see #getLogicalFactor()
+   * @generated
+   */
+  EAttribute getLogicalFactor_Not();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.LogicalFactor#getRel <em>Rel</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Rel</em>'.
+   * @see xmodelica.modelica.LogicalFactor#getRel()
+   * @see #getLogicalFactor()
+   * @generated
+   */
+  EReference getLogicalFactor_Rel();
+
+  /**
    * Returns the meta object for class '{@link xmodelica.modelica.Relation <em>Relation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -6672,15 +7495,15 @@ public interface ModelicaPackage extends EPackage
   EReference getRelation_Left();
 
   /**
-   * Returns the meta object for the attribute '{@link xmodelica.modelica.Relation#getOp <em>Op</em>}'.
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.Relation#getRel_op <em>Rel op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see xmodelica.modelica.Relation#getOp()
+   * @return the meta object for the attribute '<em>Rel op</em>'.
+   * @see xmodelica.modelica.Relation#getRel_op()
    * @see #getRelation()
    * @generated
    */
-  EAttribute getRelation_Op();
+  EAttribute getRelation_Rel_op();
 
   /**
    * Returns the meta object for the containment reference '{@link xmodelica.modelica.Relation#getRight <em>Right</em>}'.
@@ -6704,15 +7527,47 @@ public interface ModelicaPackage extends EPackage
   EClass getArithmeticExpression();
 
   /**
-   * Returns the meta object for the attribute list '{@link xmodelica.modelica.ArithmeticExpression#getOps <em>Ops</em>}'.
+   * Returns the meta object for the attribute list '{@link xmodelica.modelica.ArithmeticExpression#getAdd_op <em>Add op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Ops</em>'.
-   * @see xmodelica.modelica.ArithmeticExpression#getOps()
+   * @return the meta object for the attribute list '<em>Add op</em>'.
+   * @see xmodelica.modelica.ArithmeticExpression#getAdd_op()
    * @see #getArithmeticExpression()
    * @generated
    */
-  EAttribute getArithmeticExpression_Ops();
+  EAttribute getArithmeticExpression_Add_op();
+
+  /**
+   * Returns the meta object for class '{@link xmodelica.modelica.Negation <em>Negation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Negation</em>'.
+   * @see xmodelica.modelica.Negation
+   * @generated
+   */
+  EClass getNegation();
+
+  /**
+   * Returns the meta object for the attribute '{@link xmodelica.modelica.Negation#getNeg_op <em>Neg op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Neg op</em>'.
+   * @see xmodelica.modelica.Negation#getNeg_op()
+   * @see #getNegation()
+   * @generated
+   */
+  EAttribute getNegation_Neg_op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link xmodelica.modelica.Negation#getTerm <em>Term</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Term</em>'.
+   * @see xmodelica.modelica.Negation#getTerm()
+   * @see #getNegation()
+   * @generated
+   */
+  EReference getNegation_Term();
 
   /**
    * Returns the meta object for class '{@link xmodelica.modelica.Term <em>Term</em>}'.
@@ -6723,6 +7578,17 @@ public interface ModelicaPackage extends EPackage
    * @generated
    */
   EClass getTerm();
+
+  /**
+   * Returns the meta object for the attribute list '{@link xmodelica.modelica.Term#getMul_op <em>Mul op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Mul op</em>'.
+   * @see xmodelica.modelica.Term#getMul_op()
+   * @see #getTerm()
+   * @generated
+   */
+  EAttribute getTerm_Mul_op();
 
   /**
    * Returns the meta object for class '{@link xmodelica.modelica.Factor <em>Factor</em>}'.
@@ -7261,12 +8127,12 @@ public interface ModelicaPackage extends EPackage
     EAttribute CLASS_DEFINITION__NAME = eINSTANCE.getClassDefinition_Name();
 
     /**
-     * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Str comment</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_DEFINITION__COMMENT = eINSTANCE.getClassDefinition_Comment();
+    EAttribute CLASS_DEFINITION__STR_COMMENT = eINSTANCE.getClassDefinition_Str_comment();
 
     /**
      * The meta object literal for the '<em><b>Composition</b></em>' containment reference feature.
@@ -7283,6 +8149,38 @@ public interface ModelicaPackage extends EPackage
      * @generated
      */
     EAttribute CLASS_DEFINITION__NAME_END = eINSTANCE.getClassDefinition_Name_end();
+
+    /**
+     * The meta object literal for the '<em><b>Prefix</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLASS_DEFINITION__PREFIX = eINSTANCE.getClassDefinition_Prefix();
+
+    /**
+     * The meta object literal for the '<em><b>Name2</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLASS_DEFINITION__NAME2 = eINSTANCE.getClassDefinition_Name2();
+
+    /**
+     * The meta object literal for the '<em><b>Subs</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLASS_DEFINITION__SUBS = eINSTANCE.getClassDefinition_Subs();
+
+    /**
+     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLASS_DEFINITION__MOD = eINSTANCE.getClassDefinition_Mod();
 
     /**
      * The meta object literal for the '{@link xmodelica.modelica.impl.EnumListImpl <em>Enum List</em>}' class.
@@ -8371,7 +9269,7 @@ public interface ModelicaPackage extends EPackage
     EReference WHEN_EQUATION__WHEN_EQS = eINSTANCE.getWhenEquation_When_eqs();
 
     /**
-     * The meta object literal for the '<em><b>Elsehwhen</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Elsehwhen</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -8413,7 +9311,7 @@ public interface ModelicaPackage extends EPackage
     EReference WHEN_STATEMENT__WHEN_STMTS = eINSTANCE.getWhenStatement_When_stmts();
 
     /**
-     * The meta object literal for the '<em><b>Elsehwhen</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Elsehwhen</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -8553,6 +9451,22 @@ public interface ModelicaPackage extends EPackage
     EReference LOGICAL_FACTOR__FACTORS = eINSTANCE.getLogicalFactor_Factors();
 
     /**
+     * The meta object literal for the '<em><b>Not</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LOGICAL_FACTOR__NOT = eINSTANCE.getLogicalFactor_Not();
+
+    /**
+     * The meta object literal for the '<em><b>Rel</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LOGICAL_FACTOR__REL = eINSTANCE.getLogicalFactor_Rel();
+
+    /**
      * The meta object literal for the '{@link xmodelica.modelica.impl.RelationImpl <em>Relation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8571,12 +9485,12 @@ public interface ModelicaPackage extends EPackage
     EReference RELATION__LEFT = eINSTANCE.getRelation_Left();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Rel op</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RELATION__OP = eINSTANCE.getRelation_Op();
+    EAttribute RELATION__REL_OP = eINSTANCE.getRelation_Rel_op();
 
     /**
      * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
@@ -8597,12 +9511,38 @@ public interface ModelicaPackage extends EPackage
     EClass ARITHMETIC_EXPRESSION = eINSTANCE.getArithmeticExpression();
 
     /**
-     * The meta object literal for the '<em><b>Ops</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Add op</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ARITHMETIC_EXPRESSION__OPS = eINSTANCE.getArithmeticExpression_Ops();
+    EAttribute ARITHMETIC_EXPRESSION__ADD_OP = eINSTANCE.getArithmeticExpression_Add_op();
+
+    /**
+     * The meta object literal for the '{@link xmodelica.modelica.impl.NegationImpl <em>Negation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see xmodelica.modelica.impl.NegationImpl
+     * @see xmodelica.modelica.impl.ModelicaPackageImpl#getNegation()
+     * @generated
+     */
+    EClass NEGATION = eINSTANCE.getNegation();
+
+    /**
+     * The meta object literal for the '<em><b>Neg op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NEGATION__NEG_OP = eINSTANCE.getNegation_Neg_op();
+
+    /**
+     * The meta object literal for the '<em><b>Term</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NEGATION__TERM = eINSTANCE.getNegation_Term();
 
     /**
      * The meta object literal for the '{@link xmodelica.modelica.impl.TermImpl <em>Term</em>}' class.
@@ -8613,6 +9553,14 @@ public interface ModelicaPackage extends EPackage
      * @generated
      */
     EClass TERM = eINSTANCE.getTerm();
+
+    /**
+     * The meta object literal for the '<em><b>Mul op</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TERM__MUL_OP = eINSTANCE.getTerm_Mul_op();
 
     /**
      * The meta object literal for the '{@link xmodelica.modelica.impl.FactorImpl <em>Factor</em>}' class.

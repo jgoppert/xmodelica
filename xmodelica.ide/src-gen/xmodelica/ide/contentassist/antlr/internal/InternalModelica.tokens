@@ -1,8 +1,8 @@
-'('=66
-')'=67
+'('=67
+')'=68
 '*'=26
 '+'=43
-','=62
+','=63
 '-'=44
 '.'=99
 '.*'=48
@@ -17,7 +17,7 @@
 '<'=37
 '<='=38
 '<>'=42
-'='=68
+'='=62
 '=='=41
 '>'=39
 '>='=40
@@ -46,7 +46,7 @@
 'equation'=81
 'expandable'=58
 'extends'=75
-'external'=65
+'external'=66
 'final'=70
 'flow'=27
 'for'=86
@@ -60,6 +60,7 @@
 'input'=32
 'loop'=87
 'model'=19
+'not'=102
 'operator'=23
 'or'=93
 'outer'=72
@@ -67,8 +68,8 @@
 'package'=22
 'parameter'=30
 'partial'=56
-'protected'=64
-'public'=63
+'protected'=65
+'public'=64
 'pure'=24
 'record'=57
 'redeclare'=69
@@ -98,6 +99,7 @@ RULE_UNSIGNED_NUMBER=6
 RULE_WS=16
 T__100=100
 T__101=101
+T__102=102
 T__18=18
 T__19=19
 T__20=20

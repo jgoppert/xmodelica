@@ -3,17 +3,40 @@
  */
 package xmodelica.modelica;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Term</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.Term#getMul_op <em>Mul op</em>}</li>
+ * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getTerm()
  * @model
  * @generated
  */
-public interface Term extends ArithmeticExpression
+public interface Term extends Negation
 {
+  /**
+   * Returns the value of the '<em><b>Mul op</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Mul op</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Mul op</em>' attribute list.
+   * @see xmodelica.modelica.ModelicaPackage#getTerm_Mul_op()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getMul_op();
+
 } // Term

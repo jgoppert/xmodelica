@@ -14,7 +14,7 @@ package xmodelica.modelica;
  * </p>
  * <ul>
  *   <li>{@link xmodelica.modelica.Relation#getLeft <em>Left</em>}</li>
- *   <li>{@link xmodelica.modelica.Relation#getOp <em>Op</em>}</li>
+ *   <li>{@link xmodelica.modelica.Relation#getRel_op <em>Rel op</em>}</li>
  *   <li>{@link xmodelica.modelica.Relation#getRight <em>Right</em>}</li>
  * </ul>
  *
@@ -51,30 +51,30 @@ public interface Relation extends LogicalFactor
   void setLeft(ArithmeticExpression value);
 
   /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute.
+   * Returns the value of the '<em><b>Rel op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Op</em>' attribute isn't clear,
+   * If the meaning of the '<em>Rel op</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute.
-   * @see #setOp(String)
-   * @see xmodelica.modelica.ModelicaPackage#getRelation_Op()
+   * @return the value of the '<em>Rel op</em>' attribute.
+   * @see #setRel_op(String)
+   * @see xmodelica.modelica.ModelicaPackage#getRelation_Rel_op()
    * @model
    * @generated
    */
-  String getOp();
+  String getRel_op();
 
   /**
-   * Sets the value of the '{@link xmodelica.modelica.Relation#getOp <em>Op</em>}' attribute.
+   * Sets the value of the '{@link xmodelica.modelica.Relation#getRel_op <em>Rel op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Op</em>' attribute.
-   * @see #getOp()
+   * @param value the new value of the '<em>Rel op</em>' attribute.
+   * @see #getRel_op()
    * @generated
    */
-  void setOp(String value);
+  void setRel_op(String value);
 
   /**
    * Returns the value of the '<em><b>Right</b></em>' containment reference.

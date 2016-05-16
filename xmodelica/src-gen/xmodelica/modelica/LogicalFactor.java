@@ -15,6 +15,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link xmodelica.modelica.LogicalFactor#getFactors <em>Factors</em>}</li>
+ *   <li>{@link xmodelica.modelica.LogicalFactor#isNot <em>Not</em>}</li>
+ *   <li>{@link xmodelica.modelica.LogicalFactor#getRel <em>Rel</em>}</li>
  * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getLogicalFactor()
@@ -38,5 +40,57 @@ public interface LogicalFactor extends LogicalTerm
    * @generated
    */
   EList<LogicalFactor> getFactors();
+
+  /**
+   * Returns the value of the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Not</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Not</em>' attribute.
+   * @see #setNot(boolean)
+   * @see xmodelica.modelica.ModelicaPackage#getLogicalFactor_Not()
+   * @model
+   * @generated
+   */
+  boolean isNot();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.LogicalFactor#isNot <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Not</em>' attribute.
+   * @see #isNot()
+   * @generated
+   */
+  void setNot(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Rel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Rel</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Rel</em>' containment reference.
+   * @see #setRel(Relation)
+   * @see xmodelica.modelica.ModelicaPackage#getLogicalFactor_Rel()
+   * @model containment="true"
+   * @generated
+   */
+  Relation getRel();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.LogicalFactor#getRel <em>Rel</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rel</em>' containment reference.
+   * @see #getRel()
+   * @generated
+   */
+  void setRel(Relation value);
 
 } // LogicalFactor

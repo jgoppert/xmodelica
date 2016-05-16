@@ -474,6 +474,15 @@ public interface ModelicaFactory extends EFactory
   ArithmeticExpression createArithmeticExpression();
 
   /**
+   * Returns a new object of class '<em>Negation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Negation</em>'.
+   * @generated
+   */
+  Negation createNegation();
+
+  /**
    * Returns a new object of class '<em>Term</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -11,7 +11,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import xmodelica.modelica.ArraySubscripts;
 import xmodelica.modelica.ClassDefinition;
+import xmodelica.modelica.ClassModification;
 import xmodelica.modelica.Composition;
 import xmodelica.modelica.ModelicaPackage;
 
@@ -26,9 +28,13 @@ import xmodelica.modelica.ModelicaPackage;
  *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#isFinal <em>Final</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#isEncapsulated <em>Encapsulated</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getName <em>Name</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getStr_comment <em>Str comment</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getComposition <em>Composition</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getName_end <em>Name end</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getName2 <em>Name2</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getSubs <em>Subs</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getMod <em>Mod</em>}</li>
  * </ul>
  *
  * @generated
@@ -96,24 +102,24 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+   * The default value of the '{@link #getStr_comment() <em>Str comment</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComment()
+   * @see #getStr_comment()
    * @generated
    * @ordered
    */
-  protected static final String COMMENT_EDEFAULT = null;
+  protected static final String STR_COMMENT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+   * The cached value of the '{@link #getStr_comment() <em>Str comment</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComment()
+   * @see #getStr_comment()
    * @generated
    * @ordered
    */
-  protected String comment = COMMENT_EDEFAULT;
+  protected String str_comment = STR_COMMENT_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getComposition() <em>Composition</em>}' containment reference.
@@ -144,6 +150,66 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
    * @ordered
    */
   protected String name_end = NAME_END_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefix()
+   * @generated
+   * @ordered
+   */
+  protected static final String PREFIX_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefix()
+   * @generated
+   * @ordered
+   */
+  protected String prefix = PREFIX_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getName2() <em>Name2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName2()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME2_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName2() <em>Name2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName2()
+   * @generated
+   * @ordered
+   */
+  protected String name2 = NAME2_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSubs() <em>Subs</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubs()
+   * @generated
+   * @ordered
+   */
+  protected ArraySubscripts subs;
+
+  /**
+   * The cached value of the '{@link #getMod() <em>Mod</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMod()
+   * @generated
+   * @ordered
+   */
+  protected ClassModification mod;
 
   /**
    * <!-- begin-user-doc -->
@@ -240,9 +306,9 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getComment()
+  public String getStr_comment()
   {
-    return comment;
+    return str_comment;
   }
 
   /**
@@ -250,12 +316,12 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setComment(String newComment)
+  public void setStr_comment(String newStr_comment)
   {
-    String oldComment = comment;
-    comment = newComment;
+    String oldStr_comment = str_comment;
+    str_comment = newStr_comment;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__COMMENT, oldComment, comment));
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__STR_COMMENT, oldStr_comment, str_comment));
   }
 
   /**
@@ -334,6 +400,148 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getPrefix()
+  {
+    return prefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPrefix(String newPrefix)
+  {
+    String oldPrefix = prefix;
+    prefix = newPrefix;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__PREFIX, oldPrefix, prefix));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName2()
+  {
+    return name2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName2(String newName2)
+  {
+    String oldName2 = name2;
+    name2 = newName2;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__NAME2, oldName2, name2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArraySubscripts getSubs()
+  {
+    return subs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetSubs(ArraySubscripts newSubs, NotificationChain msgs)
+  {
+    ArraySubscripts oldSubs = subs;
+    subs = newSubs;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__SUBS, oldSubs, newSubs);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSubs(ArraySubscripts newSubs)
+  {
+    if (newSubs != subs)
+    {
+      NotificationChain msgs = null;
+      if (subs != null)
+        msgs = ((InternalEObject)subs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.CLASS_DEFINITION__SUBS, null, msgs);
+      if (newSubs != null)
+        msgs = ((InternalEObject)newSubs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.CLASS_DEFINITION__SUBS, null, msgs);
+      msgs = basicSetSubs(newSubs, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__SUBS, newSubs, newSubs));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClassModification getMod()
+  {
+    return mod;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetMod(ClassModification newMod, NotificationChain msgs)
+  {
+    ClassModification oldMod = mod;
+    mod = newMod;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__MOD, oldMod, newMod);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMod(ClassModification newMod)
+  {
+    if (newMod != mod)
+    {
+      NotificationChain msgs = null;
+      if (mod != null)
+        msgs = ((InternalEObject)mod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.CLASS_DEFINITION__MOD, null, msgs);
+      if (newMod != null)
+        msgs = ((InternalEObject)newMod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.CLASS_DEFINITION__MOD, null, msgs);
+      msgs = basicSetMod(newMod, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__MOD, newMod, newMod));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -341,6 +549,10 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
     {
       case ModelicaPackage.CLASS_DEFINITION__COMPOSITION:
         return basicSetComposition(null, msgs);
+      case ModelicaPackage.CLASS_DEFINITION__SUBS:
+        return basicSetSubs(null, msgs);
+      case ModelicaPackage.CLASS_DEFINITION__MOD:
+        return basicSetMod(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -361,12 +573,20 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
         return isEncapsulated();
       case ModelicaPackage.CLASS_DEFINITION__NAME:
         return getName();
-      case ModelicaPackage.CLASS_DEFINITION__COMMENT:
-        return getComment();
+      case ModelicaPackage.CLASS_DEFINITION__STR_COMMENT:
+        return getStr_comment();
       case ModelicaPackage.CLASS_DEFINITION__COMPOSITION:
         return getComposition();
       case ModelicaPackage.CLASS_DEFINITION__NAME_END:
         return getName_end();
+      case ModelicaPackage.CLASS_DEFINITION__PREFIX:
+        return getPrefix();
+      case ModelicaPackage.CLASS_DEFINITION__NAME2:
+        return getName2();
+      case ModelicaPackage.CLASS_DEFINITION__SUBS:
+        return getSubs();
+      case ModelicaPackage.CLASS_DEFINITION__MOD:
+        return getMod();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -390,14 +610,26 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
       case ModelicaPackage.CLASS_DEFINITION__NAME:
         setName((String)newValue);
         return;
-      case ModelicaPackage.CLASS_DEFINITION__COMMENT:
-        setComment((String)newValue);
+      case ModelicaPackage.CLASS_DEFINITION__STR_COMMENT:
+        setStr_comment((String)newValue);
         return;
       case ModelicaPackage.CLASS_DEFINITION__COMPOSITION:
         setComposition((Composition)newValue);
         return;
       case ModelicaPackage.CLASS_DEFINITION__NAME_END:
         setName_end((String)newValue);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__PREFIX:
+        setPrefix((String)newValue);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__NAME2:
+        setName2((String)newValue);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__SUBS:
+        setSubs((ArraySubscripts)newValue);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__MOD:
+        setMod((ClassModification)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -422,14 +654,26 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
       case ModelicaPackage.CLASS_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case ModelicaPackage.CLASS_DEFINITION__COMMENT:
-        setComment(COMMENT_EDEFAULT);
+      case ModelicaPackage.CLASS_DEFINITION__STR_COMMENT:
+        setStr_comment(STR_COMMENT_EDEFAULT);
         return;
       case ModelicaPackage.CLASS_DEFINITION__COMPOSITION:
         setComposition((Composition)null);
         return;
       case ModelicaPackage.CLASS_DEFINITION__NAME_END:
         setName_end(NAME_END_EDEFAULT);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__PREFIX:
+        setPrefix(PREFIX_EDEFAULT);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__NAME2:
+        setName2(NAME2_EDEFAULT);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__SUBS:
+        setSubs((ArraySubscripts)null);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__MOD:
+        setMod((ClassModification)null);
         return;
     }
     super.eUnset(featureID);
@@ -451,12 +695,20 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
         return encapsulated != ENCAPSULATED_EDEFAULT;
       case ModelicaPackage.CLASS_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ModelicaPackage.CLASS_DEFINITION__COMMENT:
-        return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+      case ModelicaPackage.CLASS_DEFINITION__STR_COMMENT:
+        return STR_COMMENT_EDEFAULT == null ? str_comment != null : !STR_COMMENT_EDEFAULT.equals(str_comment);
       case ModelicaPackage.CLASS_DEFINITION__COMPOSITION:
         return composition != null;
       case ModelicaPackage.CLASS_DEFINITION__NAME_END:
         return NAME_END_EDEFAULT == null ? name_end != null : !NAME_END_EDEFAULT.equals(name_end);
+      case ModelicaPackage.CLASS_DEFINITION__PREFIX:
+        return PREFIX_EDEFAULT == null ? prefix != null : !PREFIX_EDEFAULT.equals(prefix);
+      case ModelicaPackage.CLASS_DEFINITION__NAME2:
+        return NAME2_EDEFAULT == null ? name2 != null : !NAME2_EDEFAULT.equals(name2);
+      case ModelicaPackage.CLASS_DEFINITION__SUBS:
+        return subs != null;
+      case ModelicaPackage.CLASS_DEFINITION__MOD:
+        return mod != null;
     }
     return super.eIsSet(featureID);
   }
@@ -478,10 +730,14 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
     result.append(encapsulated);
     result.append(", name: ");
     result.append(name);
-    result.append(", comment: ");
-    result.append(comment);
+    result.append(", str_comment: ");
+    result.append(str_comment);
     result.append(", name_end: ");
     result.append(name_end);
+    result.append(", prefix: ");
+    result.append(prefix);
+    result.append(", name2: ");
+    result.append(name2);
     result.append(')');
     return result.toString();
   }

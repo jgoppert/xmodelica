@@ -62,14 +62,14 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
   protected EList<Equation> when_eqs;
 
   /**
-   * The cached value of the '{@link #getElsehwhen() <em>Elsehwhen</em>}' containment reference.
+   * The cached value of the '{@link #getElsehwhen() <em>Elsehwhen</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getElsehwhen()
    * @generated
    * @ordered
    */
-  protected Expression elsehwhen;
+  protected EList<Expression> elsehwhen;
 
   /**
    * The cached value of the '{@link #getElsewhen_eqs() <em>Elsewhen eqs</em>}' containment reference list.
@@ -169,47 +169,13 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getElsehwhen()
+  public EList<Expression> getElsehwhen()
   {
+    if (elsehwhen == null)
+    {
+      elsehwhen = new EObjectContainmentEList<Expression>(Expression.class, this, ModelicaPackage.WHEN_EQUATION__ELSEHWHEN);
+    }
     return elsehwhen;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetElsehwhen(Expression newElsehwhen, NotificationChain msgs)
-  {
-    Expression oldElsehwhen = elsehwhen;
-    elsehwhen = newElsehwhen;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.WHEN_EQUATION__ELSEHWHEN, oldElsehwhen, newElsehwhen);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setElsehwhen(Expression newElsehwhen)
-  {
-    if (newElsehwhen != elsehwhen)
-    {
-      NotificationChain msgs = null;
-      if (elsehwhen != null)
-        msgs = ((InternalEObject)elsehwhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.WHEN_EQUATION__ELSEHWHEN, null, msgs);
-      if (newElsehwhen != null)
-        msgs = ((InternalEObject)newElsehwhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.WHEN_EQUATION__ELSEHWHEN, null, msgs);
-      msgs = basicSetElsehwhen(newElsehwhen, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.WHEN_EQUATION__ELSEHWHEN, newElsehwhen, newElsehwhen));
   }
 
   /**
@@ -241,7 +207,7 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
       case ModelicaPackage.WHEN_EQUATION__WHEN_EQS:
         return ((InternalEList<?>)getWhen_eqs()).basicRemove(otherEnd, msgs);
       case ModelicaPackage.WHEN_EQUATION__ELSEHWHEN:
-        return basicSetElsehwhen(null, msgs);
+        return ((InternalEList<?>)getElsehwhen()).basicRemove(otherEnd, msgs);
       case ModelicaPackage.WHEN_EQUATION__ELSEWHEN_EQS:
         return ((InternalEList<?>)getElsewhen_eqs()).basicRemove(otherEnd, msgs);
     }
@@ -289,7 +255,8 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
         getWhen_eqs().addAll((Collection<? extends Equation>)newValue);
         return;
       case ModelicaPackage.WHEN_EQUATION__ELSEHWHEN:
-        setElsehwhen((Expression)newValue);
+        getElsehwhen().clear();
+        getElsehwhen().addAll((Collection<? extends Expression>)newValue);
         return;
       case ModelicaPackage.WHEN_EQUATION__ELSEWHEN_EQS:
         getElsewhen_eqs().clear();
@@ -316,7 +283,7 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
         getWhen_eqs().clear();
         return;
       case ModelicaPackage.WHEN_EQUATION__ELSEHWHEN:
-        setElsehwhen((Expression)null);
+        getElsehwhen().clear();
         return;
       case ModelicaPackage.WHEN_EQUATION__ELSEWHEN_EQS:
         getElsewhen_eqs().clear();
@@ -340,7 +307,7 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
       case ModelicaPackage.WHEN_EQUATION__WHEN_EQS:
         return when_eqs != null && !when_eqs.isEmpty();
       case ModelicaPackage.WHEN_EQUATION__ELSEHWHEN:
-        return elsehwhen != null;
+        return elsehwhen != null && !elsehwhen.isEmpty();
       case ModelicaPackage.WHEN_EQUATION__ELSEWHEN_EQS:
         return elsewhen_eqs != null && !elsewhen_eqs.isEmpty();
     }

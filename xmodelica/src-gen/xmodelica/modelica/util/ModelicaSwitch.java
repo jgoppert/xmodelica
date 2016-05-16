@@ -494,10 +494,28 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ModelicaPackage.NEGATION:
+      {
+        Negation negation = (Negation)theEObject;
+        T result = caseNegation(negation);
+        if (result == null) result = caseArithmeticExpression(negation);
+        if (result == null) result = caseRelation(negation);
+        if (result == null) result = caseLogicalFactor(negation);
+        if (result == null) result = caseLogicalTerm(negation);
+        if (result == null) result = caseLogicalExpression(negation);
+        if (result == null) result = caseSimpleExpression(negation);
+        if (result == null) result = caseExpression(negation);
+        if (result == null) result = caseConditionAttribute(negation);
+        if (result == null) result = caseFunctionArgument(negation);
+        if (result == null) result = caseSubscript(negation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ModelicaPackage.TERM:
       {
         Term term = (Term)theEObject;
         T result = caseTerm(term);
+        if (result == null) result = caseNegation(term);
         if (result == null) result = caseArithmeticExpression(term);
         if (result == null) result = caseRelation(term);
         if (result == null) result = caseLogicalFactor(term);
@@ -516,6 +534,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         Factor factor = (Factor)theEObject;
         T result = caseFactor(factor);
         if (result == null) result = caseTerm(factor);
+        if (result == null) result = caseNegation(factor);
         if (result == null) result = caseArithmeticExpression(factor);
         if (result == null) result = caseRelation(factor);
         if (result == null) result = caseLogicalFactor(factor);
@@ -536,6 +555,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = casePrimary(floatPrimary);
         if (result == null) result = caseFactor(floatPrimary);
         if (result == null) result = caseTerm(floatPrimary);
+        if (result == null) result = caseNegation(floatPrimary);
         if (result == null) result = caseArithmeticExpression(floatPrimary);
         if (result == null) result = caseRelation(floatPrimary);
         if (result == null) result = caseLogicalFactor(floatPrimary);
@@ -556,6 +576,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = casePrimary(stringPrimary);
         if (result == null) result = caseFactor(stringPrimary);
         if (result == null) result = caseTerm(stringPrimary);
+        if (result == null) result = caseNegation(stringPrimary);
         if (result == null) result = caseArithmeticExpression(stringPrimary);
         if (result == null) result = caseRelation(stringPrimary);
         if (result == null) result = caseLogicalFactor(stringPrimary);
@@ -576,6 +597,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = casePrimary(logicalPrimary);
         if (result == null) result = caseFactor(logicalPrimary);
         if (result == null) result = caseTerm(logicalPrimary);
+        if (result == null) result = caseNegation(logicalPrimary);
         if (result == null) result = caseArithmeticExpression(logicalPrimary);
         if (result == null) result = caseRelation(logicalPrimary);
         if (result == null) result = caseLogicalFactor(logicalPrimary);
@@ -596,6 +618,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = casePrimary(end);
         if (result == null) result = caseFactor(end);
         if (result == null) result = caseTerm(end);
+        if (result == null) result = caseNegation(end);
         if (result == null) result = caseArithmeticExpression(end);
         if (result == null) result = caseRelation(end);
         if (result == null) result = caseLogicalFactor(end);
@@ -615,6 +638,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         T result = casePrimary(primary);
         if (result == null) result = caseFactor(primary);
         if (result == null) result = caseTerm(primary);
+        if (result == null) result = caseNegation(primary);
         if (result == null) result = caseArithmeticExpression(primary);
         if (result == null) result = caseRelation(primary);
         if (result == null) result = caseLogicalFactor(primary);
@@ -635,6 +659,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = casePrimary(functionCall);
         if (result == null) result = caseFactor(functionCall);
         if (result == null) result = caseTerm(functionCall);
+        if (result == null) result = caseNegation(functionCall);
         if (result == null) result = caseArithmeticExpression(functionCall);
         if (result == null) result = caseRelation(functionCall);
         if (result == null) result = caseLogicalFactor(functionCall);
@@ -655,6 +680,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = casePrimary(componentReference);
         if (result == null) result = caseFactor(componentReference);
         if (result == null) result = caseTerm(componentReference);
+        if (result == null) result = caseNegation(componentReference);
         if (result == null) result = caseArithmeticExpression(componentReference);
         if (result == null) result = caseRelation(componentReference);
         if (result == null) result = caseLogicalFactor(componentReference);
@@ -682,6 +708,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = casePrimary(functionArguments);
         if (result == null) result = caseFactor(functionArguments);
         if (result == null) result = caseTerm(functionArguments);
+        if (result == null) result = caseNegation(functionArguments);
         if (result == null) result = caseArithmeticExpression(functionArguments);
         if (result == null) result = caseRelation(functionArguments);
         if (result == null) result = caseLogicalFactor(functionArguments);
@@ -710,6 +737,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = casePrimary(namedArgument);
         if (result == null) result = caseFactor(namedArgument);
         if (result == null) result = caseTerm(namedArgument);
+        if (result == null) result = caseNegation(namedArgument);
         if (result == null) result = caseArithmeticExpression(namedArgument);
         if (result == null) result = caseRelation(namedArgument);
         if (result == null) result = caseLogicalFactor(namedArgument);
@@ -1585,6 +1613,22 @@ public class ModelicaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseArithmeticExpression(ArithmeticExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Negation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Negation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNegation(Negation object)
   {
     return null;
   }

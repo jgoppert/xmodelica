@@ -61,6 +61,7 @@ import xmodelica.modelica.ModelicaPackage;
 import xmodelica.modelica.Modification;
 import xmodelica.modelica.NamedArgument;
 import xmodelica.modelica.NamedArguments;
+import xmodelica.modelica.Negation;
 import xmodelica.modelica.OuputExpressionList;
 import xmodelica.modelica.Primary;
 import xmodelica.modelica.Relation;
@@ -293,8 +294,24 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				sequence_LogicalExpression(context, (LogicalExpression) semanticObject); 
 				return; 
 			case ModelicaPackage.LOGICAL_FACTOR:
-				sequence_LogicalTerm(context, (LogicalFactor) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getLogicalFactorRule()) {
+					sequence_LogicalFactor(context, (LogicalFactor) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getConditionAttributeRule()
+						|| rule == grammarAccess.getExpressionRule()
+						|| rule == grammarAccess.getSimpleExpressionRule()
+						|| action == grammarAccess.getSimpleExpressionAccess().getSimpleExpressionExprsAction_1_1()
+						|| rule == grammarAccess.getLogicalExpressionRule()
+						|| action == grammarAccess.getLogicalExpressionAccess().getLogicalExpressionTermsAction_1_0()
+						|| rule == grammarAccess.getLogicalTermRule()
+						|| action == grammarAccess.getLogicalTermAccess().getLogicalFactorFactorsAction_1_0()
+						|| rule == grammarAccess.getFunctionArgumentRule()
+						|| rule == grammarAccess.getSubscriptRule()) {
+					sequence_LogicalFactor_LogicalTerm(context, (LogicalFactor) semanticObject); 
+					return; 
+				}
+				else break;
 			case ModelicaPackage.LOGICAL_PRIMARY:
 				sequence_LogicalPrimary(context, (LogicalPrimary) semanticObject); 
 				return; 
@@ -306,6 +323,9 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case ModelicaPackage.NAMED_ARGUMENTS:
 				sequence_NamedArguments(context, (NamedArguments) semanticObject); 
+				return; 
+			case ModelicaPackage.NEGATION:
+				sequence_Negation(context, (Negation) semanticObject); 
 				return; 
 			case ModelicaPackage.OUPUT_EXPRESSION_LIST:
 				sequence_OutputExpressionList(context, (OuputExpressionList) semanticObject); 
@@ -428,7 +448,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Subscript returns ArithmeticExpression
 	 *
 	 * Constraint:
-	 *     (terms+=ArithmeticExpression_ArithmeticExpression_1_0 ops+=AddOp terms+=Term)
+	 *     (terms+=ArithmeticExpression_ArithmeticExpression_1_0 add_op+=AddOp terms+=Negation)
 	 */
 	protected void sequence_ArithmeticExpression(ISerializationContext context, ArithmeticExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -482,10 +502,10 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     (
 	 *         final?='final'? 
 	 *         encapsulated?='encapsulated'? 
-	 *         name=IDENT 
-	 *         comment=StringComment 
-	 *         composition=Composition 
-	 *         name_end=IDENT
+	 *         (
+	 *             (name=IDENT str_comment=StringComment composition=Composition name_end=IDENT) | 
+	 *             (name=IDENT prefix=BasePrefix name2=Name subs=ArraySubscripts? mod=ClassModification?)
+	 *         )
 	 *     )
 	 */
 	protected void sequence_ClassDefinitionWithFinal_ClassSpecifier(ISerializationContext context, ClassDefinition semanticObject) {
@@ -499,7 +519,13 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Element returns ClassDefinition
 	 *
 	 * Constraint:
-	 *     (encapsulated?='encapsulated'? name=IDENT comment=StringComment composition=Composition name_end=IDENT)
+	 *     (
+	 *         encapsulated?='encapsulated'? 
+	 *         (
+	 *             (name=IDENT str_comment=StringComment composition=Composition name_end=IDENT) | 
+	 *             (name=IDENT prefix=BasePrefix name2=Name subs=ArraySubscripts? mod=ClassModification?)
+	 *         )
+	 *     )
 	 */
 	protected void sequence_ClassDefinition_ClassSpecifier(ISerializationContext context, ClassDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -524,25 +550,13 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ClassSpecifier returns ClassDefinition
 	 *
 	 * Constraint:
-	 *     (name=IDENT comment=StringComment composition=Composition name_end=IDENT)
+	 *     (
+	 *         (name=IDENT str_comment=StringComment composition=Composition name_end=IDENT) | 
+	 *         (name=IDENT prefix=BasePrefix name2=Name subs=ArraySubscripts? mod=ClassModification?)
+	 *     )
 	 */
 	protected void sequence_ClassSpecifier(ISerializationContext context, ClassDefinition semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.CLASS_DEFINITION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.CLASS_DEFINITION__NAME));
-			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.CLASS_DEFINITION__COMMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.CLASS_DEFINITION__COMMENT));
-			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.CLASS_DEFINITION__COMPOSITION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.CLASS_DEFINITION__COMPOSITION));
-			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.CLASS_DEFINITION__NAME_END) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.CLASS_DEFINITION__NAME_END));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClassSpecifierAccess().getNameIDENTTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getClassSpecifierAccess().getCommentStringCommentParserRuleCall_1_0(), semanticObject.getComment());
-		feeder.accept(grammarAccess.getClassSpecifierAccess().getCompositionCompositionParserRuleCall_2_0(), semanticObject.getComposition());
-		feeder.accept(grammarAccess.getClassSpecifierAccess().getName_endIDENTTerminalRuleCall_4_0(), semanticObject.getName_end());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -661,6 +675,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Relation.Relation_1_0 returns ComponentReference
 	 *     ArithmeticExpression returns ComponentReference
 	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns ComponentReference
+	 *     Negation returns ComponentReference
 	 *     Term returns ComponentReference
 	 *     Term.Term_1_0 returns ComponentReference
 	 *     Factor returns ComponentReference
@@ -822,6 +837,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Relation.Relation_1_0 returns End
 	 *     ArithmeticExpression returns End
 	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns End
+	 *     Negation returns End
 	 *     Term returns End
 	 *     Term.Term_1_0 returns End
 	 *     Factor returns End
@@ -943,7 +959,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Equation returns WhenEquation
 	 *
 	 * Constraint:
-	 *     (when=Expression when_eqs+=Equation* elsehwhen=Expression elsewhen_eqs+=Equation commment=Comment)
+	 *     (when=Expression when_eqs+=Equation* (elsehwhen+=Expression elsewhen_eqs+=Equation)* commment=Comment)
 	 */
 	protected void sequence_Equation_WhenEquation(ISerializationContext context, WhenEquation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1017,6 +1033,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Relation.Relation_1_0 returns Factor
 	 *     ArithmeticExpression returns Factor
 	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns Factor
+	 *     Negation returns Factor
 	 *     Term returns Factor
 	 *     Term.Term_1_0 returns Factor
 	 *     Factor returns Factor
@@ -1055,6 +1072,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Relation.Relation_1_0 returns FloatPrimary
 	 *     ArithmeticExpression returns FloatPrimary
 	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns FloatPrimary
+	 *     Negation returns FloatPrimary
 	 *     Term returns FloatPrimary
 	 *     Term.Term_1_0 returns FloatPrimary
 	 *     Factor returns FloatPrimary
@@ -1162,6 +1180,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Relation.Relation_1_0 returns FunctionArguments
 	 *     ArithmeticExpression returns FunctionArguments
 	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns FunctionArguments
+	 *     Negation returns FunctionArguments
 	 *     Term returns FunctionArguments
 	 *     Term.Term_1_0 returns FunctionArguments
 	 *     Factor returns FunctionArguments
@@ -1206,6 +1225,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Relation.Relation_1_0 returns FunctionCall
 	 *     ArithmeticExpression returns FunctionCall
 	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns FunctionCall
+	 *     Negation returns FunctionCall
 	 *     Term returns FunctionCall
 	 *     Term.Term_1_0 returns FunctionCall
 	 *     Factor returns FunctionCall
@@ -1305,6 +1325,48 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     LogicalFactor returns LogicalFactor
+	 *
+	 * Constraint:
+	 *     (not?='not' rel=Relation)
+	 */
+	protected void sequence_LogicalFactor(ISerializationContext context, LogicalFactor semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.LOGICAL_FACTOR__NOT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.LOGICAL_FACTOR__NOT));
+			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.LOGICAL_FACTOR__REL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.LOGICAL_FACTOR__REL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLogicalFactorAccess().getNotNotKeyword_1_0_0(), semanticObject.isNot());
+		feeder.accept(grammarAccess.getLogicalFactorAccess().getRelRelationParserRuleCall_1_1_0(), semanticObject.getRel());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ConditionAttribute returns LogicalFactor
+	 *     Expression returns LogicalFactor
+	 *     SimpleExpression returns LogicalFactor
+	 *     SimpleExpression.SimpleExpression_1_1 returns LogicalFactor
+	 *     LogicalExpression returns LogicalFactor
+	 *     LogicalExpression.LogicalExpression_1_0 returns LogicalFactor
+	 *     LogicalTerm returns LogicalFactor
+	 *     LogicalTerm.LogicalFactor_1_0 returns LogicalFactor
+	 *     FunctionArgument returns LogicalFactor
+	 *     Subscript returns LogicalFactor
+	 *
+	 * Constraint:
+	 *     ((factors+=LogicalTerm_LogicalFactor_1_0 factors+=LogicalFactor) | (not?='not' rel=Relation))
+	 */
+	protected void sequence_LogicalFactor_LogicalTerm(ISerializationContext context, LogicalFactor semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ConditionAttribute returns LogicalPrimary
 	 *     Expression returns LogicalPrimary
 	 *     SimpleExpression returns LogicalPrimary
@@ -1318,6 +1380,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Relation.Relation_1_0 returns LogicalPrimary
 	 *     ArithmeticExpression returns LogicalPrimary
 	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns LogicalPrimary
+	 *     Negation returns LogicalPrimary
 	 *     Term returns LogicalPrimary
 	 *     Term.Term_1_0 returns LogicalPrimary
 	 *     Factor returns LogicalPrimary
@@ -1338,27 +1401,6 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLogicalPrimaryAccess().getValTRUE_FALSETerminalRuleCall_0(), semanticObject.isVal());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ConditionAttribute returns LogicalFactor
-	 *     Expression returns LogicalFactor
-	 *     SimpleExpression returns LogicalFactor
-	 *     SimpleExpression.SimpleExpression_1_1 returns LogicalFactor
-	 *     LogicalExpression returns LogicalFactor
-	 *     LogicalExpression.LogicalExpression_1_0 returns LogicalFactor
-	 *     LogicalTerm returns LogicalFactor
-	 *     LogicalTerm.LogicalFactor_1_0 returns LogicalFactor
-	 *     FunctionArgument returns LogicalFactor
-	 *     Subscript returns LogicalFactor
-	 *
-	 * Constraint:
-	 *     (factors+=LogicalTerm_LogicalFactor_1_0 factors+=LogicalFactor)
-	 */
-	protected void sequence_LogicalTerm(ISerializationContext context, LogicalFactor semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1389,6 +1431,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Relation.Relation_1_0 returns NamedArgument
 	 *     ArithmeticExpression returns NamedArgument
 	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns NamedArgument
+	 *     Negation returns NamedArgument
 	 *     Term returns NamedArgument
 	 *     Term.Term_1_0 returns NamedArgument
 	 *     Factor returns NamedArgument
@@ -1430,6 +1473,42 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ConditionAttribute returns Negation
+	 *     Expression returns Negation
+	 *     SimpleExpression returns Negation
+	 *     SimpleExpression.SimpleExpression_1_1 returns Negation
+	 *     LogicalExpression returns Negation
+	 *     LogicalExpression.LogicalExpression_1_0 returns Negation
+	 *     LogicalTerm returns Negation
+	 *     LogicalTerm.LogicalFactor_1_0 returns Negation
+	 *     LogicalFactor returns Negation
+	 *     Relation returns Negation
+	 *     Relation.Relation_1_0 returns Negation
+	 *     ArithmeticExpression returns Negation
+	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns Negation
+	 *     Negation returns Negation
+	 *     FunctionArgument returns Negation
+	 *     Subscript returns Negation
+	 *
+	 * Constraint:
+	 *     (neg_op=AddOp term=Term)
+	 */
+	protected void sequence_Negation(ISerializationContext context, Negation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.NEGATION__NEG_OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.NEGATION__NEG_OP));
+			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.NEGATION__TERM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.NEGATION__TERM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNegationAccess().getNeg_opAddOpParserRuleCall_1_0_0(), semanticObject.getNeg_op());
+		feeder.accept(grammarAccess.getNegationAccess().getTermTermParserRuleCall_1_1_0(), semanticObject.getTerm());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     OutputExpressionList returns OuputExpressionList
 	 *
 	 * Constraint:
@@ -1455,6 +1534,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Relation.Relation_1_0 returns Primary
 	 *     ArithmeticExpression returns Primary
 	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns Primary
+	 *     Negation returns Primary
 	 *     Term returns Primary
 	 *     Term.Term_1_0 returns Primary
 	 *     Factor returns Primary
@@ -1487,20 +1567,20 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Subscript returns Relation
 	 *
 	 * Constraint:
-	 *     (left=Relation_Relation_1_0 op=RelOp right=ArithmeticExpression)
+	 *     (left=Relation_Relation_1_0 rel_op=RelOp right=ArithmeticExpression)
 	 */
 	protected void sequence_Relation(ISerializationContext context, Relation semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.RELATION__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.RELATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.RELATION__OP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.RELATION__OP));
+			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.RELATION__REL_OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.RELATION__REL_OP));
 			if (transientValues.isValueTransient(semanticObject, ModelicaPackage.Literals.RELATION__RIGHT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelicaPackage.Literals.RELATION__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRelationAccess().getRelationLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getRelationAccess().getOpRelOpParserRuleCall_1_1_0(), semanticObject.getOp());
+		feeder.accept(grammarAccess.getRelationAccess().getRel_opRelOpParserRuleCall_1_1_0(), semanticObject.getRel_op());
 		feeder.accept(grammarAccess.getRelationAccess().getRightArithmeticExpressionParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
@@ -1557,7 +1637,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Statement returns WhenStatement
 	 *
 	 * Constraint:
-	 *     (when=Expression when_stmts+=Statement* elsehwhen=Expression elsewhen_stmts+=Statement comment=Comment)
+	 *     (when=Expression when_stmts+=Statement* (elsehwhen+=Expression elsewhen_stmts+=Statement)* comment=Comment)
 	 */
 	protected void sequence_Statement_WhenStatement(ISerializationContext context, WhenStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1603,6 +1683,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Relation.Relation_1_0 returns StringPrimary
 	 *     ArithmeticExpression returns StringPrimary
 	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns StringPrimary
+	 *     Negation returns StringPrimary
 	 *     Term returns StringPrimary
 	 *     Term.Term_1_0 returns StringPrimary
 	 *     Factor returns StringPrimary
@@ -1659,13 +1740,14 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Relation.Relation_1_0 returns Term
 	 *     ArithmeticExpression returns Term
 	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns Term
+	 *     Negation returns Term
 	 *     Term returns Term
 	 *     Term.Term_1_0 returns Term
 	 *     FunctionArgument returns Term
 	 *     Subscript returns Term
 	 *
 	 * Constraint:
-	 *     (factors+=Term_Term_1_0 ops+=MulOp factors+=Factor)
+	 *     (factors+=Term_Term_1_0 mul_op+=MulOp factors+=Factor)
 	 */
 	protected void sequence_Term(ISerializationContext context, Term semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1695,7 +1777,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     WhenEquation returns WhenEquation
 	 *
 	 * Constraint:
-	 *     (when=Expression when_eqs+=Equation* elsehwhen=Expression elsewhen_eqs+=Equation)
+	 *     (when=Expression when_eqs+=Equation* (elsehwhen+=Expression elsewhen_eqs+=Equation)*)
 	 */
 	protected void sequence_WhenEquation(ISerializationContext context, WhenEquation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1707,7 +1789,7 @@ public class ModelicaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     WhenStatement returns WhenStatement
 	 *
 	 * Constraint:
-	 *     (when=Expression when_stmts+=Statement* elsehwhen=Expression elsewhen_stmts+=Statement)
+	 *     (when=Expression when_stmts+=Statement* (elsehwhen+=Expression elsewhen_stmts+=Statement)*)
 	 */
 	protected void sequence_WhenStatement(ISerializationContext context, WhenStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

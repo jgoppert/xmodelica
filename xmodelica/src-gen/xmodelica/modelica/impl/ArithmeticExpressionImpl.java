@@ -22,7 +22,7 @@ import xmodelica.modelica.ModelicaPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.impl.ArithmeticExpressionImpl#getOps <em>Ops</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ArithmeticExpressionImpl#getAdd_op <em>Add op</em>}</li>
  * </ul>
  *
  * @generated
@@ -30,14 +30,14 @@ import xmodelica.modelica.ModelicaPackage;
 public class ArithmeticExpressionImpl extends RelationImpl implements ArithmeticExpression
 {
   /**
-   * The cached value of the '{@link #getOps() <em>Ops</em>}' attribute list.
+   * The cached value of the '{@link #getAdd_op() <em>Add op</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOps()
+   * @see #getAdd_op()
    * @generated
    * @ordered
    */
-  protected EList<String> ops;
+  protected EList<String> add_op;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,13 +65,13 @@ public class ArithmeticExpressionImpl extends RelationImpl implements Arithmetic
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getOps()
+  public EList<String> getAdd_op()
   {
-    if (ops == null)
+    if (add_op == null)
     {
-      ops = new EDataTypeEList<String>(String.class, this, ModelicaPackage.ARITHMETIC_EXPRESSION__OPS);
+      add_op = new EDataTypeEList<String>(String.class, this, ModelicaPackage.ARITHMETIC_EXPRESSION__ADD_OP);
     }
-    return ops;
+    return add_op;
   }
 
   /**
@@ -84,8 +84,8 @@ public class ArithmeticExpressionImpl extends RelationImpl implements Arithmetic
   {
     switch (featureID)
     {
-      case ModelicaPackage.ARITHMETIC_EXPRESSION__OPS:
-        return getOps();
+      case ModelicaPackage.ARITHMETIC_EXPRESSION__ADD_OP:
+        return getAdd_op();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -101,9 +101,9 @@ public class ArithmeticExpressionImpl extends RelationImpl implements Arithmetic
   {
     switch (featureID)
     {
-      case ModelicaPackage.ARITHMETIC_EXPRESSION__OPS:
-        getOps().clear();
-        getOps().addAll((Collection<? extends String>)newValue);
+      case ModelicaPackage.ARITHMETIC_EXPRESSION__ADD_OP:
+        getAdd_op().clear();
+        getAdd_op().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -119,8 +119,8 @@ public class ArithmeticExpressionImpl extends RelationImpl implements Arithmetic
   {
     switch (featureID)
     {
-      case ModelicaPackage.ARITHMETIC_EXPRESSION__OPS:
-        getOps().clear();
+      case ModelicaPackage.ARITHMETIC_EXPRESSION__ADD_OP:
+        getAdd_op().clear();
         return;
     }
     super.eUnset(featureID);
@@ -136,8 +136,8 @@ public class ArithmeticExpressionImpl extends RelationImpl implements Arithmetic
   {
     switch (featureID)
     {
-      case ModelicaPackage.ARITHMETIC_EXPRESSION__OPS:
-        return ops != null && !ops.isEmpty();
+      case ModelicaPackage.ARITHMETIC_EXPRESSION__ADD_OP:
+        return add_op != null && !add_op.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -153,8 +153,8 @@ public class ArithmeticExpressionImpl extends RelationImpl implements Arithmetic
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (ops: ");
-    result.append(ops);
+    result.append(" (add_op: ");
+    result.append(add_op);
     result.append(')');
     return result.toString();
   }

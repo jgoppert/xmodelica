@@ -69,30 +69,20 @@ public interface WhenStatement extends Statement
   EList<Statement> getWhen_stmts();
 
   /**
-   * Returns the value of the '<em><b>Elsehwhen</b></em>' containment reference.
+   * Returns the value of the '<em><b>Elsehwhen</b></em>' containment reference list.
+   * The list contents are of type {@link xmodelica.modelica.Expression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Elsehwhen</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Elsehwhen</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elsehwhen</em>' containment reference.
-   * @see #setElsehwhen(Expression)
+   * @return the value of the '<em>Elsehwhen</em>' containment reference list.
    * @see xmodelica.modelica.ModelicaPackage#getWhenStatement_Elsehwhen()
    * @model containment="true"
    * @generated
    */
-  Expression getElsehwhen();
-
-  /**
-   * Sets the value of the '{@link xmodelica.modelica.WhenStatement#getElsehwhen <em>Elsehwhen</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Elsehwhen</em>' containment reference.
-   * @see #getElsehwhen()
-   * @generated
-   */
-  void setElsehwhen(Expression value);
+  EList<Expression> getElsehwhen();
 
   /**
    * Returns the value of the '<em><b>Elsewhen stmts</b></em>' containment reference list.

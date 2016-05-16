@@ -100,6 +100,7 @@ public class ModelicaParsingTest {
       _builder.append("end Ball;");
       _builder.newLine();
       final StoredDefinition result = this.parser.parse(_builder);
+      Assert.assertNotNull(result);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

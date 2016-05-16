@@ -45,11 +45,12 @@ ClassPrefixes returns ecore::EString:
 ;
 
 ClassSpecifier returns ClassDefinition:
-	name=IDENT comment=StringComment composition=Composition 'end' name_end=IDENT
-	//| IDENT '=' BasePrefix Name ArraySubscripts? mod=ClassModification? // TODO Comment
-	//| IDENT '=' 'enumeration' '(' ( EnumList? | ':') ')' // TODO Comment
-	//| IDENT '=' 'der' '(' Name ',' IDENT (',' IDENT)* ')' Comment
-	//| 'extends' type=[ClassDefinition|Name] mod=ClassModification? comment=StringComment composition=Composition 'end' IDENT
+	name=IDENT str_comment=StringComment composition=Composition 'end' name_end=IDENT
+	| name=IDENT '=' prefix=BasePrefix name2=Name subs=ArraySubscripts? mod=ClassModification? // TODO Comment
+	//| name=IDENT '=' 'enumeration' '(' ( list=EnumList? | ':') ')' comment=Comment
+	//| name=IDENT '=' 'der' '(' Name ',' IDENT (',' IDENT)* ')' comment=Comment
+	//| 'extends' type=[ClassDefinition|Name] mod=ClassModification?
+	//	str_comment=StringComment composition=Composition 'end' name_end=IDENT
 ;
 
 BasePrefix:
@@ -311,17 +312,19 @@ WhileStatement:
 WhenEquation:
 	'when' when=Expression 'then'
 		(when_eqs+=Equation ';')*
-	( 'elsewhen' elsehwhen=Expression 'then'
+	( 'elsewhen' elsehwhen+=Expression 'then'
 		(elsewhen_eqs+=Equation ';')
-	)
+	)*
+	'end' 'when'
 ;
 
 WhenStatement:
 	'when' when=Expression 'then'
 		(when_stmts+=Statement ';')*
-	( 'elsewhen' elsehwhen=Expression 'then'
+	( 'elsewhen' elsehwhen+=Expression 'then'
 		(elsewhen_stmts+=Statement ';')
-	)	
+	)*
+	'end' 'when'
 ;
 
 ConnectClause:
@@ -356,31 +359,36 @@ LogicalTerm:
 	LogicalFactor ({LogicalFactor.factors+=current} 'and' factors+=LogicalFactor)*
 ;
 
+
 LogicalFactor:
-	// TODO (not?='not')?
 	Relation
+	| not?='not' rel=Relation
 ;
 
 Relation:
-	ArithmeticExpression ({Relation.left=current} op=RelOp right=ArithmeticExpression)?
+	ArithmeticExpression ({Relation.left=current} rel_op=RelOp right=ArithmeticExpression)?
 ;
 
 RelOp:
 	"<" | "<=" | ">" | ">=" | "==" | "<>"
 ;
 
+
 ArithmeticExpression:
-	// TODO ops+=AddOp?
-	Term ( {ArithmeticExpression.terms+=current} ops+=AddOp terms+=Term)*
+	Negation ( {ArithmeticExpression.terms+=current} add_op+=AddOp terms+=Negation)*
 ;
 
+Negation:
+	Term
+	| neg_op=AddOp term=Term
+;
 
 AddOp:
 	"+" | "-" | ".+" | ".-"
 ;
 
 Term :
-	Factor ({Term.factors+=current} ops+=MulOp factors+=Factor )*
+	Factor ({Term.factors+=current} mul_op+=MulOp factors+=Factor )*
 ;
 
 MulOp :

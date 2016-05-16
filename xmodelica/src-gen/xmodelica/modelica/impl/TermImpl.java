@@ -3,7 +3,13 @@
  */
 package xmodelica.modelica.impl;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import xmodelica.modelica.ModelicaPackage;
 import xmodelica.modelica.Term;
@@ -12,11 +18,27 @@ import xmodelica.modelica.Term;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Term</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.impl.TermImpl#getMul_op <em>Mul op</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class TermImpl extends ArithmeticExpressionImpl implements Term
+public class TermImpl extends NegationImpl implements Term
 {
+  /**
+   * The cached value of the '{@link #getMul_op() <em>Mul op</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMul_op()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> mul_op;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +58,105 @@ public class TermImpl extends ArithmeticExpressionImpl implements Term
   protected EClass eStaticClass()
   {
     return ModelicaPackage.Literals.TERM;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getMul_op()
+  {
+    if (mul_op == null)
+    {
+      mul_op = new EDataTypeEList<String>(String.class, this, ModelicaPackage.TERM__MUL_OP);
+    }
+    return mul_op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.TERM__MUL_OP:
+        return getMul_op();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.TERM__MUL_OP:
+        getMul_op().clear();
+        getMul_op().addAll((Collection<? extends String>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.TERM__MUL_OP:
+        getMul_op().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.TERM__MUL_OP:
+        return mul_op != null && !mul_op.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (mul_op: ");
+    result.append(mul_op);
+    result.append(')');
+    return result.toString();
   }
 
 } //TermImpl

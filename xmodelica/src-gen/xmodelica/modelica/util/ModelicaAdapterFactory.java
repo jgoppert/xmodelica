@@ -326,6 +326,11 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
         return createArithmeticExpressionAdapter();
       }
       @Override
+      public Adapter caseNegation(Negation object)
+      {
+        return createNegationAdapter();
+      }
+      @Override
       public Adapter caseTerm(Term object)
       {
         return createTermAdapter();
@@ -1198,6 +1203,21 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createArithmeticExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.Negation <em>Negation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.Negation
+   * @generated
+   */
+  public Adapter createNegationAdapter()
   {
     return null;
   }

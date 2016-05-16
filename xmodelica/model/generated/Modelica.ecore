@@ -10,10 +10,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="encapsulated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="str_comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="composition" eType="#//Composition"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name_end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subs" eType="#//ArraySubscripts"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mod" eType="#//ClassModification"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="enums" upperBound="-1"
@@ -243,8 +249,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="when_eqs" upperBound="-1"
         eType="#//Equation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elsehwhen" eType="#//Expression"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elsehwhen" upperBound="-1"
+        eType="#//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elsewhen_eqs" upperBound="-1"
         eType="#//Equation" containment="true"/>
   </eClassifiers>
@@ -253,8 +259,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="when_stmts" upperBound="-1"
         eType="#//Statement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elsehwhen" eType="#//Expression"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elsehwhen" upperBound="-1"
+        eType="#//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elsewhen_stmts" upperBound="-1"
         eType="#//Statement" containment="true"/>
   </eClassifiers>
@@ -283,19 +289,29 @@
   <eClassifiers xsi:type="ecore:EClass" name="LogicalFactor" eSuperTypes="#//LogicalTerm">
     <eStructuralFeatures xsi:type="ecore:EReference" name="factors" upperBound="-1"
         eType="#//LogicalFactor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="not" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rel" eType="#//Relation"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//LogicalFactor">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//ArithmeticExpression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rel_op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//ArithmeticExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArithmeticExpression" eSuperTypes="#//Relation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ops" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="add_op" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Term" eSuperTypes="#//ArithmeticExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Negation" eSuperTypes="#//ArithmeticExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="neg_op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="term" eType="#//Term" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Term" eSuperTypes="#//Negation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mul_op" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Factor" eSuperTypes="#//Term">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//Primary"
         containment="true"/>

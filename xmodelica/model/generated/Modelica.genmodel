@@ -14,9 +14,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/final"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/encapsulated"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/str_comment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ClassDefinition/composition"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/name_end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/prefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/name2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ClassDefinition/subs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ClassDefinition/mod"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//EnumList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//EnumList/enums"/>
@@ -202,16 +206,24 @@
     <genClasses ecoreClass="Modelica.ecore#//LogicalTerm"/>
     <genClasses ecoreClass="Modelica.ecore#//LogicalFactor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//LogicalFactor/factors"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//LogicalFactor/not"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//LogicalFactor/rel"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//Relation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Relation/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Relation/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Relation/rel_op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Relation/right"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//ArithmeticExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ArithmeticExpression/ops"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ArithmeticExpression/add_op"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//Term"/>
+    <genClasses ecoreClass="Modelica.ecore#//Negation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Negation/neg_op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Negation/term"/>
+    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//Term">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Term/mul_op"/>
+    </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//Factor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Factor/base"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Factor/exp"/>

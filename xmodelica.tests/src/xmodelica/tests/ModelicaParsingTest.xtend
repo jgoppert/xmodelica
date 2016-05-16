@@ -61,6 +61,7 @@ class ModelicaParsingTest{
 				der(a) = 1;
 			end Ball;
 		''')
+		Assert.assertNotNull(result)
 	}
 
 
