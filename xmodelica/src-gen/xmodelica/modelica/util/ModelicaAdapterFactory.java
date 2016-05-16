@@ -86,11 +86,6 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
         return createClassDefinitionAdapter();
       }
       @Override
-      public Adapter caseClassSpecifier(ClassSpecifier object)
-      {
-        return createClassSpecifierAdapter();
-      }
-      @Override
       public Adapter caseEnumList(EnumList object)
       {
         return createEnumListAdapter();
@@ -126,6 +121,11 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
         return createImportClauseAdapter();
       }
       @Override
+      public Adapter caseImportList(ImportList object)
+      {
+        return createImportListAdapter();
+      }
+      @Override
       public Adapter caseExtendsClause(ExtendsClause object)
       {
         return createExtendsClauseAdapter();
@@ -139,6 +139,11 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
       public Adapter caseComponentClause(ComponentClause object)
       {
         return createComponentClauseAdapter();
+      }
+      @Override
+      public Adapter caseTypeSpecifier(TypeSpecifier object)
+      {
+        return createTypeSpecifierAdapter();
       }
       @Override
       public Adapter caseComponentList(ComponentList object)
@@ -331,9 +336,34 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
         return createFactorAdapter();
       }
       @Override
+      public Adapter caseFloatPrimary(FloatPrimary object)
+      {
+        return createFloatPrimaryAdapter();
+      }
+      @Override
+      public Adapter caseStringPrimary(StringPrimary object)
+      {
+        return createStringPrimaryAdapter();
+      }
+      @Override
+      public Adapter caseLogicalPrimary(LogicalPrimary object)
+      {
+        return createLogicalPrimaryAdapter();
+      }
+      @Override
+      public Adapter caseEnd(End object)
+      {
+        return createEndAdapter();
+      }
+      @Override
       public Adapter casePrimary(Primary object)
       {
         return createPrimaryAdapter();
+      }
+      @Override
+      public Adapter caseFunctionCall(FunctionCall object)
+      {
+        return createFunctionCallAdapter();
       }
       @Override
       public Adapter caseComponentReference(ComponentReference object)
@@ -453,21 +483,6 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ClassSpecifier <em>Class Specifier</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see xmodelica.modelica.ClassSpecifier
-   * @generated
-   */
-  public Adapter createClassSpecifierAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link xmodelica.modelica.EnumList <em>Enum List</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -573,6 +588,21 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.ImportList <em>Import List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.ImportList
+   * @generated
+   */
+  public Adapter createImportListAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link xmodelica.modelica.ExtendsClause <em>Extends Clause</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -613,6 +643,21 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createComponentClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.TypeSpecifier <em>Type Specifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.TypeSpecifier
+   * @generated
+   */
+  public Adapter createTypeSpecifierAdapter()
   {
     return null;
   }
@@ -1188,6 +1233,66 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.FloatPrimary <em>Float Primary</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.FloatPrimary
+   * @generated
+   */
+  public Adapter createFloatPrimaryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.StringPrimary <em>String Primary</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.StringPrimary
+   * @generated
+   */
+  public Adapter createStringPrimaryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.LogicalPrimary <em>Logical Primary</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.LogicalPrimary
+   * @generated
+   */
+  public Adapter createLogicalPrimaryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.End <em>End</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.End
+   * @generated
+   */
+  public Adapter createEndAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link xmodelica.modelica.Primary <em>Primary</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1198,6 +1303,21 @@ public class ModelicaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPrimaryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link xmodelica.modelica.FunctionCall <em>Function Call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see xmodelica.modelica.FunctionCall
+   * @generated
+   */
+  public Adapter createFunctionCallAdapter()
   {
     return null;
   }

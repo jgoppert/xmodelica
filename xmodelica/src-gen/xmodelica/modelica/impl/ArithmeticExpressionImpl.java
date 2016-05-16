@@ -5,22 +5,14 @@ package xmodelica.modelica.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import xmodelica.modelica.ArithmeticExpression;
 import xmodelica.modelica.ModelicaPackage;
-import xmodelica.modelica.Term;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,12 +23,11 @@ import xmodelica.modelica.Term;
  * </p>
  * <ul>
  *   <li>{@link xmodelica.modelica.impl.ArithmeticExpressionImpl#getOps <em>Ops</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.ArithmeticExpressionImpl#getTerms <em>Terms</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ArithmeticExpressionImpl extends MinimalEObjectImpl.Container implements ArithmeticExpression
+public class ArithmeticExpressionImpl extends RelationImpl implements ArithmeticExpression
 {
   /**
    * The cached value of the '{@link #getOps() <em>Ops</em>}' attribute list.
@@ -47,16 +38,6 @@ public class ArithmeticExpressionImpl extends MinimalEObjectImpl.Container imple
    * @ordered
    */
   protected EList<String> ops;
-
-  /**
-   * The cached value of the '{@link #getTerms() <em>Terms</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTerms()
-   * @generated
-   * @ordered
-   */
-  protected EList<Term> terms;
 
   /**
    * <!-- begin-user-doc -->
@@ -98,36 +79,6 @@ public class ArithmeticExpressionImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Term> getTerms()
-  {
-    if (terms == null)
-    {
-      terms = new EObjectContainmentEList<Term>(Term.class, this, ModelicaPackage.ARITHMETIC_EXPRESSION__TERMS);
-    }
-    return terms;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case ModelicaPackage.ARITHMETIC_EXPRESSION__TERMS:
-        return ((InternalEList<?>)getTerms()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -135,8 +86,6 @@ public class ArithmeticExpressionImpl extends MinimalEObjectImpl.Container imple
     {
       case ModelicaPackage.ARITHMETIC_EXPRESSION__OPS:
         return getOps();
-      case ModelicaPackage.ARITHMETIC_EXPRESSION__TERMS:
-        return getTerms();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -156,10 +105,6 @@ public class ArithmeticExpressionImpl extends MinimalEObjectImpl.Container imple
         getOps().clear();
         getOps().addAll((Collection<? extends String>)newValue);
         return;
-      case ModelicaPackage.ARITHMETIC_EXPRESSION__TERMS:
-        getTerms().clear();
-        getTerms().addAll((Collection<? extends Term>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -177,9 +122,6 @@ public class ArithmeticExpressionImpl extends MinimalEObjectImpl.Container imple
       case ModelicaPackage.ARITHMETIC_EXPRESSION__OPS:
         getOps().clear();
         return;
-      case ModelicaPackage.ARITHMETIC_EXPRESSION__TERMS:
-        getTerms().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -196,8 +138,6 @@ public class ArithmeticExpressionImpl extends MinimalEObjectImpl.Container imple
     {
       case ModelicaPackage.ARITHMETIC_EXPRESSION__OPS:
         return ops != null && !ops.isEmpty();
-      case ModelicaPackage.ARITHMETIC_EXPRESSION__TERMS:
-        return terms != null && !terms.isEmpty();
     }
     return super.eIsSet(featureID);
   }

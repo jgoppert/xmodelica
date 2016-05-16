@@ -3,6 +3,7 @@
  */
 package xmodelica.modelica;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +23,7 @@ package xmodelica.modelica;
  * @model
  * @generated
  */
-public interface ExternalFunctionCall extends Composition
+public interface ExternalFunctionCall extends EObject
 {
   /**
    * Returns the value of the '<em><b>Lhs</b></em>' containment reference.

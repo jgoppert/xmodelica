@@ -7,32 +7,54 @@
   <genPackages prefix="Modelica" basePackage="xmodelica" disposableProviderFactory="true"
       fileExtensions="mo" ecorePackage="Modelica.ecore#/">
     <genClasses ecoreClass="Modelica.ecore#//StoredDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//StoredDefinition/within"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//StoredDefinition/classes"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//ClassDefinition"/>
-    <genClasses ecoreClass="Modelica.ecore#//ClassSpecifier">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ClassSpecifier/mod"/>
+    <genClasses ecoreClass="Modelica.ecore#//ClassDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/final"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/encapsulated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ClassDefinition/composition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ClassDefinition/name_end"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//EnumList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//EnumList/enums"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//EnumerationLiteral"/>
-    <genClasses ecoreClass="Modelica.ecore#//Composition"/>
+    <genClasses ecoreClass="Modelica.ecore#//EnumerationLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//EnumerationLiteral/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//EnumerationLiteral/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//Composition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Composition/priv_elist"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Composition/pub_elist"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Composition/protected_elist"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Composition/eq_secs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Composition/alg_secs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Composition/ext_lang_spec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Composition/ext_func_call"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Composition/ext_anno"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Composition/anno"/>
+    </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//ExternalFunctionCall">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ExternalFunctionCall/lhs"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ExternalFunctionCall/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ExternalFunctionCall/args"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//ElementList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ElementList/pub_elist"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ElementList/protected_elist"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ElementList/eq_secs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ElementList/alg_secs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ElementList/anno"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ElementList/elem"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//Element"/>
-    <genClasses ecoreClass="Modelica.ecore#//ImportClause"/>
+    <genClasses ecoreClass="Modelica.ecore#//ImportClause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ImportClause/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ImportClause/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ImportClause/list"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ImportClause/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//ImportList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ImportList/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ImportList/list"/>
+    </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//ExtendsClause">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ExtendsClause/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ExtendsClause/mod"/>
@@ -43,7 +65,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ConstrainingClause/mod"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//ComponentClause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ComponentClause/prefix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ComponentClause/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ComponentClause/subs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ComponentClause/comps"/>
+    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//TypeSpecifier">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modelica.ecore#//TypeSpecifier/name"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//ComponentList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ComponentList/comps"/>
@@ -81,16 +109,23 @@
     <genClasses ecoreClass="Modelica.ecore#//ElementReplaceable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ElementReplaceable/const"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//ComponentClause1"/>
+    <genClasses ecoreClass="Modelica.ecore#//ComponentClause1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ComponentClause1/prefix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ComponentClause1/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ComponentClause1/comp"/>
+    </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//ComponentDeclaration1"/>
     <genClasses ecoreClass="Modelica.ecore#//ShortClassDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ShortClassDefinition/mode"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ShortClassDefinition/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ShortClassDefinition/list"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//EquationSection">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//EquationSection/equationss"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//EquationSection/initial"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//EquationSection/equations"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//AlgorithmSection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//AlgorithmSection/initial"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//AlgorithmSection/statements"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//Equation">
@@ -130,7 +165,10 @@
     <genClasses ecoreClass="Modelica.ecore#//ForIndices">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ForIndices/indices"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//ForIndex"/>
+    <genClasses ecoreClass="Modelica.ecore#//ForIndex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ForIndex/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ForIndex/expr"/>
+    </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//WhileStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//WhileStatement/cond"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//WhileStatement/stmts"/>
@@ -147,10 +185,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//WhenStatement/elsehwhen"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//WhenStatement/elsewhen_stmts"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//ConnectClause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ConnectClause/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ConnectClause/right"/>
-    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//ConnectClause"/>
     <genClasses ecoreClass="Modelica.ecore#//Expression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Expression/if"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Expression/then"/>
@@ -164,10 +199,10 @@
     <genClasses ecoreClass="Modelica.ecore#//LogicalExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//LogicalExpression/terms"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//LogicalTerm">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//LogicalTerm/factors"/>
+    <genClasses ecoreClass="Modelica.ecore#//LogicalTerm"/>
+    <genClasses ecoreClass="Modelica.ecore#//LogicalFactor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//LogicalFactor/factors"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//LogicalFactor"/>
     <genClasses ecoreClass="Modelica.ecore#//Relation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Relation/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Relation/op"/>
@@ -175,23 +210,37 @@
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//ArithmeticExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ArithmeticExpression/ops"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ArithmeticExpression/terms"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//Term">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Term/factors"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Term/ops"/>
-    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//Term"/>
     <genClasses ecoreClass="Modelica.ecore#//Factor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Factor/base"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Factor/exp"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//Primary"/>
+    <genClasses ecoreClass="Modelica.ecore#//FloatPrimary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//FloatPrimary/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//StringPrimary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//StringPrimary/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//LogicalPrimary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//LogicalPrimary/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//End">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//End/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//Primary">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Primary/res"/>
+    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//FunctionCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modelica.ecore#//FunctionCall/comp_ref"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//FunctionCall/args"/>
+    </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//ComponentReference">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//ComponentReference/idents"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ComponentReference/subscripts"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//FunctionCallArgs">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//FunctionCallArgs/args"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//FunctionCallArgs/res"/>
     </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//FunctionArguments">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//FunctionArguments/args"/>
@@ -204,10 +253,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//NamedArgument/id"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//NamedArgument/func"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//FunctionArgument">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//FunctionArgument/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//FunctionArgument/args"/>
-    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//FunctionArgument"/>
     <genClasses ecoreClass="Modelica.ecore#//OutputExpressionList"/>
     <genClasses ecoreClass="Modelica.ecore#//ExpressionList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ExpressionList/exprs"/>
@@ -215,8 +261,13 @@
     <genClasses ecoreClass="Modelica.ecore#//ArraySubscripts">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//ArraySubscripts/subscripts"/>
     </genClasses>
-    <genClasses ecoreClass="Modelica.ecore#//Subscript"/>
-    <genClasses ecoreClass="Modelica.ecore#//Comment"/>
+    <genClasses ecoreClass="Modelica.ecore#//Subscript">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Subscript/all"/>
+    </genClasses>
+    <genClasses ecoreClass="Modelica.ecore#//Comment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modelica.ecore#//Comment/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//Comment/annotation"/>
+    </genClasses>
     <genClasses ecoreClass="Modelica.ecore#//Annotation"/>
     <genClasses ecoreClass="Modelica.ecore#//OuputExpressionList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modelica.ecore#//OuputExpressionList/exprs"/>

@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ArraySubscripts extends ClassSpecifier, ComponentClause, ShortClassDefinition
+public interface ArraySubscripts extends ShortClassDefinition
 {
   /**
    * Returns the value of the '<em><b>Subscripts</b></em>' containment reference list.

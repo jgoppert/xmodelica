@@ -24,7 +24,7 @@ import xmodelica.modelica.ModelicaPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.impl.FunctionCallArgsImpl#getArgs <em>Args</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.FunctionCallArgsImpl#getRes <em>Res</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +32,14 @@ import xmodelica.modelica.ModelicaPackage;
 public class FunctionCallArgsImpl extends MinimalEObjectImpl.Container implements FunctionCallArgs
 {
   /**
-   * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference.
+   * The cached value of the '{@link #getRes() <em>Res</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArgs()
+   * @see #getRes()
    * @generated
    * @ordered
    */
-  protected FunctionArguments args;
+  protected FunctionArguments res;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +67,9 @@ public class FunctionCallArgsImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public FunctionArguments getArgs()
+  public FunctionArguments getRes()
   {
-    return args;
+    return res;
   }
 
   /**
@@ -77,13 +77,13 @@ public class FunctionCallArgsImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetArgs(FunctionArguments newArgs, NotificationChain msgs)
+  public NotificationChain basicSetRes(FunctionArguments newRes, NotificationChain msgs)
   {
-    FunctionArguments oldArgs = args;
-    args = newArgs;
+    FunctionArguments oldRes = res;
+    res = newRes;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.FUNCTION_CALL_ARGS__ARGS, oldArgs, newArgs);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.FUNCTION_CALL_ARGS__RES, oldRes, newRes);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +94,20 @@ public class FunctionCallArgsImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setArgs(FunctionArguments newArgs)
+  public void setRes(FunctionArguments newRes)
   {
-    if (newArgs != args)
+    if (newRes != res)
     {
       NotificationChain msgs = null;
-      if (args != null)
-        msgs = ((InternalEObject)args).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.FUNCTION_CALL_ARGS__ARGS, null, msgs);
-      if (newArgs != null)
-        msgs = ((InternalEObject)newArgs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.FUNCTION_CALL_ARGS__ARGS, null, msgs);
-      msgs = basicSetArgs(newArgs, msgs);
+      if (res != null)
+        msgs = ((InternalEObject)res).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.FUNCTION_CALL_ARGS__RES, null, msgs);
+      if (newRes != null)
+        msgs = ((InternalEObject)newRes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.FUNCTION_CALL_ARGS__RES, null, msgs);
+      msgs = basicSetRes(newRes, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.FUNCTION_CALL_ARGS__ARGS, newArgs, newArgs));
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.FUNCTION_CALL_ARGS__RES, newRes, newRes));
   }
 
   /**
@@ -120,8 +120,8 @@ public class FunctionCallArgsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ModelicaPackage.FUNCTION_CALL_ARGS__ARGS:
-        return basicSetArgs(null, msgs);
+      case ModelicaPackage.FUNCTION_CALL_ARGS__RES:
+        return basicSetRes(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +136,8 @@ public class FunctionCallArgsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ModelicaPackage.FUNCTION_CALL_ARGS__ARGS:
-        return getArgs();
+      case ModelicaPackage.FUNCTION_CALL_ARGS__RES:
+        return getRes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +152,8 @@ public class FunctionCallArgsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ModelicaPackage.FUNCTION_CALL_ARGS__ARGS:
-        setArgs((FunctionArguments)newValue);
+      case ModelicaPackage.FUNCTION_CALL_ARGS__RES:
+        setRes((FunctionArguments)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +169,8 @@ public class FunctionCallArgsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ModelicaPackage.FUNCTION_CALL_ARGS__ARGS:
-        setArgs((FunctionArguments)null);
+      case ModelicaPackage.FUNCTION_CALL_ARGS__RES:
+        setRes((FunctionArguments)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +186,8 @@ public class FunctionCallArgsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ModelicaPackage.FUNCTION_CALL_ARGS__ARGS:
-        return args != null;
+      case ModelicaPackage.FUNCTION_CALL_ARGS__RES:
+        return res != null;
     }
     return super.eIsSet(featureID);
   }

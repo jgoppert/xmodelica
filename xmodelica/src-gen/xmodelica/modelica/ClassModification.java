@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ClassModification extends ClassSpecifier, Annotation
+public interface ClassModification extends Annotation
 {
   /**
    * Returns the value of the '<em><b>Args</b></em>' containment reference list.

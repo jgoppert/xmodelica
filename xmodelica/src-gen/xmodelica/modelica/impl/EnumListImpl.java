@@ -5,7 +5,6 @@ package xmodelica.modelica.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,21 +12,14 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import xmodelica.modelica.ClassModification;
-import xmodelica.modelica.Comment;
-import xmodelica.modelica.ConstrainingClause;
-import xmodelica.modelica.ElementModicationOrReplaceable;
-import xmodelica.modelica.ElementRedeclaration;
-import xmodelica.modelica.ElementReplaceable;
 import xmodelica.modelica.EnumList;
 import xmodelica.modelica.EnumerationLiteral;
 import xmodelica.modelica.ModelicaPackage;
-import xmodelica.modelica.ShortClassDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,46 +29,13 @@ import xmodelica.modelica.ShortClassDefinition;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.impl.EnumListImpl#getConst <em>Const</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.EnumListImpl#getMode <em>Mode</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.EnumListImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.EnumListImpl#getEnums <em>Enums</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EnumListImpl extends ClassSpecifierImpl implements EnumList
+public class EnumListImpl extends MinimalEObjectImpl.Container implements EnumList
 {
-  /**
-   * The cached value of the '{@link #getConst() <em>Const</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getConst()
-   * @generated
-   * @ordered
-   */
-  protected ConstrainingClause const_;
-
-  /**
-   * The cached value of the '{@link #getMode() <em>Mode</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMode()
-   * @generated
-   * @ordered
-   */
-  protected ClassModification mode;
-
-  /**
-   * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getComment()
-   * @generated
-   * @ordered
-   */
-  protected Comment comment;
-
   /**
    * The cached value of the '{@link #getEnums() <em>Enums</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -113,150 +72,6 @@ public class EnumListImpl extends ClassSpecifierImpl implements EnumList
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConstrainingClause getConst()
-  {
-    return const_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetConst(ConstrainingClause newConst, NotificationChain msgs)
-  {
-    ConstrainingClause oldConst = const_;
-    const_ = newConst;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.ENUM_LIST__CONST, oldConst, newConst);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setConst(ConstrainingClause newConst)
-  {
-    if (newConst != const_)
-    {
-      NotificationChain msgs = null;
-      if (const_ != null)
-        msgs = ((InternalEObject)const_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ENUM_LIST__CONST, null, msgs);
-      if (newConst != null)
-        msgs = ((InternalEObject)newConst).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ENUM_LIST__CONST, null, msgs);
-      msgs = basicSetConst(newConst, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.ENUM_LIST__CONST, newConst, newConst));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ClassModification getMode()
-  {
-    return mode;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetMode(ClassModification newMode, NotificationChain msgs)
-  {
-    ClassModification oldMode = mode;
-    mode = newMode;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.ENUM_LIST__MODE, oldMode, newMode);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMode(ClassModification newMode)
-  {
-    if (newMode != mode)
-    {
-      NotificationChain msgs = null;
-      if (mode != null)
-        msgs = ((InternalEObject)mode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ENUM_LIST__MODE, null, msgs);
-      if (newMode != null)
-        msgs = ((InternalEObject)newMode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ENUM_LIST__MODE, null, msgs);
-      msgs = basicSetMode(newMode, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.ENUM_LIST__MODE, newMode, newMode));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Comment getComment()
-  {
-    return comment;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetComment(Comment newComment, NotificationChain msgs)
-  {
-    Comment oldComment = comment;
-    comment = newComment;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.ENUM_LIST__COMMENT, oldComment, newComment);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setComment(Comment newComment)
-  {
-    if (newComment != comment)
-    {
-      NotificationChain msgs = null;
-      if (comment != null)
-        msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ENUM_LIST__COMMENT, null, msgs);
-      if (newComment != null)
-        msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ENUM_LIST__COMMENT, null, msgs);
-      msgs = basicSetComment(newComment, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.ENUM_LIST__COMMENT, newComment, newComment));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<EnumerationLiteral> getEnums()
   {
     if (enums == null)
@@ -276,12 +91,6 @@ public class EnumListImpl extends ClassSpecifierImpl implements EnumList
   {
     switch (featureID)
     {
-      case ModelicaPackage.ENUM_LIST__CONST:
-        return basicSetConst(null, msgs);
-      case ModelicaPackage.ENUM_LIST__MODE:
-        return basicSetMode(null, msgs);
-      case ModelicaPackage.ENUM_LIST__COMMENT:
-        return basicSetComment(null, msgs);
       case ModelicaPackage.ENUM_LIST__ENUMS:
         return ((InternalEList<?>)getEnums()).basicRemove(otherEnd, msgs);
     }
@@ -298,12 +107,6 @@ public class EnumListImpl extends ClassSpecifierImpl implements EnumList
   {
     switch (featureID)
     {
-      case ModelicaPackage.ENUM_LIST__CONST:
-        return getConst();
-      case ModelicaPackage.ENUM_LIST__MODE:
-        return getMode();
-      case ModelicaPackage.ENUM_LIST__COMMENT:
-        return getComment();
       case ModelicaPackage.ENUM_LIST__ENUMS:
         return getEnums();
     }
@@ -321,15 +124,6 @@ public class EnumListImpl extends ClassSpecifierImpl implements EnumList
   {
     switch (featureID)
     {
-      case ModelicaPackage.ENUM_LIST__CONST:
-        setConst((ConstrainingClause)newValue);
-        return;
-      case ModelicaPackage.ENUM_LIST__MODE:
-        setMode((ClassModification)newValue);
-        return;
-      case ModelicaPackage.ENUM_LIST__COMMENT:
-        setComment((Comment)newValue);
-        return;
       case ModelicaPackage.ENUM_LIST__ENUMS:
         getEnums().clear();
         getEnums().addAll((Collection<? extends EnumerationLiteral>)newValue);
@@ -348,15 +142,6 @@ public class EnumListImpl extends ClassSpecifierImpl implements EnumList
   {
     switch (featureID)
     {
-      case ModelicaPackage.ENUM_LIST__CONST:
-        setConst((ConstrainingClause)null);
-        return;
-      case ModelicaPackage.ENUM_LIST__MODE:
-        setMode((ClassModification)null);
-        return;
-      case ModelicaPackage.ENUM_LIST__COMMENT:
-        setComment((Comment)null);
-        return;
       case ModelicaPackage.ENUM_LIST__ENUMS:
         getEnums().clear();
         return;
@@ -374,100 +159,10 @@ public class EnumListImpl extends ClassSpecifierImpl implements EnumList
   {
     switch (featureID)
     {
-      case ModelicaPackage.ENUM_LIST__CONST:
-        return const_ != null;
-      case ModelicaPackage.ENUM_LIST__MODE:
-        return mode != null;
-      case ModelicaPackage.ENUM_LIST__COMMENT:
-        return comment != null;
       case ModelicaPackage.ENUM_LIST__ENUMS:
         return enums != null && !enums.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == ElementRedeclaration.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == ElementModicationOrReplaceable.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == ElementReplaceable.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case ModelicaPackage.ENUM_LIST__CONST: return ModelicaPackage.ELEMENT_REPLACEABLE__CONST;
-        default: return -1;
-      }
-    }
-    if (baseClass == ShortClassDefinition.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case ModelicaPackage.ENUM_LIST__MODE: return ModelicaPackage.SHORT_CLASS_DEFINITION__MODE;
-        case ModelicaPackage.ENUM_LIST__COMMENT: return ModelicaPackage.SHORT_CLASS_DEFINITION__COMMENT;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == ElementRedeclaration.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == ElementModicationOrReplaceable.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == ElementReplaceable.class)
-    {
-      switch (baseFeatureID)
-      {
-        case ModelicaPackage.ELEMENT_REPLACEABLE__CONST: return ModelicaPackage.ENUM_LIST__CONST;
-        default: return -1;
-      }
-    }
-    if (baseClass == ShortClassDefinition.class)
-    {
-      switch (baseFeatureID)
-      {
-        case ModelicaPackage.SHORT_CLASS_DEFINITION__MODE: return ModelicaPackage.ENUM_LIST__MODE;
-        case ModelicaPackage.SHORT_CLASS_DEFINITION__COMMENT: return ModelicaPackage.ENUM_LIST__COMMENT;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
 } //EnumListImpl

@@ -13,6 +13,9 @@ package xmodelica.modelica;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link xmodelica.modelica.ComponentClause#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link xmodelica.modelica.ComponentClause#getType <em>Type</em>}</li>
+ *   <li>{@link xmodelica.modelica.ComponentClause#getSubs <em>Subs</em>}</li>
  *   <li>{@link xmodelica.modelica.ComponentClause#getComps <em>Comps</em>}</li>
  * </ul>
  *
@@ -22,6 +25,84 @@ package xmodelica.modelica;
  */
 public interface ComponentClause extends Element
 {
+  /**
+   * Returns the value of the '<em><b>Prefix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Prefix</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Prefix</em>' attribute.
+   * @see #setPrefix(String)
+   * @see xmodelica.modelica.ModelicaPackage#getComponentClause_Prefix()
+   * @model
+   * @generated
+   */
+  String getPrefix();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ComponentClause#getPrefix <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Prefix</em>' attribute.
+   * @see #getPrefix()
+   * @generated
+   */
+  void setPrefix(String value);
+
+  /**
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(TypeSpecifier)
+   * @see xmodelica.modelica.ModelicaPackage#getComponentClause_Type()
+   * @model containment="true"
+   * @generated
+   */
+  TypeSpecifier getType();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ComponentClause#getType <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Type</em>' containment reference.
+   * @see #getType()
+   * @generated
+   */
+  void setType(TypeSpecifier value);
+
+  /**
+   * Returns the value of the '<em><b>Subs</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Subs</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Subs</em>' containment reference.
+   * @see #setSubs(ArraySubscripts)
+   * @see xmodelica.modelica.ModelicaPackage#getComponentClause_Subs()
+   * @model containment="true"
+   * @generated
+   */
+  ArraySubscripts getSubs();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ComponentClause#getSubs <em>Subs</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Subs</em>' containment reference.
+   * @see #getSubs()
+   * @generated
+   */
+  void setSubs(ArraySubscripts value);
+
   /**
    * Returns the value of the '<em><b>Comps</b></em>' containment reference.
    * <!-- begin-user-doc -->

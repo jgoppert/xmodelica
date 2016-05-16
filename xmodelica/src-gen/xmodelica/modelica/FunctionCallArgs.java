@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.FunctionCallArgs#getArgs <em>Args</em>}</li>
+ *   <li>{@link xmodelica.modelica.FunctionCallArgs#getRes <em>Res</em>}</li>
  * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getFunctionCallArgs()
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface FunctionCallArgs extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Args</b></em>' containment reference.
+   * Returns the value of the '<em><b>Res</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Args</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Res</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Args</em>' containment reference.
-   * @see #setArgs(FunctionArguments)
-   * @see xmodelica.modelica.ModelicaPackage#getFunctionCallArgs_Args()
+   * @return the value of the '<em>Res</em>' containment reference.
+   * @see #setRes(FunctionArguments)
+   * @see xmodelica.modelica.ModelicaPackage#getFunctionCallArgs_Res()
    * @model containment="true"
    * @generated
    */
-  FunctionArguments getArgs();
+  FunctionArguments getRes();
 
   /**
-   * Sets the value of the '{@link xmodelica.modelica.FunctionCallArgs#getArgs <em>Args</em>}' containment reference.
+   * Sets the value of the '{@link xmodelica.modelica.FunctionCallArgs#getRes <em>Res</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Args</em>' containment reference.
-   * @see #getArgs()
+   * @param value the new value of the '<em>Res</em>' containment reference.
+   * @see #getRes()
    * @generated
    */
-  void setArgs(FunctionArguments value);
+  void setRes(FunctionArguments value);
 
 } // FunctionCallArgs

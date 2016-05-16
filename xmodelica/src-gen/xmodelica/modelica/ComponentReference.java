@@ -5,8 +5,6 @@ package xmodelica.modelica;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Component Reference</b></em>'.
@@ -24,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ComponentReference extends EObject
+public interface ComponentReference extends Primary
 {
   /**
    * Returns the value of the '<em><b>Idents</b></em>' attribute list.

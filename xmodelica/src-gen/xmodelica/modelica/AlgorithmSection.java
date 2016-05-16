@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link xmodelica.modelica.AlgorithmSection#isInitial <em>Initial</em>}</li>
  *   <li>{@link xmodelica.modelica.AlgorithmSection#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -25,6 +26,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AlgorithmSection extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Initial</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Initial</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Initial</em>' attribute.
+   * @see #setInitial(boolean)
+   * @see xmodelica.modelica.ModelicaPackage#getAlgorithmSection_Initial()
+   * @model
+   * @generated
+   */
+  boolean isInitial();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.AlgorithmSection#isInitial <em>Initial</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Initial</em>' attribute.
+   * @see #isInitial()
+   * @generated
+   */
+  void setInitial(boolean value);
+
   /**
    * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
    * The list contents are of type {@link xmodelica.modelica.Statement}.

@@ -5,6 +5,8 @@ package xmodelica.modelica.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import xmodelica.modelica.Annotation;
 import xmodelica.modelica.ModelicaPackage;
 
@@ -15,7 +17,7 @@ import xmodelica.modelica.ModelicaPackage;
  *
  * @generated
  */
-public class AnnotationImpl extends CommentImpl implements Annotation
+public class AnnotationImpl extends MinimalEObjectImpl.Container implements Annotation
 {
   /**
    * <!-- begin-user-doc -->

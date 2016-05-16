@@ -3,6 +3,7 @@
  */
 package xmodelica.modelica;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,6 @@ package xmodelica.modelica;
  * @model
  * @generated
  */
-public interface ComponentDeclaration1 extends ComponentClause1
+public interface ComponentDeclaration1 extends EObject
 {
 } // ComponentDeclaration1

@@ -42,15 +42,6 @@ public interface ModelicaFactory extends EFactory
   ClassDefinition createClassDefinition();
 
   /**
-   * Returns a new object of class '<em>Class Specifier</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class Specifier</em>'.
-   * @generated
-   */
-  ClassSpecifier createClassSpecifier();
-
-  /**
    * Returns a new object of class '<em>Enum List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -114,6 +105,15 @@ public interface ModelicaFactory extends EFactory
   ImportClause createImportClause();
 
   /**
+   * Returns a new object of class '<em>Import List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import List</em>'.
+   * @generated
+   */
+  ImportList createImportList();
+
+  /**
    * Returns a new object of class '<em>Extends Clause</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -139,6 +139,15 @@ public interface ModelicaFactory extends EFactory
    * @generated
    */
   ComponentClause createComponentClause();
+
+  /**
+   * Returns a new object of class '<em>Type Specifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Specifier</em>'.
+   * @generated
+   */
+  TypeSpecifier createTypeSpecifier();
 
   /**
    * Returns a new object of class '<em>Component List</em>'.
@@ -483,6 +492,42 @@ public interface ModelicaFactory extends EFactory
   Factor createFactor();
 
   /**
+   * Returns a new object of class '<em>Float Primary</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Float Primary</em>'.
+   * @generated
+   */
+  FloatPrimary createFloatPrimary();
+
+  /**
+   * Returns a new object of class '<em>String Primary</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Primary</em>'.
+   * @generated
+   */
+  StringPrimary createStringPrimary();
+
+  /**
+   * Returns a new object of class '<em>Logical Primary</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Logical Primary</em>'.
+   * @generated
+   */
+  LogicalPrimary createLogicalPrimary();
+
+  /**
+   * Returns a new object of class '<em>End</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>End</em>'.
+   * @generated
+   */
+  End createEnd();
+
+  /**
    * Returns a new object of class '<em>Primary</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -490,6 +535,15 @@ public interface ModelicaFactory extends EFactory
    * @generated
    */
   Primary createPrimary();
+
+  /**
+   * Returns a new object of class '<em>Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Call</em>'.
+   * @generated
+   */
+  FunctionCall createFunctionCall();
 
   /**
    * Returns a new object of class '<em>Component Reference</em>'.

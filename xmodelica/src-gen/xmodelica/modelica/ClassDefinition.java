@@ -9,6 +9,17 @@ package xmodelica.modelica;
  * A representation of the model object '<em><b>Class Definition</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.ClassDefinition#isFinal <em>Final</em>}</li>
+ *   <li>{@link xmodelica.modelica.ClassDefinition#isEncapsulated <em>Encapsulated</em>}</li>
+ *   <li>{@link xmodelica.modelica.ClassDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link xmodelica.modelica.ClassDefinition#getComment <em>Comment</em>}</li>
+ *   <li>{@link xmodelica.modelica.ClassDefinition#getComposition <em>Composition</em>}</li>
+ *   <li>{@link xmodelica.modelica.ClassDefinition#getName_end <em>Name end</em>}</li>
+ * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getClassDefinition()
  * @model
@@ -16,4 +27,160 @@ package xmodelica.modelica;
  */
 public interface ClassDefinition extends Element
 {
+  /**
+   * Returns the value of the '<em><b>Final</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Final</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Final</em>' attribute.
+   * @see #setFinal(boolean)
+   * @see xmodelica.modelica.ModelicaPackage#getClassDefinition_Final()
+   * @model
+   * @generated
+   */
+  boolean isFinal();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ClassDefinition#isFinal <em>Final</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Final</em>' attribute.
+   * @see #isFinal()
+   * @generated
+   */
+  void setFinal(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Encapsulated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Encapsulated</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Encapsulated</em>' attribute.
+   * @see #setEncapsulated(boolean)
+   * @see xmodelica.modelica.ModelicaPackage#getClassDefinition_Encapsulated()
+   * @model
+   * @generated
+   */
+  boolean isEncapsulated();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ClassDefinition#isEncapsulated <em>Encapsulated</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Encapsulated</em>' attribute.
+   * @see #isEncapsulated()
+   * @generated
+   */
+  void setEncapsulated(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see xmodelica.modelica.ModelicaPackage#getClassDefinition_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ClassDefinition#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Comment</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Comment</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Comment</em>' attribute.
+   * @see #setComment(String)
+   * @see xmodelica.modelica.ModelicaPackage#getClassDefinition_Comment()
+   * @model
+   * @generated
+   */
+  String getComment();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ClassDefinition#getComment <em>Comment</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Comment</em>' attribute.
+   * @see #getComment()
+   * @generated
+   */
+  void setComment(String value);
+
+  /**
+   * Returns the value of the '<em><b>Composition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Composition</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Composition</em>' containment reference.
+   * @see #setComposition(Composition)
+   * @see xmodelica.modelica.ModelicaPackage#getClassDefinition_Composition()
+   * @model containment="true"
+   * @generated
+   */
+  Composition getComposition();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ClassDefinition#getComposition <em>Composition</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Composition</em>' containment reference.
+   * @see #getComposition()
+   * @generated
+   */
+  void setComposition(Composition value);
+
+  /**
+   * Returns the value of the '<em><b>Name end</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name end</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name end</em>' attribute.
+   * @see #setName_end(String)
+   * @see xmodelica.modelica.ModelicaPackage#getClassDefinition_Name_end()
+   * @model
+   * @generated
+   */
+  String getName_end();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ClassDefinition#getName_end <em>Name end</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name end</em>' attribute.
+   * @see #getName_end()
+   * @generated
+   */
+  void setName_end(String value);
+
 } // ClassDefinition

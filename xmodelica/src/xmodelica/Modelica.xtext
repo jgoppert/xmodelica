@@ -8,35 +8,48 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 // B.2.1 Stored Definition
 //-----------------------------------------------
 
-
 StoredDefinition:
-	{StoredDefinition}
-	('within' Name? ';')?
-	('final'? classes+=ClassDefinition ';')*
+	('within' within=Name ';')?
+	(classes+=ClassDefinitionWithFinal ';' )*
 ;
 
 //-----------------------------------------------
 // B.2.1 Class Definition
 //-----------------------------------------------
-	
-ClassDefinition:
-	'encapsulated'? ClassPrefixes
+
+ClassDefinitionWithFinal returns ClassDefinition:
+	(final?='final')?
+	(encapsulated?='encapsulated')?
+	ClassPrefixes
 	ClassSpecifier
 ;
 
-ClassPrefixes:
+ClassDefinition:
+	(encapsulated?='encapsulated')?
+	ClassPrefixes
+	ClassSpecifier
+;
+
+ClassPrefixes returns ecore::EString:
 	'partial'?
-	('class' | 'model' | 'operator'? 'record' | 'block' | 'expandable'? 'connector'
-		| 'type' | 'package' | ('pure' | 'impure')? 'operator'? 'function' | 'operator'
+	('class'
+		| 'model'
+		| 'operator'? 'record'
+		| 'block'
+		| 'expandable'? 'connector'
+		| 'type'
+		| 'package'
+		| ('pure' | 'impure')? 'operator'? 'function'
+		| 'operator'
 	)
 ;
 
-ClassSpecifier:
-	IDENT StringComment Composition 'end' IDENT
-	| IDENT '=' BasePrefix Name ArraySubscripts? mod=ClassModification? // TODO Comment
-	| IDENT '=' 'enumeration' '(' ( EnumList? | ':') ')' // TODO Comment
-	| IDENT '=' 'der' '(' Name ',' IDENT (',' IDENT)* ')' Comment
-	| 'extends' IDENT ClassModification? StringComment Composition 'end' IDENT
+ClassSpecifier returns ClassDefinition:
+	name=IDENT comment=StringComment composition=Composition 'end' name_end=IDENT
+	//| IDENT '=' BasePrefix Name ArraySubscripts? mod=ClassModification? // TODO Comment
+	//| IDENT '=' 'enumeration' '(' ( EnumList? | ':') ')' // TODO Comment
+	//| IDENT '=' 'der' '(' Name ',' IDENT (',' IDENT)* ')' Comment
+	//| 'extends' type=[ClassDefinition|Name] mod=ClassModification? comment=StringComment composition=Composition 'end' IDENT
 ;
 
 BasePrefix:
@@ -48,19 +61,23 @@ EnumList:
 ;
 
 EnumerationLiteral:
-	IDENT Comment
+	id=IDENT comment=Comment
 ;
 
 Composition:
-	ElementList
+	priv_elist=ElementList
 	(
 		'public' pub_elist+=ElementList
 		| 'protected' protected_elist+=ElementList
 		| eq_secs+=EquationSection
 		| alg_secs+=AlgorithmSection
 	)*
-	('external' LanguageSpecification? ExternalFunctionCall? anno+=Annotation? ';')?
-	(anno+=Annotation ';')?
+	('external'
+		ext_lang_spec=LanguageSpecification?
+		ext_func_call=ExternalFunctionCall?
+		ext_anno=Annotation? ';'
+	)?
+	(anno=Annotation ';')?
 ;
 
 LanguageSpecification:
@@ -88,12 +105,12 @@ Element:
 ;
 
 ImportClause:
-	'import' (IDENT '=' Name
-		| Name (','? ('*' | '(' ImportList ')' ) )?) Comment
+	'import' (id=IDENT '=' name=Name
+		| Name (','? ('*' | '(' list=ImportList ')' ) )?) comment=Comment
 ;
 
 ImportList:
-	IDENT (',' ImportList)?
+	id=IDENT (',' list=ImportList)?
 ;
 
 //-----------------------------------------------
@@ -112,7 +129,7 @@ ConstrainingClause:
 //-----------------------------------------------
 
 ComponentClause:
-	TypePrefix TypeSpecifier ArraySubscripts? comps=ComponentList
+	prefix=TypePrefix type=TypeSpecifier subs=ArraySubscripts? comps=ComponentList
 ;
 
 TypePrefix:
@@ -122,7 +139,7 @@ TypePrefix:
 ;
 
 TypeSpecifier:
-	Name
+	name=[ClassDefinition|Name]
 ;
 
 ComponentList:
@@ -162,8 +179,8 @@ ArgumentList:
 ;
 
 Argument:
-	// TODO
-	Primary
+	ElementModicationOrReplaceable
+	| ElementRedeclaration
 ;
 
 ElementModicationOrReplaceable:
@@ -186,7 +203,7 @@ ElementReplaceable:
 ;
 
 ComponentClause1:
-	TypePrefix TypeSpecifier ComponentDeclaration1
+	prefix=TypePrefix type=TypeSpecifier comp=ComponentDeclaration1
 ;
 
 ComponentDeclaration1:
@@ -196,7 +213,7 @@ ComponentDeclaration1:
 ShortClassDefinition:
 	ClassPrefixes IDENT '='
 	(BasePrefix Name ArraySubscripts? mode=ClassModification? comment=Comment |
-		'enumeration' '(' ( EnumList? | ':') ')' comment=Comment 
+		'enumeration' '(' ( list=EnumList? | ':') ')' comment=Comment 
 	)
 ;
 
@@ -204,17 +221,21 @@ ShortClassDefinition:
 // B.2.6 Equations
 //-----------------------------------------------
 EquationSection:
-	{EquationSection}
-	'initial'? 'equation' (equationss+=Equation ';')*
+	(initial?='initial')? 'equation' (equations+=Equation ';')+
 ;
 
 AlgorithmSection:
-	{AlgorithmSection}
-	'initial'? 'algorithm' (statements+=Statement ';')*
+	(initial?='initial')? 'algorithm' (statements+=Statement ';')+
 ;
 
 Equation:
-	(left=SimpleExpression '=' right=Expression)
+	(left=SimpleExpression '=' right=Expression
+		| IfEquation
+		| ForEquation
+		| ConnectClause
+		| WhenEquation
+		// TODO | Name FunctionCallArgs
+	)
 	commment=Comment
 ;
 
@@ -278,7 +299,7 @@ ForIndices:
 ;
 
 ForIndex:
-	IDENT ('in' Expression)
+	id=IDENT ('in' expr=Expression)
 ;
 
 WhileStatement:
@@ -321,26 +342,27 @@ Expression:
 ;
 
 SimpleExpression:
-	exprs+=LogicalExpression
-	(':' exprs+=LogicalExpression 
+	LogicalExpression
+	(':' {SimpleExpression.exprs += current} exprs+=LogicalExpression 
 		(':' exprs+=LogicalExpression)?
 	)?
 ;
 
 LogicalExpression:
-	terms+=LogicalTerm ( 'or' terms+=LogicalTerm)*
+	LogicalTerm ({LogicalExpression.terms+=current} 'or' terms+=LogicalTerm)*
 ;
 
 LogicalTerm:
-	factors+=LogicalFactor ('and' factors+=LogicalFactor)*
+	LogicalFactor ({LogicalFactor.factors+=current} 'and' factors+=LogicalFactor)*
 ;
 
 LogicalFactor:
-	'not' Relation
+	// TODO (not?='not')?
+	Relation
 ;
 
 Relation:
-	left=ArithmeticExpression ( op=RelOp right=ArithmeticExpression)?
+	ArithmeticExpression ({Relation.left=current} op=RelOp right=ArithmeticExpression)?
 ;
 
 RelOp:
@@ -348,15 +370,17 @@ RelOp:
 ;
 
 ArithmeticExpression:
-	ops+=AddOp? terms+=Term ( ops+=AddOp terms+=Term)*
+	// TODO ops+=AddOp?
+	Term ( {ArithmeticExpression.terms+=current} ops+=AddOp terms+=Term)*
 ;
+
 
 AddOp:
 	"+" | "-" | ".+" | ".-"
 ;
 
 Term :
-	factors+=Factor ( ops+=MulOp factors+=Factor )*
+	Factor ({Term.factors+=current} ops+=MulOp factors+=Factor )*
 ;
 
 MulOp :
@@ -364,23 +388,39 @@ MulOp :
 ;
 
 Factor :
-	base=Primary ( ("^" | ".^") exp=Primary )?
+	Primary ({Factor.base=current} ("^" | ".^") exp=Primary )?
+;
+
+FloatPrimary:
+	val=UNSIGNED_NUMBER
+;
+
+StringPrimary:
+	val=STRING
+;
+
+LogicalPrimary:
+	val=TRUE_FALSE
+;
+
+End:
+	val='end'
 ;
 
 Primary:
-	{Primary}
-	UNSIGNED_NUMBER
-	| STRING
-	| 'false'
-	| 'true'
-	/* TODO
-	| ( name | 'der' | 'initial' ) function_call_args
-	| component_reference
-	| "(" output_expression_list ")"
-	| "[" expression_list { ";" expression_list } "]"
-	| "{" function_arguments "}"
-	*/
-	| 'end'
+	FloatPrimary
+	| StringPrimary
+	| LogicalPrimary
+	| FunctionCall
+	| ComponentReference
+	// TODO | "(" OutputExpressionList ")"
+	| "[" res+=ExpressionList ( ";" res+=ExpressionList )* "]"
+	| "{" FunctionArguments "}"
+	| End
+;
+
+FunctionCall:
+	( comp_ref=[ClassDefinition|Name] | 'der' | 'initial' ) args=FunctionCallArgs
 ;
 
 Name:
@@ -388,19 +428,19 @@ Name:
 ;
 
 ComponentReference:
-	{ComponentReference}
 	('.'? idents+=IDENT subscripts+=ArraySubscripts?)+
 ;
 
 FunctionCallArgs:
 	{FunctionCallArgs}
-	'(' args=FunctionArguments? ')'
+	'(' res=FunctionArguments? ')'
 ;
 
 FunctionArguments:
-	// TODO args handling for list
-	args+=FunctionArgument ( ',' args+=FunctionArguments |
-		'for' indices=ForIndices )? | NamedArgument
+	args+=FunctionArgument
+	( ',' args+=FunctionArguments | 'for' indices=ForIndices
+	)?
+	| NamedArgument
 ;
 
 
@@ -413,9 +453,8 @@ NamedArgument:
 ;
 
 FunctionArgument:
-	{FunctionArgument}
-	'function' name=Name '(' args=NamedArguments? ')'
-	| Expression
+	Expression
+	// TODO | 'function' name=Name '(' args=NamedArguments? ')'
 ;
 
 OutputExpressionList:
@@ -434,13 +473,11 @@ ArraySubscripts:
 ;
 
 Subscript:
-	{Subscript}
-	';' | Expression
+	all?=':' | Expression
 ;
 
 Comment:
-	{Comment}
-	StringComment Annotation?
+	comment=StringComment annotation=Annotation?
 ;
 
 StringComment:
@@ -452,23 +489,31 @@ Annotation:
 ;
 
 // terminals
-terminal IDENT : NONDIGIT ( DIGIT | NONDIGIT )* /* | Q_IDENT */;
-terminal UNSIGNED_NUMBER:
+terminal TRUE_FALSE returns ecore::EBoolean:
+	('true' | 'false')
+;
+terminal IDENT returns ecore::EString:
+	NONDIGIT ( DIGIT | NONDIGIT )* | Q_IDENT
+;
+terminal UNSIGNED_NUMBER returns ecore::EFloat:
 	UNSIGNED_INTEGER ( "." ( UNSIGNED_INTEGER )? )?
-	( ( "e" | "E" ) ( "+" | "-" )? UNSIGNED_INTEGER )?;
-terminal STRING : "\"" ( S_CHAR /* | S_ESCAPE*/ )* "\"";
+	( ( "e" | "E" ) ( "+" | "-" )? UNSIGNED_INTEGER )?
+;
+terminal STRING returns ecore::EString:
+	"\"" ( S_CHAR | S_ESCAPE )* "\""
+;
 terminal ML_COMMENT: '/*'->'*/';
 terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
 terminal WS: (' ' | '\t' | '\r' | '\n')+;
-terminal ANY_OTHER: .;
+//terminal ANY_OTHER: .;
 
 // terminal fragments
-terminal fragment DIGIT : "0".."9";
-terminal fragment UNSIGNED_INTEGER :DIGIT+;
-terminal fragment S_ESCAPE : "\\" ("'" | "\"" | "?" | "\\" | "a" | "b" | "f" | "n" | "r" | "t" | "v");
-terminal fragment Q_IDENT : "’" ( Q_CHAR | S_ESCAPE )+ "’";
-terminal fragment NONDIGIT : "_" | "a".."z" | "A".."Z";
-terminal fragment S_CHAR : (! ( "\"" | "\\"));
-terminal fragment Q_CHAR : NONDIGIT | DIGIT | "!" | "#" | "$" | "%" | "&" | "(" | ")" | "*" | "+" | "," |
+terminal fragment DIGIT: "0".."9";
+terminal fragment UNSIGNED_INTEGER: DIGIT+;
+terminal fragment S_ESCAPE: "\\" ("'" | "\"" | "?" | "\\" | "a" | "b" | "f" | "n" | "r" | "t" | "v");
+terminal fragment Q_IDENT: "’" ( Q_CHAR | S_ESCAPE )* "’";
+terminal fragment NONDIGIT: "_" | "a".."z" | "A".."Z";
+terminal fragment S_CHAR: !( "\"" | "\\");
+terminal fragment Q_CHAR: NONDIGIT | DIGIT | "!" | "#" | "$" | "%" | "&" | "(" | ")" | "*" | "+" | "," |
 	"-" | "." | "/" | ":" | ";" | "<" | ">" | "=" | "?" | "@" | "[" | "]" | "^" |
 	"{" | "}" | "|" | "~" | " ";

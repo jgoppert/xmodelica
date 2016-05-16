@@ -5,6 +5,8 @@ package xmodelica.modelica;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Enum List</b></em>'.
@@ -21,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface EnumList extends ClassSpecifier, ShortClassDefinition
+public interface EnumList extends EObject
 {
   /**
    * Returns the value of the '<em><b>Enums</b></em>' containment reference list.

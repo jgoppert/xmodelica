@@ -5,7 +5,6 @@ package xmodelica.modelica.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,22 +12,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import xmodelica.modelica.ArraySubscripts;
-import xmodelica.modelica.ClassModification;
-import xmodelica.modelica.Comment;
-import xmodelica.modelica.ComponentClause;
-import xmodelica.modelica.ComponentList;
-import xmodelica.modelica.ConstrainingClause;
-import xmodelica.modelica.ElementModicationOrReplaceable;
-import xmodelica.modelica.ElementRedeclaration;
-import xmodelica.modelica.ElementReplaceable;
 import xmodelica.modelica.ModelicaPackage;
-import xmodelica.modelica.ShortClassDefinition;
 import xmodelica.modelica.Subscript;
 
 /**
@@ -39,57 +27,13 @@ import xmodelica.modelica.Subscript;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.impl.ArraySubscriptsImpl#getComps <em>Comps</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.ArraySubscriptsImpl#getConst <em>Const</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.ArraySubscriptsImpl#getMode <em>Mode</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.ArraySubscriptsImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ArraySubscriptsImpl#getSubscripts <em>Subscripts</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ArraySubscriptsImpl extends ClassSpecifierImpl implements ArraySubscripts
+public class ArraySubscriptsImpl extends ShortClassDefinitionImpl implements ArraySubscripts
 {
-  /**
-   * The cached value of the '{@link #getComps() <em>Comps</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getComps()
-   * @generated
-   * @ordered
-   */
-  protected ComponentList comps;
-
-  /**
-   * The cached value of the '{@link #getConst() <em>Const</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getConst()
-   * @generated
-   * @ordered
-   */
-  protected ConstrainingClause const_;
-
-  /**
-   * The cached value of the '{@link #getMode() <em>Mode</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMode()
-   * @generated
-   * @ordered
-   */
-  protected ClassModification mode;
-
-  /**
-   * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getComment()
-   * @generated
-   * @ordered
-   */
-  protected Comment comment;
-
   /**
    * The cached value of the '{@link #getSubscripts() <em>Subscripts</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -126,198 +70,6 @@ public class ArraySubscriptsImpl extends ClassSpecifierImpl implements ArraySubs
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComponentList getComps()
-  {
-    return comps;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetComps(ComponentList newComps, NotificationChain msgs)
-  {
-    ComponentList oldComps = comps;
-    comps = newComps;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.ARRAY_SUBSCRIPTS__COMPS, oldComps, newComps);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setComps(ComponentList newComps)
-  {
-    if (newComps != comps)
-    {
-      NotificationChain msgs = null;
-      if (comps != null)
-        msgs = ((InternalEObject)comps).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ARRAY_SUBSCRIPTS__COMPS, null, msgs);
-      if (newComps != null)
-        msgs = ((InternalEObject)newComps).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ARRAY_SUBSCRIPTS__COMPS, null, msgs);
-      msgs = basicSetComps(newComps, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.ARRAY_SUBSCRIPTS__COMPS, newComps, newComps));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ConstrainingClause getConst()
-  {
-    return const_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetConst(ConstrainingClause newConst, NotificationChain msgs)
-  {
-    ConstrainingClause oldConst = const_;
-    const_ = newConst;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.ARRAY_SUBSCRIPTS__CONST, oldConst, newConst);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setConst(ConstrainingClause newConst)
-  {
-    if (newConst != const_)
-    {
-      NotificationChain msgs = null;
-      if (const_ != null)
-        msgs = ((InternalEObject)const_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ARRAY_SUBSCRIPTS__CONST, null, msgs);
-      if (newConst != null)
-        msgs = ((InternalEObject)newConst).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ARRAY_SUBSCRIPTS__CONST, null, msgs);
-      msgs = basicSetConst(newConst, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.ARRAY_SUBSCRIPTS__CONST, newConst, newConst));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ClassModification getMode()
-  {
-    return mode;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetMode(ClassModification newMode, NotificationChain msgs)
-  {
-    ClassModification oldMode = mode;
-    mode = newMode;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.ARRAY_SUBSCRIPTS__MODE, oldMode, newMode);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMode(ClassModification newMode)
-  {
-    if (newMode != mode)
-    {
-      NotificationChain msgs = null;
-      if (mode != null)
-        msgs = ((InternalEObject)mode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ARRAY_SUBSCRIPTS__MODE, null, msgs);
-      if (newMode != null)
-        msgs = ((InternalEObject)newMode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ARRAY_SUBSCRIPTS__MODE, null, msgs);
-      msgs = basicSetMode(newMode, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.ARRAY_SUBSCRIPTS__MODE, newMode, newMode));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Comment getComment()
-  {
-    return comment;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetComment(Comment newComment, NotificationChain msgs)
-  {
-    Comment oldComment = comment;
-    comment = newComment;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.ARRAY_SUBSCRIPTS__COMMENT, oldComment, newComment);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setComment(Comment newComment)
-  {
-    if (newComment != comment)
-    {
-      NotificationChain msgs = null;
-      if (comment != null)
-        msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ARRAY_SUBSCRIPTS__COMMENT, null, msgs);
-      if (newComment != null)
-        msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.ARRAY_SUBSCRIPTS__COMMENT, null, msgs);
-      msgs = basicSetComment(newComment, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.ARRAY_SUBSCRIPTS__COMMENT, newComment, newComment));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Subscript> getSubscripts()
   {
     if (subscripts == null)
@@ -337,14 +89,6 @@ public class ArraySubscriptsImpl extends ClassSpecifierImpl implements ArraySubs
   {
     switch (featureID)
     {
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__COMPS:
-        return basicSetComps(null, msgs);
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__CONST:
-        return basicSetConst(null, msgs);
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__MODE:
-        return basicSetMode(null, msgs);
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__COMMENT:
-        return basicSetComment(null, msgs);
       case ModelicaPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS:
         return ((InternalEList<?>)getSubscripts()).basicRemove(otherEnd, msgs);
     }
@@ -361,14 +105,6 @@ public class ArraySubscriptsImpl extends ClassSpecifierImpl implements ArraySubs
   {
     switch (featureID)
     {
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__COMPS:
-        return getComps();
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__CONST:
-        return getConst();
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__MODE:
-        return getMode();
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__COMMENT:
-        return getComment();
       case ModelicaPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS:
         return getSubscripts();
     }
@@ -386,18 +122,6 @@ public class ArraySubscriptsImpl extends ClassSpecifierImpl implements ArraySubs
   {
     switch (featureID)
     {
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__COMPS:
-        setComps((ComponentList)newValue);
-        return;
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__CONST:
-        setConst((ConstrainingClause)newValue);
-        return;
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__MODE:
-        setMode((ClassModification)newValue);
-        return;
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__COMMENT:
-        setComment((Comment)newValue);
-        return;
       case ModelicaPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS:
         getSubscripts().clear();
         getSubscripts().addAll((Collection<? extends Subscript>)newValue);
@@ -416,18 +140,6 @@ public class ArraySubscriptsImpl extends ClassSpecifierImpl implements ArraySubs
   {
     switch (featureID)
     {
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__COMPS:
-        setComps((ComponentList)null);
-        return;
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__CONST:
-        setConst((ConstrainingClause)null);
-        return;
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__MODE:
-        setMode((ClassModification)null);
-        return;
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__COMMENT:
-        setComment((Comment)null);
-        return;
       case ModelicaPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS:
         getSubscripts().clear();
         return;
@@ -445,118 +157,10 @@ public class ArraySubscriptsImpl extends ClassSpecifierImpl implements ArraySubs
   {
     switch (featureID)
     {
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__COMPS:
-        return comps != null;
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__CONST:
-        return const_ != null;
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__MODE:
-        return mode != null;
-      case ModelicaPackage.ARRAY_SUBSCRIPTS__COMMENT:
-        return comment != null;
       case ModelicaPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS:
         return subscripts != null && !subscripts.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == ComponentClause.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case ModelicaPackage.ARRAY_SUBSCRIPTS__COMPS: return ModelicaPackage.COMPONENT_CLAUSE__COMPS;
-        default: return -1;
-      }
-    }
-    if (baseClass == ElementRedeclaration.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == ElementModicationOrReplaceable.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == ElementReplaceable.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case ModelicaPackage.ARRAY_SUBSCRIPTS__CONST: return ModelicaPackage.ELEMENT_REPLACEABLE__CONST;
-        default: return -1;
-      }
-    }
-    if (baseClass == ShortClassDefinition.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case ModelicaPackage.ARRAY_SUBSCRIPTS__MODE: return ModelicaPackage.SHORT_CLASS_DEFINITION__MODE;
-        case ModelicaPackage.ARRAY_SUBSCRIPTS__COMMENT: return ModelicaPackage.SHORT_CLASS_DEFINITION__COMMENT;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == ComponentClause.class)
-    {
-      switch (baseFeatureID)
-      {
-        case ModelicaPackage.COMPONENT_CLAUSE__COMPS: return ModelicaPackage.ARRAY_SUBSCRIPTS__COMPS;
-        default: return -1;
-      }
-    }
-    if (baseClass == ElementRedeclaration.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == ElementModicationOrReplaceable.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == ElementReplaceable.class)
-    {
-      switch (baseFeatureID)
-      {
-        case ModelicaPackage.ELEMENT_REPLACEABLE__CONST: return ModelicaPackage.ARRAY_SUBSCRIPTS__CONST;
-        default: return -1;
-      }
-    }
-    if (baseClass == ShortClassDefinition.class)
-    {
-      switch (baseFeatureID)
-      {
-        case ModelicaPackage.SHORT_CLASS_DEFINITION__MODE: return ModelicaPackage.ARRAY_SUBSCRIPTS__MODE;
-        case ModelicaPackage.SHORT_CLASS_DEFINITION__COMMENT: return ModelicaPackage.ARRAY_SUBSCRIPTS__COMMENT;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
 } //ArraySubscriptsImpl

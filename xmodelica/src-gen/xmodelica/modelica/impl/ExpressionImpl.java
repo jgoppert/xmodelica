@@ -19,10 +19,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import xmodelica.modelica.Expression;
-import xmodelica.modelica.ForIndex;
 import xmodelica.modelica.FunctionArgument;
 import xmodelica.modelica.ModelicaPackage;
-import xmodelica.modelica.NamedArguments;
 import xmodelica.modelica.Subscript;
 
 /**
@@ -33,8 +31,7 @@ import xmodelica.modelica.Subscript;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.impl.ExpressionImpl#getName <em>Name</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.ExpressionImpl#getArgs <em>Args</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ExpressionImpl#isAll <em>All</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ExpressionImpl#getIf <em>If</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ExpressionImpl#getThen <em>Then</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ExpressionImpl#getElseif <em>Elseif</em>}</li>
@@ -47,34 +44,24 @@ import xmodelica.modelica.Subscript;
 public class ExpressionImpl extends ConditionAttributeImpl implements Expression
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #isAll() <em>All</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #isAll()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final boolean ALL_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #isAll() <em>All</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #isAll()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getArgs()
-   * @generated
-   * @ordered
-   */
-  protected NamedArguments args;
+  protected boolean all = ALL_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getIf() <em>If</em>}' containment reference.
@@ -152,9 +139,9 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public boolean isAll()
   {
-    return name;
+    return all;
   }
 
   /**
@@ -162,60 +149,12 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setAll(boolean newAll)
   {
-    String oldName = name;
-    name = newName;
+    boolean oldAll = all;
+    all = newAll;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.EXPRESSION__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NamedArguments getArgs()
-  {
-    return args;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetArgs(NamedArguments newArgs, NotificationChain msgs)
-  {
-    NamedArguments oldArgs = args;
-    args = newArgs;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.EXPRESSION__ARGS, oldArgs, newArgs);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setArgs(NamedArguments newArgs)
-  {
-    if (newArgs != args)
-    {
-      NotificationChain msgs = null;
-      if (args != null)
-        msgs = ((InternalEObject)args).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.EXPRESSION__ARGS, null, msgs);
-      if (newArgs != null)
-        msgs = ((InternalEObject)newArgs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.EXPRESSION__ARGS, null, msgs);
-      msgs = basicSetArgs(newArgs, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.EXPRESSION__ARGS, newArgs, newArgs));
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.EXPRESSION__ALL, oldAll, all));
   }
 
   /**
@@ -366,8 +305,6 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
   {
     switch (featureID)
     {
-      case ModelicaPackage.EXPRESSION__ARGS:
-        return basicSetArgs(null, msgs);
       case ModelicaPackage.EXPRESSION__IF:
         return basicSetIf(null, msgs);
       case ModelicaPackage.EXPRESSION__THEN:
@@ -392,10 +329,8 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
   {
     switch (featureID)
     {
-      case ModelicaPackage.EXPRESSION__NAME:
-        return getName();
-      case ModelicaPackage.EXPRESSION__ARGS:
-        return getArgs();
+      case ModelicaPackage.EXPRESSION__ALL:
+        return isAll();
       case ModelicaPackage.EXPRESSION__IF:
         return getIf();
       case ModelicaPackage.EXPRESSION__THEN:
@@ -421,11 +356,8 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
   {
     switch (featureID)
     {
-      case ModelicaPackage.EXPRESSION__NAME:
-        setName((String)newValue);
-        return;
-      case ModelicaPackage.EXPRESSION__ARGS:
-        setArgs((NamedArguments)newValue);
+      case ModelicaPackage.EXPRESSION__ALL:
+        setAll((Boolean)newValue);
         return;
       case ModelicaPackage.EXPRESSION__IF:
         setIf((Expression)newValue);
@@ -459,11 +391,8 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
   {
     switch (featureID)
     {
-      case ModelicaPackage.EXPRESSION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case ModelicaPackage.EXPRESSION__ARGS:
-        setArgs((NamedArguments)null);
+      case ModelicaPackage.EXPRESSION__ALL:
+        setAll(ALL_EDEFAULT);
         return;
       case ModelicaPackage.EXPRESSION__IF:
         setIf((Expression)null);
@@ -494,10 +423,8 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
   {
     switch (featureID)
     {
-      case ModelicaPackage.EXPRESSION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ModelicaPackage.EXPRESSION__ARGS:
-        return args != null;
+      case ModelicaPackage.EXPRESSION__ALL:
+        return all != ALL_EDEFAULT;
       case ModelicaPackage.EXPRESSION__IF:
         return if_ != null;
       case ModelicaPackage.EXPRESSION__THEN:
@@ -520,19 +447,10 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
-    if (baseClass == ForIndex.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == FunctionArgument.class)
     {
       switch (derivedFeatureID)
       {
-        case ModelicaPackage.EXPRESSION__NAME: return ModelicaPackage.FUNCTION_ARGUMENT__NAME;
-        case ModelicaPackage.EXPRESSION__ARGS: return ModelicaPackage.FUNCTION_ARGUMENT__ARGS;
         default: return -1;
       }
     }
@@ -540,6 +458,7 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
     {
       switch (derivedFeatureID)
       {
+        case ModelicaPackage.EXPRESSION__ALL: return ModelicaPackage.SUBSCRIPT__ALL;
         default: return -1;
       }
     }
@@ -554,19 +473,10 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
-    if (baseClass == ForIndex.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == FunctionArgument.class)
     {
       switch (baseFeatureID)
       {
-        case ModelicaPackage.FUNCTION_ARGUMENT__NAME: return ModelicaPackage.EXPRESSION__NAME;
-        case ModelicaPackage.FUNCTION_ARGUMENT__ARGS: return ModelicaPackage.EXPRESSION__ARGS;
         default: return -1;
       }
     }
@@ -574,6 +484,7 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
     {
       switch (baseFeatureID)
       {
+        case ModelicaPackage.SUBSCRIPT__ALL: return ModelicaPackage.EXPRESSION__ALL;
         default: return -1;
       }
     }
@@ -591,8 +502,8 @@ public class ExpressionImpl extends ConditionAttributeImpl implements Expression
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (all: ");
+    result.append(all);
     result.append(')');
     return result.toString();
   }

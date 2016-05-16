@@ -10,6 +10,13 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>For Index</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.ForIndex#getId <em>Id</em>}</li>
+ *   <li>{@link xmodelica.modelica.ForIndex#getExpr <em>Expr</em>}</li>
+ * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getForIndex()
  * @model
@@ -17,4 +24,56 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ForIndex extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Id</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Id</em>' attribute.
+   * @see #setId(String)
+   * @see xmodelica.modelica.ModelicaPackage#getForIndex_Id()
+   * @model
+   * @generated
+   */
+  String getId();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ForIndex#getId <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Id</em>' attribute.
+   * @see #getId()
+   * @generated
+   */
+  void setId(String value);
+
+  /**
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expr</em>' containment reference.
+   * @see #setExpr(Expression)
+   * @see xmodelica.modelica.ModelicaPackage#getForIndex_Expr()
+   * @model containment="true"
+   * @generated
+   */
+  Expression getExpr();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ForIndex#getExpr <em>Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expr</em>' containment reference.
+   * @see #getExpr()
+   * @generated
+   */
+  void setExpr(Expression value);
+
 } // ForIndex

@@ -20,20 +20,86 @@ import xmodelica.tests.ModelicaInjectorProvider;
 @SuppressWarnings("all")
 public class ModelicaParsingTest {
   @Inject
-  private ParseHelper<StoredDefinition> parseHelper;
+  private ParseHelper<StoredDefinition> parser;
   
   @Test
-  public void loadStoredDefinition() {
+  public void within() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("within Blah.Blah;");
+      _builder.newLine();
+      _builder.append("class Ball");
+      _builder.newLine();
+      _builder.append("end Ball;");
+      _builder.newLine();
+      final StoredDefinition result = this.parser.parse(_builder);
+      Assert.assertNotNull(result);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void components() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("class Ball");
       _builder.newLine();
-      _builder.append("equation");
+      _builder.append("\t");
+      _builder.append("Real a=1;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("Bool c=2;");
       _builder.newLine();
       _builder.append("end Ball;");
       _builder.newLine();
-      final StoredDefinition result = this.parseHelper.parse(_builder);
+      final StoredDefinition result = this.parser.parse(_builder);
       Assert.assertNotNull(result);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void equation() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("class Ball");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("Real a;");
+      _builder.newLine();
+      _builder.append("equation");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("a = 1;");
+      _builder.newLine();
+      _builder.append("end Ball;");
+      _builder.newLine();
+      final StoredDefinition result = this.parser.parse(_builder);
+      Assert.assertNotNull(result);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void derivative() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("class Ball");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("Real a;");
+      _builder.newLine();
+      _builder.append("equation");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("der(a) = 1;");
+      _builder.newLine();
+      _builder.append("end Ball;");
+      _builder.newLine();
+      final StoredDefinition result = this.parser.parse(_builder);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

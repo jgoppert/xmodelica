@@ -11,16 +11,15 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import xmodelica.modelica.ForIndices;
+import xmodelica.modelica.FunctionArgument;
 import xmodelica.modelica.FunctionArguments;
 import xmodelica.modelica.ModelicaPackage;
 
@@ -38,7 +37,7 @@ import xmodelica.modelica.ModelicaPackage;
  *
  * @generated
  */
-public class FunctionArgumentsImpl extends MinimalEObjectImpl.Container implements FunctionArguments
+public class FunctionArgumentsImpl extends PrimaryImpl implements FunctionArguments
 {
   /**
    * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference list.
@@ -48,7 +47,7 @@ public class FunctionArgumentsImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected EList<EObject> args;
+  protected EList<FunctionArgument> args;
 
   /**
    * The cached value of the '{@link #getIndices() <em>Indices</em>}' containment reference.
@@ -86,11 +85,11 @@ public class FunctionArgumentsImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EObject> getArgs()
+  public EList<FunctionArgument> getArgs()
   {
     if (args == null)
     {
-      args = new EObjectContainmentEList<EObject>(EObject.class, this, ModelicaPackage.FUNCTION_ARGUMENTS__ARGS);
+      args = new EObjectContainmentEList<FunctionArgument>(FunctionArgument.class, this, ModelicaPackage.FUNCTION_ARGUMENTS__ARGS);
     }
     return args;
   }
@@ -192,7 +191,7 @@ public class FunctionArgumentsImpl extends MinimalEObjectImpl.Container implemen
     {
       case ModelicaPackage.FUNCTION_ARGUMENTS__ARGS:
         getArgs().clear();
-        getArgs().addAll((Collection<? extends EObject>)newValue);
+        getArgs().addAll((Collection<? extends FunctionArgument>)newValue);
         return;
       case ModelicaPackage.FUNCTION_ARGUMENTS__INDICES:
         setIndices((ForIndices)newValue);

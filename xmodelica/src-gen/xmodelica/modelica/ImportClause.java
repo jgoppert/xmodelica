@@ -9,6 +9,15 @@ package xmodelica.modelica;
  * A representation of the model object '<em><b>Import Clause</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.ImportClause#getId <em>Id</em>}</li>
+ *   <li>{@link xmodelica.modelica.ImportClause#getName <em>Name</em>}</li>
+ *   <li>{@link xmodelica.modelica.ImportClause#getList <em>List</em>}</li>
+ *   <li>{@link xmodelica.modelica.ImportClause#getComment <em>Comment</em>}</li>
+ * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getImportClause()
  * @model
@@ -16,4 +25,108 @@ package xmodelica.modelica;
  */
 public interface ImportClause extends Element
 {
+  /**
+   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Id</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Id</em>' attribute.
+   * @see #setId(String)
+   * @see xmodelica.modelica.ModelicaPackage#getImportClause_Id()
+   * @model
+   * @generated
+   */
+  String getId();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ImportClause#getId <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Id</em>' attribute.
+   * @see #getId()
+   * @generated
+   */
+  void setId(String value);
+
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see xmodelica.modelica.ModelicaPackage#getImportClause_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ImportClause#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>List</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>List</em>' containment reference.
+   * @see #setList(ImportList)
+   * @see xmodelica.modelica.ModelicaPackage#getImportClause_List()
+   * @model containment="true"
+   * @generated
+   */
+  ImportList getList();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ImportClause#getList <em>List</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>List</em>' containment reference.
+   * @see #getList()
+   * @generated
+   */
+  void setList(ImportList value);
+
+  /**
+   * Returns the value of the '<em><b>Comment</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Comment</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Comment</em>' containment reference.
+   * @see #setComment(Comment)
+   * @see xmodelica.modelica.ModelicaPackage#getImportClause_Comment()
+   * @model containment="true"
+   * @generated
+   */
+  Comment getComment();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ImportClause#getComment <em>Comment</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Comment</em>' containment reference.
+   * @see #getComment()
+   * @generated
+   */
+  void setComment(Comment value);
+
 } // ImportClause

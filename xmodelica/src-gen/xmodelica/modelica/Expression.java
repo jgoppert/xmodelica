@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Expression extends ConditionAttribute, ForIndex, FunctionArgument, Subscript
+public interface Expression extends ConditionAttribute, FunctionArgument, Subscript
 {
   /**
    * Returns the value of the '<em><b>If</b></em>' containment reference.

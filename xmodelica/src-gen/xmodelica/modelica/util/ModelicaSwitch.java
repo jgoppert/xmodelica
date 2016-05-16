@@ -88,26 +88,10 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ModelicaPackage.CLASS_SPECIFIER:
-      {
-        ClassSpecifier classSpecifier = (ClassSpecifier)theEObject;
-        T result = caseClassSpecifier(classSpecifier);
-        if (result == null) result = caseClassDefinition(classSpecifier);
-        if (result == null) result = caseElement(classSpecifier);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ModelicaPackage.ENUM_LIST:
       {
         EnumList enumList = (EnumList)theEObject;
         T result = caseEnumList(enumList);
-        if (result == null) result = caseClassSpecifier(enumList);
-        if (result == null) result = caseShortClassDefinition(enumList);
-        if (result == null) result = caseClassDefinition(enumList);
-        if (result == null) result = caseElementReplaceable(enumList);
-        if (result == null) result = caseElement(enumList);
-        if (result == null) result = caseElementRedeclaration(enumList);
-        if (result == null) result = caseElementModicationOrReplaceable(enumList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -122,9 +106,6 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         Composition composition = (Composition)theEObject;
         T result = caseComposition(composition);
-        if (result == null) result = caseClassSpecifier(composition);
-        if (result == null) result = caseClassDefinition(composition);
-        if (result == null) result = caseElement(composition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -132,10 +113,6 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         ExternalFunctionCall externalFunctionCall = (ExternalFunctionCall)theEObject;
         T result = caseExternalFunctionCall(externalFunctionCall);
-        if (result == null) result = caseComposition(externalFunctionCall);
-        if (result == null) result = caseClassSpecifier(externalFunctionCall);
-        if (result == null) result = caseClassDefinition(externalFunctionCall);
-        if (result == null) result = caseElement(externalFunctionCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -143,10 +120,6 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         ElementList elementList = (ElementList)theEObject;
         T result = caseElementList(elementList);
-        if (result == null) result = caseComposition(elementList);
-        if (result == null) result = caseClassSpecifier(elementList);
-        if (result == null) result = caseClassDefinition(elementList);
-        if (result == null) result = caseElement(elementList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -162,6 +135,13 @@ public class ModelicaSwitch<T> extends Switch<T>
         ImportClause importClause = (ImportClause)theEObject;
         T result = caseImportClause(importClause);
         if (result == null) result = caseElement(importClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.IMPORT_LIST:
+      {
+        ImportList importList = (ImportList)theEObject;
+        T result = caseImportList(importList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -185,6 +165,13 @@ public class ModelicaSwitch<T> extends Switch<T>
         ComponentClause componentClause = (ComponentClause)theEObject;
         T result = caseComponentClause(componentClause);
         if (result == null) result = caseElement(componentClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.TYPE_SPECIFIER:
+      {
+        TypeSpecifier typeSpecifier = (TypeSpecifier)theEObject;
+        T result = caseTypeSpecifier(typeSpecifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -214,10 +201,6 @@ public class ModelicaSwitch<T> extends Switch<T>
         Declaration declaration = (Declaration)theEObject;
         T result = caseDeclaration(declaration);
         if (result == null) result = caseComponentDeclaration1(declaration);
-        if (result == null) result = caseComponentClause1(declaration);
-        if (result == null) result = caseElementReplaceable(declaration);
-        if (result == null) result = caseElementRedeclaration(declaration);
-        if (result == null) result = caseElementModicationOrReplaceable(declaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -233,12 +216,6 @@ public class ModelicaSwitch<T> extends Switch<T>
         ClassModification classModification = (ClassModification)theEObject;
         T result = caseClassModification(classModification);
         if (result == null) result = caseAnnotation(classModification);
-        if (result == null) result = caseClassDefinition(classModification);
-        if (result == null) result = caseComment(classModification);
-        if (result == null) result = caseClassSpecifier(classModification);
-        if (result == null) result = caseEnumerationLiteral(classModification);
-        if (result == null) result = caseImportClause(classModification);
-        if (result == null) result = caseElement(classModification);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -260,6 +237,7 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         ElementModicationOrReplaceable elementModicationOrReplaceable = (ElementModicationOrReplaceable)theEObject;
         T result = caseElementModicationOrReplaceable(elementModicationOrReplaceable);
+        if (result == null) result = caseArgument(elementModicationOrReplaceable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -268,6 +246,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         ElementModification elementModification = (ElementModification)theEObject;
         T result = caseElementModification(elementModification);
         if (result == null) result = caseElementModicationOrReplaceable(elementModification);
+        if (result == null) result = caseArgument(elementModification);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -275,6 +254,7 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         ElementRedeclaration elementRedeclaration = (ElementRedeclaration)theEObject;
         T result = caseElementRedeclaration(elementRedeclaration);
+        if (result == null) result = caseArgument(elementRedeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -284,6 +264,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         T result = caseElementReplaceable(elementReplaceable);
         if (result == null) result = caseElementModicationOrReplaceable(elementReplaceable);
         if (result == null) result = caseElementRedeclaration(elementReplaceable);
+        if (result == null) result = caseArgument(elementReplaceable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -294,6 +275,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = caseElementReplaceable(componentClause1);
         if (result == null) result = caseElementRedeclaration(componentClause1);
         if (result == null) result = caseElementModicationOrReplaceable(componentClause1);
+        if (result == null) result = caseArgument(componentClause1);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -301,10 +283,6 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         ComponentDeclaration1 componentDeclaration1 = (ComponentDeclaration1)theEObject;
         T result = caseComponentDeclaration1(componentDeclaration1);
-        if (result == null) result = caseComponentClause1(componentDeclaration1);
-        if (result == null) result = caseElementReplaceable(componentDeclaration1);
-        if (result == null) result = caseElementRedeclaration(componentDeclaration1);
-        if (result == null) result = caseElementModicationOrReplaceable(componentDeclaration1);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -315,6 +293,7 @@ public class ModelicaSwitch<T> extends Switch<T>
         if (result == null) result = caseElementReplaceable(shortClassDefinition);
         if (result == null) result = caseElementRedeclaration(shortClassDefinition);
         if (result == null) result = caseElementModicationOrReplaceable(shortClassDefinition);
+        if (result == null) result = caseArgument(shortClassDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -350,6 +329,7 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         IfEquation ifEquation = (IfEquation)theEObject;
         T result = caseIfEquation(ifEquation);
+        if (result == null) result = caseEquation(ifEquation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -365,6 +345,7 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         ForEquation forEquation = (ForEquation)theEObject;
         T result = caseForEquation(forEquation);
+        if (result == null) result = caseEquation(forEquation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -402,6 +383,7 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         WhenEquation whenEquation = (WhenEquation)theEObject;
         T result = caseWhenEquation(whenEquation);
+        if (result == null) result = caseEquation(whenEquation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -417,6 +399,7 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         ConnectClause connectClause = (ConnectClause)theEObject;
         T result = caseConnectClause(connectClause);
+        if (result == null) result = caseEquation(connectClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -425,7 +408,6 @@ public class ModelicaSwitch<T> extends Switch<T>
         Expression expression = (Expression)theEObject;
         T result = caseExpression(expression);
         if (result == null) result = caseConditionAttribute(expression);
-        if (result == null) result = caseForIndex(expression);
         if (result == null) result = caseFunctionArgument(expression);
         if (result == null) result = caseSubscript(expression);
         if (result == null) result = defaultCase(theEObject);
@@ -437,7 +419,6 @@ public class ModelicaSwitch<T> extends Switch<T>
         T result = caseSimpleExpression(simpleExpression);
         if (result == null) result = caseExpression(simpleExpression);
         if (result == null) result = caseConditionAttribute(simpleExpression);
-        if (result == null) result = caseForIndex(simpleExpression);
         if (result == null) result = caseFunctionArgument(simpleExpression);
         if (result == null) result = caseSubscript(simpleExpression);
         if (result == null) result = defaultCase(theEObject);
@@ -447,6 +428,11 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         LogicalExpression logicalExpression = (LogicalExpression)theEObject;
         T result = caseLogicalExpression(logicalExpression);
+        if (result == null) result = caseSimpleExpression(logicalExpression);
+        if (result == null) result = caseExpression(logicalExpression);
+        if (result == null) result = caseConditionAttribute(logicalExpression);
+        if (result == null) result = caseFunctionArgument(logicalExpression);
+        if (result == null) result = caseSubscript(logicalExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -454,6 +440,12 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         LogicalTerm logicalTerm = (LogicalTerm)theEObject;
         T result = caseLogicalTerm(logicalTerm);
+        if (result == null) result = caseLogicalExpression(logicalTerm);
+        if (result == null) result = caseSimpleExpression(logicalTerm);
+        if (result == null) result = caseExpression(logicalTerm);
+        if (result == null) result = caseConditionAttribute(logicalTerm);
+        if (result == null) result = caseFunctionArgument(logicalTerm);
+        if (result == null) result = caseSubscript(logicalTerm);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -461,6 +453,13 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         LogicalFactor logicalFactor = (LogicalFactor)theEObject;
         T result = caseLogicalFactor(logicalFactor);
+        if (result == null) result = caseLogicalTerm(logicalFactor);
+        if (result == null) result = caseLogicalExpression(logicalFactor);
+        if (result == null) result = caseSimpleExpression(logicalFactor);
+        if (result == null) result = caseExpression(logicalFactor);
+        if (result == null) result = caseConditionAttribute(logicalFactor);
+        if (result == null) result = caseFunctionArgument(logicalFactor);
+        if (result == null) result = caseSubscript(logicalFactor);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -469,6 +468,13 @@ public class ModelicaSwitch<T> extends Switch<T>
         Relation relation = (Relation)theEObject;
         T result = caseRelation(relation);
         if (result == null) result = caseLogicalFactor(relation);
+        if (result == null) result = caseLogicalTerm(relation);
+        if (result == null) result = caseLogicalExpression(relation);
+        if (result == null) result = caseSimpleExpression(relation);
+        if (result == null) result = caseExpression(relation);
+        if (result == null) result = caseConditionAttribute(relation);
+        if (result == null) result = caseFunctionArgument(relation);
+        if (result == null) result = caseSubscript(relation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -476,6 +482,15 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         ArithmeticExpression arithmeticExpression = (ArithmeticExpression)theEObject;
         T result = caseArithmeticExpression(arithmeticExpression);
+        if (result == null) result = caseRelation(arithmeticExpression);
+        if (result == null) result = caseLogicalFactor(arithmeticExpression);
+        if (result == null) result = caseLogicalTerm(arithmeticExpression);
+        if (result == null) result = caseLogicalExpression(arithmeticExpression);
+        if (result == null) result = caseSimpleExpression(arithmeticExpression);
+        if (result == null) result = caseExpression(arithmeticExpression);
+        if (result == null) result = caseConditionAttribute(arithmeticExpression);
+        if (result == null) result = caseFunctionArgument(arithmeticExpression);
+        if (result == null) result = caseSubscript(arithmeticExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -483,6 +498,16 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         Term term = (Term)theEObject;
         T result = caseTerm(term);
+        if (result == null) result = caseArithmeticExpression(term);
+        if (result == null) result = caseRelation(term);
+        if (result == null) result = caseLogicalFactor(term);
+        if (result == null) result = caseLogicalTerm(term);
+        if (result == null) result = caseLogicalExpression(term);
+        if (result == null) result = caseSimpleExpression(term);
+        if (result == null) result = caseExpression(term);
+        if (result == null) result = caseConditionAttribute(term);
+        if (result == null) result = caseFunctionArgument(term);
+        if (result == null) result = caseSubscript(term);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -490,6 +515,97 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         Factor factor = (Factor)theEObject;
         T result = caseFactor(factor);
+        if (result == null) result = caseTerm(factor);
+        if (result == null) result = caseArithmeticExpression(factor);
+        if (result == null) result = caseRelation(factor);
+        if (result == null) result = caseLogicalFactor(factor);
+        if (result == null) result = caseLogicalTerm(factor);
+        if (result == null) result = caseLogicalExpression(factor);
+        if (result == null) result = caseSimpleExpression(factor);
+        if (result == null) result = caseExpression(factor);
+        if (result == null) result = caseConditionAttribute(factor);
+        if (result == null) result = caseFunctionArgument(factor);
+        if (result == null) result = caseSubscript(factor);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.FLOAT_PRIMARY:
+      {
+        FloatPrimary floatPrimary = (FloatPrimary)theEObject;
+        T result = caseFloatPrimary(floatPrimary);
+        if (result == null) result = casePrimary(floatPrimary);
+        if (result == null) result = caseFactor(floatPrimary);
+        if (result == null) result = caseTerm(floatPrimary);
+        if (result == null) result = caseArithmeticExpression(floatPrimary);
+        if (result == null) result = caseRelation(floatPrimary);
+        if (result == null) result = caseLogicalFactor(floatPrimary);
+        if (result == null) result = caseLogicalTerm(floatPrimary);
+        if (result == null) result = caseLogicalExpression(floatPrimary);
+        if (result == null) result = caseSimpleExpression(floatPrimary);
+        if (result == null) result = caseExpression(floatPrimary);
+        if (result == null) result = caseConditionAttribute(floatPrimary);
+        if (result == null) result = caseFunctionArgument(floatPrimary);
+        if (result == null) result = caseSubscript(floatPrimary);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.STRING_PRIMARY:
+      {
+        StringPrimary stringPrimary = (StringPrimary)theEObject;
+        T result = caseStringPrimary(stringPrimary);
+        if (result == null) result = casePrimary(stringPrimary);
+        if (result == null) result = caseFactor(stringPrimary);
+        if (result == null) result = caseTerm(stringPrimary);
+        if (result == null) result = caseArithmeticExpression(stringPrimary);
+        if (result == null) result = caseRelation(stringPrimary);
+        if (result == null) result = caseLogicalFactor(stringPrimary);
+        if (result == null) result = caseLogicalTerm(stringPrimary);
+        if (result == null) result = caseLogicalExpression(stringPrimary);
+        if (result == null) result = caseSimpleExpression(stringPrimary);
+        if (result == null) result = caseExpression(stringPrimary);
+        if (result == null) result = caseConditionAttribute(stringPrimary);
+        if (result == null) result = caseFunctionArgument(stringPrimary);
+        if (result == null) result = caseSubscript(stringPrimary);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.LOGICAL_PRIMARY:
+      {
+        LogicalPrimary logicalPrimary = (LogicalPrimary)theEObject;
+        T result = caseLogicalPrimary(logicalPrimary);
+        if (result == null) result = casePrimary(logicalPrimary);
+        if (result == null) result = caseFactor(logicalPrimary);
+        if (result == null) result = caseTerm(logicalPrimary);
+        if (result == null) result = caseArithmeticExpression(logicalPrimary);
+        if (result == null) result = caseRelation(logicalPrimary);
+        if (result == null) result = caseLogicalFactor(logicalPrimary);
+        if (result == null) result = caseLogicalTerm(logicalPrimary);
+        if (result == null) result = caseLogicalExpression(logicalPrimary);
+        if (result == null) result = caseSimpleExpression(logicalPrimary);
+        if (result == null) result = caseExpression(logicalPrimary);
+        if (result == null) result = caseConditionAttribute(logicalPrimary);
+        if (result == null) result = caseFunctionArgument(logicalPrimary);
+        if (result == null) result = caseSubscript(logicalPrimary);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.END:
+      {
+        End end = (End)theEObject;
+        T result = caseEnd(end);
+        if (result == null) result = casePrimary(end);
+        if (result == null) result = caseFactor(end);
+        if (result == null) result = caseTerm(end);
+        if (result == null) result = caseArithmeticExpression(end);
+        if (result == null) result = caseRelation(end);
+        if (result == null) result = caseLogicalFactor(end);
+        if (result == null) result = caseLogicalTerm(end);
+        if (result == null) result = caseLogicalExpression(end);
+        if (result == null) result = caseSimpleExpression(end);
+        if (result == null) result = caseExpression(end);
+        if (result == null) result = caseConditionAttribute(end);
+        if (result == null) result = caseFunctionArgument(end);
+        if (result == null) result = caseSubscript(end);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -497,7 +613,38 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         Primary primary = (Primary)theEObject;
         T result = casePrimary(primary);
-        if (result == null) result = caseArgument(primary);
+        if (result == null) result = caseFactor(primary);
+        if (result == null) result = caseTerm(primary);
+        if (result == null) result = caseArithmeticExpression(primary);
+        if (result == null) result = caseRelation(primary);
+        if (result == null) result = caseLogicalFactor(primary);
+        if (result == null) result = caseLogicalTerm(primary);
+        if (result == null) result = caseLogicalExpression(primary);
+        if (result == null) result = caseSimpleExpression(primary);
+        if (result == null) result = caseExpression(primary);
+        if (result == null) result = caseConditionAttribute(primary);
+        if (result == null) result = caseFunctionArgument(primary);
+        if (result == null) result = caseSubscript(primary);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModelicaPackage.FUNCTION_CALL:
+      {
+        FunctionCall functionCall = (FunctionCall)theEObject;
+        T result = caseFunctionCall(functionCall);
+        if (result == null) result = casePrimary(functionCall);
+        if (result == null) result = caseFactor(functionCall);
+        if (result == null) result = caseTerm(functionCall);
+        if (result == null) result = caseArithmeticExpression(functionCall);
+        if (result == null) result = caseRelation(functionCall);
+        if (result == null) result = caseLogicalFactor(functionCall);
+        if (result == null) result = caseLogicalTerm(functionCall);
+        if (result == null) result = caseLogicalExpression(functionCall);
+        if (result == null) result = caseSimpleExpression(functionCall);
+        if (result == null) result = caseExpression(functionCall);
+        if (result == null) result = caseConditionAttribute(functionCall);
+        if (result == null) result = caseFunctionArgument(functionCall);
+        if (result == null) result = caseSubscript(functionCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -505,6 +652,19 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         ComponentReference componentReference = (ComponentReference)theEObject;
         T result = caseComponentReference(componentReference);
+        if (result == null) result = casePrimary(componentReference);
+        if (result == null) result = caseFactor(componentReference);
+        if (result == null) result = caseTerm(componentReference);
+        if (result == null) result = caseArithmeticExpression(componentReference);
+        if (result == null) result = caseRelation(componentReference);
+        if (result == null) result = caseLogicalFactor(componentReference);
+        if (result == null) result = caseLogicalTerm(componentReference);
+        if (result == null) result = caseLogicalExpression(componentReference);
+        if (result == null) result = caseSimpleExpression(componentReference);
+        if (result == null) result = caseExpression(componentReference);
+        if (result == null) result = caseConditionAttribute(componentReference);
+        if (result == null) result = caseFunctionArgument(componentReference);
+        if (result == null) result = caseSubscript(componentReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -519,6 +679,19 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         FunctionArguments functionArguments = (FunctionArguments)theEObject;
         T result = caseFunctionArguments(functionArguments);
+        if (result == null) result = casePrimary(functionArguments);
+        if (result == null) result = caseFactor(functionArguments);
+        if (result == null) result = caseTerm(functionArguments);
+        if (result == null) result = caseArithmeticExpression(functionArguments);
+        if (result == null) result = caseRelation(functionArguments);
+        if (result == null) result = caseLogicalFactor(functionArguments);
+        if (result == null) result = caseLogicalTerm(functionArguments);
+        if (result == null) result = caseLogicalExpression(functionArguments);
+        if (result == null) result = caseSimpleExpression(functionArguments);
+        if (result == null) result = caseExpression(functionArguments);
+        if (result == null) result = caseConditionAttribute(functionArguments);
+        if (result == null) result = caseFunctionArgument(functionArguments);
+        if (result == null) result = caseSubscript(functionArguments);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -534,6 +707,19 @@ public class ModelicaSwitch<T> extends Switch<T>
         NamedArgument namedArgument = (NamedArgument)theEObject;
         T result = caseNamedArgument(namedArgument);
         if (result == null) result = caseFunctionArguments(namedArgument);
+        if (result == null) result = casePrimary(namedArgument);
+        if (result == null) result = caseFactor(namedArgument);
+        if (result == null) result = caseTerm(namedArgument);
+        if (result == null) result = caseArithmeticExpression(namedArgument);
+        if (result == null) result = caseRelation(namedArgument);
+        if (result == null) result = caseLogicalFactor(namedArgument);
+        if (result == null) result = caseLogicalTerm(namedArgument);
+        if (result == null) result = caseLogicalExpression(namedArgument);
+        if (result == null) result = caseSimpleExpression(namedArgument);
+        if (result == null) result = caseExpression(namedArgument);
+        if (result == null) result = caseConditionAttribute(namedArgument);
+        if (result == null) result = caseFunctionArgument(namedArgument);
+        if (result == null) result = caseSubscript(namedArgument);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -562,14 +748,11 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         ArraySubscripts arraySubscripts = (ArraySubscripts)theEObject;
         T result = caseArraySubscripts(arraySubscripts);
-        if (result == null) result = caseClassSpecifier(arraySubscripts);
-        if (result == null) result = caseComponentClause(arraySubscripts);
         if (result == null) result = caseShortClassDefinition(arraySubscripts);
-        if (result == null) result = caseClassDefinition(arraySubscripts);
         if (result == null) result = caseElementReplaceable(arraySubscripts);
-        if (result == null) result = caseElement(arraySubscripts);
         if (result == null) result = caseElementRedeclaration(arraySubscripts);
         if (result == null) result = caseElementModicationOrReplaceable(arraySubscripts);
+        if (result == null) result = caseArgument(arraySubscripts);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -584,11 +767,6 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         Comment comment = (Comment)theEObject;
         T result = caseComment(comment);
-        if (result == null) result = caseClassSpecifier(comment);
-        if (result == null) result = caseEnumerationLiteral(comment);
-        if (result == null) result = caseImportClause(comment);
-        if (result == null) result = caseClassDefinition(comment);
-        if (result == null) result = caseElement(comment);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -596,12 +774,6 @@ public class ModelicaSwitch<T> extends Switch<T>
       {
         Annotation annotation = (Annotation)theEObject;
         T result = caseAnnotation(annotation);
-        if (result == null) result = caseComment(annotation);
-        if (result == null) result = caseClassSpecifier(annotation);
-        if (result == null) result = caseEnumerationLiteral(annotation);
-        if (result == null) result = caseImportClause(annotation);
-        if (result == null) result = caseClassDefinition(annotation);
-        if (result == null) result = caseElement(annotation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -645,22 +817,6 @@ public class ModelicaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseClassDefinition(ClassDefinition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Class Specifier</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Class Specifier</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseClassSpecifier(ClassSpecifier object)
   {
     return null;
   }
@@ -778,6 +934,22 @@ public class ModelicaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Import List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Import List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImportList(ImportList object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Extends Clause</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -821,6 +993,22 @@ public class ModelicaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComponentClause(ComponentClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type Specifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type Specifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypeSpecifier(TypeSpecifier object)
   {
     return null;
   }
@@ -1434,6 +1622,70 @@ public class ModelicaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Float Primary</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Float Primary</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFloatPrimary(FloatPrimary object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Primary</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Primary</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringPrimary(StringPrimary object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Logical Primary</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Logical Primary</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLogicalPrimary(LogicalPrimary object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>End</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>End</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnd(End object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Primary</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1445,6 +1697,22 @@ public class ModelicaSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePrimary(Primary object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionCall(FunctionCall object)
   {
     return null;
   }

@@ -32,7 +32,7 @@ import xmodelica.modelica.ModelicaPackage;
  *
  * @generated
  */
-public class ClassModificationImpl extends ClassSpecifierImpl implements ClassModification
+public class ClassModificationImpl extends AnnotationImpl implements ClassModification
 {
   /**
    * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference list.

@@ -17,16 +17,51 @@ import xmodelica.modelica.StoredDefinition
 class ModelicaParsingTest{
 
 	@Inject
-	ParseHelper<StoredDefinition> parseHelper;
+	ParseHelper<StoredDefinition> parser;
 
 	@Test 
-	def void loadStoredDefinition() {
-		val result = parseHelper.parse('''
+	def void within() {
+		val result = parser.parse('''
+			within Blah.Blah;
 			class Ball
-			equation
 			end Ball;
 		''')
 		Assert.assertNotNull(result)
 	}
+
+	@Test 
+	def void components() {
+		val result = parser.parse('''
+			class Ball
+				Real a=1;
+				Bool c=2;
+			end Ball;
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test 
+	def void equation() {
+		val result = parser.parse('''
+			class Ball
+				Real a;
+			equation
+				a = 1;
+			end Ball;
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test 
+	def void derivative() {
+		val result = parser.parse('''
+			class Ball
+				Real a;
+			equation
+				der(a) = 1;
+			end Ball;
+		''')
+	}
+
 
 }

@@ -3,65 +3,22 @@
  */
 package xmodelica.modelica.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import xmodelica.modelica.FunctionArgument;
 import xmodelica.modelica.ModelicaPackage;
-import xmodelica.modelica.NamedArguments;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Function Argument</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link xmodelica.modelica.impl.FunctionArgumentImpl#getName <em>Name</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.FunctionArgumentImpl#getArgs <em>Args</em>}</li>
- * </ul>
  *
  * @generated
  */
 public class FunctionArgumentImpl extends MinimalEObjectImpl.Container implements FunctionArgument
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getArgs()
-   * @generated
-   * @ordered
-   */
-  protected NamedArguments args;
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -81,186 +38,6 @@ public class FunctionArgumentImpl extends MinimalEObjectImpl.Container implement
   protected EClass eStaticClass()
   {
     return ModelicaPackage.Literals.FUNCTION_ARGUMENT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.FUNCTION_ARGUMENT__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NamedArguments getArgs()
-  {
-    return args;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetArgs(NamedArguments newArgs, NotificationChain msgs)
-  {
-    NamedArguments oldArgs = args;
-    args = newArgs;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.FUNCTION_ARGUMENT__ARGS, oldArgs, newArgs);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setArgs(NamedArguments newArgs)
-  {
-    if (newArgs != args)
-    {
-      NotificationChain msgs = null;
-      if (args != null)
-        msgs = ((InternalEObject)args).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.FUNCTION_ARGUMENT__ARGS, null, msgs);
-      if (newArgs != null)
-        msgs = ((InternalEObject)newArgs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.FUNCTION_ARGUMENT__ARGS, null, msgs);
-      msgs = basicSetArgs(newArgs, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.FUNCTION_ARGUMENT__ARGS, newArgs, newArgs));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case ModelicaPackage.FUNCTION_ARGUMENT__ARGS:
-        return basicSetArgs(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case ModelicaPackage.FUNCTION_ARGUMENT__NAME:
-        return getName();
-      case ModelicaPackage.FUNCTION_ARGUMENT__ARGS:
-        return getArgs();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case ModelicaPackage.FUNCTION_ARGUMENT__NAME:
-        setName((String)newValue);
-        return;
-      case ModelicaPackage.FUNCTION_ARGUMENT__ARGS:
-        setArgs((NamedArguments)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case ModelicaPackage.FUNCTION_ARGUMENT__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case ModelicaPackage.FUNCTION_ARGUMENT__ARGS:
-        setArgs((NamedArguments)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case ModelicaPackage.FUNCTION_ARGUMENT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ModelicaPackage.FUNCTION_ARGUMENT__ARGS:
-        return args != null;
-    }
-    return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //FunctionArgumentImpl

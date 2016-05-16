@@ -18,7 +18,6 @@ import xmodelica.modelica.ArithmeticExpression;
 import xmodelica.modelica.ArraySubscripts;
 import xmodelica.modelica.ClassDefinition;
 import xmodelica.modelica.ClassModification;
-import xmodelica.modelica.ClassSpecifier;
 import xmodelica.modelica.Comment;
 import xmodelica.modelica.ComponentClause;
 import xmodelica.modelica.ComponentClause1;
@@ -37,6 +36,7 @@ import xmodelica.modelica.ElementModicationOrReplaceable;
 import xmodelica.modelica.ElementModification;
 import xmodelica.modelica.ElementRedeclaration;
 import xmodelica.modelica.ElementReplaceable;
+import xmodelica.modelica.End;
 import xmodelica.modelica.EnumList;
 import xmodelica.modelica.EnumerationLiteral;
 import xmodelica.modelica.Equation;
@@ -46,18 +46,22 @@ import xmodelica.modelica.ExpressionList;
 import xmodelica.modelica.ExtendsClause;
 import xmodelica.modelica.ExternalFunctionCall;
 import xmodelica.modelica.Factor;
+import xmodelica.modelica.FloatPrimary;
 import xmodelica.modelica.ForEquation;
 import xmodelica.modelica.ForIndex;
 import xmodelica.modelica.ForIndices;
 import xmodelica.modelica.ForStatement;
 import xmodelica.modelica.FunctionArgument;
 import xmodelica.modelica.FunctionArguments;
+import xmodelica.modelica.FunctionCall;
 import xmodelica.modelica.FunctionCallArgs;
 import xmodelica.modelica.IfEquation;
 import xmodelica.modelica.IfStatement;
 import xmodelica.modelica.ImportClause;
+import xmodelica.modelica.ImportList;
 import xmodelica.modelica.LogicalExpression;
 import xmodelica.modelica.LogicalFactor;
+import xmodelica.modelica.LogicalPrimary;
 import xmodelica.modelica.LogicalTerm;
 import xmodelica.modelica.ModelicaFactory;
 import xmodelica.modelica.ModelicaPackage;
@@ -72,8 +76,10 @@ import xmodelica.modelica.ShortClassDefinition;
 import xmodelica.modelica.SimpleExpression;
 import xmodelica.modelica.Statement;
 import xmodelica.modelica.StoredDefinition;
+import xmodelica.modelica.StringPrimary;
 import xmodelica.modelica.Subscript;
 import xmodelica.modelica.Term;
+import xmodelica.modelica.TypeSpecifier;
 import xmodelica.modelica.WhenEquation;
 import xmodelica.modelica.WhenStatement;
 import xmodelica.modelica.WhileStatement;
@@ -99,13 +105,6 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * @generated
    */
   private EClass classDefinitionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass classSpecifierEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -161,6 +160,13 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass importListEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass extendsClauseEClass = null;
 
   /**
@@ -176,6 +182,13 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * @generated
    */
   private EClass componentClauseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeSpecifierEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -448,7 +461,42 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass floatPrimaryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringPrimaryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass logicalPrimaryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass endEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass primaryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass functionCallEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -619,9 +667,19 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getStoredDefinition_Within()
+  {
+    return (EAttribute)storedDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getStoredDefinition_Classes()
   {
-    return (EReference)storedDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EReference)storedDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -639,9 +697,9 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getClassSpecifier()
+  public EAttribute getClassDefinition_Final()
   {
-    return classSpecifierEClass;
+    return (EAttribute)classDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -649,9 +707,49 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getClassSpecifier_Mod()
+  public EAttribute getClassDefinition_Encapsulated()
   {
-    return (EReference)classSpecifierEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)classDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getClassDefinition_Name()
+  {
+    return (EAttribute)classDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getClassDefinition_Comment()
+  {
+    return (EAttribute)classDefinitionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getClassDefinition_Composition()
+  {
+    return (EReference)classDefinitionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getClassDefinition_Name_end()
+  {
+    return (EAttribute)classDefinitionEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -689,9 +787,119 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getEnumerationLiteral_Id()
+  {
+    return (EAttribute)enumerationLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEnumerationLiteral_Comment()
+  {
+    return (EReference)enumerationLiteralEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getComposition()
   {
     return compositionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComposition_Priv_elist()
+  {
+    return (EReference)compositionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComposition_Pub_elist()
+  {
+    return (EReference)compositionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComposition_Protected_elist()
+  {
+    return (EReference)compositionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComposition_Eq_secs()
+  {
+    return (EReference)compositionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComposition_Alg_secs()
+  {
+    return (EReference)compositionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getComposition_Ext_lang_spec()
+  {
+    return (EAttribute)compositionEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComposition_Ext_func_call()
+  {
+    return (EReference)compositionEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComposition_Ext_anno()
+  {
+    return (EReference)compositionEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComposition_Anno()
+  {
+    return (EReference)compositionEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -749,59 +957,9 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getElementList_Pub_elist()
-  {
-    return (EReference)elementListEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getElementList_Protected_elist()
-  {
-    return (EReference)elementListEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getElementList_Eq_secs()
-  {
-    return (EReference)elementListEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getElementList_Alg_secs()
-  {
-    return (EReference)elementListEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getElementList_Anno()
-  {
-    return (EReference)elementListEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getElementList_Elem()
   {
-    return (EReference)elementListEClass.getEStructuralFeatures().get(5);
+    return (EReference)elementListEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -822,6 +980,76 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
   public EClass getImportClause()
   {
     return importClauseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getImportClause_Id()
+  {
+    return (EAttribute)importClauseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getImportClause_Name()
+  {
+    return (EAttribute)importClauseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImportClause_List()
+  {
+    return (EReference)importClauseEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImportClause_Comment()
+  {
+    return (EReference)importClauseEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getImportList()
+  {
+    return importListEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getImportList_Id()
+  {
+    return (EAttribute)importListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImportList_List()
+  {
+    return (EReference)importListEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -909,9 +1137,59 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getComponentClause_Prefix()
+  {
+    return (EAttribute)componentClauseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponentClause_Type()
+  {
+    return (EReference)componentClauseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponentClause_Subs()
+  {
+    return (EReference)componentClauseEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getComponentClause_Comps()
   {
-    return (EReference)componentClauseEClass.getEStructuralFeatures().get(0);
+    return (EReference)componentClauseEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTypeSpecifier()
+  {
+    return typeSpecifierEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypeSpecifier_Name()
+  {
+    return (EReference)typeSpecifierEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1209,6 +1487,36 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getComponentClause1_Prefix()
+  {
+    return (EAttribute)componentClause1EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponentClause1_Type()
+  {
+    return (EReference)componentClause1EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponentClause1_Comp()
+  {
+    return (EReference)componentClause1EClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getComponentDeclaration1()
   {
     return componentDeclaration1EClass;
@@ -1249,6 +1557,16 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getShortClassDefinition_List()
+  {
+    return (EReference)shortClassDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getEquationSection()
   {
     return equationSectionEClass;
@@ -1259,9 +1577,19 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEquationSection_Equationss()
+  public EAttribute getEquationSection_Initial()
   {
-    return (EReference)equationSectionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)equationSectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEquationSection_Equations()
+  {
+    return (EReference)equationSectionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1279,9 +1607,19 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getAlgorithmSection_Initial()
+  {
+    return (EAttribute)algorithmSectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getAlgorithmSection_Statements()
   {
-    return (EReference)algorithmSectionEClass.getEStructuralFeatures().get(0);
+    return (EReference)algorithmSectionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1599,6 +1937,26 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getForIndex_Id()
+  {
+    return (EAttribute)forIndexEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForIndex_Expr()
+  {
+    return (EReference)forIndexEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getWhileStatement()
   {
     return whileStatementEClass;
@@ -1739,26 +2097,6 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConnectClause_Left()
-  {
-    return (EReference)connectClauseEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getConnectClause_Right()
-  {
-    return (EReference)connectClauseEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getExpression()
   {
     return expressionEClass;
@@ -1869,9 +2207,9 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLogicalTerm_Factors()
+  public EClass getLogicalFactor()
   {
-    return (EReference)logicalTermEClass.getEStructuralFeatures().get(0);
+    return logicalFactorEClass;
   }
 
   /**
@@ -1879,9 +2217,9 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLogicalFactor()
+  public EReference getLogicalFactor_Factors()
   {
-    return logicalFactorEClass;
+    return (EReference)logicalFactorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1949,39 +2287,9 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getArithmeticExpression_Terms()
-  {
-    return (EReference)arithmeticExpressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getTerm()
   {
     return termEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTerm_Factors()
-  {
-    return (EReference)termEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTerm_Ops()
-  {
-    return (EAttribute)termEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2019,9 +2327,129 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFloatPrimary()
+  {
+    return floatPrimaryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFloatPrimary_Val()
+  {
+    return (EAttribute)floatPrimaryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringPrimary()
+  {
+    return stringPrimaryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringPrimary_Val()
+  {
+    return (EAttribute)stringPrimaryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLogicalPrimary()
+  {
+    return logicalPrimaryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLogicalPrimary_Val()
+  {
+    return (EAttribute)logicalPrimaryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEnd()
+  {
+    return endEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEnd_Val()
+  {
+    return (EAttribute)endEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getPrimary()
   {
     return primaryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPrimary_Res()
+  {
+    return (EReference)primaryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFunctionCall()
+  {
+    return functionCallEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionCall_Comp_ref()
+  {
+    return (EReference)functionCallEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionCall_Args()
+  {
+    return (EReference)functionCallEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2069,7 +2497,7 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionCallArgs_Args()
+  public EReference getFunctionCallArgs_Res()
   {
     return (EReference)functionCallArgsEClass.getEStructuralFeatures().get(0);
   }
@@ -2169,26 +2597,6 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunctionArgument_Name()
-  {
-    return (EAttribute)functionArgumentEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionArgument_Args()
-  {
-    return (EReference)functionArgumentEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getOutputExpressionList()
   {
     return outputExpressionListEClass;
@@ -2249,9 +2657,39 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getSubscript_All()
+  {
+    return (EAttribute)subscriptEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getComment()
   {
     return commentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getComment_Comment()
+  {
+    return (EAttribute)commentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComment_Annotation()
+  {
+    return (EReference)commentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2315,19 +2753,34 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
 
     // Create classes and their features
     storedDefinitionEClass = createEClass(STORED_DEFINITION);
+    createEAttribute(storedDefinitionEClass, STORED_DEFINITION__WITHIN);
     createEReference(storedDefinitionEClass, STORED_DEFINITION__CLASSES);
 
     classDefinitionEClass = createEClass(CLASS_DEFINITION);
-
-    classSpecifierEClass = createEClass(CLASS_SPECIFIER);
-    createEReference(classSpecifierEClass, CLASS_SPECIFIER__MOD);
+    createEAttribute(classDefinitionEClass, CLASS_DEFINITION__FINAL);
+    createEAttribute(classDefinitionEClass, CLASS_DEFINITION__ENCAPSULATED);
+    createEAttribute(classDefinitionEClass, CLASS_DEFINITION__NAME);
+    createEAttribute(classDefinitionEClass, CLASS_DEFINITION__COMMENT);
+    createEReference(classDefinitionEClass, CLASS_DEFINITION__COMPOSITION);
+    createEAttribute(classDefinitionEClass, CLASS_DEFINITION__NAME_END);
 
     enumListEClass = createEClass(ENUM_LIST);
     createEReference(enumListEClass, ENUM_LIST__ENUMS);
 
     enumerationLiteralEClass = createEClass(ENUMERATION_LITERAL);
+    createEAttribute(enumerationLiteralEClass, ENUMERATION_LITERAL__ID);
+    createEReference(enumerationLiteralEClass, ENUMERATION_LITERAL__COMMENT);
 
     compositionEClass = createEClass(COMPOSITION);
+    createEReference(compositionEClass, COMPOSITION__PRIV_ELIST);
+    createEReference(compositionEClass, COMPOSITION__PUB_ELIST);
+    createEReference(compositionEClass, COMPOSITION__PROTECTED_ELIST);
+    createEReference(compositionEClass, COMPOSITION__EQ_SECS);
+    createEReference(compositionEClass, COMPOSITION__ALG_SECS);
+    createEAttribute(compositionEClass, COMPOSITION__EXT_LANG_SPEC);
+    createEReference(compositionEClass, COMPOSITION__EXT_FUNC_CALL);
+    createEReference(compositionEClass, COMPOSITION__EXT_ANNO);
+    createEReference(compositionEClass, COMPOSITION__ANNO);
 
     externalFunctionCallEClass = createEClass(EXTERNAL_FUNCTION_CALL);
     createEReference(externalFunctionCallEClass, EXTERNAL_FUNCTION_CALL__LHS);
@@ -2335,16 +2788,19 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     createEReference(externalFunctionCallEClass, EXTERNAL_FUNCTION_CALL__ARGS);
 
     elementListEClass = createEClass(ELEMENT_LIST);
-    createEReference(elementListEClass, ELEMENT_LIST__PUB_ELIST);
-    createEReference(elementListEClass, ELEMENT_LIST__PROTECTED_ELIST);
-    createEReference(elementListEClass, ELEMENT_LIST__EQ_SECS);
-    createEReference(elementListEClass, ELEMENT_LIST__ALG_SECS);
-    createEReference(elementListEClass, ELEMENT_LIST__ANNO);
     createEReference(elementListEClass, ELEMENT_LIST__ELEM);
 
     elementEClass = createEClass(ELEMENT);
 
     importClauseEClass = createEClass(IMPORT_CLAUSE);
+    createEAttribute(importClauseEClass, IMPORT_CLAUSE__ID);
+    createEAttribute(importClauseEClass, IMPORT_CLAUSE__NAME);
+    createEReference(importClauseEClass, IMPORT_CLAUSE__LIST);
+    createEReference(importClauseEClass, IMPORT_CLAUSE__COMMENT);
+
+    importListEClass = createEClass(IMPORT_LIST);
+    createEAttribute(importListEClass, IMPORT_LIST__ID);
+    createEReference(importListEClass, IMPORT_LIST__LIST);
 
     extendsClauseEClass = createEClass(EXTENDS_CLAUSE);
     createEAttribute(extendsClauseEClass, EXTENDS_CLAUSE__NAME);
@@ -2356,7 +2812,13 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     createEReference(constrainingClauseEClass, CONSTRAINING_CLAUSE__MOD);
 
     componentClauseEClass = createEClass(COMPONENT_CLAUSE);
+    createEAttribute(componentClauseEClass, COMPONENT_CLAUSE__PREFIX);
+    createEReference(componentClauseEClass, COMPONENT_CLAUSE__TYPE);
+    createEReference(componentClauseEClass, COMPONENT_CLAUSE__SUBS);
     createEReference(componentClauseEClass, COMPONENT_CLAUSE__COMPS);
+
+    typeSpecifierEClass = createEClass(TYPE_SPECIFIER);
+    createEReference(typeSpecifierEClass, TYPE_SPECIFIER__NAME);
 
     componentListEClass = createEClass(COMPONENT_LIST);
     createEReference(componentListEClass, COMPONENT_LIST__COMPS);
@@ -2399,17 +2861,23 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     createEReference(elementReplaceableEClass, ELEMENT_REPLACEABLE__CONST);
 
     componentClause1EClass = createEClass(COMPONENT_CLAUSE1);
+    createEAttribute(componentClause1EClass, COMPONENT_CLAUSE1__PREFIX);
+    createEReference(componentClause1EClass, COMPONENT_CLAUSE1__TYPE);
+    createEReference(componentClause1EClass, COMPONENT_CLAUSE1__COMP);
 
     componentDeclaration1EClass = createEClass(COMPONENT_DECLARATION1);
 
     shortClassDefinitionEClass = createEClass(SHORT_CLASS_DEFINITION);
     createEReference(shortClassDefinitionEClass, SHORT_CLASS_DEFINITION__MODE);
     createEReference(shortClassDefinitionEClass, SHORT_CLASS_DEFINITION__COMMENT);
+    createEReference(shortClassDefinitionEClass, SHORT_CLASS_DEFINITION__LIST);
 
     equationSectionEClass = createEClass(EQUATION_SECTION);
-    createEReference(equationSectionEClass, EQUATION_SECTION__EQUATIONSS);
+    createEAttribute(equationSectionEClass, EQUATION_SECTION__INITIAL);
+    createEReference(equationSectionEClass, EQUATION_SECTION__EQUATIONS);
 
     algorithmSectionEClass = createEClass(ALGORITHM_SECTION);
+    createEAttribute(algorithmSectionEClass, ALGORITHM_SECTION__INITIAL);
     createEReference(algorithmSectionEClass, ALGORITHM_SECTION__STATEMENTS);
 
     equationEClass = createEClass(EQUATION);
@@ -2450,6 +2918,8 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     createEReference(forIndicesEClass, FOR_INDICES__INDICES);
 
     forIndexEClass = createEClass(FOR_INDEX);
+    createEAttribute(forIndexEClass, FOR_INDEX__ID);
+    createEReference(forIndexEClass, FOR_INDEX__EXPR);
 
     whileStatementEClass = createEClass(WHILE_STATEMENT);
     createEReference(whileStatementEClass, WHILE_STATEMENT__COND);
@@ -2468,8 +2938,6 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     createEReference(whenStatementEClass, WHEN_STATEMENT__ELSEWHEN_STMTS);
 
     connectClauseEClass = createEClass(CONNECT_CLAUSE);
-    createEReference(connectClauseEClass, CONNECT_CLAUSE__LEFT);
-    createEReference(connectClauseEClass, CONNECT_CLAUSE__RIGHT);
 
     expressionEClass = createEClass(EXPRESSION);
     createEReference(expressionEClass, EXPRESSION__IF);
@@ -2485,9 +2953,9 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     createEReference(logicalExpressionEClass, LOGICAL_EXPRESSION__TERMS);
 
     logicalTermEClass = createEClass(LOGICAL_TERM);
-    createEReference(logicalTermEClass, LOGICAL_TERM__FACTORS);
 
     logicalFactorEClass = createEClass(LOGICAL_FACTOR);
+    createEReference(logicalFactorEClass, LOGICAL_FACTOR__FACTORS);
 
     relationEClass = createEClass(RELATION);
     createEReference(relationEClass, RELATION__LEFT);
@@ -2496,24 +2964,38 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
 
     arithmeticExpressionEClass = createEClass(ARITHMETIC_EXPRESSION);
     createEAttribute(arithmeticExpressionEClass, ARITHMETIC_EXPRESSION__OPS);
-    createEReference(arithmeticExpressionEClass, ARITHMETIC_EXPRESSION__TERMS);
 
     termEClass = createEClass(TERM);
-    createEReference(termEClass, TERM__FACTORS);
-    createEAttribute(termEClass, TERM__OPS);
 
     factorEClass = createEClass(FACTOR);
     createEReference(factorEClass, FACTOR__BASE);
     createEReference(factorEClass, FACTOR__EXP);
 
+    floatPrimaryEClass = createEClass(FLOAT_PRIMARY);
+    createEAttribute(floatPrimaryEClass, FLOAT_PRIMARY__VAL);
+
+    stringPrimaryEClass = createEClass(STRING_PRIMARY);
+    createEAttribute(stringPrimaryEClass, STRING_PRIMARY__VAL);
+
+    logicalPrimaryEClass = createEClass(LOGICAL_PRIMARY);
+    createEAttribute(logicalPrimaryEClass, LOGICAL_PRIMARY__VAL);
+
+    endEClass = createEClass(END);
+    createEAttribute(endEClass, END__VAL);
+
     primaryEClass = createEClass(PRIMARY);
+    createEReference(primaryEClass, PRIMARY__RES);
+
+    functionCallEClass = createEClass(FUNCTION_CALL);
+    createEReference(functionCallEClass, FUNCTION_CALL__COMP_REF);
+    createEReference(functionCallEClass, FUNCTION_CALL__ARGS);
 
     componentReferenceEClass = createEClass(COMPONENT_REFERENCE);
     createEAttribute(componentReferenceEClass, COMPONENT_REFERENCE__IDENTS);
     createEReference(componentReferenceEClass, COMPONENT_REFERENCE__SUBSCRIPTS);
 
     functionCallArgsEClass = createEClass(FUNCTION_CALL_ARGS);
-    createEReference(functionCallArgsEClass, FUNCTION_CALL_ARGS__ARGS);
+    createEReference(functionCallArgsEClass, FUNCTION_CALL_ARGS__RES);
 
     functionArgumentsEClass = createEClass(FUNCTION_ARGUMENTS);
     createEReference(functionArgumentsEClass, FUNCTION_ARGUMENTS__ARGS);
@@ -2527,8 +3009,6 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     createEReference(namedArgumentEClass, NAMED_ARGUMENT__FUNC);
 
     functionArgumentEClass = createEClass(FUNCTION_ARGUMENT);
-    createEAttribute(functionArgumentEClass, FUNCTION_ARGUMENT__NAME);
-    createEReference(functionArgumentEClass, FUNCTION_ARGUMENT__ARGS);
 
     outputExpressionListEClass = createEClass(OUTPUT_EXPRESSION_LIST);
 
@@ -2539,8 +3019,11 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     createEReference(arraySubscriptsEClass, ARRAY_SUBSCRIPTS__SUBSCRIPTS);
 
     subscriptEClass = createEClass(SUBSCRIPT);
+    createEAttribute(subscriptEClass, SUBSCRIPT__ALL);
 
     commentEClass = createEClass(COMMENT);
+    createEAttribute(commentEClass, COMMENT__COMMENT);
+    createEReference(commentEClass, COMMENT__ANNOTATION);
 
     annotationEClass = createEClass(ANNOTATION);
 
@@ -2578,62 +3061,81 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
 
     // Add supertypes to classes
     classDefinitionEClass.getESuperTypes().add(this.getElement());
-    classSpecifierEClass.getESuperTypes().add(this.getClassDefinition());
-    enumListEClass.getESuperTypes().add(this.getClassSpecifier());
-    enumListEClass.getESuperTypes().add(this.getShortClassDefinition());
-    compositionEClass.getESuperTypes().add(this.getClassSpecifier());
-    externalFunctionCallEClass.getESuperTypes().add(this.getComposition());
-    elementListEClass.getESuperTypes().add(this.getComposition());
     importClauseEClass.getESuperTypes().add(this.getElement());
     extendsClauseEClass.getESuperTypes().add(this.getElement());
     componentClauseEClass.getESuperTypes().add(this.getElement());
     declarationEClass.getESuperTypes().add(this.getComponentDeclaration1());
-    classModificationEClass.getESuperTypes().add(this.getClassSpecifier());
     classModificationEClass.getESuperTypes().add(this.getAnnotation());
+    elementModicationOrReplaceableEClass.getESuperTypes().add(this.getArgument());
     elementModificationEClass.getESuperTypes().add(this.getElementModicationOrReplaceable());
+    elementRedeclarationEClass.getESuperTypes().add(this.getArgument());
     elementReplaceableEClass.getESuperTypes().add(this.getElementModicationOrReplaceable());
     elementReplaceableEClass.getESuperTypes().add(this.getElementRedeclaration());
     componentClause1EClass.getESuperTypes().add(this.getElementRedeclaration());
     componentClause1EClass.getESuperTypes().add(this.getElementReplaceable());
-    componentDeclaration1EClass.getESuperTypes().add(this.getComponentClause1());
     shortClassDefinitionEClass.getESuperTypes().add(this.getElementRedeclaration());
     shortClassDefinitionEClass.getESuperTypes().add(this.getElementReplaceable());
+    ifEquationEClass.getESuperTypes().add(this.getEquation());
     ifStatementEClass.getESuperTypes().add(this.getStatement());
+    forEquationEClass.getESuperTypes().add(this.getEquation());
     forStatementEClass.getESuperTypes().add(this.getStatement());
     whileStatementEClass.getESuperTypes().add(this.getStatement());
+    whenEquationEClass.getESuperTypes().add(this.getEquation());
     whenStatementEClass.getESuperTypes().add(this.getStatement());
+    connectClauseEClass.getESuperTypes().add(this.getEquation());
     expressionEClass.getESuperTypes().add(this.getConditionAttribute());
-    expressionEClass.getESuperTypes().add(this.getForIndex());
     expressionEClass.getESuperTypes().add(this.getFunctionArgument());
     expressionEClass.getESuperTypes().add(this.getSubscript());
     simpleExpressionEClass.getESuperTypes().add(this.getExpression());
+    logicalExpressionEClass.getESuperTypes().add(this.getSimpleExpression());
+    logicalTermEClass.getESuperTypes().add(this.getLogicalExpression());
+    logicalFactorEClass.getESuperTypes().add(this.getLogicalTerm());
     relationEClass.getESuperTypes().add(this.getLogicalFactor());
-    primaryEClass.getESuperTypes().add(this.getArgument());
+    arithmeticExpressionEClass.getESuperTypes().add(this.getRelation());
+    termEClass.getESuperTypes().add(this.getArithmeticExpression());
+    factorEClass.getESuperTypes().add(this.getTerm());
+    floatPrimaryEClass.getESuperTypes().add(this.getPrimary());
+    stringPrimaryEClass.getESuperTypes().add(this.getPrimary());
+    logicalPrimaryEClass.getESuperTypes().add(this.getPrimary());
+    endEClass.getESuperTypes().add(this.getPrimary());
+    primaryEClass.getESuperTypes().add(this.getFactor());
+    functionCallEClass.getESuperTypes().add(this.getPrimary());
+    componentReferenceEClass.getESuperTypes().add(this.getPrimary());
+    functionArgumentsEClass.getESuperTypes().add(this.getPrimary());
     namedArgumentEClass.getESuperTypes().add(this.getFunctionArguments());
-    arraySubscriptsEClass.getESuperTypes().add(this.getClassSpecifier());
-    arraySubscriptsEClass.getESuperTypes().add(this.getComponentClause());
     arraySubscriptsEClass.getESuperTypes().add(this.getShortClassDefinition());
-    commentEClass.getESuperTypes().add(this.getClassSpecifier());
-    commentEClass.getESuperTypes().add(this.getEnumerationLiteral());
-    commentEClass.getESuperTypes().add(this.getImportClause());
-    annotationEClass.getESuperTypes().add(this.getComment());
     ouputExpressionListEClass.getESuperTypes().add(this.getOutputExpressionList());
 
     // Initialize classes and features; add operations and parameters
     initEClass(storedDefinitionEClass, StoredDefinition.class, "StoredDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStoredDefinition_Within(), ecorePackage.getEString(), "within", null, 0, 1, StoredDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStoredDefinition_Classes(), this.getClassDefinition(), null, "classes", null, 0, -1, StoredDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classDefinitionEClass, ClassDefinition.class, "ClassDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(classSpecifierEClass, ClassSpecifier.class, "ClassSpecifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getClassSpecifier_Mod(), this.getClassModification(), null, "mod", null, 0, 1, ClassSpecifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClassDefinition_Final(), ecorePackage.getEBoolean(), "final", null, 0, 1, ClassDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClassDefinition_Encapsulated(), ecorePackage.getEBoolean(), "encapsulated", null, 0, 1, ClassDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClassDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, ClassDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClassDefinition_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, ClassDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClassDefinition_Composition(), this.getComposition(), null, "composition", null, 0, 1, ClassDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClassDefinition_Name_end(), ecorePackage.getEString(), "name_end", null, 0, 1, ClassDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enumListEClass, EnumList.class, "EnumList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEnumList_Enums(), this.getEnumerationLiteral(), null, "enums", null, 0, -1, EnumList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enumerationLiteralEClass, EnumerationLiteral.class, "EnumerationLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEnumerationLiteral_Id(), ecorePackage.getEString(), "id", null, 0, 1, EnumerationLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEnumerationLiteral_Comment(), this.getComment(), null, "comment", null, 0, 1, EnumerationLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(compositionEClass, Composition.class, "Composition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComposition_Priv_elist(), this.getElementList(), null, "priv_elist", null, 0, 1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComposition_Pub_elist(), this.getElementList(), null, "pub_elist", null, 0, -1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComposition_Protected_elist(), this.getElementList(), null, "protected_elist", null, 0, -1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComposition_Eq_secs(), this.getEquationSection(), null, "eq_secs", null, 0, -1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComposition_Alg_secs(), this.getAlgorithmSection(), null, "alg_secs", null, 0, -1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComposition_Ext_lang_spec(), ecorePackage.getEString(), "ext_lang_spec", null, 0, 1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComposition_Ext_func_call(), this.getExternalFunctionCall(), null, "ext_func_call", null, 0, 1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComposition_Ext_anno(), this.getAnnotation(), null, "ext_anno", null, 0, 1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComposition_Anno(), this.getAnnotation(), null, "anno", null, 0, 1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(externalFunctionCallEClass, ExternalFunctionCall.class, "ExternalFunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExternalFunctionCall_Lhs(), this.getComponentReference(), null, "lhs", null, 0, 1, ExternalFunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2641,16 +3143,19 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     initEReference(getExternalFunctionCall_Args(), this.getExpressionList(), null, "args", null, 0, 1, ExternalFunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementListEClass, ElementList.class, "ElementList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getElementList_Pub_elist(), this.getElementList(), null, "pub_elist", null, 0, -1, ElementList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElementList_Protected_elist(), this.getElementList(), null, "protected_elist", null, 0, -1, ElementList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElementList_Eq_secs(), this.getEquationSection(), null, "eq_secs", null, 0, -1, ElementList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElementList_Alg_secs(), this.getAlgorithmSection(), null, "alg_secs", null, 0, -1, ElementList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElementList_Anno(), this.getAnnotation(), null, "anno", null, 0, -1, ElementList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElementList_Elem(), this.getElement(), null, "elem", null, 0, -1, ElementList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(importClauseEClass, ImportClause.class, "ImportClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImportClause_Id(), ecorePackage.getEString(), "id", null, 0, 1, ImportClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getImportClause_Name(), ecorePackage.getEString(), "name", null, 0, 1, ImportClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getImportClause_List(), this.getImportList(), null, "list", null, 0, 1, ImportClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getImportClause_Comment(), this.getComment(), null, "comment", null, 0, 1, ImportClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(importListEClass, ImportList.class, "ImportList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImportList_Id(), ecorePackage.getEString(), "id", null, 0, 1, ImportList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getImportList_List(), this.getImportList(), null, "list", null, 0, 1, ImportList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(extendsClauseEClass, ExtendsClause.class, "ExtendsClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExtendsClause_Name(), ecorePackage.getEString(), "name", null, 0, 1, ExtendsClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2662,7 +3167,13 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     initEReference(getConstrainingClause_Mod(), this.getClassModification(), null, "mod", null, 0, 1, ConstrainingClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentClauseEClass, ComponentClause.class, "ComponentClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getComponentClause_Prefix(), ecorePackage.getEString(), "prefix", null, 0, 1, ComponentClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponentClause_Type(), this.getTypeSpecifier(), null, "type", null, 0, 1, ComponentClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponentClause_Subs(), this.getArraySubscripts(), null, "subs", null, 0, 1, ComponentClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentClause_Comps(), this.getComponentList(), null, "comps", null, 0, 1, ComponentClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeSpecifierEClass, TypeSpecifier.class, "TypeSpecifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTypeSpecifier_Name(), this.getClassDefinition(), null, "name", null, 0, 1, TypeSpecifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentListEClass, ComponentList.class, "ComponentList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComponentList_Comps(), this.getComponentDeclaration(), null, "comps", null, 0, -1, ComponentList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2705,17 +3216,23 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     initEReference(getElementReplaceable_Const(), this.getConstrainingClause(), null, "const", null, 0, 1, ElementReplaceable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentClause1EClass, ComponentClause1.class, "ComponentClause1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getComponentClause1_Prefix(), ecorePackage.getEString(), "prefix", null, 0, 1, ComponentClause1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponentClause1_Type(), this.getTypeSpecifier(), null, "type", null, 0, 1, ComponentClause1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponentClause1_Comp(), this.getComponentDeclaration1(), null, "comp", null, 0, 1, ComponentClause1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentDeclaration1EClass, ComponentDeclaration1.class, "ComponentDeclaration1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(shortClassDefinitionEClass, ShortClassDefinition.class, "ShortClassDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getShortClassDefinition_Mode(), this.getClassModification(), null, "mode", null, 0, 1, ShortClassDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getShortClassDefinition_Comment(), this.getComment(), null, "comment", null, 0, 1, ShortClassDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getShortClassDefinition_List(), this.getEnumList(), null, "list", null, 0, 1, ShortClassDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(equationSectionEClass, EquationSection.class, "EquationSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEquationSection_Equationss(), this.getEquation(), null, "equationss", null, 0, -1, EquationSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEquationSection_Initial(), ecorePackage.getEBoolean(), "initial", null, 0, 1, EquationSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEquationSection_Equations(), this.getEquation(), null, "equations", null, 0, -1, EquationSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(algorithmSectionEClass, AlgorithmSection.class, "AlgorithmSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAlgorithmSection_Initial(), ecorePackage.getEBoolean(), "initial", null, 0, 1, AlgorithmSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAlgorithmSection_Statements(), this.getStatement(), null, "statements", null, 0, -1, AlgorithmSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(equationEClass, Equation.class, "Equation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2756,6 +3273,8 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     initEReference(getForIndices_Indices(), this.getForIndex(), null, "indices", null, 0, -1, ForIndices.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(forIndexEClass, ForIndex.class, "ForIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getForIndex_Id(), ecorePackage.getEString(), "id", null, 0, 1, ForIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForIndex_Expr(), this.getExpression(), null, "expr", null, 0, 1, ForIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whileStatementEClass, WhileStatement.class, "WhileStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWhileStatement_Cond(), this.getExpression(), null, "cond", null, 0, 1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2774,8 +3293,6 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     initEReference(getWhenStatement_Elsewhen_stmts(), this.getStatement(), null, "elsewhen_stmts", null, 0, -1, WhenStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(connectClauseEClass, ConnectClause.class, "ConnectClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConnectClause_Left(), this.getComponentReference(), null, "left", null, 0, 1, ConnectClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConnectClause_Right(), this.getComponentReference(), null, "right", null, 0, 1, ConnectClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpression_If(), this.getExpression(), null, "if", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2788,12 +3305,12 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     initEReference(getSimpleExpression_Exprs(), this.getLogicalExpression(), null, "exprs", null, 0, -1, SimpleExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(logicalExpressionEClass, LogicalExpression.class, "LogicalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLogicalExpression_Terms(), this.getLogicalTerm(), null, "terms", null, 0, -1, LogicalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLogicalExpression_Terms(), this.getLogicalExpression(), null, "terms", null, 0, -1, LogicalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(logicalTermEClass, LogicalTerm.class, "LogicalTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLogicalTerm_Factors(), this.getLogicalFactor(), null, "factors", null, 0, -1, LogicalTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(logicalFactorEClass, LogicalFactor.class, "LogicalFactor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLogicalFactor_Factors(), this.getLogicalFactor(), null, "factors", null, 0, -1, LogicalFactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relationEClass, Relation.class, "Relation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRelation_Left(), this.getArithmeticExpression(), null, "left", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2802,27 +3319,41 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
 
     initEClass(arithmeticExpressionEClass, ArithmeticExpression.class, "ArithmeticExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getArithmeticExpression_Ops(), ecorePackage.getEString(), "ops", null, 0, -1, ArithmeticExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getArithmeticExpression_Terms(), this.getTerm(), null, "terms", null, 0, -1, ArithmeticExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTerm_Factors(), this.getFactor(), null, "factors", null, 0, -1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTerm_Ops(), ecorePackage.getEString(), "ops", null, 0, -1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(factorEClass, Factor.class, "Factor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFactor_Base(), this.getPrimary(), null, "base", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFactor_Exp(), this.getPrimary(), null, "exp", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(floatPrimaryEClass, FloatPrimary.class, "FloatPrimary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFloatPrimary_Val(), ecorePackage.getEFloat(), "val", null, 0, 1, FloatPrimary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringPrimaryEClass, StringPrimary.class, "StringPrimary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringPrimary_Val(), ecorePackage.getEString(), "val", null, 0, 1, StringPrimary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(logicalPrimaryEClass, LogicalPrimary.class, "LogicalPrimary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLogicalPrimary_Val(), ecorePackage.getEBoolean(), "val", null, 0, 1, LogicalPrimary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(endEClass, End.class, "End", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEnd_Val(), ecorePackage.getEString(), "val", null, 0, 1, End.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(primaryEClass, Primary.class, "Primary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPrimary_Res(), this.getExpressionList(), null, "res", null, 0, -1, Primary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFunctionCall_Comp_ref(), this.getClassDefinition(), null, "comp_ref", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionCall_Args(), this.getFunctionCallArgs(), null, "args", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentReferenceEClass, ComponentReference.class, "ComponentReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComponentReference_Idents(), ecorePackage.getEString(), "idents", null, 0, -1, ComponentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentReference_Subscripts(), this.getArraySubscripts(), null, "subscripts", null, 0, -1, ComponentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionCallArgsEClass, FunctionCallArgs.class, "FunctionCallArgs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFunctionCallArgs_Args(), this.getFunctionArguments(), null, "args", null, 0, 1, FunctionCallArgs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionCallArgs_Res(), this.getFunctionArguments(), null, "res", null, 0, 1, FunctionCallArgs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionArgumentsEClass, FunctionArguments.class, "FunctionArguments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFunctionArguments_Args(), ecorePackage.getEObject(), null, "args", null, 0, -1, FunctionArguments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionArguments_Args(), this.getFunctionArgument(), null, "args", null, 0, -1, FunctionArguments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionArguments_Indices(), this.getForIndices(), null, "indices", null, 0, 1, FunctionArguments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(namedArgumentsEClass, NamedArguments.class, "NamedArguments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2833,8 +3364,6 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     initEReference(getNamedArgument_Func(), this.getFunctionArgument(), null, "func", null, 0, 1, NamedArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionArgumentEClass, FunctionArgument.class, "FunctionArgument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFunctionArgument_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionArgument_Args(), this.getNamedArguments(), null, "args", null, 0, 1, FunctionArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(outputExpressionListEClass, OutputExpressionList.class, "OutputExpressionList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2845,8 +3374,11 @@ public class ModelicaPackageImpl extends EPackageImpl implements ModelicaPackage
     initEReference(getArraySubscripts_Subscripts(), this.getSubscript(), null, "subscripts", null, 0, -1, ArraySubscripts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subscriptEClass, Subscript.class, "Subscript", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSubscript_All(), ecorePackage.getEBoolean(), "all", null, 0, 1, Subscript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getComment_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComment_Annotation(), this.getAnnotation(), null, "annotation", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

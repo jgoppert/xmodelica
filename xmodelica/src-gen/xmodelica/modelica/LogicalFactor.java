@@ -3,18 +3,40 @@
  */
 package xmodelica.modelica;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Logical Factor</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.LogicalFactor#getFactors <em>Factors</em>}</li>
+ * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getLogicalFactor()
  * @model
  * @generated
  */
-public interface LogicalFactor extends EObject
+public interface LogicalFactor extends LogicalTerm
 {
+  /**
+   * Returns the value of the '<em><b>Factors</b></em>' containment reference list.
+   * The list contents are of type {@link xmodelica.modelica.LogicalFactor}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Factors</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Factors</em>' containment reference list.
+   * @see xmodelica.modelica.ModelicaPackage#getLogicalFactor_Factors()
+   * @model containment="true"
+   * @generated
+   */
+  EList<LogicalFactor> getFactors();
+
 } // LogicalFactor

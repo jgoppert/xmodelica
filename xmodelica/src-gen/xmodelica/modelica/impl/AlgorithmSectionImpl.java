@@ -5,6 +5,7 @@ package xmodelica.modelica.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +31,7 @@ import xmodelica.modelica.Statement;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link xmodelica.modelica.impl.AlgorithmSectionImpl#isInitial <em>Initial</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.AlgorithmSectionImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -36,6 +39,26 @@ import xmodelica.modelica.Statement;
  */
 public class AlgorithmSectionImpl extends MinimalEObjectImpl.Container implements AlgorithmSection
 {
+  /**
+   * The default value of the '{@link #isInitial() <em>Initial</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInitial()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean INITIAL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isInitial() <em>Initial</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInitial()
+   * @generated
+   * @ordered
+   */
+  protected boolean initial = INITIAL_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -65,6 +88,29 @@ public class AlgorithmSectionImpl extends MinimalEObjectImpl.Container implement
   protected EClass eStaticClass()
   {
     return ModelicaPackage.Literals.ALGORITHM_SECTION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isInitial()
+  {
+    return initial;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInitial(boolean newInitial)
+  {
+    boolean oldInitial = initial;
+    initial = newInitial;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.ALGORITHM_SECTION__INITIAL, oldInitial, initial));
   }
 
   /**
@@ -107,6 +153,8 @@ public class AlgorithmSectionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case ModelicaPackage.ALGORITHM_SECTION__INITIAL:
+        return isInitial();
       case ModelicaPackage.ALGORITHM_SECTION__STATEMENTS:
         return getStatements();
     }
@@ -124,6 +172,9 @@ public class AlgorithmSectionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case ModelicaPackage.ALGORITHM_SECTION__INITIAL:
+        setInitial((Boolean)newValue);
+        return;
       case ModelicaPackage.ALGORITHM_SECTION__STATEMENTS:
         getStatements().clear();
         getStatements().addAll((Collection<? extends Statement>)newValue);
@@ -142,6 +193,9 @@ public class AlgorithmSectionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case ModelicaPackage.ALGORITHM_SECTION__INITIAL:
+        setInitial(INITIAL_EDEFAULT);
+        return;
       case ModelicaPackage.ALGORITHM_SECTION__STATEMENTS:
         getStatements().clear();
         return;
@@ -159,10 +213,29 @@ public class AlgorithmSectionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case ModelicaPackage.ALGORITHM_SECTION__INITIAL:
+        return initial != INITIAL_EDEFAULT;
       case ModelicaPackage.ALGORITHM_SECTION__STATEMENTS:
         return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (initial: ");
+    result.append(initial);
+    result.append(')');
+    return result.toString();
   }
 
 } //AlgorithmSectionImpl

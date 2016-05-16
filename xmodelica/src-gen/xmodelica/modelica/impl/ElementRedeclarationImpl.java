@@ -5,8 +5,6 @@ package xmodelica.modelica.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import xmodelica.modelica.ElementRedeclaration;
 import xmodelica.modelica.ModelicaPackage;
 
@@ -17,7 +15,7 @@ import xmodelica.modelica.ModelicaPackage;
  *
  * @generated
  */
-public class ElementRedeclarationImpl extends MinimalEObjectImpl.Container implements ElementRedeclaration
+public class ElementRedeclarationImpl extends ArgumentImpl implements ElementRedeclaration
 {
   /**
    * <!-- begin-user-doc -->

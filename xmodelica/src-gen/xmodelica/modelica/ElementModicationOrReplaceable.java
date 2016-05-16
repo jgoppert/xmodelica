@@ -3,7 +3,6 @@
  */
 package xmodelica.modelica;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ElementModicationOrReplaceable extends EObject
+public interface ElementModicationOrReplaceable extends Argument
 {
 } // ElementModicationOrReplaceable

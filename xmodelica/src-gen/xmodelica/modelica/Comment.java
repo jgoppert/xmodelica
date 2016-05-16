@@ -3,17 +3,77 @@
  */
 package xmodelica.modelica;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Comment</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.Comment#getComment <em>Comment</em>}</li>
+ *   <li>{@link xmodelica.modelica.Comment#getAnnotation <em>Annotation</em>}</li>
+ * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getComment()
  * @model
  * @generated
  */
-public interface Comment extends ClassSpecifier, EnumerationLiteral, ImportClause
+public interface Comment extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Comment</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Comment</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Comment</em>' attribute.
+   * @see #setComment(String)
+   * @see xmodelica.modelica.ModelicaPackage#getComment_Comment()
+   * @model
+   * @generated
+   */
+  String getComment();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.Comment#getComment <em>Comment</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Comment</em>' attribute.
+   * @see #getComment()
+   * @generated
+   */
+  void setComment(String value);
+
+  /**
+   * Returns the value of the '<em><b>Annotation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Annotation</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Annotation</em>' containment reference.
+   * @see #setAnnotation(Annotation)
+   * @see xmodelica.modelica.ModelicaPackage#getComment_Annotation()
+   * @model containment="true"
+   * @generated
+   */
+  Annotation getAnnotation();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.Comment#getAnnotation <em>Annotation</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Annotation</em>' containment reference.
+   * @see #getAnnotation()
+   * @generated
+   */
+  void setAnnotation(Annotation value);
+
 } // Comment

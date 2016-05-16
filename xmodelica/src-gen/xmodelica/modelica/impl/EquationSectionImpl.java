@@ -5,6 +5,7 @@ package xmodelica.modelica.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,7 +31,8 @@ import xmodelica.modelica.ModelicaPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.impl.EquationSectionImpl#getEquationss <em>Equationss</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.EquationSectionImpl#isInitial <em>Initial</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.EquationSectionImpl#getEquations <em>Equations</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +40,34 @@ import xmodelica.modelica.ModelicaPackage;
 public class EquationSectionImpl extends MinimalEObjectImpl.Container implements EquationSection
 {
   /**
-   * The cached value of the '{@link #getEquationss() <em>Equationss</em>}' containment reference list.
+   * The default value of the '{@link #isInitial() <em>Initial</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEquationss()
+   * @see #isInitial()
    * @generated
    * @ordered
    */
-  protected EList<Equation> equationss;
+  protected static final boolean INITIAL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isInitial() <em>Initial</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInitial()
+   * @generated
+   * @ordered
+   */
+  protected boolean initial = INITIAL_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getEquations() <em>Equations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEquations()
+   * @generated
+   * @ordered
+   */
+  protected EList<Equation> equations;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +95,36 @@ public class EquationSectionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Equation> getEquationss()
+  public boolean isInitial()
   {
-    if (equationss == null)
+    return initial;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInitial(boolean newInitial)
+  {
+    boolean oldInitial = initial;
+    initial = newInitial;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.EQUATION_SECTION__INITIAL, oldInitial, initial));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Equation> getEquations()
+  {
+    if (equations == null)
     {
-      equationss = new EObjectContainmentEList<Equation>(Equation.class, this, ModelicaPackage.EQUATION_SECTION__EQUATIONSS);
+      equations = new EObjectContainmentEList<Equation>(Equation.class, this, ModelicaPackage.EQUATION_SECTION__EQUATIONS);
     }
-    return equationss;
+    return equations;
   }
 
   /**
@@ -91,8 +137,8 @@ public class EquationSectionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case ModelicaPackage.EQUATION_SECTION__EQUATIONSS:
-        return ((InternalEList<?>)getEquationss()).basicRemove(otherEnd, msgs);
+      case ModelicaPackage.EQUATION_SECTION__EQUATIONS:
+        return ((InternalEList<?>)getEquations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +153,10 @@ public class EquationSectionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case ModelicaPackage.EQUATION_SECTION__EQUATIONSS:
-        return getEquationss();
+      case ModelicaPackage.EQUATION_SECTION__INITIAL:
+        return isInitial();
+      case ModelicaPackage.EQUATION_SECTION__EQUATIONS:
+        return getEquations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +172,12 @@ public class EquationSectionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case ModelicaPackage.EQUATION_SECTION__EQUATIONSS:
-        getEquationss().clear();
-        getEquationss().addAll((Collection<? extends Equation>)newValue);
+      case ModelicaPackage.EQUATION_SECTION__INITIAL:
+        setInitial((Boolean)newValue);
+        return;
+      case ModelicaPackage.EQUATION_SECTION__EQUATIONS:
+        getEquations().clear();
+        getEquations().addAll((Collection<? extends Equation>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +193,11 @@ public class EquationSectionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case ModelicaPackage.EQUATION_SECTION__EQUATIONSS:
-        getEquationss().clear();
+      case ModelicaPackage.EQUATION_SECTION__INITIAL:
+        setInitial(INITIAL_EDEFAULT);
+        return;
+      case ModelicaPackage.EQUATION_SECTION__EQUATIONS:
+        getEquations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,10 +213,29 @@ public class EquationSectionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case ModelicaPackage.EQUATION_SECTION__EQUATIONSS:
-        return equationss != null && !equationss.isEmpty();
+      case ModelicaPackage.EQUATION_SECTION__INITIAL:
+        return initial != INITIAL_EDEFAULT;
+      case ModelicaPackage.EQUATION_SECTION__EQUATIONS:
+        return equations != null && !equations.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (initial: ");
+    result.append(initial);
+    result.append(')');
+    return result.toString();
   }
 
 } //EquationSectionImpl

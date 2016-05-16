@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.EquationSection#getEquationss <em>Equationss</em>}</li>
+ *   <li>{@link xmodelica.modelica.EquationSection#isInitial <em>Initial</em>}</li>
+ *   <li>{@link xmodelica.modelica.EquationSection#getEquations <em>Equations</em>}</li>
  * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getEquationSection()
@@ -26,19 +27,45 @@ import org.eclipse.emf.ecore.EObject;
 public interface EquationSection extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Equationss</b></em>' containment reference list.
-   * The list contents are of type {@link xmodelica.modelica.Equation}.
+   * Returns the value of the '<em><b>Initial</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Equationss</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Initial</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Equationss</em>' containment reference list.
-   * @see xmodelica.modelica.ModelicaPackage#getEquationSection_Equationss()
+   * @return the value of the '<em>Initial</em>' attribute.
+   * @see #setInitial(boolean)
+   * @see xmodelica.modelica.ModelicaPackage#getEquationSection_Initial()
+   * @model
+   * @generated
+   */
+  boolean isInitial();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.EquationSection#isInitial <em>Initial</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Initial</em>' attribute.
+   * @see #isInitial()
+   * @generated
+   */
+  void setInitial(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Equations</b></em>' containment reference list.
+   * The list contents are of type {@link xmodelica.modelica.Equation}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Equations</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Equations</em>' containment reference list.
+   * @see xmodelica.modelica.ModelicaPackage#getEquationSection_Equations()
    * @model containment="true"
    * @generated
    */
-  EList<Equation> getEquationss();
+  EList<Equation> getEquations();
 
 } // EquationSection

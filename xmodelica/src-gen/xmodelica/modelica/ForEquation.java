@@ -5,8 +5,6 @@ package xmodelica.modelica;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>For Equation</b></em>'.
@@ -24,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ForEquation extends EObject
+public interface ForEquation extends Equation
 {
   /**
    * Returns the value of the '<em><b>Indices</b></em>' containment reference.

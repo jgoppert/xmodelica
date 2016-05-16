@@ -5,8 +5,6 @@ package xmodelica.modelica;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Arithmetic Expression</b></em>'.
@@ -17,14 +15,13 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link xmodelica.modelica.ArithmeticExpression#getOps <em>Ops</em>}</li>
- *   <li>{@link xmodelica.modelica.ArithmeticExpression#getTerms <em>Terms</em>}</li>
  * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getArithmeticExpression()
  * @model
  * @generated
  */
-public interface ArithmeticExpression extends EObject
+public interface ArithmeticExpression extends Relation
 {
   /**
    * Returns the value of the '<em><b>Ops</b></em>' attribute list.
@@ -41,21 +38,5 @@ public interface ArithmeticExpression extends EObject
    * @generated
    */
   EList<String> getOps();
-
-  /**
-   * Returns the value of the '<em><b>Terms</b></em>' containment reference list.
-   * The list contents are of type {@link xmodelica.modelica.Term}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Terms</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Terms</em>' containment reference list.
-   * @see xmodelica.modelica.ModelicaPackage#getArithmeticExpression_Terms()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Term> getTerms();
 
 } // ArithmeticExpression

@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -40,7 +39,7 @@ import xmodelica.modelica.WhenEquation;
  *
  * @generated
  */
-public class WhenEquationImpl extends MinimalEObjectImpl.Container implements WhenEquation
+public class WhenEquationImpl extends EquationImpl implements WhenEquation
 {
   /**
    * The cached value of the '{@link #getWhen() <em>When</em>}' containment reference.

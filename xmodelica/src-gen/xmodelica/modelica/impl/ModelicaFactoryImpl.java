@@ -67,7 +67,6 @@ public class ModelicaFactoryImpl extends EFactoryImpl implements ModelicaFactory
     {
       case ModelicaPackage.STORED_DEFINITION: return createStoredDefinition();
       case ModelicaPackage.CLASS_DEFINITION: return createClassDefinition();
-      case ModelicaPackage.CLASS_SPECIFIER: return createClassSpecifier();
       case ModelicaPackage.ENUM_LIST: return createEnumList();
       case ModelicaPackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
       case ModelicaPackage.COMPOSITION: return createComposition();
@@ -75,9 +74,11 @@ public class ModelicaFactoryImpl extends EFactoryImpl implements ModelicaFactory
       case ModelicaPackage.ELEMENT_LIST: return createElementList();
       case ModelicaPackage.ELEMENT: return createElement();
       case ModelicaPackage.IMPORT_CLAUSE: return createImportClause();
+      case ModelicaPackage.IMPORT_LIST: return createImportList();
       case ModelicaPackage.EXTENDS_CLAUSE: return createExtendsClause();
       case ModelicaPackage.CONSTRAINING_CLAUSE: return createConstrainingClause();
       case ModelicaPackage.COMPONENT_CLAUSE: return createComponentClause();
+      case ModelicaPackage.TYPE_SPECIFIER: return createTypeSpecifier();
       case ModelicaPackage.COMPONENT_LIST: return createComponentList();
       case ModelicaPackage.COMPONENT_DECLARATION: return createComponentDeclaration();
       case ModelicaPackage.CONDITION_ATTRIBUTE: return createConditionAttribute();
@@ -116,7 +117,12 @@ public class ModelicaFactoryImpl extends EFactoryImpl implements ModelicaFactory
       case ModelicaPackage.ARITHMETIC_EXPRESSION: return createArithmeticExpression();
       case ModelicaPackage.TERM: return createTerm();
       case ModelicaPackage.FACTOR: return createFactor();
+      case ModelicaPackage.FLOAT_PRIMARY: return createFloatPrimary();
+      case ModelicaPackage.STRING_PRIMARY: return createStringPrimary();
+      case ModelicaPackage.LOGICAL_PRIMARY: return createLogicalPrimary();
+      case ModelicaPackage.END: return createEnd();
       case ModelicaPackage.PRIMARY: return createPrimary();
+      case ModelicaPackage.FUNCTION_CALL: return createFunctionCall();
       case ModelicaPackage.COMPONENT_REFERENCE: return createComponentReference();
       case ModelicaPackage.FUNCTION_CALL_ARGS: return createFunctionCallArgs();
       case ModelicaPackage.FUNCTION_ARGUMENTS: return createFunctionArguments();
@@ -155,17 +161,6 @@ public class ModelicaFactoryImpl extends EFactoryImpl implements ModelicaFactory
   {
     ClassDefinitionImpl classDefinition = new ClassDefinitionImpl();
     return classDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ClassSpecifier createClassSpecifier()
-  {
-    ClassSpecifierImpl classSpecifier = new ClassSpecifierImpl();
-    return classSpecifier;
   }
 
   /**
@@ -250,6 +245,17 @@ public class ModelicaFactoryImpl extends EFactoryImpl implements ModelicaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ImportList createImportList()
+  {
+    ImportListImpl importList = new ImportListImpl();
+    return importList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ExtendsClause createExtendsClause()
   {
     ExtendsClauseImpl extendsClause = new ExtendsClauseImpl();
@@ -276,6 +282,17 @@ public class ModelicaFactoryImpl extends EFactoryImpl implements ModelicaFactory
   {
     ComponentClauseImpl componentClause = new ComponentClauseImpl();
     return componentClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeSpecifier createTypeSpecifier()
+  {
+    TypeSpecifierImpl typeSpecifier = new TypeSpecifierImpl();
+    return typeSpecifier;
   }
 
   /**
@@ -701,10 +718,65 @@ public class ModelicaFactoryImpl extends EFactoryImpl implements ModelicaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public FloatPrimary createFloatPrimary()
+  {
+    FloatPrimaryImpl floatPrimary = new FloatPrimaryImpl();
+    return floatPrimary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringPrimary createStringPrimary()
+  {
+    StringPrimaryImpl stringPrimary = new StringPrimaryImpl();
+    return stringPrimary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LogicalPrimary createLogicalPrimary()
+  {
+    LogicalPrimaryImpl logicalPrimary = new LogicalPrimaryImpl();
+    return logicalPrimary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public End createEnd()
+  {
+    EndImpl end = new EndImpl();
+    return end;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Primary createPrimary()
   {
     PrimaryImpl primary = new PrimaryImpl();
     return primary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FunctionCall createFunctionCall()
+  {
+    FunctionCallImpl functionCall = new FunctionCallImpl();
+    return functionCall;
   }
 
   /**

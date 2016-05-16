@@ -11,9 +11,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import xmodelica.modelica.ArraySubscripts;
 import xmodelica.modelica.ComponentClause;
 import xmodelica.modelica.ComponentList;
 import xmodelica.modelica.ModelicaPackage;
+import xmodelica.modelica.TypeSpecifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +25,9 @@ import xmodelica.modelica.ModelicaPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link xmodelica.modelica.impl.ComponentClauseImpl#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ComponentClauseImpl#getType <em>Type</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ComponentClauseImpl#getSubs <em>Subs</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ComponentClauseImpl#getComps <em>Comps</em>}</li>
  * </ul>
  *
@@ -30,6 +35,46 @@ import xmodelica.modelica.ModelicaPackage;
  */
 public class ComponentClauseImpl extends ElementImpl implements ComponentClause
 {
+  /**
+   * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefix()
+   * @generated
+   * @ordered
+   */
+  protected static final String PREFIX_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefix()
+   * @generated
+   * @ordered
+   */
+  protected String prefix = PREFIX_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected TypeSpecifier type;
+
+  /**
+   * The cached value of the '{@link #getSubs() <em>Subs</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubs()
+   * @generated
+   * @ordered
+   */
+  protected ArraySubscripts subs;
+
   /**
    * The cached value of the '{@link #getComps() <em>Comps</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -59,6 +104,125 @@ public class ComponentClauseImpl extends ElementImpl implements ComponentClause
   protected EClass eStaticClass()
   {
     return ModelicaPackage.Literals.COMPONENT_CLAUSE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getPrefix()
+  {
+    return prefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPrefix(String newPrefix)
+  {
+    String oldPrefix = prefix;
+    prefix = newPrefix;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPONENT_CLAUSE__PREFIX, oldPrefix, prefix));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeSpecifier getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetType(TypeSpecifier newType, NotificationChain msgs)
+  {
+    TypeSpecifier oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPONENT_CLAUSE__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(TypeSpecifier newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPONENT_CLAUSE__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPONENT_CLAUSE__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPONENT_CLAUSE__TYPE, newType, newType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArraySubscripts getSubs()
+  {
+    return subs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetSubs(ArraySubscripts newSubs, NotificationChain msgs)
+  {
+    ArraySubscripts oldSubs = subs;
+    subs = newSubs;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPONENT_CLAUSE__SUBS, oldSubs, newSubs);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSubs(ArraySubscripts newSubs)
+  {
+    if (newSubs != subs)
+    {
+      NotificationChain msgs = null;
+      if (subs != null)
+        msgs = ((InternalEObject)subs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPONENT_CLAUSE__SUBS, null, msgs);
+      if (newSubs != null)
+        msgs = ((InternalEObject)newSubs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPONENT_CLAUSE__SUBS, null, msgs);
+      msgs = basicSetSubs(newSubs, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPONENT_CLAUSE__SUBS, newSubs, newSubs));
   }
 
   /**
@@ -119,6 +283,10 @@ public class ComponentClauseImpl extends ElementImpl implements ComponentClause
   {
     switch (featureID)
     {
+      case ModelicaPackage.COMPONENT_CLAUSE__TYPE:
+        return basicSetType(null, msgs);
+      case ModelicaPackage.COMPONENT_CLAUSE__SUBS:
+        return basicSetSubs(null, msgs);
       case ModelicaPackage.COMPONENT_CLAUSE__COMPS:
         return basicSetComps(null, msgs);
     }
@@ -135,6 +303,12 @@ public class ComponentClauseImpl extends ElementImpl implements ComponentClause
   {
     switch (featureID)
     {
+      case ModelicaPackage.COMPONENT_CLAUSE__PREFIX:
+        return getPrefix();
+      case ModelicaPackage.COMPONENT_CLAUSE__TYPE:
+        return getType();
+      case ModelicaPackage.COMPONENT_CLAUSE__SUBS:
+        return getSubs();
       case ModelicaPackage.COMPONENT_CLAUSE__COMPS:
         return getComps();
     }
@@ -151,6 +325,15 @@ public class ComponentClauseImpl extends ElementImpl implements ComponentClause
   {
     switch (featureID)
     {
+      case ModelicaPackage.COMPONENT_CLAUSE__PREFIX:
+        setPrefix((String)newValue);
+        return;
+      case ModelicaPackage.COMPONENT_CLAUSE__TYPE:
+        setType((TypeSpecifier)newValue);
+        return;
+      case ModelicaPackage.COMPONENT_CLAUSE__SUBS:
+        setSubs((ArraySubscripts)newValue);
+        return;
       case ModelicaPackage.COMPONENT_CLAUSE__COMPS:
         setComps((ComponentList)newValue);
         return;
@@ -168,6 +351,15 @@ public class ComponentClauseImpl extends ElementImpl implements ComponentClause
   {
     switch (featureID)
     {
+      case ModelicaPackage.COMPONENT_CLAUSE__PREFIX:
+        setPrefix(PREFIX_EDEFAULT);
+        return;
+      case ModelicaPackage.COMPONENT_CLAUSE__TYPE:
+        setType((TypeSpecifier)null);
+        return;
+      case ModelicaPackage.COMPONENT_CLAUSE__SUBS:
+        setSubs((ArraySubscripts)null);
+        return;
       case ModelicaPackage.COMPONENT_CLAUSE__COMPS:
         setComps((ComponentList)null);
         return;
@@ -185,10 +377,33 @@ public class ComponentClauseImpl extends ElementImpl implements ComponentClause
   {
     switch (featureID)
     {
+      case ModelicaPackage.COMPONENT_CLAUSE__PREFIX:
+        return PREFIX_EDEFAULT == null ? prefix != null : !PREFIX_EDEFAULT.equals(prefix);
+      case ModelicaPackage.COMPONENT_CLAUSE__TYPE:
+        return type != null;
+      case ModelicaPackage.COMPONENT_CLAUSE__SUBS:
+        return subs != null;
       case ModelicaPackage.COMPONENT_CLAUSE__COMPS:
         return comps != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (prefix: ");
+    result.append(prefix);
+    result.append(')');
+    return result.toString();
   }
 
 } //ComponentClauseImpl

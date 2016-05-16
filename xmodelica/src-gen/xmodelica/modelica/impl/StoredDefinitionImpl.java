@@ -5,6 +5,7 @@ package xmodelica.modelica.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +31,7 @@ import xmodelica.modelica.StoredDefinition;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link xmodelica.modelica.impl.StoredDefinitionImpl#getWithin <em>Within</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.StoredDefinitionImpl#getClasses <em>Classes</em>}</li>
  * </ul>
  *
@@ -36,6 +39,26 @@ import xmodelica.modelica.StoredDefinition;
  */
 public class StoredDefinitionImpl extends MinimalEObjectImpl.Container implements StoredDefinition
 {
+  /**
+   * The default value of the '{@link #getWithin() <em>Within</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWithin()
+   * @generated
+   * @ordered
+   */
+  protected static final String WITHIN_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getWithin() <em>Within</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWithin()
+   * @generated
+   * @ordered
+   */
+  protected String within = WITHIN_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getClasses() <em>Classes</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -65,6 +88,29 @@ public class StoredDefinitionImpl extends MinimalEObjectImpl.Container implement
   protected EClass eStaticClass()
   {
     return ModelicaPackage.Literals.STORED_DEFINITION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getWithin()
+  {
+    return within;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setWithin(String newWithin)
+  {
+    String oldWithin = within;
+    within = newWithin;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.STORED_DEFINITION__WITHIN, oldWithin, within));
   }
 
   /**
@@ -107,6 +153,8 @@ public class StoredDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case ModelicaPackage.STORED_DEFINITION__WITHIN:
+        return getWithin();
       case ModelicaPackage.STORED_DEFINITION__CLASSES:
         return getClasses();
     }
@@ -124,6 +172,9 @@ public class StoredDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case ModelicaPackage.STORED_DEFINITION__WITHIN:
+        setWithin((String)newValue);
+        return;
       case ModelicaPackage.STORED_DEFINITION__CLASSES:
         getClasses().clear();
         getClasses().addAll((Collection<? extends ClassDefinition>)newValue);
@@ -142,6 +193,9 @@ public class StoredDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case ModelicaPackage.STORED_DEFINITION__WITHIN:
+        setWithin(WITHIN_EDEFAULT);
+        return;
       case ModelicaPackage.STORED_DEFINITION__CLASSES:
         getClasses().clear();
         return;
@@ -159,10 +213,29 @@ public class StoredDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case ModelicaPackage.STORED_DEFINITION__WITHIN:
+        return WITHIN_EDEFAULT == null ? within != null : !WITHIN_EDEFAULT.equals(within);
       case ModelicaPackage.STORED_DEFINITION__CLASSES:
         return classes != null && !classes.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (within: ");
+    result.append(within);
+    result.append(')');
+    return result.toString();
   }
 
 } //StoredDefinitionImpl

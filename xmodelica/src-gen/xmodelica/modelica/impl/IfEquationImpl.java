@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -41,7 +40,7 @@ import xmodelica.modelica.ModelicaPackage;
  *
  * @generated
  */
-public class IfEquationImpl extends MinimalEObjectImpl.Container implements IfEquation
+public class IfEquationImpl extends EquationImpl implements IfEquation
 {
   /**
    * The cached value of the '{@link #getIf_expr() <em>If expr</em>}' containment reference.

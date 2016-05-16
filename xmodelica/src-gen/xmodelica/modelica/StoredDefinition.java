@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link xmodelica.modelica.StoredDefinition#getWithin <em>Within</em>}</li>
  *   <li>{@link xmodelica.modelica.StoredDefinition#getClasses <em>Classes</em>}</li>
  * </ul>
  *
@@ -25,6 +26,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface StoredDefinition extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Within</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Within</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Within</em>' attribute.
+   * @see #setWithin(String)
+   * @see xmodelica.modelica.ModelicaPackage#getStoredDefinition_Within()
+   * @model
+   * @generated
+   */
+  String getWithin();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.StoredDefinition#getWithin <em>Within</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Within</em>' attribute.
+   * @see #getWithin()
+   * @generated
+   */
+  void setWithin(String value);
+
   /**
    * Returns the value of the '<em><b>Classes</b></em>' containment reference list.
    * The list contents are of type {@link xmodelica.modelica.ClassDefinition}.

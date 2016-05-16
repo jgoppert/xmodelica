@@ -12,10 +12,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import xmodelica.modelica.ComponentClause1;
+import xmodelica.modelica.ComponentDeclaration1;
 import xmodelica.modelica.ConstrainingClause;
 import xmodelica.modelica.ElementModicationOrReplaceable;
 import xmodelica.modelica.ElementReplaceable;
 import xmodelica.modelica.ModelicaPackage;
+import xmodelica.modelica.TypeSpecifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +28,9 @@ import xmodelica.modelica.ModelicaPackage;
  * </p>
  * <ul>
  *   <li>{@link xmodelica.modelica.impl.ComponentClause1Impl#getConst <em>Const</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ComponentClause1Impl#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ComponentClause1Impl#getType <em>Type</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ComponentClause1Impl#getComp <em>Comp</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,6 +46,46 @@ public class ComponentClause1Impl extends ElementRedeclarationImpl implements Co
    * @ordered
    */
   protected ConstrainingClause const_;
+
+  /**
+   * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefix()
+   * @generated
+   * @ordered
+   */
+  protected static final String PREFIX_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefix()
+   * @generated
+   * @ordered
+   */
+  protected String prefix = PREFIX_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected TypeSpecifier type;
+
+  /**
+   * The cached value of the '{@link #getComp() <em>Comp</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComp()
+   * @generated
+   * @ordered
+   */
+  protected ComponentDeclaration1 comp;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,6 +161,125 @@ public class ComponentClause1Impl extends ElementRedeclarationImpl implements Co
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getPrefix()
+  {
+    return prefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPrefix(String newPrefix)
+  {
+    String oldPrefix = prefix;
+    prefix = newPrefix;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPONENT_CLAUSE1__PREFIX, oldPrefix, prefix));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeSpecifier getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetType(TypeSpecifier newType, NotificationChain msgs)
+  {
+    TypeSpecifier oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPONENT_CLAUSE1__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(TypeSpecifier newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPONENT_CLAUSE1__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPONENT_CLAUSE1__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPONENT_CLAUSE1__TYPE, newType, newType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ComponentDeclaration1 getComp()
+  {
+    return comp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetComp(ComponentDeclaration1 newComp, NotificationChain msgs)
+  {
+    ComponentDeclaration1 oldComp = comp;
+    comp = newComp;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPONENT_CLAUSE1__COMP, oldComp, newComp);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setComp(ComponentDeclaration1 newComp)
+  {
+    if (newComp != comp)
+    {
+      NotificationChain msgs = null;
+      if (comp != null)
+        msgs = ((InternalEObject)comp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPONENT_CLAUSE1__COMP, null, msgs);
+      if (newComp != null)
+        msgs = ((InternalEObject)newComp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPONENT_CLAUSE1__COMP, null, msgs);
+      msgs = basicSetComp(newComp, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPONENT_CLAUSE1__COMP, newComp, newComp));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -123,6 +287,10 @@ public class ComponentClause1Impl extends ElementRedeclarationImpl implements Co
     {
       case ModelicaPackage.COMPONENT_CLAUSE1__CONST:
         return basicSetConst(null, msgs);
+      case ModelicaPackage.COMPONENT_CLAUSE1__TYPE:
+        return basicSetType(null, msgs);
+      case ModelicaPackage.COMPONENT_CLAUSE1__COMP:
+        return basicSetComp(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -139,6 +307,12 @@ public class ComponentClause1Impl extends ElementRedeclarationImpl implements Co
     {
       case ModelicaPackage.COMPONENT_CLAUSE1__CONST:
         return getConst();
+      case ModelicaPackage.COMPONENT_CLAUSE1__PREFIX:
+        return getPrefix();
+      case ModelicaPackage.COMPONENT_CLAUSE1__TYPE:
+        return getType();
+      case ModelicaPackage.COMPONENT_CLAUSE1__COMP:
+        return getComp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -155,6 +329,15 @@ public class ComponentClause1Impl extends ElementRedeclarationImpl implements Co
     {
       case ModelicaPackage.COMPONENT_CLAUSE1__CONST:
         setConst((ConstrainingClause)newValue);
+        return;
+      case ModelicaPackage.COMPONENT_CLAUSE1__PREFIX:
+        setPrefix((String)newValue);
+        return;
+      case ModelicaPackage.COMPONENT_CLAUSE1__TYPE:
+        setType((TypeSpecifier)newValue);
+        return;
+      case ModelicaPackage.COMPONENT_CLAUSE1__COMP:
+        setComp((ComponentDeclaration1)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -173,6 +356,15 @@ public class ComponentClause1Impl extends ElementRedeclarationImpl implements Co
       case ModelicaPackage.COMPONENT_CLAUSE1__CONST:
         setConst((ConstrainingClause)null);
         return;
+      case ModelicaPackage.COMPONENT_CLAUSE1__PREFIX:
+        setPrefix(PREFIX_EDEFAULT);
+        return;
+      case ModelicaPackage.COMPONENT_CLAUSE1__TYPE:
+        setType((TypeSpecifier)null);
+        return;
+      case ModelicaPackage.COMPONENT_CLAUSE1__COMP:
+        setComp((ComponentDeclaration1)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -189,6 +381,12 @@ public class ComponentClause1Impl extends ElementRedeclarationImpl implements Co
     {
       case ModelicaPackage.COMPONENT_CLAUSE1__CONST:
         return const_ != null;
+      case ModelicaPackage.COMPONENT_CLAUSE1__PREFIX:
+        return PREFIX_EDEFAULT == null ? prefix != null : !PREFIX_EDEFAULT.equals(prefix);
+      case ModelicaPackage.COMPONENT_CLAUSE1__TYPE:
+        return type != null;
+      case ModelicaPackage.COMPONENT_CLAUSE1__COMP:
+        return comp != null;
     }
     return super.eIsSet(featureID);
   }
@@ -243,6 +441,23 @@ public class ComponentClause1Impl extends ElementRedeclarationImpl implements Co
       }
     }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (prefix: ");
+    result.append(prefix);
+    result.append(')');
+    return result.toString();
   }
 
 } //ComponentClause1Impl

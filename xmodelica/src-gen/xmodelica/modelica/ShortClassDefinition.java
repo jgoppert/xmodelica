@@ -15,6 +15,7 @@ package xmodelica.modelica;
  * <ul>
  *   <li>{@link xmodelica.modelica.ShortClassDefinition#getMode <em>Mode</em>}</li>
  *   <li>{@link xmodelica.modelica.ShortClassDefinition#getComment <em>Comment</em>}</li>
+ *   <li>{@link xmodelica.modelica.ShortClassDefinition#getList <em>List</em>}</li>
  * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getShortClassDefinition()
@@ -74,5 +75,31 @@ public interface ShortClassDefinition extends ElementRedeclaration, ElementRepla
    * @generated
    */
   void setComment(Comment value);
+
+  /**
+   * Returns the value of the '<em><b>List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>List</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>List</em>' containment reference.
+   * @see #setList(EnumList)
+   * @see xmodelica.modelica.ModelicaPackage#getShortClassDefinition_List()
+   * @model containment="true"
+   * @generated
+   */
+  EnumList getList();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.ShortClassDefinition#getList <em>List</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>List</em>' containment reference.
+   * @see #getList()
+   * @generated
+   */
+  void setList(EnumList value);
 
 } // ShortClassDefinition

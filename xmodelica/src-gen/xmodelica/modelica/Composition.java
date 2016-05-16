@@ -3,17 +3,228 @@
  */
 package xmodelica.modelica;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Composition</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.Composition#getPriv_elist <em>Priv elist</em>}</li>
+ *   <li>{@link xmodelica.modelica.Composition#getPub_elist <em>Pub elist</em>}</li>
+ *   <li>{@link xmodelica.modelica.Composition#getProtected_elist <em>Protected elist</em>}</li>
+ *   <li>{@link xmodelica.modelica.Composition#getEq_secs <em>Eq secs</em>}</li>
+ *   <li>{@link xmodelica.modelica.Composition#getAlg_secs <em>Alg secs</em>}</li>
+ *   <li>{@link xmodelica.modelica.Composition#getExt_lang_spec <em>Ext lang spec</em>}</li>
+ *   <li>{@link xmodelica.modelica.Composition#getExt_func_call <em>Ext func call</em>}</li>
+ *   <li>{@link xmodelica.modelica.Composition#getExt_anno <em>Ext anno</em>}</li>
+ *   <li>{@link xmodelica.modelica.Composition#getAnno <em>Anno</em>}</li>
+ * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getComposition()
  * @model
  * @generated
  */
-public interface Composition extends ClassSpecifier
+public interface Composition extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Priv elist</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Priv elist</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Priv elist</em>' containment reference.
+   * @see #setPriv_elist(ElementList)
+   * @see xmodelica.modelica.ModelicaPackage#getComposition_Priv_elist()
+   * @model containment="true"
+   * @generated
+   */
+  ElementList getPriv_elist();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.Composition#getPriv_elist <em>Priv elist</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Priv elist</em>' containment reference.
+   * @see #getPriv_elist()
+   * @generated
+   */
+  void setPriv_elist(ElementList value);
+
+  /**
+   * Returns the value of the '<em><b>Pub elist</b></em>' containment reference list.
+   * The list contents are of type {@link xmodelica.modelica.ElementList}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Pub elist</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Pub elist</em>' containment reference list.
+   * @see xmodelica.modelica.ModelicaPackage#getComposition_Pub_elist()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ElementList> getPub_elist();
+
+  /**
+   * Returns the value of the '<em><b>Protected elist</b></em>' containment reference list.
+   * The list contents are of type {@link xmodelica.modelica.ElementList}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Protected elist</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Protected elist</em>' containment reference list.
+   * @see xmodelica.modelica.ModelicaPackage#getComposition_Protected_elist()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ElementList> getProtected_elist();
+
+  /**
+   * Returns the value of the '<em><b>Eq secs</b></em>' containment reference list.
+   * The list contents are of type {@link xmodelica.modelica.EquationSection}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Eq secs</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Eq secs</em>' containment reference list.
+   * @see xmodelica.modelica.ModelicaPackage#getComposition_Eq_secs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<EquationSection> getEq_secs();
+
+  /**
+   * Returns the value of the '<em><b>Alg secs</b></em>' containment reference list.
+   * The list contents are of type {@link xmodelica.modelica.AlgorithmSection}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Alg secs</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Alg secs</em>' containment reference list.
+   * @see xmodelica.modelica.ModelicaPackage#getComposition_Alg_secs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<AlgorithmSection> getAlg_secs();
+
+  /**
+   * Returns the value of the '<em><b>Ext lang spec</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ext lang spec</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ext lang spec</em>' attribute.
+   * @see #setExt_lang_spec(String)
+   * @see xmodelica.modelica.ModelicaPackage#getComposition_Ext_lang_spec()
+   * @model
+   * @generated
+   */
+  String getExt_lang_spec();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.Composition#getExt_lang_spec <em>Ext lang spec</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ext lang spec</em>' attribute.
+   * @see #getExt_lang_spec()
+   * @generated
+   */
+  void setExt_lang_spec(String value);
+
+  /**
+   * Returns the value of the '<em><b>Ext func call</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ext func call</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ext func call</em>' containment reference.
+   * @see #setExt_func_call(ExternalFunctionCall)
+   * @see xmodelica.modelica.ModelicaPackage#getComposition_Ext_func_call()
+   * @model containment="true"
+   * @generated
+   */
+  ExternalFunctionCall getExt_func_call();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.Composition#getExt_func_call <em>Ext func call</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ext func call</em>' containment reference.
+   * @see #getExt_func_call()
+   * @generated
+   */
+  void setExt_func_call(ExternalFunctionCall value);
+
+  /**
+   * Returns the value of the '<em><b>Ext anno</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ext anno</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ext anno</em>' containment reference.
+   * @see #setExt_anno(Annotation)
+   * @see xmodelica.modelica.ModelicaPackage#getComposition_Ext_anno()
+   * @model containment="true"
+   * @generated
+   */
+  Annotation getExt_anno();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.Composition#getExt_anno <em>Ext anno</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ext anno</em>' containment reference.
+   * @see #getExt_anno()
+   * @generated
+   */
+  void setExt_anno(Annotation value);
+
+  /**
+   * Returns the value of the '<em><b>Anno</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Anno</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Anno</em>' containment reference.
+   * @see #setAnno(Annotation)
+   * @see xmodelica.modelica.ModelicaPackage#getComposition_Anno()
+   * @model containment="true"
+   * @generated
+   */
+  Annotation getAnno();
+
+  /**
+   * Sets the value of the '{@link xmodelica.modelica.Composition#getAnno <em>Anno</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Anno</em>' containment reference.
+   * @see #getAnno()
+   * @generated
+   */
+  void setAnno(Annotation value);
+
 } // Composition

@@ -3,20 +3,153 @@
  */
 package xmodelica.modelica.impl;
 
-import org.eclipse.emf.ecore.EClass;
+import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import xmodelica.modelica.AlgorithmSection;
+import xmodelica.modelica.Annotation;
 import xmodelica.modelica.Composition;
+import xmodelica.modelica.ElementList;
+import xmodelica.modelica.EquationSection;
+import xmodelica.modelica.ExternalFunctionCall;
 import xmodelica.modelica.ModelicaPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Composition</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.impl.CompositionImpl#getPriv_elist <em>Priv elist</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.CompositionImpl#getPub_elist <em>Pub elist</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.CompositionImpl#getProtected_elist <em>Protected elist</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.CompositionImpl#getEq_secs <em>Eq secs</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.CompositionImpl#getAlg_secs <em>Alg secs</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.CompositionImpl#getExt_lang_spec <em>Ext lang spec</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.CompositionImpl#getExt_func_call <em>Ext func call</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.CompositionImpl#getExt_anno <em>Ext anno</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.CompositionImpl#getAnno <em>Anno</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class CompositionImpl extends ClassSpecifierImpl implements Composition
+public class CompositionImpl extends MinimalEObjectImpl.Container implements Composition
 {
+  /**
+   * The cached value of the '{@link #getPriv_elist() <em>Priv elist</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPriv_elist()
+   * @generated
+   * @ordered
+   */
+  protected ElementList priv_elist;
+
+  /**
+   * The cached value of the '{@link #getPub_elist() <em>Pub elist</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPub_elist()
+   * @generated
+   * @ordered
+   */
+  protected EList<ElementList> pub_elist;
+
+  /**
+   * The cached value of the '{@link #getProtected_elist() <em>Protected elist</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProtected_elist()
+   * @generated
+   * @ordered
+   */
+  protected EList<ElementList> protected_elist;
+
+  /**
+   * The cached value of the '{@link #getEq_secs() <em>Eq secs</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEq_secs()
+   * @generated
+   * @ordered
+   */
+  protected EList<EquationSection> eq_secs;
+
+  /**
+   * The cached value of the '{@link #getAlg_secs() <em>Alg secs</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAlg_secs()
+   * @generated
+   * @ordered
+   */
+  protected EList<AlgorithmSection> alg_secs;
+
+  /**
+   * The default value of the '{@link #getExt_lang_spec() <em>Ext lang spec</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExt_lang_spec()
+   * @generated
+   * @ordered
+   */
+  protected static final String EXT_LANG_SPEC_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getExt_lang_spec() <em>Ext lang spec</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExt_lang_spec()
+   * @generated
+   * @ordered
+   */
+  protected String ext_lang_spec = EXT_LANG_SPEC_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getExt_func_call() <em>Ext func call</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExt_func_call()
+   * @generated
+   * @ordered
+   */
+  protected ExternalFunctionCall ext_func_call;
+
+  /**
+   * The cached value of the '{@link #getExt_anno() <em>Ext anno</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExt_anno()
+   * @generated
+   * @ordered
+   */
+  protected Annotation ext_anno;
+
+  /**
+   * The cached value of the '{@link #getAnno() <em>Anno</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnno()
+   * @generated
+   * @ordered
+   */
+  protected Annotation anno;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +169,475 @@ public class CompositionImpl extends ClassSpecifierImpl implements Composition
   protected EClass eStaticClass()
   {
     return ModelicaPackage.Literals.COMPOSITION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementList getPriv_elist()
+  {
+    return priv_elist;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPriv_elist(ElementList newPriv_elist, NotificationChain msgs)
+  {
+    ElementList oldPriv_elist = priv_elist;
+    priv_elist = newPriv_elist;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPOSITION__PRIV_ELIST, oldPriv_elist, newPriv_elist);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPriv_elist(ElementList newPriv_elist)
+  {
+    if (newPriv_elist != priv_elist)
+    {
+      NotificationChain msgs = null;
+      if (priv_elist != null)
+        msgs = ((InternalEObject)priv_elist).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPOSITION__PRIV_ELIST, null, msgs);
+      if (newPriv_elist != null)
+        msgs = ((InternalEObject)newPriv_elist).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPOSITION__PRIV_ELIST, null, msgs);
+      msgs = basicSetPriv_elist(newPriv_elist, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPOSITION__PRIV_ELIST, newPriv_elist, newPriv_elist));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ElementList> getPub_elist()
+  {
+    if (pub_elist == null)
+    {
+      pub_elist = new EObjectContainmentEList<ElementList>(ElementList.class, this, ModelicaPackage.COMPOSITION__PUB_ELIST);
+    }
+    return pub_elist;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ElementList> getProtected_elist()
+  {
+    if (protected_elist == null)
+    {
+      protected_elist = new EObjectContainmentEList<ElementList>(ElementList.class, this, ModelicaPackage.COMPOSITION__PROTECTED_ELIST);
+    }
+    return protected_elist;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<EquationSection> getEq_secs()
+  {
+    if (eq_secs == null)
+    {
+      eq_secs = new EObjectContainmentEList<EquationSection>(EquationSection.class, this, ModelicaPackage.COMPOSITION__EQ_SECS);
+    }
+    return eq_secs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<AlgorithmSection> getAlg_secs()
+  {
+    if (alg_secs == null)
+    {
+      alg_secs = new EObjectContainmentEList<AlgorithmSection>(AlgorithmSection.class, this, ModelicaPackage.COMPOSITION__ALG_SECS);
+    }
+    return alg_secs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getExt_lang_spec()
+  {
+    return ext_lang_spec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExt_lang_spec(String newExt_lang_spec)
+  {
+    String oldExt_lang_spec = ext_lang_spec;
+    ext_lang_spec = newExt_lang_spec;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPOSITION__EXT_LANG_SPEC, oldExt_lang_spec, ext_lang_spec));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExternalFunctionCall getExt_func_call()
+  {
+    return ext_func_call;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExt_func_call(ExternalFunctionCall newExt_func_call, NotificationChain msgs)
+  {
+    ExternalFunctionCall oldExt_func_call = ext_func_call;
+    ext_func_call = newExt_func_call;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPOSITION__EXT_FUNC_CALL, oldExt_func_call, newExt_func_call);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExt_func_call(ExternalFunctionCall newExt_func_call)
+  {
+    if (newExt_func_call != ext_func_call)
+    {
+      NotificationChain msgs = null;
+      if (ext_func_call != null)
+        msgs = ((InternalEObject)ext_func_call).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPOSITION__EXT_FUNC_CALL, null, msgs);
+      if (newExt_func_call != null)
+        msgs = ((InternalEObject)newExt_func_call).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPOSITION__EXT_FUNC_CALL, null, msgs);
+      msgs = basicSetExt_func_call(newExt_func_call, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPOSITION__EXT_FUNC_CALL, newExt_func_call, newExt_func_call));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Annotation getExt_anno()
+  {
+    return ext_anno;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExt_anno(Annotation newExt_anno, NotificationChain msgs)
+  {
+    Annotation oldExt_anno = ext_anno;
+    ext_anno = newExt_anno;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPOSITION__EXT_ANNO, oldExt_anno, newExt_anno);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExt_anno(Annotation newExt_anno)
+  {
+    if (newExt_anno != ext_anno)
+    {
+      NotificationChain msgs = null;
+      if (ext_anno != null)
+        msgs = ((InternalEObject)ext_anno).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPOSITION__EXT_ANNO, null, msgs);
+      if (newExt_anno != null)
+        msgs = ((InternalEObject)newExt_anno).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPOSITION__EXT_ANNO, null, msgs);
+      msgs = basicSetExt_anno(newExt_anno, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPOSITION__EXT_ANNO, newExt_anno, newExt_anno));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Annotation getAnno()
+  {
+    return anno;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAnno(Annotation newAnno, NotificationChain msgs)
+  {
+    Annotation oldAnno = anno;
+    anno = newAnno;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPOSITION__ANNO, oldAnno, newAnno);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAnno(Annotation newAnno)
+  {
+    if (newAnno != anno)
+    {
+      NotificationChain msgs = null;
+      if (anno != null)
+        msgs = ((InternalEObject)anno).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPOSITION__ANNO, null, msgs);
+      if (newAnno != null)
+        msgs = ((InternalEObject)newAnno).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMPOSITION__ANNO, null, msgs);
+      msgs = basicSetAnno(newAnno, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMPOSITION__ANNO, newAnno, newAnno));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.COMPOSITION__PRIV_ELIST:
+        return basicSetPriv_elist(null, msgs);
+      case ModelicaPackage.COMPOSITION__PUB_ELIST:
+        return ((InternalEList<?>)getPub_elist()).basicRemove(otherEnd, msgs);
+      case ModelicaPackage.COMPOSITION__PROTECTED_ELIST:
+        return ((InternalEList<?>)getProtected_elist()).basicRemove(otherEnd, msgs);
+      case ModelicaPackage.COMPOSITION__EQ_SECS:
+        return ((InternalEList<?>)getEq_secs()).basicRemove(otherEnd, msgs);
+      case ModelicaPackage.COMPOSITION__ALG_SECS:
+        return ((InternalEList<?>)getAlg_secs()).basicRemove(otherEnd, msgs);
+      case ModelicaPackage.COMPOSITION__EXT_FUNC_CALL:
+        return basicSetExt_func_call(null, msgs);
+      case ModelicaPackage.COMPOSITION__EXT_ANNO:
+        return basicSetExt_anno(null, msgs);
+      case ModelicaPackage.COMPOSITION__ANNO:
+        return basicSetAnno(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.COMPOSITION__PRIV_ELIST:
+        return getPriv_elist();
+      case ModelicaPackage.COMPOSITION__PUB_ELIST:
+        return getPub_elist();
+      case ModelicaPackage.COMPOSITION__PROTECTED_ELIST:
+        return getProtected_elist();
+      case ModelicaPackage.COMPOSITION__EQ_SECS:
+        return getEq_secs();
+      case ModelicaPackage.COMPOSITION__ALG_SECS:
+        return getAlg_secs();
+      case ModelicaPackage.COMPOSITION__EXT_LANG_SPEC:
+        return getExt_lang_spec();
+      case ModelicaPackage.COMPOSITION__EXT_FUNC_CALL:
+        return getExt_func_call();
+      case ModelicaPackage.COMPOSITION__EXT_ANNO:
+        return getExt_anno();
+      case ModelicaPackage.COMPOSITION__ANNO:
+        return getAnno();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.COMPOSITION__PRIV_ELIST:
+        setPriv_elist((ElementList)newValue);
+        return;
+      case ModelicaPackage.COMPOSITION__PUB_ELIST:
+        getPub_elist().clear();
+        getPub_elist().addAll((Collection<? extends ElementList>)newValue);
+        return;
+      case ModelicaPackage.COMPOSITION__PROTECTED_ELIST:
+        getProtected_elist().clear();
+        getProtected_elist().addAll((Collection<? extends ElementList>)newValue);
+        return;
+      case ModelicaPackage.COMPOSITION__EQ_SECS:
+        getEq_secs().clear();
+        getEq_secs().addAll((Collection<? extends EquationSection>)newValue);
+        return;
+      case ModelicaPackage.COMPOSITION__ALG_SECS:
+        getAlg_secs().clear();
+        getAlg_secs().addAll((Collection<? extends AlgorithmSection>)newValue);
+        return;
+      case ModelicaPackage.COMPOSITION__EXT_LANG_SPEC:
+        setExt_lang_spec((String)newValue);
+        return;
+      case ModelicaPackage.COMPOSITION__EXT_FUNC_CALL:
+        setExt_func_call((ExternalFunctionCall)newValue);
+        return;
+      case ModelicaPackage.COMPOSITION__EXT_ANNO:
+        setExt_anno((Annotation)newValue);
+        return;
+      case ModelicaPackage.COMPOSITION__ANNO:
+        setAnno((Annotation)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.COMPOSITION__PRIV_ELIST:
+        setPriv_elist((ElementList)null);
+        return;
+      case ModelicaPackage.COMPOSITION__PUB_ELIST:
+        getPub_elist().clear();
+        return;
+      case ModelicaPackage.COMPOSITION__PROTECTED_ELIST:
+        getProtected_elist().clear();
+        return;
+      case ModelicaPackage.COMPOSITION__EQ_SECS:
+        getEq_secs().clear();
+        return;
+      case ModelicaPackage.COMPOSITION__ALG_SECS:
+        getAlg_secs().clear();
+        return;
+      case ModelicaPackage.COMPOSITION__EXT_LANG_SPEC:
+        setExt_lang_spec(EXT_LANG_SPEC_EDEFAULT);
+        return;
+      case ModelicaPackage.COMPOSITION__EXT_FUNC_CALL:
+        setExt_func_call((ExternalFunctionCall)null);
+        return;
+      case ModelicaPackage.COMPOSITION__EXT_ANNO:
+        setExt_anno((Annotation)null);
+        return;
+      case ModelicaPackage.COMPOSITION__ANNO:
+        setAnno((Annotation)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.COMPOSITION__PRIV_ELIST:
+        return priv_elist != null;
+      case ModelicaPackage.COMPOSITION__PUB_ELIST:
+        return pub_elist != null && !pub_elist.isEmpty();
+      case ModelicaPackage.COMPOSITION__PROTECTED_ELIST:
+        return protected_elist != null && !protected_elist.isEmpty();
+      case ModelicaPackage.COMPOSITION__EQ_SECS:
+        return eq_secs != null && !eq_secs.isEmpty();
+      case ModelicaPackage.COMPOSITION__ALG_SECS:
+        return alg_secs != null && !alg_secs.isEmpty();
+      case ModelicaPackage.COMPOSITION__EXT_LANG_SPEC:
+        return EXT_LANG_SPEC_EDEFAULT == null ? ext_lang_spec != null : !EXT_LANG_SPEC_EDEFAULT.equals(ext_lang_spec);
+      case ModelicaPackage.COMPOSITION__EXT_FUNC_CALL:
+        return ext_func_call != null;
+      case ModelicaPackage.COMPOSITION__EXT_ANNO:
+        return ext_anno != null;
+      case ModelicaPackage.COMPOSITION__ANNO:
+        return anno != null;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (ext_lang_spec: ");
+    result.append(ext_lang_spec);
+    result.append(')');
+    return result.toString();
   }
 
 } //CompositionImpl

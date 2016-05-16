@@ -12,13 +12,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import xmodelica.modelica.LogicalExpression;
-import xmodelica.modelica.LogicalTerm;
 import xmodelica.modelica.ModelicaPackage;
 
 /**
@@ -34,7 +31,7 @@ import xmodelica.modelica.ModelicaPackage;
  *
  * @generated
  */
-public class LogicalExpressionImpl extends MinimalEObjectImpl.Container implements LogicalExpression
+public class LogicalExpressionImpl extends SimpleExpressionImpl implements LogicalExpression
 {
   /**
    * The cached value of the '{@link #getTerms() <em>Terms</em>}' containment reference list.
@@ -44,7 +41,7 @@ public class LogicalExpressionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected EList<LogicalTerm> terms;
+  protected EList<LogicalExpression> terms;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,11 +69,11 @@ public class LogicalExpressionImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<LogicalTerm> getTerms()
+  public EList<LogicalExpression> getTerms()
   {
     if (terms == null)
     {
-      terms = new EObjectContainmentEList<LogicalTerm>(LogicalTerm.class, this, ModelicaPackage.LOGICAL_EXPRESSION__TERMS);
+      terms = new EObjectContainmentEList<LogicalExpression>(LogicalExpression.class, this, ModelicaPackage.LOGICAL_EXPRESSION__TERMS);
     }
     return terms;
   }
@@ -126,7 +123,7 @@ public class LogicalExpressionImpl extends MinimalEObjectImpl.Container implemen
     {
       case ModelicaPackage.LOGICAL_EXPRESSION__TERMS:
         getTerms().clear();
-        getTerms().addAll((Collection<? extends LogicalTerm>)newValue);
+        getTerms().addAll((Collection<? extends LogicalExpression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

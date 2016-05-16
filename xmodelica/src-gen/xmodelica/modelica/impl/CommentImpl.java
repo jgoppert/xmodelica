@@ -3,8 +3,16 @@
  */
 package xmodelica.modelica.impl;
 
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import xmodelica.modelica.Annotation;
 import xmodelica.modelica.Comment;
 import xmodelica.modelica.ModelicaPackage;
 
@@ -12,11 +20,48 @@ import xmodelica.modelica.ModelicaPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Comment</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.impl.CommentImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.CommentImpl#getAnnotation <em>Annotation</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class CommentImpl extends ClassSpecifierImpl implements Comment
+public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
 {
+  /**
+   * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComment()
+   * @generated
+   * @ordered
+   */
+  protected static final String COMMENT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComment()
+   * @generated
+   * @ordered
+   */
+  protected String comment = COMMENT_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotation() <em>Annotation</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected Annotation annotation;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +81,186 @@ public class CommentImpl extends ClassSpecifierImpl implements Comment
   protected EClass eStaticClass()
   {
     return ModelicaPackage.Literals.COMMENT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getComment()
+  {
+    return comment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setComment(String newComment)
+  {
+    String oldComment = comment;
+    comment = newComment;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMMENT__COMMENT, oldComment, comment));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Annotation getAnnotation()
+  {
+    return annotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAnnotation(Annotation newAnnotation, NotificationChain msgs)
+  {
+    Annotation oldAnnotation = annotation;
+    annotation = newAnnotation;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMMENT__ANNOTATION, oldAnnotation, newAnnotation);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAnnotation(Annotation newAnnotation)
+  {
+    if (newAnnotation != annotation)
+    {
+      NotificationChain msgs = null;
+      if (annotation != null)
+        msgs = ((InternalEObject)annotation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMMENT__ANNOTATION, null, msgs);
+      if (newAnnotation != null)
+        msgs = ((InternalEObject)newAnnotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.COMMENT__ANNOTATION, null, msgs);
+      msgs = basicSetAnnotation(newAnnotation, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.COMMENT__ANNOTATION, newAnnotation, newAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.COMMENT__ANNOTATION:
+        return basicSetAnnotation(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.COMMENT__COMMENT:
+        return getComment();
+      case ModelicaPackage.COMMENT__ANNOTATION:
+        return getAnnotation();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.COMMENT__COMMENT:
+        setComment((String)newValue);
+        return;
+      case ModelicaPackage.COMMENT__ANNOTATION:
+        setAnnotation((Annotation)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.COMMENT__COMMENT:
+        setComment(COMMENT_EDEFAULT);
+        return;
+      case ModelicaPackage.COMMENT__ANNOTATION:
+        setAnnotation((Annotation)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.COMMENT__COMMENT:
+        return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+      case ModelicaPackage.COMMENT__ANNOTATION:
+        return annotation != null;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (comment: ");
+    result.append(comment);
+    result.append(')');
+    return result.toString();
   }
 
 } //CommentImpl

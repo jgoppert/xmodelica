@@ -3,59 +3,17 @@
  */
 package xmodelica.modelica;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Term</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link xmodelica.modelica.Term#getFactors <em>Factors</em>}</li>
- *   <li>{@link xmodelica.modelica.Term#getOps <em>Ops</em>}</li>
- * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getTerm()
  * @model
  * @generated
  */
-public interface Term extends EObject
+public interface Term extends ArithmeticExpression
 {
-  /**
-   * Returns the value of the '<em><b>Factors</b></em>' containment reference list.
-   * The list contents are of type {@link xmodelica.modelica.Factor}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Factors</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Factors</em>' containment reference list.
-   * @see xmodelica.modelica.ModelicaPackage#getTerm_Factors()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Factor> getFactors();
-
-  /**
-   * Returns the value of the '<em><b>Ops</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Ops</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Ops</em>' attribute list.
-   * @see xmodelica.modelica.ModelicaPackage#getTerm_Ops()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getOps();
-
 } // Term

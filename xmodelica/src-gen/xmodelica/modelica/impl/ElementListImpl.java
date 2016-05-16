@@ -12,14 +12,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import xmodelica.modelica.AlgorithmSection;
-import xmodelica.modelica.Annotation;
 import xmodelica.modelica.Element;
 import xmodelica.modelica.ElementList;
-import xmodelica.modelica.EquationSection;
 import xmodelica.modelica.ModelicaPackage;
 
 /**
@@ -30,68 +29,13 @@ import xmodelica.modelica.ModelicaPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmodelica.modelica.impl.ElementListImpl#getPub_elist <em>Pub elist</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.ElementListImpl#getProtected_elist <em>Protected elist</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.ElementListImpl#getEq_secs <em>Eq secs</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.ElementListImpl#getAlg_secs <em>Alg secs</em>}</li>
- *   <li>{@link xmodelica.modelica.impl.ElementListImpl#getAnno <em>Anno</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ElementListImpl#getElem <em>Elem</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ElementListImpl extends CompositionImpl implements ElementList
+public class ElementListImpl extends MinimalEObjectImpl.Container implements ElementList
 {
-  /**
-   * The cached value of the '{@link #getPub_elist() <em>Pub elist</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPub_elist()
-   * @generated
-   * @ordered
-   */
-  protected EList<ElementList> pub_elist;
-
-  /**
-   * The cached value of the '{@link #getProtected_elist() <em>Protected elist</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProtected_elist()
-   * @generated
-   * @ordered
-   */
-  protected EList<ElementList> protected_elist;
-
-  /**
-   * The cached value of the '{@link #getEq_secs() <em>Eq secs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEq_secs()
-   * @generated
-   * @ordered
-   */
-  protected EList<EquationSection> eq_secs;
-
-  /**
-   * The cached value of the '{@link #getAlg_secs() <em>Alg secs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAlg_secs()
-   * @generated
-   * @ordered
-   */
-  protected EList<AlgorithmSection> alg_secs;
-
-  /**
-   * The cached value of the '{@link #getAnno() <em>Anno</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAnno()
-   * @generated
-   * @ordered
-   */
-  protected EList<Annotation> anno;
-
   /**
    * The cached value of the '{@link #getElem() <em>Elem</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -128,76 +72,6 @@ public class ElementListImpl extends CompositionImpl implements ElementList
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ElementList> getPub_elist()
-  {
-    if (pub_elist == null)
-    {
-      pub_elist = new EObjectContainmentEList<ElementList>(ElementList.class, this, ModelicaPackage.ELEMENT_LIST__PUB_ELIST);
-    }
-    return pub_elist;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ElementList> getProtected_elist()
-  {
-    if (protected_elist == null)
-    {
-      protected_elist = new EObjectContainmentEList<ElementList>(ElementList.class, this, ModelicaPackage.ELEMENT_LIST__PROTECTED_ELIST);
-    }
-    return protected_elist;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<EquationSection> getEq_secs()
-  {
-    if (eq_secs == null)
-    {
-      eq_secs = new EObjectContainmentEList<EquationSection>(EquationSection.class, this, ModelicaPackage.ELEMENT_LIST__EQ_SECS);
-    }
-    return eq_secs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<AlgorithmSection> getAlg_secs()
-  {
-    if (alg_secs == null)
-    {
-      alg_secs = new EObjectContainmentEList<AlgorithmSection>(AlgorithmSection.class, this, ModelicaPackage.ELEMENT_LIST__ALG_SECS);
-    }
-    return alg_secs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Annotation> getAnno()
-  {
-    if (anno == null)
-    {
-      anno = new EObjectContainmentEList<Annotation>(Annotation.class, this, ModelicaPackage.ELEMENT_LIST__ANNO);
-    }
-    return anno;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Element> getElem()
   {
     if (elem == null)
@@ -217,16 +91,6 @@ public class ElementListImpl extends CompositionImpl implements ElementList
   {
     switch (featureID)
     {
-      case ModelicaPackage.ELEMENT_LIST__PUB_ELIST:
-        return ((InternalEList<?>)getPub_elist()).basicRemove(otherEnd, msgs);
-      case ModelicaPackage.ELEMENT_LIST__PROTECTED_ELIST:
-        return ((InternalEList<?>)getProtected_elist()).basicRemove(otherEnd, msgs);
-      case ModelicaPackage.ELEMENT_LIST__EQ_SECS:
-        return ((InternalEList<?>)getEq_secs()).basicRemove(otherEnd, msgs);
-      case ModelicaPackage.ELEMENT_LIST__ALG_SECS:
-        return ((InternalEList<?>)getAlg_secs()).basicRemove(otherEnd, msgs);
-      case ModelicaPackage.ELEMENT_LIST__ANNO:
-        return ((InternalEList<?>)getAnno()).basicRemove(otherEnd, msgs);
       case ModelicaPackage.ELEMENT_LIST__ELEM:
         return ((InternalEList<?>)getElem()).basicRemove(otherEnd, msgs);
     }
@@ -243,16 +107,6 @@ public class ElementListImpl extends CompositionImpl implements ElementList
   {
     switch (featureID)
     {
-      case ModelicaPackage.ELEMENT_LIST__PUB_ELIST:
-        return getPub_elist();
-      case ModelicaPackage.ELEMENT_LIST__PROTECTED_ELIST:
-        return getProtected_elist();
-      case ModelicaPackage.ELEMENT_LIST__EQ_SECS:
-        return getEq_secs();
-      case ModelicaPackage.ELEMENT_LIST__ALG_SECS:
-        return getAlg_secs();
-      case ModelicaPackage.ELEMENT_LIST__ANNO:
-        return getAnno();
       case ModelicaPackage.ELEMENT_LIST__ELEM:
         return getElem();
     }
@@ -270,26 +124,6 @@ public class ElementListImpl extends CompositionImpl implements ElementList
   {
     switch (featureID)
     {
-      case ModelicaPackage.ELEMENT_LIST__PUB_ELIST:
-        getPub_elist().clear();
-        getPub_elist().addAll((Collection<? extends ElementList>)newValue);
-        return;
-      case ModelicaPackage.ELEMENT_LIST__PROTECTED_ELIST:
-        getProtected_elist().clear();
-        getProtected_elist().addAll((Collection<? extends ElementList>)newValue);
-        return;
-      case ModelicaPackage.ELEMENT_LIST__EQ_SECS:
-        getEq_secs().clear();
-        getEq_secs().addAll((Collection<? extends EquationSection>)newValue);
-        return;
-      case ModelicaPackage.ELEMENT_LIST__ALG_SECS:
-        getAlg_secs().clear();
-        getAlg_secs().addAll((Collection<? extends AlgorithmSection>)newValue);
-        return;
-      case ModelicaPackage.ELEMENT_LIST__ANNO:
-        getAnno().clear();
-        getAnno().addAll((Collection<? extends Annotation>)newValue);
-        return;
       case ModelicaPackage.ELEMENT_LIST__ELEM:
         getElem().clear();
         getElem().addAll((Collection<? extends Element>)newValue);
@@ -308,21 +142,6 @@ public class ElementListImpl extends CompositionImpl implements ElementList
   {
     switch (featureID)
     {
-      case ModelicaPackage.ELEMENT_LIST__PUB_ELIST:
-        getPub_elist().clear();
-        return;
-      case ModelicaPackage.ELEMENT_LIST__PROTECTED_ELIST:
-        getProtected_elist().clear();
-        return;
-      case ModelicaPackage.ELEMENT_LIST__EQ_SECS:
-        getEq_secs().clear();
-        return;
-      case ModelicaPackage.ELEMENT_LIST__ALG_SECS:
-        getAlg_secs().clear();
-        return;
-      case ModelicaPackage.ELEMENT_LIST__ANNO:
-        getAnno().clear();
-        return;
       case ModelicaPackage.ELEMENT_LIST__ELEM:
         getElem().clear();
         return;
@@ -340,16 +159,6 @@ public class ElementListImpl extends CompositionImpl implements ElementList
   {
     switch (featureID)
     {
-      case ModelicaPackage.ELEMENT_LIST__PUB_ELIST:
-        return pub_elist != null && !pub_elist.isEmpty();
-      case ModelicaPackage.ELEMENT_LIST__PROTECTED_ELIST:
-        return protected_elist != null && !protected_elist.isEmpty();
-      case ModelicaPackage.ELEMENT_LIST__EQ_SECS:
-        return eq_secs != null && !eq_secs.isEmpty();
-      case ModelicaPackage.ELEMENT_LIST__ALG_SECS:
-        return alg_secs != null && !alg_secs.isEmpty();
-      case ModelicaPackage.ELEMENT_LIST__ANNO:
-        return anno != null && !anno.isEmpty();
       case ModelicaPackage.ELEMENT_LIST__ELEM:
         return elem != null && !elem.isEmpty();
     }

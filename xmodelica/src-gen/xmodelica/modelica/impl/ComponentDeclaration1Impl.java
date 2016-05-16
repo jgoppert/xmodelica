@@ -5,6 +5,8 @@ package xmodelica.modelica.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import xmodelica.modelica.ComponentDeclaration1;
 import xmodelica.modelica.ModelicaPackage;
 
@@ -15,7 +17,7 @@ import xmodelica.modelica.ModelicaPackage;
  *
  * @generated
  */
-public class ComponentDeclaration1Impl extends ComponentClause1Impl implements ComponentDeclaration1
+public class ComponentDeclaration1Impl extends MinimalEObjectImpl.Container implements ComponentDeclaration1
 {
   /**
    * <!-- begin-user-doc -->

@@ -3,17 +3,40 @@
  */
 package xmodelica.modelica;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Primary</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.Primary#getRes <em>Res</em>}</li>
+ * </ul>
  *
  * @see xmodelica.modelica.ModelicaPackage#getPrimary()
  * @model
  * @generated
  */
-public interface Primary extends Argument
+public interface Primary extends Factor
 {
+  /**
+   * Returns the value of the '<em><b>Res</b></em>' containment reference list.
+   * The list contents are of type {@link xmodelica.modelica.ExpressionList}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Res</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Res</em>' containment reference list.
+   * @see xmodelica.modelica.ModelicaPackage#getPrimary_Res()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ExpressionList> getRes();
+
 } // Primary

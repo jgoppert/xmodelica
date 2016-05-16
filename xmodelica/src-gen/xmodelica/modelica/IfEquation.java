@@ -5,8 +5,6 @@ package xmodelica.modelica;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>If Equation</b></em>'.
@@ -27,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface IfEquation extends EObject
+public interface IfEquation extends Equation
 {
   /**
    * Returns the value of the '<em><b>If expr</b></em>' containment reference.

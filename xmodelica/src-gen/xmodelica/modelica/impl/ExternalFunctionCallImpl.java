@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import xmodelica.modelica.ComponentReference;
 import xmodelica.modelica.ExpressionList;
@@ -31,7 +32,7 @@ import xmodelica.modelica.ModelicaPackage;
  *
  * @generated
  */
-public class ExternalFunctionCallImpl extends CompositionImpl implements ExternalFunctionCall
+public class ExternalFunctionCallImpl extends MinimalEObjectImpl.Container implements ExternalFunctionCall
 {
   /**
    * The cached value of the '{@link #getLhs() <em>Lhs</em>}' containment reference.

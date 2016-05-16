@@ -3,7 +3,6 @@
  */
 package xmodelica.modelica;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Factor extends EObject
+public interface Factor extends Term
 {
   /**
    * Returns the value of the '<em><b>Base</b></em>' containment reference.

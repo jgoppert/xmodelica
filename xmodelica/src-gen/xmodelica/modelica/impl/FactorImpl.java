@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import xmodelica.modelica.Factor;
 import xmodelica.modelica.ModelicaPackage;
@@ -30,7 +29,7 @@ import xmodelica.modelica.Primary;
  *
  * @generated
  */
-public class FactorImpl extends MinimalEObjectImpl.Container implements Factor
+public class FactorImpl extends TermImpl implements Factor
 {
   /**
    * The cached value of the '{@link #getBase() <em>Base</em>}' containment reference.

@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -38,7 +37,7 @@ import xmodelica.modelica.ModelicaPackage;
  *
  * @generated
  */
-public class ForEquationImpl extends MinimalEObjectImpl.Container implements ForEquation
+public class ForEquationImpl extends EquationImpl implements ForEquation
 {
   /**
    * The cached value of the '{@link #getIndices() <em>Indices</em>}' containment reference.

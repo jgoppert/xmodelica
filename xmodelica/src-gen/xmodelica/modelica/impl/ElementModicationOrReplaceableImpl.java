@@ -5,8 +5,6 @@ package xmodelica.modelica.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import xmodelica.modelica.ElementModicationOrReplaceable;
 import xmodelica.modelica.ModelicaPackage;
 
@@ -17,7 +15,7 @@ import xmodelica.modelica.ModelicaPackage;
  *
  * @generated
  */
-public class ElementModicationOrReplaceableImpl extends MinimalEObjectImpl.Container implements ElementModicationOrReplaceable
+public class ElementModicationOrReplaceableImpl extends ArgumentImpl implements ElementModicationOrReplaceable
 {
   /**
    * <!-- begin-user-doc -->

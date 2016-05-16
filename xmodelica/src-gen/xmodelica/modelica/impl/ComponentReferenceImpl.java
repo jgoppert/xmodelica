@@ -12,8 +12,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -36,7 +34,7 @@ import xmodelica.modelica.ModelicaPackage;
  *
  * @generated
  */
-public class ComponentReferenceImpl extends MinimalEObjectImpl.Container implements ComponentReference
+public class ComponentReferenceImpl extends PrimaryImpl implements ComponentReference
 {
   /**
    * The cached value of the '{@link #getIdents() <em>Idents</em>}' attribute list.

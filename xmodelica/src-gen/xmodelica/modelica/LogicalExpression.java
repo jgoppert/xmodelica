@@ -5,8 +5,6 @@ package xmodelica.modelica;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Logical Expression</b></em>'.
@@ -23,11 +21,11 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface LogicalExpression extends EObject
+public interface LogicalExpression extends SimpleExpression
 {
   /**
    * Returns the value of the '<em><b>Terms</b></em>' containment reference list.
-   * The list contents are of type {@link xmodelica.modelica.LogicalTerm}.
+   * The list contents are of type {@link xmodelica.modelica.LogicalExpression}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Terms</em>' containment reference list isn't clear,
@@ -39,6 +37,6 @@ public interface LogicalExpression extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<LogicalTerm> getTerms();
+  EList<LogicalExpression> getTerms();
 
 } // LogicalExpression

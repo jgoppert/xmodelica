@@ -3,20 +3,148 @@
  */
 package xmodelica.modelica.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import xmodelica.modelica.ClassDefinition;
+import xmodelica.modelica.Composition;
 import xmodelica.modelica.ModelicaPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Class Definition</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#isFinal <em>Final</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#isEncapsulated <em>Encapsulated</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getComposition <em>Composition</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ClassDefinitionImpl#getName_end <em>Name end</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
 {
+  /**
+   * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isFinal()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean FINAL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isFinal()
+   * @generated
+   * @ordered
+   */
+  protected boolean final_ = FINAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isEncapsulated() <em>Encapsulated</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isEncapsulated()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ENCAPSULATED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isEncapsulated() <em>Encapsulated</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isEncapsulated()
+   * @generated
+   * @ordered
+   */
+  protected boolean encapsulated = ENCAPSULATED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComment()
+   * @generated
+   * @ordered
+   */
+  protected static final String COMMENT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComment()
+   * @generated
+   * @ordered
+   */
+  protected String comment = COMMENT_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getComposition() <em>Composition</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComposition()
+   * @generated
+   * @ordered
+   */
+  protected Composition composition;
+
+  /**
+   * The default value of the '{@link #getName_end() <em>Name end</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName_end()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_END_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName_end() <em>Name end</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName_end()
+   * @generated
+   * @ordered
+   */
+  protected String name_end = NAME_END_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +164,326 @@ public class ClassDefinitionImpl extends ElementImpl implements ClassDefinition
   protected EClass eStaticClass()
   {
     return ModelicaPackage.Literals.CLASS_DEFINITION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isFinal()
+  {
+    return final_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFinal(boolean newFinal)
+  {
+    boolean oldFinal = final_;
+    final_ = newFinal;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__FINAL, oldFinal, final_));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isEncapsulated()
+  {
+    return encapsulated;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEncapsulated(boolean newEncapsulated)
+  {
+    boolean oldEncapsulated = encapsulated;
+    encapsulated = newEncapsulated;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__ENCAPSULATED, oldEncapsulated, encapsulated));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getComment()
+  {
+    return comment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setComment(String newComment)
+  {
+    String oldComment = comment;
+    comment = newComment;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__COMMENT, oldComment, comment));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Composition getComposition()
+  {
+    return composition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetComposition(Composition newComposition, NotificationChain msgs)
+  {
+    Composition oldComposition = composition;
+    composition = newComposition;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__COMPOSITION, oldComposition, newComposition);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setComposition(Composition newComposition)
+  {
+    if (newComposition != composition)
+    {
+      NotificationChain msgs = null;
+      if (composition != null)
+        msgs = ((InternalEObject)composition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.CLASS_DEFINITION__COMPOSITION, null, msgs);
+      if (newComposition != null)
+        msgs = ((InternalEObject)newComposition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.CLASS_DEFINITION__COMPOSITION, null, msgs);
+      msgs = basicSetComposition(newComposition, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__COMPOSITION, newComposition, newComposition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName_end()
+  {
+    return name_end;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName_end(String newName_end)
+  {
+    String oldName_end = name_end;
+    name_end = newName_end;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.CLASS_DEFINITION__NAME_END, oldName_end, name_end));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.CLASS_DEFINITION__COMPOSITION:
+        return basicSetComposition(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.CLASS_DEFINITION__FINAL:
+        return isFinal();
+      case ModelicaPackage.CLASS_DEFINITION__ENCAPSULATED:
+        return isEncapsulated();
+      case ModelicaPackage.CLASS_DEFINITION__NAME:
+        return getName();
+      case ModelicaPackage.CLASS_DEFINITION__COMMENT:
+        return getComment();
+      case ModelicaPackage.CLASS_DEFINITION__COMPOSITION:
+        return getComposition();
+      case ModelicaPackage.CLASS_DEFINITION__NAME_END:
+        return getName_end();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.CLASS_DEFINITION__FINAL:
+        setFinal((Boolean)newValue);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__ENCAPSULATED:
+        setEncapsulated((Boolean)newValue);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__NAME:
+        setName((String)newValue);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__COMMENT:
+        setComment((String)newValue);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__COMPOSITION:
+        setComposition((Composition)newValue);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__NAME_END:
+        setName_end((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.CLASS_DEFINITION__FINAL:
+        setFinal(FINAL_EDEFAULT);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__ENCAPSULATED:
+        setEncapsulated(ENCAPSULATED_EDEFAULT);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__COMMENT:
+        setComment(COMMENT_EDEFAULT);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__COMPOSITION:
+        setComposition((Composition)null);
+        return;
+      case ModelicaPackage.CLASS_DEFINITION__NAME_END:
+        setName_end(NAME_END_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.CLASS_DEFINITION__FINAL:
+        return final_ != FINAL_EDEFAULT;
+      case ModelicaPackage.CLASS_DEFINITION__ENCAPSULATED:
+        return encapsulated != ENCAPSULATED_EDEFAULT;
+      case ModelicaPackage.CLASS_DEFINITION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ModelicaPackage.CLASS_DEFINITION__COMMENT:
+        return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+      case ModelicaPackage.CLASS_DEFINITION__COMPOSITION:
+        return composition != null;
+      case ModelicaPackage.CLASS_DEFINITION__NAME_END:
+        return NAME_END_EDEFAULT == null ? name_end != null : !NAME_END_EDEFAULT.equals(name_end);
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (final: ");
+    result.append(final_);
+    result.append(", encapsulated: ");
+    result.append(encapsulated);
+    result.append(", name: ");
+    result.append(name);
+    result.append(", comment: ");
+    result.append(comment);
+    result.append(", name_end: ");
+    result.append(name_end);
+    result.append(')');
+    return result.toString();
   }
 
 } //ClassDefinitionImpl

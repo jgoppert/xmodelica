@@ -3,20 +3,97 @@
  */
 package xmodelica.modelica.impl;
 
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import xmodelica.modelica.Comment;
 import xmodelica.modelica.ImportClause;
+import xmodelica.modelica.ImportList;
 import xmodelica.modelica.ModelicaPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Import Clause</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link xmodelica.modelica.impl.ImportClauseImpl#getId <em>Id</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ImportClauseImpl#getName <em>Name</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ImportClauseImpl#getList <em>List</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ImportClauseImpl#getComment <em>Comment</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class ImportClauseImpl extends ElementImpl implements ImportClause
 {
+  /**
+   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected static final String ID_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected String id = ID_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getList() <em>List</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getList()
+   * @generated
+   * @ordered
+   */
+  protected ImportList list;
+
+  /**
+   * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComment()
+   * @generated
+   * @ordered
+   */
+  protected Comment comment;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +113,281 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
   protected EClass eStaticClass()
   {
     return ModelicaPackage.Literals.IMPORT_CLAUSE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getId()
+  {
+    return id;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setId(String newId)
+  {
+    String oldId = id;
+    id = newId;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.IMPORT_CLAUSE__ID, oldId, id));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.IMPORT_CLAUSE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImportList getList()
+  {
+    return list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetList(ImportList newList, NotificationChain msgs)
+  {
+    ImportList oldList = list;
+    list = newList;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.IMPORT_CLAUSE__LIST, oldList, newList);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setList(ImportList newList)
+  {
+    if (newList != list)
+    {
+      NotificationChain msgs = null;
+      if (list != null)
+        msgs = ((InternalEObject)list).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.IMPORT_CLAUSE__LIST, null, msgs);
+      if (newList != null)
+        msgs = ((InternalEObject)newList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.IMPORT_CLAUSE__LIST, null, msgs);
+      msgs = basicSetList(newList, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.IMPORT_CLAUSE__LIST, newList, newList));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Comment getComment()
+  {
+    return comment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetComment(Comment newComment, NotificationChain msgs)
+  {
+    Comment oldComment = comment;
+    comment = newComment;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.IMPORT_CLAUSE__COMMENT, oldComment, newComment);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setComment(Comment newComment)
+  {
+    if (newComment != comment)
+    {
+      NotificationChain msgs = null;
+      if (comment != null)
+        msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.IMPORT_CLAUSE__COMMENT, null, msgs);
+      if (newComment != null)
+        msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.IMPORT_CLAUSE__COMMENT, null, msgs);
+      msgs = basicSetComment(newComment, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.IMPORT_CLAUSE__COMMENT, newComment, newComment));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.IMPORT_CLAUSE__LIST:
+        return basicSetList(null, msgs);
+      case ModelicaPackage.IMPORT_CLAUSE__COMMENT:
+        return basicSetComment(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.IMPORT_CLAUSE__ID:
+        return getId();
+      case ModelicaPackage.IMPORT_CLAUSE__NAME:
+        return getName();
+      case ModelicaPackage.IMPORT_CLAUSE__LIST:
+        return getList();
+      case ModelicaPackage.IMPORT_CLAUSE__COMMENT:
+        return getComment();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.IMPORT_CLAUSE__ID:
+        setId((String)newValue);
+        return;
+      case ModelicaPackage.IMPORT_CLAUSE__NAME:
+        setName((String)newValue);
+        return;
+      case ModelicaPackage.IMPORT_CLAUSE__LIST:
+        setList((ImportList)newValue);
+        return;
+      case ModelicaPackage.IMPORT_CLAUSE__COMMENT:
+        setComment((Comment)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.IMPORT_CLAUSE__ID:
+        setId(ID_EDEFAULT);
+        return;
+      case ModelicaPackage.IMPORT_CLAUSE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case ModelicaPackage.IMPORT_CLAUSE__LIST:
+        setList((ImportList)null);
+        return;
+      case ModelicaPackage.IMPORT_CLAUSE__COMMENT:
+        setComment((Comment)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case ModelicaPackage.IMPORT_CLAUSE__ID:
+        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case ModelicaPackage.IMPORT_CLAUSE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ModelicaPackage.IMPORT_CLAUSE__LIST:
+        return list != null;
+      case ModelicaPackage.IMPORT_CLAUSE__COMMENT:
+        return comment != null;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (id: ");
+    result.append(id);
+    result.append(", name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //ImportClauseImpl

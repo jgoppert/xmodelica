@@ -16,6 +16,7 @@ import xmodelica.modelica.Comment;
 import xmodelica.modelica.ConstrainingClause;
 import xmodelica.modelica.ElementModicationOrReplaceable;
 import xmodelica.modelica.ElementReplaceable;
+import xmodelica.modelica.EnumList;
 import xmodelica.modelica.ModelicaPackage;
 import xmodelica.modelica.ShortClassDefinition;
 
@@ -30,6 +31,7 @@ import xmodelica.modelica.ShortClassDefinition;
  *   <li>{@link xmodelica.modelica.impl.ShortClassDefinitionImpl#getConst <em>Const</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ShortClassDefinitionImpl#getMode <em>Mode</em>}</li>
  *   <li>{@link xmodelica.modelica.impl.ShortClassDefinitionImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link xmodelica.modelica.impl.ShortClassDefinitionImpl#getList <em>List</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,6 +67,16 @@ public class ShortClassDefinitionImpl extends ElementRedeclarationImpl implement
    * @ordered
    */
   protected Comment comment;
+
+  /**
+   * The cached value of the '{@link #getList() <em>List</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getList()
+   * @generated
+   * @ordered
+   */
+  protected EnumList list;
 
   /**
    * <!-- begin-user-doc -->
@@ -236,6 +248,54 @@ public class ShortClassDefinitionImpl extends ElementRedeclarationImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
+  public EnumList getList()
+  {
+    return list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetList(EnumList newList, NotificationChain msgs)
+  {
+    EnumList oldList = list;
+    list = newList;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelicaPackage.SHORT_CLASS_DEFINITION__LIST, oldList, newList);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setList(EnumList newList)
+  {
+    if (newList != list)
+    {
+      NotificationChain msgs = null;
+      if (list != null)
+        msgs = ((InternalEObject)list).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.SHORT_CLASS_DEFINITION__LIST, null, msgs);
+      if (newList != null)
+        msgs = ((InternalEObject)newList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelicaPackage.SHORT_CLASS_DEFINITION__LIST, null, msgs);
+      msgs = basicSetList(newList, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelicaPackage.SHORT_CLASS_DEFINITION__LIST, newList, newList));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -247,6 +307,8 @@ public class ShortClassDefinitionImpl extends ElementRedeclarationImpl implement
         return basicSetMode(null, msgs);
       case ModelicaPackage.SHORT_CLASS_DEFINITION__COMMENT:
         return basicSetComment(null, msgs);
+      case ModelicaPackage.SHORT_CLASS_DEFINITION__LIST:
+        return basicSetList(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -267,6 +329,8 @@ public class ShortClassDefinitionImpl extends ElementRedeclarationImpl implement
         return getMode();
       case ModelicaPackage.SHORT_CLASS_DEFINITION__COMMENT:
         return getComment();
+      case ModelicaPackage.SHORT_CLASS_DEFINITION__LIST:
+        return getList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -289,6 +353,9 @@ public class ShortClassDefinitionImpl extends ElementRedeclarationImpl implement
         return;
       case ModelicaPackage.SHORT_CLASS_DEFINITION__COMMENT:
         setComment((Comment)newValue);
+        return;
+      case ModelicaPackage.SHORT_CLASS_DEFINITION__LIST:
+        setList((EnumList)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -313,6 +380,9 @@ public class ShortClassDefinitionImpl extends ElementRedeclarationImpl implement
       case ModelicaPackage.SHORT_CLASS_DEFINITION__COMMENT:
         setComment((Comment)null);
         return;
+      case ModelicaPackage.SHORT_CLASS_DEFINITION__LIST:
+        setList((EnumList)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -333,6 +403,8 @@ public class ShortClassDefinitionImpl extends ElementRedeclarationImpl implement
         return mode != null;
       case ModelicaPackage.SHORT_CLASS_DEFINITION__COMMENT:
         return comment != null;
+      case ModelicaPackage.SHORT_CLASS_DEFINITION__LIST:
+        return list != null;
     }
     return super.eIsSet(featureID);
   }
